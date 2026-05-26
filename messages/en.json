@@ -85,10 +85,12 @@
   "footer": {
     "copyright": "Copyright © {year} AION",
     "tagline": "Trustworthy and auditable artificial intelligence.",
+    "legalNotice": "Personal data is processed in accordance with applicable privacy law.",
     "columns": {
       "services": "Services",
       "company": "Company",
       "contact": "Contact",
+      "legal": "Legal",
       "servicesLinks": {
         "aiGovernance": "AI Governance",
         "compliance": "Regulation & Compliance",
@@ -98,6 +100,11 @@
         "about": "About",
         "approach": "Approach",
         "assessment": "Assessment"
+      },
+      "legalLinks": {
+        "privacy": "Privacy Notice",
+        "cookies": "Cookie Policy",
+        "contact": "Contact"
       },
       "contactText": "Get in touch for your enterprise AI compliance journey."
     }
@@ -217,7 +224,9 @@
       "title": "Job Title",
       "email": "Corporate Email",
       "phone": "Phone",
-      "consent": "I have read and accept the Privacy Policy.",
+      "consentPrefix": "I have read and accept the",
+      "consentLink": "Privacy Notice",
+      "consentSuffix": ".",
       "marketingOptIn": "I would like to receive updates on compliance and AI governance from AION (optional)."
     },
     "errors": {
@@ -252,8 +261,13 @@
     "calendlyLabel": "Schedule a Call",
     "calendlyDescription": "Pick a time for a 30-minute discovery session.",
     "calendlyButton": "Open Calendar",
-    "privacyNote": "Form data is processed under our privacy policy.",
-    "privacyLink": "Assessment form"
+    "privacyNote": "Your personal data is processed under applicable privacy law.",
+    "privacyLink": "Privacy Notice",
+    "cookiesLink": "Cookie Policy"
+  },
+  "legal": {
+    "eyebrow": "Legal",
+    "lastUpdated": "Last updated: {date}"
   },
   "about": {
     "eyebrow": "Company",

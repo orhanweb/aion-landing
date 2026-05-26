@@ -17,8 +17,8 @@ export async function SiteFooter() {
   return (
     <footer className="border-t border-border bg-[var(--ink-elevated)] py-16">
       <Container>
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
-          <div className="flex flex-col gap-4">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
+          <div className="flex flex-col gap-4 lg:col-span-2">
             <Logo />
             <p className="text-sm leading-relaxed text-muted-foreground">{t('tagline')}</p>
           </div>
@@ -66,19 +66,33 @@ export async function SiteFooter() {
           </div>
 
           <div>
-            <MonoLabel className="mb-4 block text-foreground">{t('columns.contact')}</MonoLabel>
-            <p className="text-sm leading-relaxed text-muted-foreground">{t('columns.contactText')}</p>
-            <a href={`mailto:${contact.email}`} className="mt-3 block text-sm text-foreground transition-colors hover:text-accent">
+            <MonoLabel className="mb-4 block text-foreground">{t('columns.legal')}</MonoLabel>
+            <ul className="flex flex-col gap-3 text-sm text-muted-foreground">
+              <li>
+                <Link href="/privacy" className="transition-colors hover:text-foreground">
+                  {t('columns.legalLinks.privacy')}
+                </Link>
+              </li>
+              <li>
+                <Link href="/cookies" className="transition-colors hover:text-foreground">
+                  {t('columns.legalLinks.cookies')}
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="transition-colors hover:text-foreground">
+                  {t('columns.legalLinks.contact')}
+                </Link>
+              </li>
+            </ul>
+            <a href={`mailto:${contact.email}`} className="mt-4 block text-sm text-foreground transition-colors hover:text-accent">
               {contact.email}
             </a>
-            <Link href="/contact" className="mt-4 inline-block font-mono-label text-accent hover:text-[var(--accent-strong)]">
-              {locale === 'tr' ? 'İletişime Geç →' : 'Get in Touch →'}
-            </Link>
           </div>
         </div>
 
-        <div className="mt-12 border-t border-border pt-8">
+        <div className="mt-12 flex flex-col gap-4 border-t border-border pt-8 sm:flex-row sm:items-center sm:justify-between">
           <p className="font-mono-label text-muted-foreground">{t('copyright', { year })}</p>
+          <p className="font-mono-label text-[0.625rem] text-muted-foreground">{t('legalNotice')}</p>
         </div>
       </Container>
     </footer>

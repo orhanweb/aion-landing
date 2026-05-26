@@ -60,8 +60,12 @@ export async function ContactChannels() {
 
       <p className="text-sm text-muted-foreground">
         {t('privacyNote')}{' '}
-        <Link href="/assessment" className="text-accent transition-colors hover:text-[var(--accent-strong)]">
+        <Link href="/privacy" className="text-accent transition-colors hover:text-[var(--accent-strong)]">
           {t('privacyLink')}
+        </Link>
+        {' · '}
+        <Link href="/cookies" className="text-accent transition-colors hover:text-[var(--accent-strong)]">
+          {t('cookiesLink')}
         </Link>
       </p>
     </div>

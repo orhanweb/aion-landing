@@ -7,13 +7,17 @@ import { getTeamMembers } from '@/lib/content/team';
 import { getTranslations, getLocale } from 'next-intl/server';
 import type { Locale } from '@/i18n/routing';
 
-export async function TeamSection() {
+type TeamSectionProps = {
+  id?: string;
+};
+
+export async function TeamSection({ id }: TeamSectionProps = {}) {
   const locale = (await getLocale()) as Locale;
   const t = await getTranslations('team');
   const members = getTeamMembers(locale);
 
   return (
-    <Section>
+    <Section id={id}>
       <Container>
         <FadeIn className="max-w-2xl">
           <MonoLabel className="text-accent">{t('eyebrow')}</MonoLabel>

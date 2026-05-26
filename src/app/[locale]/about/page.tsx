@@ -1,5 +1,6 @@
 // src/app/[locale]/about/page.tsx
 import { AboutPrinciples } from '@/components/sections/about-principles';
+import { AssessmentTeaser } from '@/components/sections/assessment-teaser';
 import { TeamSection } from '@/components/sections/team-section';
 import { Container, Section } from '@/components/ui/container';
 import { MonoLabel } from '@/components/ui/mono-label';
@@ -39,7 +40,8 @@ export default async function AboutPage({ params }: PageProps) {
           <AboutPrinciples locale={locale as Locale} />
         </Container>
       </Section>
-      <TeamSection />
+      <TeamSection id="team" />
+      <AssessmentTeaser />
     </>
   );
 }

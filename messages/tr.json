@@ -85,10 +85,12 @@
   "footer": {
     "copyright": "Copyright © {year} AION",
     "tagline": "Güvenilir ve denetlenebilir yapay zeka.",
+    "legalNotice": "KVKK kapsamında kişisel verileriniz korunur.",
     "columns": {
       "services": "Hizmetler",
       "company": "Kurumsal",
       "contact": "İletişim",
+      "legal": "Yasal",
       "servicesLinks": {
         "aiGovernance": "AI Yönetişimi",
         "compliance": "Regülasyon ve Uyum",
@@ -98,6 +100,11 @@
         "about": "Hakkımızda",
         "approach": "Yaklaşımımız",
         "assessment": "Değerlendirme"
+      },
+      "legalLinks": {
+        "privacy": "KVKK Aydınlatma",
+        "cookies": "Çerez Politikası",
+        "contact": "İletişim"
       },
       "contactText": "Kurumsal AI uyum yolculuğunuz için bizimle iletişime geçin."
     }
@@ -217,7 +224,9 @@
       "title": "Unvan",
       "email": "Kurumsal E-posta",
       "phone": "Telefon",
-      "consent": "KVKK Aydınlatma Metni'ni okudum ve kabul ediyorum.",
+      "consentPrefix": "",
+      "consentLink": "KVKK Aydınlatma Metni",
+      "consentSuffix": "'ni okudum ve kabul ediyorum.",
       "marketingOptIn": "AION'dan uyum ve AI yönetişimi hakkında bilgilendirme almak istiyorum (isteğe bağlı)."
     },
     "errors": {
@@ -252,8 +261,13 @@
     "calendlyLabel": "Görüşme Planla",
     "calendlyDescription": "30 dakikalık keşif görüşmesi için takvimden uygun bir zaman seçin.",
     "calendlyButton": "Takvimi Aç",
-    "privacyNote": "Form verileriniz KVKK kapsamında işlenir.",
-    "privacyLink": "Değerlendirme formu"
+    "privacyNote": "Kişisel verileriniz KVKK kapsamında işlenir.",
+    "privacyLink": "Gizlilik Politikası",
+    "cookiesLink": "Çerez Politikası"
+  },
+  "legal": {
+    "eyebrow": "Yasal",
+    "lastUpdated": "Son güncelleme: {date}"
   },
   "about": {
     "eyebrow": "Kurumsal",

@@ -4,7 +4,7 @@ import { getServiceSlugs } from '@/lib/content/services';
 import { routing } from '@/i18n/routing';
 import { getSiteUrl } from '@/lib/site';
 
-const staticPaths = ['', '/services', '/approach', '/about', '/assessment', '/contact'];
+const staticPaths = ['', '/services', '/approach', '/about', '/assessment', '/contact', '/privacy', '/cookies'];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = getSiteUrl();

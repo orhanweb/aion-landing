@@ -30,8 +30,8 @@ const legacyRedirects = [
   },
   { source: '/blog', destination: '/tr', permanent: false },
   { source: '/blog/', destination: '/tr', permanent: false },
-  { source: '/our-team', destination: '/tr/about', permanent: true },
-  { source: '/our-team/', destination: '/tr/about', permanent: true }
+  { source: '/our-team', destination: '/tr/about#team', permanent: true },
+  { source: '/our-team/', destination: '/tr/about#team', permanent: true }
 ];
 
 const nextConfig: NextConfig = {

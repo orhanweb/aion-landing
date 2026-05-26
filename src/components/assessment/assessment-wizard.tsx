@@ -1,6 +1,7 @@
 // src/components/assessment/assessment-wizard.tsx
 'use client';
 
+import { ConsentField } from '@/components/assessment/consent-field';
 import { TopicBranch } from '@/components/assessment/branches/topic-branch';
 import { FieldError } from '@/components/assessment/fields/form-fields';
 import { ThankYou } from '@/components/assessment/thank-you';
@@ -104,7 +105,6 @@ export function AssessmentWizard({ calendlyUrl, responseTime }: AssessmentWizard
 
   const currentStep = wizardSteps[stepIndex] as WizardStep;
   const topic = form.watch('topic');
-  const consent = form.register('consent');
   const marketingOptIn = form.register('marketingOptIn');
 
   function applyStepErrors(issues: { path: PropertyKey[]; message: string }[]) {
@@ -242,19 +242,12 @@ export function AssessmentWizard({ calendlyUrl, responseTime }: AssessmentWizard
 
           {currentStep === 'consent' ? (
             <div className="space-y-4">
-              <label className="flex items-start gap-3 text-sm text-muted-foreground">
-                <input
-                  type="checkbox"
-                  {...consent}
-                  onChange={event => {
-                    consent.onChange(event);
-                    void form.trigger('consent');
-                  }}
-                  className="mt-1 accent-[var(--accent)]"
-                />
-                {t('fields.consent')}
-              </label>
-              <FieldError error={form.formState.errors.consent} />
+              <ConsentField
+                register={form.register}
+                name="consent"
+                error={form.formState.errors.consent}
+                onConsentChange={() => void form.trigger('consent')}
+              />
               <label className="flex items-start gap-3 text-sm text-muted-foreground">
                 <input type="checkbox" {...marketingOptIn} className="mt-1 accent-[var(--accent)]" />
                 {t('fields.marketingOptIn')}
