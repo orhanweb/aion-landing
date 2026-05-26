@@ -43,7 +43,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   return (
     <html lang={locale} className={`${GeistSans.variable} ${cormorantGaramond.variable} ${ibmPlexMono.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col bg-background text-foreground">
-        <JsonLd data={organizationJsonLd()} />
+        <JsonLd data={organizationJsonLd(locale as Locale)} />
         <NextIntlClientProvider messages={messages}>
           <SiteHeader />
           <main className="flex-1">{children}</main>

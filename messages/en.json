@@ -116,5 +116,30 @@
     "submit": "Submit",
     "next": "Continue",
     "back": "Back"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Get in touch",
+    "description": "Reach our team directly for your enterprise AI compliance journey, or schedule a discovery call.",
+    "mockNotice": "Placeholder contact details — update site-config.ts or env variables before production.",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "addressLabel": "Address",
+    "linkedinLabel": "LinkedIn",
+    "calendlyLabel": "Schedule a Call",
+    "calendlyDescription": "Pick a time for a 30-minute discovery session.",
+    "calendlyButton": "Open Calendar",
+    "privacyNote": "Form data is processed under our privacy policy.",
+    "privacyLink": "Assessment form"
+  },
+  "about": {
+    "eyebrow": "Company",
+    "title": "About",
+    "missionLabel": "Mission",
+    "storyLabel": "Our Story",
+    "principlesLabel": "Principles",
+    "principlesTitle": "Why AION?",
+    "approachLinkPrefix": "Explore our methodology:",
+    "approachLink": "Our Approach"
   }
 }

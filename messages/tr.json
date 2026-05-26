@@ -116,5 +116,30 @@
     "submit": "Gönder",
     "next": "Devam",
     "back": "Geri"
+  },
+  "contact": {
+    "eyebrow": "İletişim",
+    "title": "Bizimle iletişime geçin",
+    "description": "Kurumsal AI uyum yolculuğunuz için ekibimizle doğrudan iletişime geçin veya görüşme planlayın.",
+    "mockNotice": "Placeholder iletişim bilgileri — production öncesi site-config.ts veya env değişkenlerini güncelleyin.",
+    "emailLabel": "E-posta",
+    "phoneLabel": "Telefon",
+    "addressLabel": "Adres",
+    "linkedinLabel": "LinkedIn",
+    "calendlyLabel": "Görüşme Planla",
+    "calendlyDescription": "30 dakikalık keşif görüşmesi için takvimden uygun bir zaman seçin.",
+    "calendlyButton": "Takvimi Aç",
+    "privacyNote": "Form verileriniz KVKK kapsamında işlenir.",
+    "privacyLink": "Değerlendirme formu"
+  },
+  "about": {
+    "eyebrow": "Kurumsal",
+    "title": "Hakkımızda",
+    "missionLabel": "Misyon",
+    "storyLabel": "Hikayemiz",
+    "principlesLabel": "İlkelerimiz",
+    "principlesTitle": "Neden AION?",
+    "approachLinkPrefix": "Metodolojimizi inceleyin:",
+    "approachLink": "Yaklaşımımız"
   }
 }
