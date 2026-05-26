@@ -37,16 +37,16 @@ export function AccordionItem({ title, children, className }: { title: string; c
   const isOpen = context.openId === id;
 
   return (
-    <div className={cn('rounded-2xl border border-border bg-card', className)}>
+    <div className={cn('rounded-lg border border-border bg-[var(--ink-elevated)]', className)}>
       <button
         type="button"
         aria-expanded={isOpen}
         onClick={() => context.toggle(id)}
         className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
       >
-        <span className="font-medium text-foreground">{title}</span>
-        <span aria-hidden className={cn('text-muted-foreground transition-transform', isOpen && 'rotate-180')}>
-          ▾
+        <span className="font-display text-lg text-foreground">{title}</span>
+        <span aria-hidden className={cn('font-mono-label text-muted-foreground transition-transform', isOpen && 'rotate-45')}>
+          +
         </span>
       </button>
       {isOpen ? <div className="border-t border-border px-6 py-5 text-sm leading-relaxed text-muted-foreground">{children}</div> : null}

@@ -1,6 +1,7 @@
 // src/app/[locale]/degerlendirme/page.tsx
 import { AssessmentWizard } from '@/components/assessment/assessment-wizard';
 import { Container, Section } from '@/components/ui/container';
+import { MonoLabel } from '@/components/ui/mono-label';
 import { buildPageMetadata } from '@/lib/seo/metadata';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { Locale } from '@/i18n/routing';
@@ -31,11 +32,12 @@ export default async function AssessmentPage({ params }: PageProps) {
   return (
     <Section className="pt-24">
       <Container className="max-w-2xl">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold tracking-tight">{t('title')}</h1>
-          <p className="mt-3 text-muted-foreground">{t('description')}</p>
+        <MonoLabel>{locale === 'tr' ? 'Değerlendirme' : 'Assessment'}</MonoLabel>
+        <h1 className="font-display mt-4 text-[clamp(2rem,4vw,3rem)] leading-tight tracking-tight">{t('title')}</h1>
+        <p className="mt-3 text-muted-foreground">{t('description')}</p>
+        <div className="mt-10">
+          <AssessmentWizard />
         </div>
-        <AssessmentWizard />
       </Container>
     </Section>
   );

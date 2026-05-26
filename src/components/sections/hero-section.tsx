@@ -1,7 +1,9 @@
 // src/components/sections/hero-section.tsx
 import { Link } from '@/i18n/navigation';
+import { GovernanceGraph } from '@/components/motion/governance-graph';
+import { Stagger, StaggerItem } from '@/components/motion/stagger';
 import { Container, Section } from '@/components/ui/container';
-import { Badge } from '@/components/ui/badge';
+import { MonoLabel } from '@/components/ui/mono-label';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils/cn';
 import { getTranslations } from 'next-intl/server';
@@ -10,39 +12,46 @@ export async function HeroSection() {
   const t = await getTranslations('hero');
 
   return (
-    <Section className="relative overflow-hidden pt-20 sm:pt-28">
-      <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(79,70,229,0.18),transparent_55%)]" />
-      <Container className="relative grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-        <div className="flex flex-col gap-6">
-          <Badge>{t('eyebrow')}</Badge>
-          <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">{t('title')}</h1>
-          <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground">{t('description')}</p>
-          <ul className="flex flex-col gap-3 text-sm text-muted-foreground">
-            {t.raw('bullets').map((bullet: string) => (
-              <li key={bullet} className="flex items-start gap-3">
-                <span className="mt-1 text-accent">→</span>
-                <span>{bullet}</span>
-              </li>
-            ))}
-          </ul>
-          <div className="flex flex-wrap gap-3 pt-2">
-            <Link href="/degerlendirme" className={cn(buttonVariants({ size: 'lg' }))}>
-              {t('primaryCta')}
-            </Link>
-            <Link href="/hizmetler" className={cn(buttonVariants({ variant: 'secondary', size: 'lg' }))}>
-              {t('secondaryCta')}
-            </Link>
-          </div>
-        </div>
+    <Section className="grain-overlay grid-lines overflow-hidden pt-8">
+      <Container>
+        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
+          <Stagger className="lg:col-span-7">
+            <StaggerItem>
+              <MonoLabel className="text-accent">{t('eyebrow')}</MonoLabel>
+            </StaggerItem>
 
-        <div className="rounded-3xl border border-border bg-card p-8">
-          <div className="grid gap-4 sm:grid-cols-2">
-            {['ISO 42001', 'EU AI Act', 'ISO 27001', 'ISO 22301'].map(item => (
-              <div key={item} className="rounded-2xl border border-border bg-background/60 p-5">
-                <p className="text-xs uppercase tracking-wider text-muted-foreground">Standard</p>
-                <p className="mt-2 text-lg font-semibold text-foreground">{item}</p>
+            <StaggerItem>
+              <h1 className="font-display mt-6 text-balance text-[clamp(2.875rem,5vw,4.75rem)] font-semibold leading-[1.12] tracking-[0.02em]">
+                <span className="block">{t('titleLine1')}</span>
+                <span className="block text-accent">{t('titleLine2')}</span>
+                <span className="block">{t('titleLine3')}</span>
+              </h1>
+            </StaggerItem>
+
+            <StaggerItem>
+              <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">{t('description')}</p>
+            </StaggerItem>
+
+            <StaggerItem>
+              <div className="mt-8 flex flex-wrap items-center gap-6">
+                <Link href="/degerlendirme" className={cn(buttonVariants({ variant: 'primary', size: 'lg' }))}>
+                  {t('primaryCta')}
+                </Link>
+                <Link href="/hizmetler" className="font-mono-label text-foreground transition-colors hover:text-accent">
+                  {t('secondaryCta')} →
+                </Link>
               </div>
-            ))}
+            </StaggerItem>
+
+            <StaggerItem>
+              <p className="mt-10 font-mono-label text-[0.625rem] text-muted-foreground">{t('standards')}</p>
+            </StaggerItem>
+          </Stagger>
+
+          <div className="lg:col-span-5">
+            <div className="aspect-[4/3] rounded-lg border border-border bg-[var(--ink-elevated)] p-8 sm:p-10">
+              <GovernanceGraph />
+            </div>
           </div>
         </div>
       </Container>

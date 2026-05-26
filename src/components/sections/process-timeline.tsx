@@ -1,0 +1,49 @@
+// src/components/sections/process-timeline.tsx
+import { FadeIn } from '@/components/motion/fade-in';
+import { Container, Section } from '@/components/ui/container';
+import { MonoLabel } from '@/components/ui/mono-label';
+import { getTranslations } from 'next-intl/server';
+
+export async function ProcessTimeline() {
+  const t = await getTranslations('process');
+  const steps = t.raw('steps') as { title: string; description: string }[];
+
+  return (
+    <Section variant="paper" id="approach">
+      <Container>
+        <FadeIn className="max-w-2xl">
+          <MonoLabel className="text-[var(--accent-strong)]">{t('eyebrow')}</MonoLabel>
+          <h2 className="font-display mt-4 text-[clamp(2rem,3.5vw,3rem)] leading-tight tracking-tight text-paper-foreground">{t('title')}</h2>
+          <p className="mt-4 text-paper-muted-foreground">{t('description')}</p>
+        </FadeIn>
+
+        <ol className="relative mt-16 space-y-0">
+          {steps.map((step, index) => {
+            const num = String(index + 1).padStart(2, '0');
+            const isLast = index === steps.length - 1;
+
+            return (
+              <FadeIn key={step.title} delay={index * 0.05}>
+                <li className="relative grid gap-6 pb-12 md:grid-cols-[80px_1fr] md:gap-12">
+                  {!isLast ? (
+                    <div
+                      aria-hidden
+                      className="absolute left-[39px] top-12 hidden h-[calc(100%-3rem)] w-px bg-[var(--foreground-dark-muted)]/30 md:block"
+                    />
+                  ) : null}
+                  <div className="flex items-start gap-4 md:flex-col md:gap-2">
+                    <span className="font-mono-label text-[var(--accent-strong)]">{num}</span>
+                  </div>
+                  <div>
+                    <h3 className="font-display text-xl tracking-tight text-paper-foreground md:text-2xl">{step.title}</h3>
+                    <p className="mt-3 max-w-xl text-sm leading-relaxed text-paper-muted-foreground md:text-base">{step.description}</p>
+                  </div>
+                </li>
+              </FadeIn>
+            );
+          })}
+        </ol>
+      </Container>
+    </Section>
+  );
+}

@@ -8,19 +8,23 @@
     "approach": "Approach",
     "about": "About",
     "assessment": "Assessment",
-    "contact": "Contact"
+    "contact": "Contact",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu"
   },
   "hero": {
-    "eyebrow": "Enterprise AI Governance & Compliance",
-    "title": "Trustworthy and Auditable Artificial Intelligence",
+    "eyebrow": "Enterprise AI Governance",
+    "titleLine1": "Trustworthy and",
+    "titleLine2": "Auditable",
+    "titleLine3": "Artificial Intelligence",
     "description": "AION helps you manage your AI usage and solutions securely, transparently, and regulation-ready.",
-    "bullets": [
-      "ISO / IEC 42001 and EU AI Act compliance model",
-      "ISO / IEC 27001 for secure data and AI infrastructure",
-      "ISO 22301 for resilient and continuous operations"
-    ],
+    "standards": "ISO 42001 · EU AI Act · ISO 27001 · ISO 22301",
     "primaryCta": "Free Assessment",
     "secondaryCta": "Explore Services"
+  },
+  "trust": {
+    "label": "Trusted Frameworks",
+    "frameworks": ["ISO/IEC 42001", "EU AI Act", "ISO/IEC 27001", "ISO 22301"]
   },
   "services": {
     "eyebrow": "Services",
@@ -41,15 +45,38 @@
       { "title": "Audit and Improvement", "description": "Audit preparation and continuous improvement are applied." }
     ]
   },
+  "testimonial": {
+    "eyebrow": "Reference",
+    "quote": "Working with AION took our AI strategy to an entirely new level. Their deep expertise in ISO 42001 standards and EU AI Act compliance helped us navigate complex regulations successfully.",
+    "author": "Fatih Kuran",
+    "sector": "Finance and Banking"
+  },
   "cta": {
     "eyebrow": "EU AI Act",
+    "dateLabel": "August 2026",
     "title": "How ready are your systems?",
     "description": "Rules change in August 2026. Learn your risk profile with a 2-minute pre-assessment.",
     "button": "Get Risk Profile"
   },
   "footer": {
     "copyright": "Copyright © {year} AION",
-    "tagline": "Trustworthy and auditable artificial intelligence."
+    "tagline": "Trustworthy and auditable artificial intelligence.",
+    "columns": {
+      "services": "Services",
+      "company": "Company",
+      "contact": "Contact",
+      "servicesLinks": {
+        "aiGovernance": "AI Governance",
+        "compliance": "Regulation & Compliance",
+        "security": "Information Security"
+      },
+      "companyLinks": {
+        "about": "About",
+        "approach": "Approach",
+        "assessment": "Assessment"
+      },
+      "contactText": "Get in touch for your enterprise AI compliance journey."
+    }
   },
   "assessment": {
     "title": "Compliance Assessment",

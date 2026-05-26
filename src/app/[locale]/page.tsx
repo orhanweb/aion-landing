@@ -1,8 +1,10 @@
 // src/app/[locale]/page.tsx
 import { HeroSection } from '@/components/sections/hero-section';
-import { ServicesSection } from '@/components/sections/services-section';
-import { ProcessSection } from '@/components/sections/process-section';
-import { CtaSection } from '@/components/sections/cta-section';
+import { TrustStrip } from '@/components/sections/trust-strip';
+import { ServicesBento } from '@/components/sections/services-bento';
+import { ProcessTimeline } from '@/components/sections/process-timeline';
+import { TestimonialFeature } from '@/components/sections/testimonial-feature';
+import { SignalBanner } from '@/components/sections/signal-banner';
 import { buildPageMetadata } from '@/lib/seo/metadata';
 import { setRequestLocale } from 'next-intl/server';
 import type { Locale } from '@/i18n/routing';
@@ -32,9 +34,11 @@ export default async function HomePage({ params }: PageProps) {
   return (
     <>
       <HeroSection />
-      <ServicesSection />
-      <ProcessSection />
-      <CtaSection />
+      <TrustStrip />
+      <ServicesBento />
+      <ProcessTimeline />
+      <TestimonialFeature />
+      <SignalBanner />
     </>
   );
 }

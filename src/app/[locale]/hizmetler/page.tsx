@@ -1,5 +1,5 @@
 // src/app/[locale]/hizmetler/page.tsx
-import { ServicesSection } from '@/components/sections/services-section';
+import { ServicesBento } from '@/components/sections/services-bento';
 import { buildPageMetadata } from '@/lib/seo/metadata';
 import { setRequestLocale } from 'next-intl/server';
 import type { Locale } from '@/i18n/routing';
@@ -26,5 +26,5 @@ export default async function ServicesPage({ params }: PageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <ServicesSection />;
+  return <ServicesBento />;
 }

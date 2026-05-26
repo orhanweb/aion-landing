@@ -2,7 +2,7 @@
 import { notFound } from 'next/navigation';
 import { Container, Section } from '@/components/ui/container';
 import { Accordion, AccordionItem } from '@/components/ui/accordion';
-import { Badge } from '@/components/ui/badge';
+import { MonoLabel } from '@/components/ui/mono-label';
 import { getService, getServiceSlugs } from '@/lib/content/services';
 import { buildPageMetadata } from '@/lib/seo/metadata';
 import { setRequestLocale } from 'next-intl/server';
@@ -44,18 +44,18 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
   return (
     <>
-      <Section className="border-b border-border/60 bg-card/20 pt-24">
+      <Section variant="elevated" spacing="compact" className="pt-24">
         <Container className="max-w-3xl">
-          <Badge>{service.subtitle}</Badge>
-          <h1 className="mt-4 text-4xl font-bold tracking-tight">{service.title}</h1>
-          <p className="mt-4 text-lg text-muted-foreground">{service.description}</p>
+          <MonoLabel className="text-accent">{service.subtitle}</MonoLabel>
+          <h1 className="font-display mt-4 text-[clamp(2rem,4vw,3.5rem)] leading-tight tracking-tight">{service.title}</h1>
+          <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{service.description}</p>
         </Container>
       </Section>
 
       {service.steps.length > 0 ? (
         <Section>
           <Container className="max-w-3xl">
-            <Accordion defaultOpenId={undefined}>
+            <Accordion>
               {service.steps.map(step => (
                 <AccordionItem key={step.title} title={step.title}>
                   {step.description}

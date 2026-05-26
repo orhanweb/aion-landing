@@ -1,16 +1,83 @@
 // src/components/layout/site-footer.tsx
+import { Link } from '@/i18n/navigation';
 import { Container } from '@/components/ui/container';
-import { getTranslations } from 'next-intl/server';
+import { Logo } from '@/components/ui/logo';
+import { MonoLabel } from '@/components/ui/mono-label';
+import { getLocale, getTranslations } from 'next-intl/server';
+import type { Locale } from '@/i18n/routing';
 
 export async function SiteFooter() {
   const t = await getTranslations('footer');
+  const locale = (await getLocale()) as Locale;
   const year = new Date().getFullYear();
 
+  const serviceSlug = locale === 'tr' ? 'ai-yonetisimi' : 'ai-governance';
+  const complianceSlug = locale === 'tr' ? 'regulasyon-uyum' : 'regulatory-compliance';
+  const securitySlug = locale === 'tr' ? 'bilgi-guvenligi' : 'information-security';
+
   return (
-    <footer className="border-t border-border py-10">
-      <Container className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm text-muted-foreground">{t('copyright', { year })}</p>
-        <p className="text-sm text-muted-foreground">{t('tagline')}</p>
+    <footer className="border-t border-border bg-[var(--ink-elevated)] py-16">
+      <Container>
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+          <div className="flex flex-col gap-4">
+            <Logo />
+            <p className="text-sm leading-relaxed text-muted-foreground">{t('tagline')}</p>
+          </div>
+
+          <div>
+            <MonoLabel className="mb-4 block text-foreground">{t('columns.services')}</MonoLabel>
+            <ul className="flex flex-col gap-3 text-sm text-muted-foreground">
+              <li>
+                <Link href={`/hizmetler/${serviceSlug}`} className="transition-colors hover:text-foreground">
+                  {t('columns.servicesLinks.aiGovernance')}
+                </Link>
+              </li>
+              <li>
+                <Link href={`/hizmetler/${complianceSlug}`} className="transition-colors hover:text-foreground">
+                  {t('columns.servicesLinks.compliance')}
+                </Link>
+              </li>
+              <li>
+                <Link href={`/hizmetler/${securitySlug}`} className="transition-colors hover:text-foreground">
+                  {t('columns.servicesLinks.security')}
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <MonoLabel className="mb-4 block text-foreground">{t('columns.company')}</MonoLabel>
+            <ul className="flex flex-col gap-3 text-sm text-muted-foreground">
+              <li>
+                <Link href="/hakkimizda" className="transition-colors hover:text-foreground">
+                  {t('columns.companyLinks.about')}
+                </Link>
+              </li>
+              <li>
+                <Link href="/yaklasimimiz" className="transition-colors hover:text-foreground">
+                  {t('columns.companyLinks.approach')}
+                </Link>
+              </li>
+              <li>
+                <Link href="/degerlendirme" className="transition-colors hover:text-foreground">
+                  {t('columns.companyLinks.assessment')}
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <MonoLabel className="mb-4 block text-foreground">{t('columns.contact')}</MonoLabel>
+            <p className="text-sm leading-relaxed text-muted-foreground">{t('columns.contactText')}</p>
+            <Link href="/iletisim" className="mt-4 inline-block font-mono-label text-accent hover:text-[var(--accent-strong)]">
+              {locale === 'tr' ? 'İletişime Geç →' : 'Get in Touch →'}
+            </Link>
+          </div>
+        </div>
+
+        <div className="mt-12 border-t border-border pt-8">
+          <p className="font-mono-label text-muted-foreground">{t('copyright', { year })}</p>
+        </div>
       </Container>
     </footer>
   );

@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { MonoLabel } from '@/components/ui/mono-label';
 
 export function AssessmentWizard() {
   const t = useTranslations('assessment');
@@ -28,6 +29,8 @@ export function AssessmentWizard() {
     },
     mode: 'onBlur'
   });
+
+  const consent = form.register('consent');
 
   async function goNext() {
     const schema = assessmentStepSchemas[step];
@@ -54,7 +57,8 @@ export function AssessmentWizard() {
     return (
       <Card>
         <CardHeader>
-          <CardTitle>{t('submit')}</CardTitle>
+          <MonoLabel className="text-accent">{t('submit')}</MonoLabel>
+          <CardTitle className="font-display text-2xl">{t('title')}</CardTitle>
         </CardHeader>
         <CardContent className="text-sm text-muted-foreground">
           Form captured locally for now. Server action will be wired on Hetzner deploy.
@@ -66,16 +70,18 @@ export function AssessmentWizard() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>{t('title')}</CardTitle>
-        <p className="text-sm text-muted-foreground">{t('description')}</p>
+        <MonoLabel>
+          {step + 1} / {assessmentStepSchemas.length}
+        </MonoLabel>
+        <CardTitle className="font-display text-2xl">{t('title')}</CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">
         {step === 0 ? (
           <fieldset className="space-y-3">
-            <legend className="text-sm font-medium">{t('stepTopic')}</legend>
+            <legend className="font-mono-label mb-4 text-foreground">{t('stepTopic')}</legend>
             {assessmentTopics.map(topic => (
               <label key={topic} className="flex items-center gap-3 text-sm">
-                <input type="radio" value={topic} {...form.register('topic')} className="accent-primary" />
+                <input type="radio" value={topic} {...form.register('topic')} className="accent-[var(--accent)]" />
                 {t(`topics.${topic}`)}
               </label>
             ))}
@@ -106,13 +112,12 @@ export function AssessmentWizard() {
             <label className="flex items-start gap-3 text-sm text-muted-foreground">
               <input
                 type="checkbox"
-                checked={form.watch('consent')}
-                onChange={event =>
-                  form.setValue('consent', event.target.checked, {
-                    shouldValidate: true
-                  })
-                }
-                className="mt-1 accent-primary"
+                {...consent}
+                onChange={event => {
+                  consent.onChange(event);
+                  void form.trigger('consent');
+                }}
+                className="mt-1 accent-[var(--accent)]"
               />
               {t('fields.consent')}
             </label>

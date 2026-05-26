@@ -8,19 +8,23 @@
     "approach": "Yaklaşımımız",
     "about": "Hakkımızda",
     "assessment": "Değerlendirme",
-    "contact": "İletişim"
+    "contact": "İletişim",
+    "menuOpen": "Menüyü aç",
+    "menuClose": "Menüyü kapat"
   },
   "hero": {
-    "eyebrow": "Kurumsal AI Yönetişimi ve Uyum",
-    "title": "Güvenilir ve Denetlenebilir Yapay Zeka",
+    "eyebrow": "Kurumsal AI Yönetişimi",
+    "titleLine1": "Güvenilir ve",
+    "titleLine2": "Denetlenebilir",
+    "titleLine3": "Yapay Zeka",
     "description": "AION, yapay zeka kullanım ve çözümlerinizi güvenli, şeffaf ve regülasyonlara hazır şekilde yönetmenize yardımcı olur.",
-    "bullets": [
-      "ISO / IEC 42001 ve EU AI Act uyum modeli",
-      "ISO / IEC 27001 ile güvenli veri ve AI altyapısı",
-      "ISO 22301 ile kesintisiz ve dayanıklı operasyonlar"
-    ],
+    "standards": "ISO 42001 · EU AI Act · ISO 27001 · ISO 22301",
     "primaryCta": "Ücretsiz Değerlendirme",
     "secondaryCta": "Hizmetleri İncele"
+  },
+  "trust": {
+    "label": "Güvenilir Çerçeveler",
+    "frameworks": ["ISO/IEC 42001", "EU AI Act", "ISO/IEC 27001", "ISO 22301"]
   },
   "services": {
     "eyebrow": "Hizmetler",
@@ -41,15 +45,38 @@
       { "title": "Denetim ve İyileştirme", "description": "Denetim hazırlığı ve sürekli iyileştirme uygulanır." }
     ]
   },
+  "testimonial": {
+    "eyebrow": "Referans",
+    "quote": "AION ile çalışmak, yapay zeka stratejimizi tamamen yeni bir seviyeye taşıdı. Özellikle ISO 42001 standartları ve EU AI Act uyum süreci konusundaki derin uzmanlıkları sayesinde, karmaşık regülasyonları başarıyla yönettik.",
+    "author": "Fatih Kuran",
+    "sector": "Finans ve Bankacılık"
+  },
   "cta": {
     "eyebrow": "EU AI Act",
+    "dateLabel": "Ağustos 2026",
     "title": "Sistemleriniz ne kadar hazır?",
     "description": "Kurallar Ağustos 2026'da değişiyor. 2 dakikalık ön değerlendirme ile risk profilinizi öğrenin.",
     "button": "Risk Profilini Öğren"
   },
   "footer": {
     "copyright": "Copyright © {year} AION",
-    "tagline": "Güvenilir ve denetlenebilir yapay zeka."
+    "tagline": "Güvenilir ve denetlenebilir yapay zeka.",
+    "columns": {
+      "services": "Hizmetler",
+      "company": "Kurumsal",
+      "contact": "İletişim",
+      "servicesLinks": {
+        "aiGovernance": "AI Yönetişimi",
+        "compliance": "Regülasyon ve Uyum",
+        "security": "Bilgi Güvenliği"
+      },
+      "companyLinks": {
+        "about": "Hakkımızda",
+        "approach": "Yaklaşımımız",
+        "assessment": "Değerlendirme"
+      },
+      "contactText": "Kurumsal AI uyum yolculuğunuz için bizimle iletişime geçin."
+    }
   },
   "assessment": {
     "title": "Uyum Değerlendirmesi",

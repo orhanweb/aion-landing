@@ -2,34 +2,82 @@
 @import 'tailwindcss';
 
 :root {
-  --background: #0a0e1a;
-  --foreground: #f8fafc;
-  --card: #111827;
-  --card-foreground: #f8fafc;
-  --muted: #1e293b;
-  --muted-foreground: #94a3b8;
-  --border: #243044;
-  --primary: #4f46e5;
-  --primary-foreground: #ffffff;
-  --accent: #06b6d4;
+  --ink: #0a0b0d;
+  --ink-elevated: #12141a;
+  --ink-muted: #1a1d26;
+  --paper: #f3f0e8;
+  --paper-muted: #e8e4da;
+  --foreground: #eeeae3;
+  --foreground-muted: #9a9590;
+  --foreground-dark: #1c1a17;
+  --foreground-dark-muted: #5c5854;
+  --accent: #b8956a;
+  --accent-strong: #9a7848;
+  --signal: #c45c3e;
+  --line: rgba(238, 234, 227, 0.08);
+  --line-strong: rgba(238, 234, 227, 0.16);
+  --border: rgba(238, 234, 227, 0.12);
 }
 
 @theme inline {
-  --color-background: var(--background);
+  --color-background: var(--ink);
   --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--ink-muted);
+  --color-muted-foreground: var(--foreground-muted);
+  --color-card: var(--ink-elevated);
+  --color-card-foreground: var(--foreground);
   --color-border: var(--border);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--accent);
+  --color-primary-foreground: var(--ink);
   --color-accent: var(--accent);
-  --font-sans: var(--font-plus-jakarta);
+  --color-signal: var(--signal);
+  --color-paper: var(--paper);
+  --color-paper-muted: var(--paper-muted);
+  --color-paper-foreground: var(--foreground-dark);
+  --color-paper-muted-foreground: var(--foreground-dark-muted);
+  --font-sans: var(--font-geist-sans);
+  --font-display: var(--font-cormorant-garamond);
+  --font-mono: var(--font-ibm-plex-mono);
 }
 
 body {
-  background: var(--background);
+  background: var(--ink);
   color: var(--foreground);
-  font-family: var(--font-sans), system-ui, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-cormorant-garamond), Georgia, 'Times New Roman', serif;
+  font-feature-settings:
+    'liga' 1,
+    'kern' 1;
+}
+
+.font-mono-label {
+  font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.grain-overlay {
+  position: relative;
+}
+
+.grain-overlay::before {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.grid-lines {
+  background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.text-balance {
+  text-wrap: balance;
 }

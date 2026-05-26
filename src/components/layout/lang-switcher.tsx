@@ -16,15 +16,15 @@ export function LangSwitcher() {
   }
 
   return (
-    <div className="flex items-center rounded-full border border-border p-1 text-xs">
+    <div className="flex items-center gap-2">
       {(['tr', 'en'] as const).map(item => (
         <button
           key={item}
           type="button"
           onClick={() => switchLocale(item)}
           className={cn(
-            'rounded-full px-2.5 py-1 uppercase transition-colors',
-            locale === item ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'
+            'font-mono-label text-[0.625rem] transition-colors',
+            locale === item ? 'text-accent' : 'text-muted-foreground hover:text-foreground'
           )}
         >
           {item}

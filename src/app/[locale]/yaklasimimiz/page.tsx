@@ -1,5 +1,5 @@
 // src/app/[locale]/yaklasimimiz/page.tsx
-import { ProcessSection } from '@/components/sections/process-section';
+import { ProcessTimeline } from '@/components/sections/process-timeline';
 import { buildPageMetadata } from '@/lib/seo/metadata';
 import { setRequestLocale } from 'next-intl/server';
 import type { Locale } from '@/i18n/routing';
@@ -24,5 +24,5 @@ export default async function ApproachPage({ params }: PageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <ProcessSection />;
+  return <ProcessTimeline />;
 }
