@@ -1,8 +1,12 @@
 // src/lib/content/services.ts
 import type { Locale } from '@/i18n/routing';
 
+export const SERVICE_SLUGS = ['ai-governance', 'regulatory-compliance', 'information-security', 'operational-resilience', 'human-oversight'] as const;
+
+export type ServiceSlug = (typeof SERVICE_SLUGS)[number];
+
 export type Service = {
-  slug: string;
+  slug: ServiceSlug;
   title: string;
   subtitle: string;
   description: string;
@@ -11,7 +15,7 @@ export type Service = {
 
 const servicesTr: Service[] = [
   {
-    slug: 'ai-yonetisimi',
+    slug: 'ai-governance',
     title: 'Yapay Zeka Yönetişimi',
     subtitle: 'ISO 42001: Riskten Değere Giden Yol Haritası',
     description:
@@ -32,7 +36,7 @@ const servicesTr: Service[] = [
     ]
   },
   {
-    slug: 'regulasyon-uyum',
+    slug: 'regulatory-compliance',
     title: 'Regülasyon ve Uyum',
     subtitle: "EU AI Act'e Hazır Yapay Zeka",
     description:
@@ -40,21 +44,21 @@ const servicesTr: Service[] = [
     steps: []
   },
   {
-    slug: 'bilgi-guvenligi',
+    slug: 'information-security',
     title: 'Bilgi Güvenliği',
     subtitle: 'Veri Güvenliği İnsanlarla Sağlanır',
     description: 'ISO 27001 çerçevesinde veri güvenliği, erişim kontrolü ve güvenli AI operasyonları için bilgi güvenliği mimarisi oluşturuyoruz.',
     steps: []
   },
   {
-    slug: 'operasyonel-dayaniklilik',
+    slug: 'operational-resilience',
     title: 'Operasyonel Dayanıklılık',
     subtitle: 'Sürekliliğe Tasarlanmış AI',
     description: 'ISO 22301 iş sürekliliği yaklaşımıyla kritik AI ve veri sistemlerinin kesintilerde güvenle çalışmasını sağlıyoruz.',
     steps: []
   },
   {
-    slug: 'insan-gozetimi',
+    slug: 'human-oversight',
     title: 'Yapay Zekada İnsan Gözetimi',
     subtitle: 'YZ Gücü İnsan Gözetiminde',
     description: 'Tasarım yoluyla güven yaklaşımıyla insan gözetimini merkeze alan, hesap verebilir risk yönetim altyapısı inşa ediyoruz.',
@@ -121,6 +125,6 @@ export function getService(locale: Locale, slug: string): Service | undefined {
   return getServices(locale).find(service => service.slug === slug);
 }
 
-export function getServiceSlugs(locale: Locale): string[] {
-  return getServices(locale).map(service => service.slug);
+export function getServiceSlugs(): ServiceSlug[] {
+  return [...SERVICE_SLUGS];
 }

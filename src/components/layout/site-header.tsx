@@ -11,10 +11,10 @@ import { Container } from '@/components/ui/container';
 import { cn } from '@/lib/utils/cn';
 
 const navItems = [
-  { href: '/hizmetler' as const, key: 'services' as const },
-  { href: '/yaklasimimiz' as const, key: 'approach' as const },
-  { href: '/hakkimizda' as const, key: 'about' as const },
-  { href: '/iletisim' as const, key: 'contact' as const }
+  { href: '/services' as const, key: 'services' as const },
+  { href: '/approach' as const, key: 'approach' as const },
+  { href: '/about' as const, key: 'about' as const },
+  { href: '/contact' as const, key: 'contact' as const }
 ];
 
 export function SiteHeader() {
@@ -42,7 +42,7 @@ export function SiteHeader() {
           <div className="flex items-center gap-4">
             <LangSwitcher />
             <Link
-              href="/degerlendirme"
+              href="/assessment"
               className="hidden font-mono-label text-[0.625rem] text-accent transition-colors hover:text-[var(--accent-strong)] sm:inline-flex"
             >
               {t('assessment')} →
@@ -75,7 +75,7 @@ export function SiteHeader() {
               {t(item.key)}
             </Link>
           ))}
-          <Link href="/degerlendirme" onClick={() => setOpen(false)} className="font-mono-label text-accent">
+          <Link href="/assessment" onClick={() => setOpen(false)} className="font-mono-label text-accent">
             {t('assessment')} →
           </Link>
         </nav>

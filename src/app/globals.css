@@ -46,6 +46,28 @@ body {
   font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
 
+@layer base {
+  a[href],
+  button:not(:disabled),
+  [role='button']:not([aria-disabled='true']),
+  label[for],
+  select:not(:disabled),
+  summary,
+  input[type='checkbox']:not(:disabled),
+  input[type='radio']:not(:disabled),
+  input[type='submit']:not(:disabled),
+  input[type='button']:not(:disabled),
+  input[type='reset']:not(:disabled),
+  input[type='file']:not(:disabled)::file-selector-button {
+    cursor: pointer;
+  }
+
+  :disabled,
+  [aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+}
+
 .font-display {
   font-family: var(--font-cormorant-garamond), Georgia, 'Times New Roman', serif;
   font-feature-settings:

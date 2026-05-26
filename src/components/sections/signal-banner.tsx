@@ -16,8 +16,9 @@ export async function SignalBanner() {
             <MonoLabel className="text-signal">{t('dateLabel')}</MonoLabel>
             <p className="font-mono-label mt-2 text-muted-foreground">{t('eyebrow')}</p>
             <h2 className="font-display mt-4 max-w-2xl text-[clamp(1.75rem,3vw,2.5rem)] leading-tight tracking-tight">{t('title')}</h2>
-            <p className="mt-4 max-w-xl text-muted-foreground">{t('description')}</p>
-            <Link href="/degerlendirme" className="mt-8 inline-block font-mono-label text-accent transition-colors hover:text-[var(--accent-strong)]">
+            <p className="mt-4 max-w-2xl text-muted-foreground">{t('description')}</p>
+            <p className="mt-3 font-mono-label text-[0.625rem] text-signal">{t('penalty')}</p>
+            <Link href="/assessment" className="mt-8 inline-block font-mono-label text-accent transition-colors hover:text-[var(--accent-strong)]">
               {t('button')} →
             </Link>
           </div>

@@ -1,5 +1,6 @@
 // src/components/sections/hero-section.tsx
 import { Link } from '@/i18n/navigation';
+import { ValueBullets } from '@/components/sections/value-bullets';
 import { GovernanceGraph } from '@/components/motion/governance-graph';
 import { Stagger, StaggerItem } from '@/components/motion/stagger';
 import { Container, Section } from '@/components/ui/container';
@@ -33,11 +34,15 @@ export async function HeroSection() {
             </StaggerItem>
 
             <StaggerItem>
+              <ValueBullets />
+            </StaggerItem>
+
+            <StaggerItem>
               <div className="mt-8 flex flex-wrap items-center gap-6">
-                <Link href="/degerlendirme" className={cn(buttonVariants({ variant: 'primary', size: 'lg' }))}>
+                <Link href="/assessment" className={cn(buttonVariants({ variant: 'primary', size: 'lg' }))}>
                   {t('primaryCta')}
                 </Link>
-                <Link href="/hizmetler" className="font-mono-label text-foreground transition-colors hover:text-accent">
+                <Link href="/services" className="font-mono-label text-foreground transition-colors hover:text-accent">
                   {t('secondaryCta')} →
                 </Link>
               </div>

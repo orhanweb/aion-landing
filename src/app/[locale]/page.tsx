@@ -3,7 +3,9 @@ import { HeroSection } from '@/components/sections/hero-section';
 import { TrustStrip } from '@/components/sections/trust-strip';
 import { ServicesBento } from '@/components/sections/services-bento';
 import { ProcessTimeline } from '@/components/sections/process-timeline';
-import { TestimonialFeature } from '@/components/sections/testimonial-feature';
+import { TestimonialsGrid } from '@/components/sections/testimonials-grid';
+import { TeamSection } from '@/components/sections/team-section';
+import { AssessmentTeaser } from '@/components/sections/assessment-teaser';
 import { SignalBanner } from '@/components/sections/signal-banner';
 import { buildPageMetadata } from '@/lib/seo/metadata';
 import { setRequestLocale } from 'next-intl/server';
@@ -37,7 +39,9 @@ export default async function HomePage({ params }: PageProps) {
       <TrustStrip />
       <ServicesBento />
       <ProcessTimeline />
-      <TestimonialFeature />
+      <TestimonialsGrid />
+      <TeamSection />
+      <AssessmentTeaser />
       <SignalBanner />
     </>
   );

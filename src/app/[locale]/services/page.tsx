@@ -1,4 +1,4 @@
-// src/app/[locale]/hizmetler/page.tsx
+// src/app/[locale]/services/page.tsx
 import { ServicesBento } from '@/components/sections/services-bento';
 import { buildPageMetadata } from '@/lib/seo/metadata';
 import { setRequestLocale } from 'next-intl/server';
@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: PageProps) {
 
   return buildPageMetadata({
     locale: locale as Locale,
-    path: '/hizmetler',
+    path: '/services',
     title: locale === 'tr' ? 'Hizmetler | AION' : 'Services | AION',
     description:
       locale === 'tr'

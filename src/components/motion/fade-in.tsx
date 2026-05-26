@@ -1,23 +1,25 @@
 // src/components/motion/fade-in.tsx
 'use client';
 
-import { motion, type HTMLMotionProps } from 'motion/react';
+import { motion, type HTMLMotionProps, type ViewportOptions } from 'motion/react';
+import { defaultScrollViewport, revealHidden, revealTransition, revealVisible } from '@/components/motion/motion-config';
 import { useReducedMotion } from '@/components/motion/use-reduced-motion';
 import { cn } from '@/lib/utils/cn';
 
 type FadeInProps = HTMLMotionProps<'div'> & {
   delay?: number;
+  viewport?: ViewportOptions;
 };
 
-export function FadeIn({ children, className, delay = 0, ...props }: FadeInProps) {
+export function FadeIn({ children, className, delay = 0, viewport, ...props }: FadeInProps) {
   const reduced = useReducedMotion();
 
   return (
     <motion.div
-      initial={reduced ? false : { opacity: 0, y: 20 }}
-      whileInView={reduced ? undefined : { opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.5, delay, ease: [0.25, 0.1, 0.25, 1] }}
+      initial={reduced ? false : revealHidden}
+      whileInView={reduced ? undefined : revealVisible}
+      viewport={{ ...defaultScrollViewport, ...viewport }}
+      transition={revealTransition(delay)}
       className={cn(className)}
       {...props}
     >

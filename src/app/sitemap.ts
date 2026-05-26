@@ -1,11 +1,11 @@
 // src/app/sitemap.ts
 import type { MetadataRoute } from 'next';
 import { getServiceSlugs } from '@/lib/content/services';
-import { routing, type Locale } from '@/i18n/routing';
+import { routing } from '@/i18n/routing';
 
 const SITE_URL = 'https://aion.tr';
 
-const staticPaths = ['', '/hizmetler', '/yaklasimimiz', '/hakkimizda', '/degerlendirme', '/iletisim'];
+const staticPaths = ['', '/services', '/approach', '/about', '/assessment', '/contact'];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
@@ -20,9 +20,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       });
     }
 
-    for (const slug of getServiceSlugs(locale as Locale)) {
+    for (const slug of getServiceSlugs()) {
       entries.push({
-        url: `${SITE_URL}/${locale}/hizmetler/${slug}`,
+        url: `${SITE_URL}/${locale}/services/${slug}`,
         lastModified: new Date(),
         changeFrequency: 'monthly',
         priority: 0.7

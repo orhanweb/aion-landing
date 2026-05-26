@@ -1,4 +1,4 @@
-// src/app/[locale]/hakkimizda/page.tsx
+// src/app/[locale]/about/page.tsx
 import { Container, Section } from '@/components/ui/container';
 import { MonoLabel } from '@/components/ui/mono-label';
 import { buildPageMetadata } from '@/lib/seo/metadata';
@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: PageProps) {
 
   return buildPageMetadata({
     locale: locale as Locale,
-    path: '/hakkimizda',
+    path: '/about',
     title: locale === 'tr' ? 'Hakkımızda | AION' : 'About | AION',
     description:
       locale === 'tr'

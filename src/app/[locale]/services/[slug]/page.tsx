@@ -1,4 +1,4 @@
-// src/app/[locale]/hizmetler/[slug]/page.tsx
+// src/app/[locale]/services/[slug]/page.tsx
 import { notFound } from 'next/navigation';
 import { Container, Section } from '@/components/ui/container';
 import { Accordion, AccordionItem } from '@/components/ui/accordion';
@@ -13,7 +13,7 @@ type PageProps = {
 };
 
 export function generateStaticParams() {
-  return routing.locales.flatMap(locale => getServiceSlugs(locale).map(slug => ({ locale, slug })));
+  return routing.locales.flatMap(locale => getServiceSlugs().map(slug => ({ locale, slug })));
 }
 
 export async function generateMetadata({ params }: PageProps) {
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: PageProps) {
 
   return buildPageMetadata({
     locale: locale as Locale,
-    path: `/hizmetler/${slug}`,
+    path: `/services/${slug}`,
     title: `${service.title} | AION`,
     description: service.description
   });

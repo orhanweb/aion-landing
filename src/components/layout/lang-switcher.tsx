@@ -6,30 +6,34 @@ import { usePathname, useRouter } from '@/i18n/navigation';
 import { cn } from '@/lib/utils/cn';
 import type { Locale } from '@/i18n/routing';
 
+const localeLabels: Record<Locale, string> = {
+  tr: 'TR',
+  en: 'EN'
+};
+
 export function LangSwitcher() {
   const locale = useLocale() as Locale;
   const pathname = usePathname();
   const router = useRouter();
+  const nextLocale: Locale = locale === 'tr' ? 'en' : 'tr';
 
-  function switchLocale(nextLocale: Locale) {
+  function switchLocale() {
     router.replace(pathname, { locale: nextLocale });
   }
 
   return (
-    <div className="flex items-center gap-2">
-      {(['tr', 'en'] as const).map(item => (
-        <button
-          key={item}
-          type="button"
-          onClick={() => switchLocale(item)}
-          className={cn(
-            'font-mono-label text-[0.625rem] transition-colors',
-            locale === item ? 'text-accent' : 'text-muted-foreground hover:text-foreground'
-          )}
-        >
-          {item}
-        </button>
-      ))}
-    </div>
+    <button
+      type="button"
+      onClick={switchLocale}
+      aria-label={locale === 'tr' ? 'Switch to English' : 'Switch to Turkish'}
+      className={cn(
+        'font-mono-label inline-flex min-h-8 min-w-8 items-center justify-center rounded-md px-2.5 py-1.5 text-[0.625rem]',
+        'text-muted-foreground transition-[color,background-color] duration-200',
+        'hover:bg-[rgba(238,234,227,0.06)] hover:text-foreground',
+        'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--ink)]'
+      )}
+    >
+      {localeLabels[nextLocale]}
+    </button>
   );
 }

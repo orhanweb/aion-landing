@@ -4,16 +4,11 @@ import { Container } from '@/components/ui/container';
 import { Logo } from '@/components/ui/logo';
 import { MonoLabel } from '@/components/ui/mono-label';
 import { getLocale, getTranslations } from 'next-intl/server';
-import type { Locale } from '@/i18n/routing';
 
 export async function SiteFooter() {
   const t = await getTranslations('footer');
-  const locale = (await getLocale()) as Locale;
+  const locale = await getLocale();
   const year = new Date().getFullYear();
-
-  const serviceSlug = locale === 'tr' ? 'ai-yonetisimi' : 'ai-governance';
-  const complianceSlug = locale === 'tr' ? 'regulasyon-uyum' : 'regulatory-compliance';
-  const securitySlug = locale === 'tr' ? 'bilgi-guvenligi' : 'information-security';
 
   return (
     <footer className="border-t border-border bg-[var(--ink-elevated)] py-16">
@@ -28,17 +23,17 @@ export async function SiteFooter() {
             <MonoLabel className="mb-4 block text-foreground">{t('columns.services')}</MonoLabel>
             <ul className="flex flex-col gap-3 text-sm text-muted-foreground">
               <li>
-                <Link href={`/hizmetler/${serviceSlug}`} className="transition-colors hover:text-foreground">
+                <Link href="/services/ai-governance" className="transition-colors hover:text-foreground">
                   {t('columns.servicesLinks.aiGovernance')}
                 </Link>
               </li>
               <li>
-                <Link href={`/hizmetler/${complianceSlug}`} className="transition-colors hover:text-foreground">
+                <Link href="/services/regulatory-compliance" className="transition-colors hover:text-foreground">
                   {t('columns.servicesLinks.compliance')}
                 </Link>
               </li>
               <li>
-                <Link href={`/hizmetler/${securitySlug}`} className="transition-colors hover:text-foreground">
+                <Link href="/services/information-security" className="transition-colors hover:text-foreground">
                   {t('columns.servicesLinks.security')}
                 </Link>
               </li>
@@ -49,17 +44,17 @@ export async function SiteFooter() {
             <MonoLabel className="mb-4 block text-foreground">{t('columns.company')}</MonoLabel>
             <ul className="flex flex-col gap-3 text-sm text-muted-foreground">
               <li>
-                <Link href="/hakkimizda" className="transition-colors hover:text-foreground">
+                <Link href="/about" className="transition-colors hover:text-foreground">
                   {t('columns.companyLinks.about')}
                 </Link>
               </li>
               <li>
-                <Link href="/yaklasimimiz" className="transition-colors hover:text-foreground">
+                <Link href="/approach" className="transition-colors hover:text-foreground">
                   {t('columns.companyLinks.approach')}
                 </Link>
               </li>
               <li>
-                <Link href="/degerlendirme" className="transition-colors hover:text-foreground">
+                <Link href="/assessment" className="transition-colors hover:text-foreground">
                   {t('columns.companyLinks.assessment')}
                 </Link>
               </li>
@@ -69,7 +64,7 @@ export async function SiteFooter() {
           <div>
             <MonoLabel className="mb-4 block text-foreground">{t('columns.contact')}</MonoLabel>
             <p className="text-sm leading-relaxed text-muted-foreground">{t('columns.contactText')}</p>
-            <Link href="/iletisim" className="mt-4 inline-block font-mono-label text-accent hover:text-[var(--accent-strong)]">
+            <Link href="/contact" className="mt-4 inline-block font-mono-label text-accent hover:text-[var(--accent-strong)]">
               {locale === 'tr' ? 'İletişime Geç →' : 'Get in Touch →'}
             </Link>
           </div>

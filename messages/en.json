@@ -20,7 +20,12 @@
     "description": "AION helps you manage your AI usage and solutions securely, transparently, and regulation-ready.",
     "standards": "ISO 42001 · EU AI Act · ISO 27001 · ISO 22301",
     "primaryCta": "Free Assessment",
-    "secondaryCta": "Explore Services"
+    "secondaryCta": "Explore Services",
+    "valueBullets": [
+      "ISO / IEC 42001 and EU AI Act compliance model",
+      "ISO / IEC 27001 for secure data and AI infrastructure",
+      "ISO 22301 for continuous and resilient operations"
+    ]
   },
   "trust": {
     "label": "Trusted Frameworks",
@@ -45,18 +50,29 @@
       { "title": "Audit and Improvement", "description": "Audit preparation and continuous improvement are applied." }
     ]
   },
-  "testimonial": {
-    "eyebrow": "Reference",
-    "quote": "Working with AION took our AI strategy to an entirely new level. Their deep expertise in ISO 42001 standards and EU AI Act compliance helped us navigate complex regulations successfully.",
-    "author": "Fatih Kuran",
-    "sector": "Finance and Banking"
+  "testimonials": {
+    "eyebrow": "References",
+    "title": "What Our Clients Say"
+  },
+  "team": {
+    "eyebrow": "Team",
+    "title": "Our Expert Team",
+    "description": "Consultants with deep experience in ISO standards, EU AI Act, and enterprise AI governance."
+  },
+  "assessmentTeaser": {
+    "eyebrow": "Compliance Tests",
+    "title": "Discover Your Risk Profile",
+    "description": "Complete a short assessment so AION experts can design the right strategy for your organization.",
+    "privacy": "Your data is protected under KVKK and ISO 27001 standards.",
+    "button": "Start Assessment"
   },
   "cta": {
     "eyebrow": "EU AI Act",
     "dateLabel": "August 2026",
-    "title": "How ready are your systems?",
-    "description": "Rules change in August 2026. Learn your risk profile with a 2-minute pre-assessment.",
-    "button": "Get Risk Profile"
+    "title": "How ready are your AI systems?",
+    "description": "Rules change in August 2026. Non-compliance may result in fines of up to €35 million or 7% of global turnover.",
+    "penalty": "€35M or 7% of global turnover",
+    "button": "Get Your Free Risk Profile"
   },
   "footer": {
     "copyright": "Copyright © {year} AION",

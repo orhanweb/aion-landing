@@ -34,7 +34,7 @@ export async function ServicesBento() {
                 className={cn('group', isFeatured && 'md:col-span-4 md:row-span-2', index === 1 && 'md:col-span-2', index >= 2 && 'md:col-span-2')}
               >
                 <Link
-                  href={`/hizmetler/${service.slug}`}
+                  href={`/services/${service.slug}`}
                   className="flex h-full flex-col justify-between rounded-lg border border-border bg-[var(--ink-elevated)] p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--line-strong)] md:p-8"
                 >
                   <div>

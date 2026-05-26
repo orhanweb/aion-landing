@@ -1,4 +1,4 @@
-// src/app/[locale]/iletisim/page.tsx
+// src/app/[locale]/contact/page.tsx
 import { Container, Section } from '@/components/ui/container';
 import { MonoLabel } from '@/components/ui/mono-label';
 import { buildPageMetadata } from '@/lib/seo/metadata';
@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: PageProps) {
 
   return buildPageMetadata({
     locale: locale as Locale,
-    path: '/iletisim',
+    path: '/contact',
     title: locale === 'tr' ? 'İletişim | AION' : 'Contact | AION',
     description: locale === 'tr' ? 'AION ile iletişime geçin veya uyum değerlendirmesi başlatın.' : 'Contact AION or start a compliance assessment.'
   });
@@ -39,7 +39,7 @@ export default async function ContactPage({ params }: PageProps) {
             ? 'Kurumsal AI uyum yolculuğunuz için bizimle iletişime geçin.'
             : 'Get in touch for your enterprise AI compliance journey.'}
         </p>
-        <Link href="/degerlendirme" className={cn(buttonVariants({ variant: 'primary', size: 'lg' }), 'mt-8 inline-flex')}>
+        <Link href="/assessment" className={cn(buttonVariants({ variant: 'primary', size: 'lg' }), 'mt-8 inline-flex')}>
           {locale === 'tr' ? 'Değerlendirme Başlat' : 'Start Assessment'}
         </Link>
       </Container>

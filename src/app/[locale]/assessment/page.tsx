@@ -1,4 +1,4 @@
-// src/app/[locale]/degerlendirme/page.tsx
+// src/app/[locale]/assessment/page.tsx
 import { AssessmentWizard } from '@/components/assessment/assessment-wizard';
 import { Container, Section } from '@/components/ui/container';
 import { MonoLabel } from '@/components/ui/mono-label';
@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: PageProps) {
 
   return buildPageMetadata({
     locale: locale as Locale,
-    path: '/degerlendirme',
+    path: '/assessment',
     title: locale === 'tr' ? 'Uyum Değerlendirmesi | AION' : 'Compliance Assessment | AION',
     description:
       locale === 'tr'

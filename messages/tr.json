@@ -20,7 +20,12 @@
     "description": "AION, yapay zeka kullanım ve çözümlerinizi güvenli, şeffaf ve regülasyonlara hazır şekilde yönetmenize yardımcı olur.",
     "standards": "ISO 42001 · EU AI Act · ISO 27001 · ISO 22301",
     "primaryCta": "Ücretsiz Değerlendirme",
-    "secondaryCta": "Hizmetleri İncele"
+    "secondaryCta": "Hizmetleri İncele",
+    "valueBullets": [
+      "ISO / IEC 42001 ve EU AI Act uyum modeli",
+      "ISO / IEC 27001 ile güvenli veri ve AI altyapısı",
+      "ISO 22301 ile kesintisiz ve dayanıklı operasyonlar"
+    ]
   },
   "trust": {
     "label": "Güvenilir Çerçeveler",
@@ -45,18 +50,29 @@
       { "title": "Denetim ve İyileştirme", "description": "Denetim hazırlığı ve sürekli iyileştirme uygulanır." }
     ]
   },
-  "testimonial": {
-    "eyebrow": "Referans",
-    "quote": "AION ile çalışmak, yapay zeka stratejimizi tamamen yeni bir seviyeye taşıdı. Özellikle ISO 42001 standartları ve EU AI Act uyum süreci konusundaki derin uzmanlıkları sayesinde, karmaşık regülasyonları başarıyla yönettik.",
-    "author": "Fatih Kuran",
-    "sector": "Finans ve Bankacılık"
+  "testimonials": {
+    "eyebrow": "Referanslar",
+    "title": "Bazı Referanslarımız"
+  },
+  "team": {
+    "eyebrow": "Takım",
+    "title": "Uzman Ekibimiz",
+    "description": "ISO standartları, EU AI Act ve kurumsal AI yönetişimi konusunda deneyimli danışman kadromuz."
+  },
+  "assessmentTeaser": {
+    "eyebrow": "Uyum Testleri",
+    "title": "Risk Profilinizi Öğrenin",
+    "description": "AION uzmanlarının kurumunuza özel en doğru stratejiyi kurgulayabilmesi için kısa değerlendirme formunu doldurun.",
+    "privacy": "Verileriniz KVKK ve ISO 27001 standartlarında korunmaktadır.",
+    "button": "Değerlendirmeyi Başlat"
   },
   "cta": {
     "eyebrow": "EU AI Act",
     "dateLabel": "Ağustos 2026",
-    "title": "Sistemleriniz ne kadar hazır?",
-    "description": "Kurallar Ağustos 2026'da değişiyor. 2 dakikalık ön değerlendirme ile risk profilinizi öğrenin.",
-    "button": "Risk Profilini Öğren"
+    "title": "Yapay zeka sistemleriniz ne kadar hazır?",
+    "description": "Kurallar Ağustos 2026'da değişiyor. Uyumsuzluk durumunda 35 milyon Euro veya küresel cironuzun %7'sine varan idari para cezalarıyla karşılaşabilirsiniz.",
+    "penalty": "35M € veya küresel cironun %7'si",
+    "button": "Ücretsiz Risk Profilinizi Öğrenin"
   },
   "footer": {
     "copyright": "Copyright © {year} AION",

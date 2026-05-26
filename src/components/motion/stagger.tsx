@@ -2,6 +2,7 @@
 'use client';
 
 import { motion } from 'motion/react';
+import { revealEase, revealHidden, revealVisible } from '@/components/motion/motion-config';
 import { useReducedMotion } from '@/components/motion/use-reduced-motion';
 import { cn } from '@/lib/utils/cn';
 import type { ReactNode } from 'react';
@@ -49,11 +50,10 @@ export function StaggerItem({ children, className }: StaggerItemProps) {
   return (
     <motion.div
       variants={{
-        hidden: { opacity: 0, y: 20 },
+        hidden: revealHidden,
         visible: {
-          opacity: 1,
-          y: 0,
-          transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }
+          ...revealVisible,
+          transition: { duration: 0.5, ease: revealEase }
         }
       }}
       className={cn(className)}
