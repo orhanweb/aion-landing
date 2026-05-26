@@ -1,23 +1,21 @@
 // src/components/sections/contact-channels.tsx
 import { Link } from '@/i18n/navigation';
 import { CalendlyEmbed } from '@/components/integrations/calendly-embed';
+import { MockDataBanner } from '@/components/ui/mock-data-banner';
 import { MonoLabel } from '@/components/ui/mono-label';
-import { getSiteContact } from '@/lib/content/site-config';
+import { getSiteConfig } from '@/lib/site';
 import { getTranslations, getLocale } from 'next-intl/server';
 import type { Locale } from '@/i18n/routing';
 
 export async function ContactChannels() {
   const locale = (await getLocale()) as Locale;
   const t = await getTranslations('contact');
-  const contact = getSiteContact(locale);
+  const site = getSiteConfig(locale);
+  const contact = site.contact;
 
   return (
     <div className="mt-12 space-y-12">
-      {contact.isMock ? (
-        <p className="rounded-md border border-border bg-[var(--ink-elevated)] px-4 py-3 font-mono-label text-[0.625rem] text-muted-foreground">
-          {t('mockNotice')}
-        </p>
-      ) : null}
+      {site.features.showMockBanner ? <MockDataBanner message={t('mockNotice')} /> : null}
 
       <div className="grid gap-10 sm:grid-cols-2">
         <div>

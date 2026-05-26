@@ -3,14 +3,15 @@ import { Link } from '@/i18n/navigation';
 import { Container } from '@/components/ui/container';
 import { Logo } from '@/components/ui/logo';
 import { MonoLabel } from '@/components/ui/mono-label';
-import { getSiteContact } from '@/lib/content/site-config';
+import { getSiteConfig } from '@/lib/site';
 import { getLocale, getTranslations } from 'next-intl/server';
 import type { Locale } from '@/i18n/routing';
 
 export async function SiteFooter() {
   const t = await getTranslations('footer');
   const locale = (await getLocale()) as Locale;
-  const contact = getSiteContact(locale);
+  const site = getSiteConfig(locale);
+  const contact = site.contact;
   const year = new Date().getFullYear();
 
   return (

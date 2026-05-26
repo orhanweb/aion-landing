@@ -1,8 +1,7 @@
 // src/lib/seo/metadata.ts
 import type { Metadata } from 'next';
 import type { Locale } from '@/i18n/routing';
-
-const SITE_URL = 'https://aion.tr';
+import { getSiteUrl } from '@/lib/site';
 
 type PageMetadataInput = {
   locale: Locale;
@@ -12,8 +11,9 @@ type PageMetadataInput = {
 };
 
 export function buildPageMetadata({ locale, path, title, description }: PageMetadataInput): Metadata {
+  const siteUrl = getSiteUrl();
   const localizedPath = `/${locale}${path === '/' ? '' : path}`;
-  const canonical = `${SITE_URL}${localizedPath}`;
+  const canonical = `${siteUrl}${localizedPath}`;
   const alternateLocale = locale === 'tr' ? 'en' : 'tr';
 
   return {
@@ -22,8 +22,8 @@ export function buildPageMetadata({ locale, path, title, description }: PageMeta
     alternates: {
       canonical,
       languages: {
-        tr: `${SITE_URL}/tr${path === '/' ? '' : path}`,
-        en: `${SITE_URL}/en${path === '/' ? '' : path}`
+        tr: `${siteUrl}/tr${path === '/' ? '' : path}`,
+        en: `${siteUrl}/en${path === '/' ? '' : path}`
       }
     },
     openGraph: {
@@ -39,8 +39,8 @@ export function buildPageMetadata({ locale, path, title, description }: PageMeta
       index: true,
       follow: true
     },
-    metadataBase: new URL(SITE_URL)
+    metadataBase: new URL(siteUrl)
   };
 }
 
-export { SITE_URL };
+export { getSiteUrl as SITE_URL };

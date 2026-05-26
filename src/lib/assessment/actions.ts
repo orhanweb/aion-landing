@@ -2,8 +2,10 @@
 'use server';
 
 import { assessmentSubmissionSchema, type AssessmentSubmission } from '@/lib/assessment/schema';
+import { getAssessmentSubmitter } from '@/lib/integrations';
+import type { AssessmentSubmitResult } from '@/lib/integrations/types';
 
-export type SubmitAssessmentResult = { success: true } | { success: false; error: 'validation' | 'unknown' };
+export type SubmitAssessmentResult = AssessmentSubmitResult;
 
 export async function submitAssessment(payload: AssessmentSubmission): Promise<SubmitAssessmentResult> {
   const parsed = assessmentSubmissionSchema.safeParse(payload);
@@ -13,13 +15,5 @@ export async function submitAssessment(payload: AssessmentSubmission): Promise<S
     return { success: false, error: 'validation' };
   }
 
-  // Stub until Phase G — log server-side only; no client persistence.
-  console.info('[assessment] submission received', {
-    topic: parsed.data.topic,
-    company: parsed.data.company,
-    email: parsed.data.email,
-    submittedAt: new Date().toISOString()
-  });
-
-  return { success: true };
+  return getAssessmentSubmitter().submit(parsed.data);
 }

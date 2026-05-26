@@ -5,16 +5,15 @@
 
 ## Services
 
-- AI Governance (TR): https://aion.tr/tr/hizmetler/ai-yonetisimi
-- AI Governance (EN): https://aion.tr/en/hizmetler/ai-governance
-- Regulatory Compliance: https://aion.tr/tr/hizmetler/regulasyon-uyum
-- Information Security: https://aion.tr/tr/hizmetler/bilgi-guvenligi
-- Operational Resilience: https://aion.tr/tr/hizmetler/operasyonel-dayaniklilik
-- Human Oversight: https://aion.tr/tr/hizmetler/insan-gozetimi
+- AI Governance: https://aion.tr/tr/services/ai-governance
+- Regulatory Compliance: https://aion.tr/tr/services/regulatory-compliance
+- Information Security: https://aion.tr/tr/services/information-security
+- Operational Resilience: https://aion.tr/tr/services/operational-resilience
+- Human Oversight: https://aion.tr/tr/services/human-oversight
 
 ## Assessment
 
-- Compliance Assessment: https://aion.tr/tr/degerlendirme
+- Compliance Assessment: https://aion.tr/tr/assessment
 
 ## Languages
 
