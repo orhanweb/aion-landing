@@ -1,137 +1,278 @@
 // src/components/assessment/assessment-wizard.tsx
 'use client';
 
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useTranslations } from 'next-intl';
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { assessmentSchema, assessmentStepSchemas, assessmentTopics, type AssessmentFormValues } from '@/lib/assessment/schema';
+import { TopicBranch } from '@/components/assessment/branches/topic-branch';
+import { FieldError } from '@/components/assessment/fields/form-fields';
+import { ThankYou } from '@/components/assessment/thank-you';
+import { WizardProgress } from '@/components/assessment/wizard-progress';
+import { useReducedMotion } from '@/components/motion/use-reduced-motion';
+import { submitAssessment } from '@/lib/assessment/actions';
+import {
+  assessmentTopics,
+  clearBranchFields,
+  getDefaultFormValues,
+  getStepSchema,
+  sectors,
+  wizardSteps,
+  type AssessmentFormValues,
+  type AssessmentSubmission,
+  type AssessmentTopic,
+  type WizardStep
+} from '@/lib/assessment/schema';
 import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { MonoLabel } from '@/components/ui/mono-label';
+import { RadioGroupField } from '@/components/assessment/fields/form-fields';
+import { motion } from 'motion/react';
+import { useTranslations } from 'next-intl';
+import { useRef, useState } from 'react';
+import { useForm } from 'react-hook-form';
 
-export function AssessmentWizard() {
+type AssessmentWizardProps = {
+  calendlyUrl: string;
+  responseTime: string;
+};
+
+function buildSubmission(values: AssessmentFormValues): AssessmentSubmission {
+  const shared = {
+    company: values.company,
+    name: values.name,
+    email: values.email,
+    phone: values.phone,
+    title: values.title,
+    consent: true as const,
+    marketingOptIn: values.marketingOptIn
+  };
+
+  switch (values.topic) {
+    case 'iso27001':
+      return {
+        topic: 'iso27001',
+        employeeCount: values.employeeCount!,
+        itModel: values.itModel!,
+        primaryMotivation: values.primaryMotivation!,
+        existingIsoSystems: values.existingIsoSystems ?? [],
+        sector: values.sector!,
+        ...shared
+      };
+    case 'iso42001':
+      return {
+        topic: 'iso42001',
+        sector: values.sector!,
+        aiRoles: values.aiRoles ?? [],
+        aiUseCase: values.aiUseCase ?? '',
+        existingIsoSystems: values.existingIsoSystems ?? [],
+        primaryMotivation: values.primaryMotivation!,
+        ...shared
+      };
+    case 'euAiAct':
+      return {
+        topic: 'euAiAct',
+        valueChainRole: values.valueChainRole!,
+        riskClassification: values.riskClassification!,
+        transparencyOversight: values.transparencyOversight!,
+        trainingDataProvenance: values.trainingDataProvenance!,
+        existingManagementSystems: values.existingManagementSystems ?? [],
+        sector: values.sector!,
+        ...shared
+      };
+    case 'general':
+      return {
+        topic: 'general',
+        needDescription: values.needDescription ?? '',
+        sector: values.sector!,
+        ...shared
+      };
+  }
+}
+
+export function AssessmentWizard({ calendlyUrl, responseTime }: AssessmentWizardProps) {
   const t = useTranslations('assessment');
-  const [step, setStep] = useState(0);
+  const reduced = useReducedMotion();
+  const [stepIndex, setStepIndex] = useState(0);
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
+  const previousTopic = useRef<AssessmentTopic>('iso42001');
 
   const form = useForm<AssessmentFormValues>({
-    resolver: zodResolver(assessmentSchema),
-    defaultValues: {
-      topic: 'iso42001',
-      company: '',
-      name: '',
-      email: '',
-      phone: '',
-      consent: false
-    },
-    mode: 'onBlur'
+    defaultValues: getDefaultFormValues(),
+    mode: 'onSubmit'
   });
 
+  const currentStep = wizardSteps[stepIndex] as WizardStep;
+  const topic = form.watch('topic');
   const consent = form.register('consent');
+  const marketingOptIn = form.register('marketingOptIn');
+
+  function applyStepErrors(issues: { path: PropertyKey[]; message: string }[]) {
+    form.clearErrors();
+    for (const issue of issues) {
+      const field = issue.path[0];
+      if (typeof field === 'string') {
+        form.setError(field as keyof AssessmentFormValues, { message: issue.message });
+      }
+    }
+  }
 
   async function goNext() {
-    const schema = assessmentStepSchemas[step];
+    setSubmitError(false);
     const values = form.getValues();
-    const result = schema.safeParse(values);
+
+    if (currentStep === 'topic' && values.topic !== previousTopic.current) {
+      const cleared = clearBranchFields(values);
+      form.reset({ ...cleared, topic: values.topic });
+      previousTopic.current = values.topic;
+    }
+
+    const schema = getStepSchema(currentStep, form.getValues().topic);
+    const result = schema.safeParse(form.getValues());
 
     if (!result.success) {
-      for (const issue of result.error.issues) {
-        const field = issue.path[0] as keyof AssessmentFormValues;
-        form.setError(field, { message: issue.message });
-      }
+      applyStepErrors(result.error.issues);
       return;
     }
 
-    if (step < assessmentStepSchemas.length - 1) {
-      setStep(current => current + 1);
+    if (stepIndex < wizardSteps.length - 1) {
+      setStepIndex(index => index + 1);
       return;
     }
 
+    setSubmitting(true);
+    const submission = buildSubmission(form.getValues());
+    const response = await submitAssessment(submission);
+    setSubmitting(false);
+
+    if (!response.success) {
+      setSubmitError(true);
+      return;
+    }
+
+    form.reset(getDefaultFormValues());
     setSubmitted(true);
   }
 
+  function goBack() {
+    setSubmitError(false);
+    if (stepIndex > 0) {
+      setStepIndex(index => index - 1);
+    }
+  }
+
   if (submitted) {
-    return (
-      <Card>
-        <CardHeader>
-          <MonoLabel className="text-accent">{t('submit')}</MonoLabel>
-          <CardTitle className="font-display text-2xl">{t('title')}</CardTitle>
-        </CardHeader>
-        <CardContent className="text-sm text-muted-foreground">
-          Form captured locally for now. Server action will be wired on Hetzner deploy.
-        </CardContent>
-      </Card>
-    );
+    return <ThankYou calendlyUrl={calendlyUrl} responseTime={responseTime} />;
   }
 
   return (
     <Card>
       <CardHeader>
-        <MonoLabel>
-          {step + 1} / {assessmentStepSchemas.length}
-        </MonoLabel>
+        <MonoLabel className="text-accent">{t('eyebrow')}</MonoLabel>
         <CardTitle className="font-display text-2xl">{t('title')}</CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">
-        {step === 0 ? (
-          <fieldset className="space-y-3">
-            <legend className="font-mono-label mb-4 text-foreground">{t('stepTopic')}</legend>
-            {assessmentTopics.map(topic => (
-              <label key={topic} className="flex items-center gap-3 text-sm">
-                <input type="radio" value={topic} {...form.register('topic')} className="accent-[var(--accent)]" />
-                {t(`topics.${topic}`)}
+        <WizardProgress currentStep={currentStep} />
+
+        <motion.div
+          key={currentStep}
+          initial={reduced ? false : { opacity: 0, y: 8 }}
+          animate={reduced ? undefined : { opacity: 1, y: 0 }}
+          transition={{ duration: reduced ? 0 : 0.25 }}
+        >
+          {currentStep === 'topic' ? (
+            <fieldset className="space-y-3">
+              <legend className="font-mono-label mb-4 block text-foreground">{t('stepTopic')}</legend>
+              {assessmentTopics.map(item => (
+                <label key={item} className="flex items-center gap-3 text-sm">
+                  <input type="radio" value={item} {...form.register('topic')} className="accent-[var(--accent)]" />
+                  {t(`topics.${item}`)}
+                </label>
+              ))}
+              <FieldError error={form.formState.errors.topic} />
+            </fieldset>
+          ) : null}
+
+          {currentStep === 'branch' ? <TopicBranch topic={topic} form={form} /> : null}
+
+          {currentStep === 'company' ? (
+            <div className="space-y-6">
+              <div className="space-y-2">
+                <Label htmlFor="company">{t('fields.company')}</Label>
+                <Input id="company" {...form.register('company')} />
+                <FieldError error={form.formState.errors.company} />
+              </div>
+              {topic !== 'iso42001' ? (
+                <RadioGroupField
+                  legend={t('fields.sector')}
+                  name="sector"
+                  options={sectors}
+                  register={form.register}
+                  labelPrefix="options.sectors"
+                  error={form.formState.errors.sector}
+                />
+              ) : null}
+            </div>
+          ) : null}
+
+          {currentStep === 'contact' ? (
+            <div className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="name">{t('fields.name')}</Label>
+                <Input id="name" {...form.register('name')} />
+                <FieldError error={form.formState.errors.name} />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="title">{t('fields.title')}</Label>
+                <Input id="title" {...form.register('title')} />
+                <FieldError error={form.formState.errors.title} />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="email">{t('fields.email')}</Label>
+                <Input id="email" type="email" {...form.register('email')} />
+                <FieldError error={form.formState.errors.email} />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="phone">{t('fields.phone')}</Label>
+                <Input id="phone" type="tel" {...form.register('phone')} />
+                <FieldError error={form.formState.errors.phone} />
+              </div>
+            </div>
+          ) : null}
+
+          {currentStep === 'consent' ? (
+            <div className="space-y-4">
+              <label className="flex items-start gap-3 text-sm text-muted-foreground">
+                <input
+                  type="checkbox"
+                  {...consent}
+                  onChange={event => {
+                    consent.onChange(event);
+                    void form.trigger('consent');
+                  }}
+                  className="mt-1 accent-[var(--accent)]"
+                />
+                {t('fields.consent')}
               </label>
-            ))}
-          </fieldset>
-        ) : null}
+              <FieldError error={form.formState.errors.consent} />
+              <label className="flex items-start gap-3 text-sm text-muted-foreground">
+                <input type="checkbox" {...marketingOptIn} className="mt-1 accent-[var(--accent)]" />
+                {t('fields.marketingOptIn')}
+              </label>
+            </div>
+          ) : null}
+        </motion.div>
 
-        {step === 1 ? (
-          <div className="space-y-2">
-            <Label htmlFor="company">{t('fields.company')}</Label>
-            <Input id="company" {...form.register('company')} />
-          </div>
-        ) : null}
-
-        {step === 2 ? (
-          <div className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="name">{t('fields.name')}</Label>
-              <Input id="name" {...form.register('name')} />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="email">{t('fields.email')}</Label>
-              <Input id="email" type="email" {...form.register('email')} />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="phone">{t('fields.phone')}</Label>
-              <Input id="phone" {...form.register('phone')} />
-            </div>
-            <label className="flex items-start gap-3 text-sm text-muted-foreground">
-              <input
-                type="checkbox"
-                {...consent}
-                onChange={event => {
-                  consent.onChange(event);
-                  void form.trigger('consent');
-                }}
-                className="mt-1 accent-[var(--accent)]"
-              />
-              {t('fields.consent')}
-            </label>
-          </div>
-        ) : null}
+        {submitError ? <p className="text-sm text-[var(--accent-strong)]">{t('errors.submitFailed')}</p> : null}
 
         <div className="flex gap-3">
-          {step > 0 ? (
-            <Button type="button" variant="secondary" onClick={() => setStep(s => s - 1)}>
+          {stepIndex > 0 ? (
+            <Button type="button" variant="secondary" onClick={goBack} disabled={submitting}>
               {t('back')}
             </Button>
           ) : null}
-          <Button type="button" onClick={goNext}>
-            {step === assessmentStepSchemas.length - 1 ? t('submit') : t('next')}
+          <Button type="button" onClick={() => void goNext()} disabled={submitting}>
+            {stepIndex === wizardSteps.length - 1 ? (submitting ? t('submitting') : t('submit')) : t('next')}
           </Button>
         </div>
       </CardContent>
