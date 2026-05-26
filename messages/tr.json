@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "siteName": "AION",
+    "siteTagline": "Artificial Intelligence Oversight Network"
+  },
+  "nav": {
+    "services": "Hizmetler",
+    "approach": "Yaklaşımımız",
+    "about": "Hakkımızda",
+    "assessment": "Değerlendirme",
+    "contact": "İletişim"
+  },
+  "hero": {
+    "eyebrow": "Kurumsal AI Yönetişimi ve Uyum",
+    "title": "Güvenilir ve Denetlenebilir Yapay Zeka",
+    "description": "AION, yapay zeka kullanım ve çözümlerinizi güvenli, şeffaf ve regülasyonlara hazır şekilde yönetmenize yardımcı olur.",
+    "bullets": [
+      "ISO / IEC 42001 ve EU AI Act uyum modeli",
+      "ISO / IEC 27001 ile güvenli veri ve AI altyapısı",
+      "ISO 22301 ile kesintisiz ve dayanıklı operasyonlar"
+    ],
+    "primaryCta": "Ücretsiz Değerlendirme",
+    "secondaryCta": "Hizmetleri İncele"
+  },
+  "services": {
+    "eyebrow": "Hizmetler",
+    "title": "Temel Yetkinlikler",
+    "description": "ISO standartları ve uluslararası regülasyonlarla uyumlu AI yönetişimi.",
+    "learnMore": "Detaylı İncele"
+  },
+  "process": {
+    "eyebrow": "Yaklaşımımız",
+    "title": "Sertifikasyona Hazır AI Sistemleri",
+    "description": "Stratejiden denetime kadar uçtan uca yol haritası.",
+    "steps": [
+      { "title": "Strateji ve Yol Haritası", "description": "AI vizyonu, risk iştahı ve yönetişim modeli belirlenir." },
+      { "title": "Risk Analizi", "description": "Teknik, regülasyon ve operasyonel riskler değerlendirilir." },
+      { "title": "Kontroller ve Güvenlik", "description": "Veri koruma ve AI kontrol mekanizmaları kurulur." },
+      { "title": "Regülasyon Uyumu", "description": "EU AI Act ve uluslararası düzenlemelere uyum sağlanır." },
+      { "title": "Sertifikasyon Hazırlığı", "description": "ISO 42001, 27001 ve 22301 süreçleri yapılandırılır." },
+      { "title": "Denetim ve İyileştirme", "description": "Denetim hazırlığı ve sürekli iyileştirme uygulanır." }
+    ]
+  },
+  "cta": {
+    "eyebrow": "EU AI Act",
+    "title": "Sistemleriniz ne kadar hazır?",
+    "description": "Kurallar Ağustos 2026'da değişiyor. 2 dakikalık ön değerlendirme ile risk profilinizi öğrenin.",
+    "button": "Risk Profilini Öğren"
+  },
+  "footer": {
+    "copyright": "Copyright © {year} AION",
+    "tagline": "Güvenilir ve denetlenebilir yapay zeka."
+  },
+  "assessment": {
+    "title": "Uyum Değerlendirmesi",
+    "description": "Kurumunuza özel strateji için kısa değerlendirme formu.",
+    "stepTopic": "Konu",
+    "stepCompany": "Kurum",
+    "stepContact": "İletişim",
+    "topics": {
+      "iso27001": "ISO 27001 Bilgi Güvenliği",
+      "iso42001": "ISO 42001 AI Yönetişimi",
+      "euAiAct": "EU AI Act Uyumu",
+      "general": "Genel Danışmanlık"
+    },
+    "fields": {
+      "company": "Şirket Adı",
+      "name": "Ad Soyad",
+      "email": "Kurumsal E-posta",
+      "phone": "Telefon",
+      "consent": "KVKK Aydınlatma Metni'ni okudum ve kabul ediyorum."
+    },
+    "submit": "Gönder",
+    "next": "Devam",
+    "back": "Geri"
+  }
+}

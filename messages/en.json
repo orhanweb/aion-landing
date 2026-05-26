@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "siteName": "AION",
+    "siteTagline": "Artificial Intelligence Oversight Network"
+  },
+  "nav": {
+    "services": "Services",
+    "approach": "Approach",
+    "about": "About",
+    "assessment": "Assessment",
+    "contact": "Contact"
+  },
+  "hero": {
+    "eyebrow": "Enterprise AI Governance & Compliance",
+    "title": "Trustworthy and Auditable Artificial Intelligence",
+    "description": "AION helps you manage your AI usage and solutions securely, transparently, and regulation-ready.",
+    "bullets": [
+      "ISO / IEC 42001 and EU AI Act compliance model",
+      "ISO / IEC 27001 for secure data and AI infrastructure",
+      "ISO 22301 for resilient and continuous operations"
+    ],
+    "primaryCta": "Free Assessment",
+    "secondaryCta": "Explore Services"
+  },
+  "services": {
+    "eyebrow": "Services",
+    "title": "Core Capabilities",
+    "description": "AI governance aligned with ISO standards and international regulations.",
+    "learnMore": "Learn More"
+  },
+  "process": {
+    "eyebrow": "Our Approach",
+    "title": "Certification-Ready AI Systems",
+    "description": "End-to-end roadmap from strategy to audit.",
+    "steps": [
+      { "title": "Strategy and Roadmap", "description": "AI vision, risk appetite, and governance model are defined." },
+      { "title": "Risk Analysis", "description": "Technical, regulatory, and operational risks are assessed." },
+      { "title": "Controls and Security", "description": "Data protection and AI control mechanisms are established." },
+      { "title": "Regulatory Compliance", "description": "Alignment with EU AI Act and international regulations." },
+      { "title": "Certification Readiness", "description": "ISO 42001, 27001, and 22301 processes are structured." },
+      { "title": "Audit and Improvement", "description": "Audit preparation and continuous improvement are applied." }
+    ]
+  },
+  "cta": {
+    "eyebrow": "EU AI Act",
+    "title": "How ready are your systems?",
+    "description": "Rules change in August 2026. Learn your risk profile with a 2-minute pre-assessment.",
+    "button": "Get Risk Profile"
+  },
+  "footer": {
+    "copyright": "Copyright © {year} AION",
+    "tagline": "Trustworthy and auditable artificial intelligence."
+  },
+  "assessment": {
+    "title": "Compliance Assessment",
+    "description": "Short assessment form for a strategy tailored to your organization.",
+    "stepTopic": "Topic",
+    "stepCompany": "Company",
+    "stepContact": "Contact",
+    "topics": {
+      "iso27001": "ISO 27001 Information Security",
+      "iso42001": "ISO 42001 AI Governance",
+      "euAiAct": "EU AI Act Compliance",
+      "general": "General Consulting"
+    },
+    "fields": {
+      "company": "Company Name",
+      "name": "Full Name",
+      "email": "Corporate Email",
+      "phone": "Phone",
+      "consent": "I have read and accept the Privacy Policy."
+    },
+    "submit": "Submit",
+    "next": "Continue",
+    "back": "Back"
+  }
+}
