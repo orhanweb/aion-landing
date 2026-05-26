@@ -35,7 +35,15 @@
     "eyebrow": "Hizmetler",
     "title": "Temel Yetkinlikler",
     "description": "ISO standartları ve uluslararası regülasyonlarla uyumlu AI yönetişimi.",
-    "learnMore": "Detaylı İncele"
+    "learnMore": "Detaylı İncele",
+    "hubIntro": "Beş temel yetkinlik alanında uçtan uca danışmanlık — stratejiden sertifikasyona kadar."
+  },
+  "serviceDetail": {
+    "outcomesLabel": "Çıktılar",
+    "processLabel": "Süreç",
+    "processTitle": "Nasıl Çalışıyoruz",
+    "relatedLabel": "İlgili Hizmetler",
+    "relatedLink": "İncele"
   },
   "process": {
     "eyebrow": "Yaklaşımımız",

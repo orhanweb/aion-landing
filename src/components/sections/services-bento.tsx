@@ -8,18 +8,24 @@ import { cn } from '@/lib/utils/cn';
 import { getTranslations, getLocale } from 'next-intl/server';
 import type { Locale } from '@/i18n/routing';
 
-export async function ServicesBento() {
+type ServicesBentoProps = {
+  className?: string;
+  showHubIntro?: boolean;
+};
+
+export async function ServicesBento({ className, showHubIntro }: ServicesBentoProps = {}) {
   const locale = (await getLocale()) as Locale;
   const t = await getTranslations('services');
   const services = getServices(locale);
 
   return (
-    <Section id="services">
+    <Section id="services" className={className}>
       <Container>
         <FadeIn className="max-w-2xl">
           <MonoLabel className="text-accent">{t('eyebrow')}</MonoLabel>
           <h2 className="font-display mt-4 text-[clamp(2rem,3.5vw,3rem)] leading-tight tracking-tight">{t('title')}</h2>
           <p className="mt-4 text-muted-foreground">{t('description')}</p>
+          {showHubIntro ? <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">{t('hubIntro')}</p> : null}
         </FadeIn>
 
         <div className="mt-16 grid gap-4 md:grid-cols-6 md:grid-rows-2">
@@ -45,7 +51,7 @@ export async function ServicesBento() {
                     <p className="mt-2 font-mono-label text-[0.625rem] text-muted-foreground">{service.subtitle}</p>
                   </div>
                   <p className={cn('mt-6 text-sm leading-relaxed text-muted-foreground', isFeatured ? 'max-w-lg' : 'line-clamp-3')}>
-                    {service.description}
+                    {service.shortDescription}
                   </p>
                   <span className="mt-6 font-mono-label text-[0.625rem] text-accent">{t('learnMore')} →</span>
                 </Link>

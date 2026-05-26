@@ -1,4 +1,5 @@
 // src/app/[locale]/services/page.tsx
+import { AssessmentTeaser } from '@/components/sections/assessment-teaser';
 import { ServicesBento } from '@/components/sections/services-bento';
 import { buildPageMetadata } from '@/lib/seo/metadata';
 import { setRequestLocale } from 'next-intl/server';
@@ -26,5 +27,10 @@ export default async function ServicesPage({ params }: PageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <ServicesBento />;
+  return (
+    <>
+      <ServicesBento className="pt-24" showHubIntro />
+      <AssessmentTeaser />
+    </>
+  );
 }
