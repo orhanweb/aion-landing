@@ -38,15 +38,15 @@
   --color-paper-muted: var(--paper-muted);
   --color-paper-foreground: var(--foreground-dark);
   --color-paper-muted-foreground: var(--foreground-dark-muted);
-  --font-sans: var(--font-geist-sans);
-  --font-display: var(--font-cormorant-garamond);
+  --font-sans: var(--font-plus-jakarta-sans);
+  --font-display: var(--font-lora);
   --font-mono: var(--font-ibm-plex-mono);
 }
 
 body {
   background: var(--ink);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-family: var(--font-plus-jakarta-sans), system-ui, sans-serif;
 }
 
 @layer base {
@@ -72,7 +72,7 @@ body {
 }
 
 .font-display {
-  font-family: var(--font-cormorant-garamond), Georgia, 'Times New Roman', serif;
+  font-family: var(--font-lora), Georgia, 'Times New Roman', serif;
   font-feature-settings:
     'liga' 1,
     'kern' 1;
