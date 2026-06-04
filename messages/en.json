@@ -8,35 +8,118 @@
     "approach": "Approach",
     "about": "About",
     "assessment": "Assessment",
+    "stickyCta": "Get Gap Analysis",
     "contact": "Contact",
     "menuOpen": "Open menu",
     "menuClose": "Close menu"
   },
   "hero": {
-    "eyebrow": "Enterprise AI Governance",
-    "titleLine1": "Trustworthy and",
-    "titleLine2": "Auditable",
-    "titleLine3": "Artificial Intelligence",
-    "description": "AION helps you manage your AI usage and solutions securely, transparently, and regulation-ready.",
-    "standards": "ISO 42001 · EU AI Act · ISO 27001 · ISO 22301",
-    "primaryCta": "Free Assessment",
+    "eyebrow": "EU AI Act Readiness / ISO 42001",
+    "titleLine1": "Is your AI system",
+    "titleLine2": "audit-ready?",
+    "titleLine3": "See the risk. Build the roadmap.",
+    "description": "As EU AI Act and ISO 42001 expectations become concrete, wrong risk classification or missing controls create direct audit exposure. AION turns gap analysis into an actionable compliance plan through certification.",
+    "standards": "ISO 42001, EU AI Act, ISO 27001, ISO 22301",
+    "primaryCta": "Get a Free Gap Analysis",
     "secondaryCta": "Explore Services",
-    "valueBullets": [
-      "ISO / IEC 42001 and EU AI Act compliance model",
-      "ISO / IEC 27001 for secure data and AI infrastructure",
-      "ISO 22301 for continuous and resilient operations"
-    ]
+    "ctaNote": "5 minutes, no commitment, privacy-compliant",
+    "valueBullets": ["Risk classification for AI systems", "ISO 42001 and EU AI Act control gaps", "Audit-ready documentation roadmap"],
+    "preview": {
+      "title": "Gap Analysis Preview",
+      "subtitle": "Four-step path from AI usage to audit readiness",
+      "badge": "Live preview",
+      "areasCount": "04",
+      "areasLabel": "Critical areas",
+      "summary": "A compact preview of the free gap analysis output.",
+      "outputsTitle": "What the free gap analysis produces",
+      "steps": [
+        {
+          "label": "Risk Classification",
+          "status": "Identify",
+          "summary": "AI systems are classified by regulatory exposure."
+        },
+        {
+          "label": "Control Gap Map",
+          "status": "Compare",
+          "summary": "Required controls are matched against current practice."
+        },
+        {
+          "label": "Evidence Checklist",
+          "status": "Prepare",
+          "summary": "Audit records and documentation needs are listed."
+        },
+        {
+          "label": "Certification Roadmap",
+          "status": "Prioritize",
+          "summary": "Next actions are sequenced for implementation."
+        }
+      ],
+      "outputs": ["Risk class identified", "Control gaps prioritized", "Audit checklist generated", "Roadmap prepared"]
+    }
   },
   "trust": {
     "label": "Trusted Frameworks",
     "frameworks": ["ISO/IEC 42001", "EU AI Act", "ISO/IEC 27001", "ISO 22301"]
+  },
+  "problemSolution": {
+    "eyebrow": "Audit Questions",
+    "title": "Four critical questions you must answer before an audit",
+    "description": "AI projects move quickly while records, ownership, controls, and evidence trails lag behind. Before audit pressure arrives, the critical step is making those gaps visible.",
+    "problemsLabel": "Unanswered risks",
+    "solutionsLabel": "Gap analysis output",
+    "problems": [
+      {
+        "title": "Which risk class is this AI system in?",
+        "description": "If classification is unclear, your regulatory obligations are unclear too."
+      },
+      {
+        "title": "Which controls are missing?",
+        "description": "Policy, logging, human oversight, and data governance gaps stay invisible."
+      },
+      {
+        "title": "What will you prove in an audit?",
+        "description": "ISO 42001 alignment must be shown through traceable evidence, not intent."
+      },
+      {
+        "title": "Who owns AI risk?",
+        "description": "Responsibility spreads across leadership, legal, technology, and operations."
+      }
+    ],
+    "solutions": [
+      {
+        "title": "Risk class and compliance position",
+        "description": "Your AI usage is mapped against ISO 42001 and EU AI Act expectations."
+      },
+      {
+        "title": "Control gap map",
+        "description": "Missing policies, processes, records, and technical controls are prioritized."
+      },
+      {
+        "title": "Evidence and documentation list",
+        "description": "The records and documents required before an audit become clear."
+      },
+      {
+        "title": "Actionable priority plan",
+        "description": "First actions, owners, and certification path become manageable."
+      }
+    ]
+  },
+  "metrics": {
+    "label": "Gap Analysis Outputs",
+    "description": "After the form, the goal is not just a callback. The goal is an actionable output that makes your audit exposure concrete.",
+    "items": [
+      { "value": "Score", "label": "AI risk and compliance maturity" },
+      { "value": "Map", "label": "ISO 42001 and EU AI Act control gaps" },
+      { "value": "Evidence", "label": "Records and documents to prepare before audit" },
+      { "value": "Plan", "label": "Prioritized certification roadmap" }
+    ]
   },
   "services": {
     "eyebrow": "Services",
     "title": "Core Capabilities",
     "description": "AI governance aligned with ISO standards and international regulations.",
     "learnMore": "Learn More",
-    "hubIntro": "End-to-end consulting across five core capability areas — from strategy to certification."
+    "hubIntro": "End-to-end consulting across five core capability areas, from strategy to certification."
   },
   "serviceDetail": {
     "outcomesLabel": "What You Get",
@@ -69,19 +152,19 @@
     "description": "Consultants who partner with you on ISO standards, EU AI Act, and enterprise AI governance."
   },
   "assessmentTeaser": {
-    "eyebrow": "Compliance Tests",
-    "title": "Discover Your Risk Profile",
-    "description": "Complete a short assessment so AION experts can design the right strategy for your organization.",
-    "privacy": "Your data is protected under KVKK and ISO 27001 standards.",
-    "button": "Start Assessment"
+    "eyebrow": "Free Gap Analysis",
+    "title": "Do not guess your audit risk before classification",
+    "description": "In 5 minutes, map the first view of your AI risk class, control gaps, and certification roadmap.",
+    "privacy": "No commitment. No sales pressure. Your data is protected under KVKK and ISO 27001 standards.",
+    "button": "Start Gap Analysis"
   },
   "cta": {
     "eyebrow": "EU AI Act",
-    "dateLabel": "August 2026",
-    "title": "How ready are your AI systems?",
-    "description": "Rules change in August 2026. Non-compliance may result in fines of up to €35 million or 7% of global turnover.",
-    "penalty": "€35M or 7% of global turnover",
-    "button": "Get Your Free Risk Profile"
+    "dateLabel": "2026-2027",
+    "title": "Wrong classification gets expensive during audit",
+    "description": "EU AI Act penalties are expanding. For the most serious violations, fines can reach €35 million or 7% of global turnover. The real risk is realizing too late which obligations apply to you.",
+    "penalty": "Max. €35M, 7% of global turnover",
+    "button": "Get Gap Analysis"
   },
   "footer": {
     "copyright": "Copyright © {year} AION",
@@ -112,8 +195,8 @@
   },
   "assessment": {
     "eyebrow": "Assessment",
-    "title": "Compliance Assessment",
-    "description": "Short assessment form for a strategy tailored to your organization.",
+    "title": "Gap Analysis",
+    "description": "Short gap analysis form for a roadmap tailored to your organization.",
     "stepTopic": "Select a topic",
     "stepCompany": "Company details",
     "stepContact": "Contact details",
@@ -254,7 +337,7 @@
     "eyebrow": "Contact",
     "title": "Get in touch",
     "description": "Reach our team directly for your enterprise AI compliance journey, or schedule a discovery call.",
-    "mockNotice": "Placeholder contact details — update NEXT_PUBLIC_* variables in .env before production.",
+    "mockNotice": "Placeholder contact details. Update NEXT_PUBLIC_* variables in .env before production.",
     "emailLabel": "Email",
     "phoneLabel": "Phone",
     "addressLabel": "Address",

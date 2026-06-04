@@ -10,7 +10,7 @@ type TestimonialCardProps = {
 
 function testimonialCardClassName(className?: string) {
   return cn(
-    'relative overflow-hidden rounded-lg border border-border border-l-2 border-l-transparent bg-[var(--ink-elevated)] text-foreground',
+    'relative overflow-hidden rounded-lg border border-border border-l-2 border-l-border bg-[var(--ink-elevated)] text-foreground',
     'transition-colors duration-300',
     'group-hover:border-accent/25 group-hover:border-l-accent/70',
     className
@@ -37,6 +37,9 @@ export function TestimonialCard({ testimonial, variant = 'grid' }: TestimonialCa
           <QuoteMark className="absolute -top-4 right-8 text-[5rem] md:right-12 md:text-[6rem]" />
           <div className="relative max-w-3xl">
             <MonoLabel className="text-accent">{testimonial.sector}</MonoLabel>
+            <p className="mt-4 inline-flex rounded-full border border-accent/25 bg-accent/10 px-3 py-1 font-mono-label text-[0.625rem] leading-relaxed text-accent">
+              {testimonial.outcome}
+            </p>
             <p className="mt-6 text-lg leading-relaxed text-foreground md:text-xl md:leading-relaxed">&ldquo;{testimonial.quote}&rdquo;</p>
             <footer className="mt-8 border-t border-border pt-6">
               <cite className="font-display text-lg not-italic text-foreground">{testimonial.author}</cite>
@@ -51,6 +54,7 @@ export function TestimonialCard({ testimonial, variant = 'grid' }: TestimonialCa
     <div className={testimonialCardShellClassName()}>
       <blockquote className={testimonialCardClassName('flex h-full min-h-[220px] flex-col p-6 md:min-h-[240px] md:p-8')}>
         <MonoLabel className="text-accent">{testimonial.sector}</MonoLabel>
+        <p className="mt-4 font-mono-label text-[0.625rem] leading-relaxed text-accent">{testimonial.outcome}</p>
         <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground md:text-[0.9375rem]">&ldquo;{testimonial.quote}&rdquo;</p>
         <footer className="mt-6 border-t border-border pt-5">
           <cite className="font-display text-base not-italic text-foreground">{testimonial.author}</cite>

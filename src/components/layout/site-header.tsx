@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { LangSwitcher } from '@/components/layout/lang-switcher';
+import { StickyHeaderCta } from '@/components/layout/sticky-header-cta';
 import { ScrollHeader } from '@/components/motion/scroll-header';
 import { Logo } from '@/components/ui/logo';
 import { Container } from '@/components/ui/container';
@@ -43,10 +44,11 @@ export function SiteHeader() {
             <LangSwitcher />
             <Link
               href="/assessment"
-              className="hidden font-mono-label text-[0.625rem] text-accent transition-colors hover:text-[var(--accent-strong)] sm:inline-flex"
+              className="hidden font-mono-label text-[0.625rem] text-accent transition-colors hover:text-[var(--accent-strong)] sm:inline-flex lg:hidden"
             >
               {t('assessment')} →
             </Link>
+            <StickyHeaderCta label={t('stickyCta')} />
             <button
               type="button"
               className="font-mono-label text-[0.625rem] text-foreground md:hidden"

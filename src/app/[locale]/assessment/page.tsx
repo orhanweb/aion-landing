@@ -18,11 +18,11 @@ export async function generateMetadata({ params }: PageProps) {
   return buildPageMetadata({
     locale: locale as Locale,
     path: '/assessment',
-    title: locale === 'tr' ? 'Uyum Değerlendirmesi | AION' : 'Compliance Assessment | AION',
+    title: locale === 'tr' ? 'Gap (Fark) Analizi | AION' : 'Gap Analysis | AION',
     description:
       locale === 'tr'
-        ? 'ISO 27001, ISO 42001 ve EU AI Act için kurumunuza özel uyum değerlendirmesi.'
-        : 'Organization-specific compliance assessment for ISO 27001, ISO 42001, and EU AI Act.'
+        ? 'ISO 27001, ISO 42001 ve EU AI Act için kurumunuza özel gap (fark) analizi formu.'
+        : 'Organization-specific gap analysis form for ISO 27001, ISO 42001, and EU AI Act.'
   });
 }
 

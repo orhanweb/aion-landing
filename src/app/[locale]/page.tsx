@@ -7,6 +7,8 @@ import { TestimonialsGrid } from '@/components/sections/testimonials-grid';
 import { TeamSection } from '@/components/sections/team-section';
 import { AssessmentTeaser } from '@/components/sections/assessment-teaser';
 import { SignalBanner } from '@/components/sections/signal-banner';
+import { ProblemSolutionBridge } from '@/components/sections/problem-solution-bridge';
+import { MetricsBand } from '@/components/sections/metrics-band';
 import { buildPageMetadata } from '@/lib/seo/metadata';
 import { setRequestLocale } from 'next-intl/server';
 import type { Locale } from '@/i18n/routing';
@@ -21,11 +23,11 @@ export async function generateMetadata({ params }: PageProps) {
   return buildPageMetadata({
     locale: locale as Locale,
     path: '/',
-    title: locale === 'tr' ? 'AION — Güvenilir ve Denetlenebilir Yapay Zeka' : 'AION — Trustworthy and Auditable AI',
+    title: locale === 'tr' ? 'AION — AI Sisteminiz Denetime Hazır mı?' : 'AION — Is Your AI System Audit-Ready?',
     description:
       locale === 'tr'
-        ? 'ISO 42001, EU AI Act, ISO 27001 ve ISO 22301 ile kurumsal AI yönetişimi ve uyum danışmanlığı.'
-        : 'Enterprise AI governance and compliance consultancy for ISO 42001, EU AI Act, ISO 27001, and ISO 22301.'
+        ? 'EU AI Act ve ISO 42001 için risk sınıflandırması, kontrol boşluğu analizi ve sertifikasyona giden uyum yol haritası.'
+        : 'Risk classification, control gap analysis, and compliance roadmap for EU AI Act and ISO 42001 readiness.'
   });
 }
 
@@ -37,12 +39,14 @@ export default async function HomePage({ params }: PageProps) {
     <>
       <HeroSection />
       <TrustStrip />
+      <SignalBanner />
+      <ProblemSolutionBridge />
+      <MetricsBand />
       <ServicesBento />
       <ProcessTimeline />
       <TestimonialsGrid />
       <TeamSection />
       <AssessmentTeaser />
-      <SignalBanner />
     </>
   );
 }

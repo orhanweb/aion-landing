@@ -8,35 +8,122 @@
     "approach": "Yaklaşımımız",
     "about": "Hakkımızda",
     "assessment": "Değerlendirme",
+    "stickyCta": "Gap Analizi Al",
     "contact": "İletişim",
     "menuOpen": "Menüyü aç",
     "menuClose": "Menüyü kapat"
   },
   "hero": {
-    "eyebrow": "Kurumsal AI Yönetişimi",
-    "titleLine1": "Güvenilir ve",
-    "titleLine2": "Denetlenebilir",
-    "titleLine3": "Yapay Zeka",
-    "description": "AION, yapay zeka kullanım ve çözümlerinizi güvenli, şeffaf ve regülasyonlara hazır şekilde yönetmenize yardımcı olur.",
-    "standards": "ISO 42001 · EU AI Act · ISO 27001 · ISO 22301",
-    "primaryCta": "Ücretsiz Değerlendirme",
+    "eyebrow": "EU AI Act Readiness / ISO 42001",
+    "titleLine1": "Yapay zeka sisteminiz",
+    "titleLine2": "denetime hazır mı?",
+    "titleLine3": "Riskinizi görün, yol haritanızı çıkarın",
+    "description": "EU AI Act ve ISO 42001 beklentileri netleşirken, hatalı risk sınıflandırması veya eksik kontrol denetimde doğrudan zafiyet yaratır. AION, gap analizinden sertifikasyona kadar uygulanabilir bir uyum planı çıkarır.",
+    "standards": "ISO 42001, EU AI Act, ISO 27001, ISO 22301",
+    "primaryCta": "Ücretsiz Gap Analizi Al",
     "secondaryCta": "Hizmetleri İncele",
+    "ctaNote": "5 dakika, taahhüt yok, KVKK uyumlu",
     "valueBullets": [
-      "ISO / IEC 42001 ve EU AI Act uyum modeli",
-      "ISO / IEC 27001 ile güvenli veri ve AI altyapısı",
-      "ISO 22301 ile kesintisiz ve dayanıklı operasyonlar"
-    ]
+      "AI sistemleri için risk sınıflandırması",
+      "ISO 42001 ve EU AI Act kontrol boşlukları",
+      "Denetime hazır dokümantasyon yol haritası"
+    ],
+    "preview": {
+      "title": "Gap Analizi Önizlemesi",
+      "subtitle": "AI kullanımından denetime hazır olmaya giden 4 adım",
+      "badge": "Canlı önizleme",
+      "areasCount": "04",
+      "areasLabel": "Kritik alan",
+      "summary": "Ücretsiz gap analizi çıktısının kısa özeti.",
+      "outputsTitle": "Ücretsiz gap analizi ne üretir?",
+      "steps": [
+        {
+          "label": "Risk Sınıflandırması",
+          "status": "Tanımla",
+          "summary": "AI sistemleri regülasyon maruziyetine göre sınıflandırılır."
+        },
+        {
+          "label": "Kontrol Boşluğu Haritası",
+          "status": "Karşılaştır",
+          "summary": "Gerekli kontroller mevcut uygulamayla eşleştirilir."
+        },
+        {
+          "label": "Kanıt Kontrol Listesi",
+          "status": "Hazırla",
+          "summary": "Denetim kayıt ve dokümantasyon ihtiyaçları listelenir."
+        },
+        {
+          "label": "Sertifikasyon Yol Haritası",
+          "status": "Önceliklendir",
+          "summary": "Sonraki aksiyonlar uygulama için sıralanır."
+        }
+      ],
+      "outputs": ["Risk sınıfı belirlendi", "Kontrol boşlukları önceliklendirildi", "Denetim kontrol listesi oluşturuldu", "Yol haritası hazırlandı"]
+    }
   },
   "trust": {
     "label": "Güvenilir Çerçeveler",
     "frameworks": ["ISO/IEC 42001", "EU AI Act", "ISO/IEC 27001", "ISO 22301"]
+  },
+  "problemSolution": {
+    "eyebrow": "Denetim Soruları",
+    "title": "Regülatör geldiğinde cevaplamanız gereken dört kritik soru",
+    "description": "AI projeleri hızlı ilerler; kayıt, sorumluluk, kontrol ve kanıt izi geride kalır. Denetim öncesi en kritik adım, bu boşlukları görünür hale getirmektir.",
+    "problemsLabel": "Cevapsız kalan riskler",
+    "solutionsLabel": "Gap analizi çıktısı",
+    "problems": [
+      {
+        "title": "Bu AI sistemi hangi risk sınıfında?",
+        "description": "Sınıflandırma net değilse hangi yükümlülüğe tabi olduğunuz da net değildir."
+      },
+      {
+        "title": "Hangi kontroller eksik?",
+        "description": "Politika, kayıt, insan gözetimi ve veri yönetişimi boşlukları görünür değildir."
+      },
+      {
+        "title": "Denetimde neyi kanıtlayacaksınız?",
+        "description": "ISO 42001 uyumu sözle değil, takip edilebilir kanıt iziyle gösterilir."
+      },
+      {
+        "title": "AI riskinin sahibi kim?",
+        "description": "Yönetim, hukuk, teknoloji ve operasyon ekipleri arasında sorumluluk dağılır."
+      }
+    ],
+    "solutions": [
+      {
+        "title": "Risk sınıfı ve uyum konumu",
+        "description": "AI kullanımınız ISO 42001 ve EU AI Act beklentilerine göre haritalanır."
+      },
+      {
+        "title": "Kontrol boşluğu haritası",
+        "description": "Eksik politika, süreç, kayıt ve teknik kontrol alanları önceliklendirilir."
+      },
+      {
+        "title": "Kanıt ve dokümantasyon listesi",
+        "description": "Denetim öncesi hazırlanması gereken belge ve kanıtlar netleşir."
+      },
+      {
+        "title": "Uygulanabilir öncelik planı",
+        "description": "İlk aksiyonlar, sorumlular ve sertifikasyon yolu yönetilebilir hale gelir."
+      }
+    ]
+  },
+  "metrics": {
+    "label": "Gap Analizi Çıktıları",
+    "description": "Form doldurulduktan sonra amaç sadece geri dönüş yapmak değil; kurumun denetim riskini somutlaştıran uygulanabilir bir çıktı üretmek.",
+    "items": [
+      { "value": "Skor", "label": "AI risk ve uyum olgunluğu" },
+      { "value": "Harita", "label": "ISO 42001 ve EU AI Act kontrol boşlukları" },
+      { "value": "Kanıt", "label": "Denetim öncesi hazırlanacak kayıt ve dokümanlar" },
+      { "value": "Plan", "label": "Önceliklendirilmiş sertifikasyon yol haritası" }
+    ]
   },
   "services": {
     "eyebrow": "Hizmetler",
     "title": "Temel Yetkinlikler",
     "description": "ISO standartları ve uluslararası regülasyonlarla uyumlu AI yönetişimi.",
     "learnMore": "Detaylı İncele",
-    "hubIntro": "Beş temel yetkinlik alanında uçtan uca danışmanlık — stratejiden sertifikasyona kadar."
+    "hubIntro": "Beş temel yetkinlik alanında uçtan uca danışmanlık, stratejiden sertifikasyona kadar."
   },
   "serviceDetail": {
     "outcomesLabel": "Ne Elde Edersiniz",
@@ -69,19 +156,19 @@
     "description": "ISO standartları, EU AI Act ve kurumsal AI yönetişiminde yanınızda olan danışmanlar."
   },
   "assessmentTeaser": {
-    "eyebrow": "Uyum Testleri",
-    "title": "Risk Profilinizi Öğrenin",
-    "description": "AION uzmanlarının kurumunuza özel en doğru stratejiyi kurgulayabilmesi için kısa değerlendirme formunu doldurun.",
-    "privacy": "Verileriniz KVKK ve ISO 27001 standartlarında korunmaktadır.",
-    "button": "Değerlendirmeyi Başlat"
+    "eyebrow": "Ücretsiz Gap Analizi",
+    "title": "Denetim riskinizi form doldurmadan tahmin etmeyin",
+    "description": "5 dakikalık değerlendirme ile AI kullanımınızın risk sınıfı, kontrol boşlukları ve sertifikasyon yol haritası için ilk tabloyu çıkarın.",
+    "privacy": "Taahhüt yok. Satış baskısı yok. Verileriniz KVKK ve ISO 27001 standartlarında korunur.",
+    "button": "Gap Analizini Başlat"
   },
   "cta": {
     "eyebrow": "EU AI Act",
-    "dateLabel": "Ağustos 2026",
-    "title": "Yapay zeka sistemleriniz ne kadar hazır?",
-    "description": "Kurallar Ağustos 2026'da değişiyor. Uyumsuzluk durumunda 35 milyon Euro veya küresel cironuzun %7'sine varan idari para cezalarıyla karşılaşabilirsiniz.",
-    "penalty": "35M € veya küresel cironun %7'si",
-    "button": "Ücretsiz Risk Profilinizi Öğrenin"
+    "dateLabel": "2026-2027",
+    "title": "Yanlış sınıflandırma denetimde pahalıya çıkar",
+    "description": "EU AI Act yaptırımları genişliyor. En ağır ihlallerde idari para cezaları 35 milyon €'ya veya küresel cironuzun %7'sine kadar çıkabilir. Asıl risk, hangi yükümlülüğe tabi olduğunuzu geç fark etmektir.",
+    "penalty": "Maks. 35M €, küresel cironun %7'si",
+    "button": "Gap Analizi Al"
   },
   "footer": {
     "copyright": "Copyright © {year} AION",
@@ -112,8 +199,8 @@
   },
   "assessment": {
     "eyebrow": "Değerlendirme",
-    "title": "Uyum Değerlendirmesi",
-    "description": "Kurumunuza özel strateji için kısa değerlendirme formu.",
+    "title": "Gap (Fark) Analizi",
+    "description": "Kurumunuza özel yol haritası için kısa gap analizi formu.",
     "stepTopic": "Konu seçin",
     "stepCompany": "Kurum bilgileri",
     "stepContact": "İletişim bilgileri",
@@ -254,7 +341,7 @@
     "eyebrow": "İletişim",
     "title": "Bizimle iletişime geçin",
     "description": "Kurumsal AI uyum yolculuğunuz için ekibimizle doğrudan iletişime geçin veya görüşme planlayın.",
-    "mockNotice": "Placeholder iletişim bilgileri — production öncesi .env dosyasındaki NEXT_PUBLIC_* değişkenlerini güncelleyin.",
+    "mockNotice": "Placeholder iletişim bilgileri. Production öncesi .env dosyasındaki NEXT_PUBLIC_* değişkenlerini güncelleyin.",
     "emailLabel": "E-posta",
     "phoneLabel": "Telefon",
     "addressLabel": "Adres",
