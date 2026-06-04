@@ -1,13 +1,8 @@
 // next.config.ts
-import createMDX from '@next/mdx';
 import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
 
 const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
-
-const withMDX = createMDX({
-  extension: /\.mdx?$/
-});
 
 const legacyRedirects = [
   { source: '/yapay-zeka-yonetisimi', destination: '/tr/services/ai-governance', permanent: true },
@@ -36,10 +31,9 @@ const legacyRedirects = [
 
 const nextConfig: NextConfig = {
   output: 'standalone',
-  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   // Allow LAN devices (e.g. phone) to load dev resources during development.
   allowedDevOrigins: ['192.168.1.116'],
   redirects: async () => legacyRedirects
 };
 
-export default withNextIntl(withMDX(nextConfig));
+export default withNextIntl(nextConfig);

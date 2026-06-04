@@ -10,7 +10,9 @@ Enterprise AI governance marketing site — Next.js, custom UI kit, TR/EN.
 - Custom UI components (`src/components/ui/`) — no shadcn
 - next-intl (TR / EN)
 - Zod + React Hook Form (assessment wizard)
-- MDX-ready (`content/`)
+- Motion (`motion/react`) for scroll and reveal animations
+
+Editorial content lives in TypeScript under `src/lib/mock/content/`, exposed through `src/lib/content/*` getters. UI copy is in `messages/*.json`. All content changes are developer-managed in the repo.
 
 ## Scripts
 
@@ -26,19 +28,39 @@ npm run lint
 
 ```
 src/
-├── app/[locale]/     # Routes
+├── app/[locale]/          # Routes (home, services, assessment, legal, …)
 ├── components/
-│   ├── ui/           # Custom design system
-│   ├── layout/       # Header, footer
-│   ├── sections/     # Homepage sections
-│   └── assessment/   # Multi-step form
-├── lib/              # SEO, schema, content
-├── i18n/             # next-intl config
-messages/             # TR / EN UI strings
-content/              # MDX content (services)
-research/             # Site audit & screenshots
-public/llms.txt       # GEO
+│   ├── ui/                # Design system (button, container, cards, …)
+│   ├── layout/            # Header, footer, lang switcher
+│   ├── sections/          # Page sections (hero, services bento, …)
+│   ├── motion/            # Fade, stagger, hero preview console
+│   ├── assessment/        # Multi-step gap analysis wizard
+│   └── integrations/      # Calendly embed
+├── lib/
+│   ├── content/           # Public content API (facade → mock today)
+│   ├── mock/              # Mock data + runtime source resolution
+│   ├── site/              # Site config, contact, env helpers
+│   ├── assessment/        # Zod schemas + server actions
+│   ├── integrations/      # Assessment submit (stub / webhook)
+│   └── seo/               # Metadata helpers
+├── i18n/                  # next-intl routing + request config
+messages/                  # TR / EN UI strings (next-intl)
+public/                    # Static assets, team photos, llms.txt
+research/                  # Internal audit notes & screenshots
 ```
+
+## Content & data
+
+| Layer                   | Role                                            |
+| ----------------------- | ----------------------------------------------- |
+| `messages/*.json`       | UI copy, form labels, section headings          |
+| `src/lib/mock/content/` | Services, team, testimonials, legal, about      |
+| `src/lib/content/`      | Stable getters consumed by pages and sections   |
+| `src/lib/site/`         | Contact channels, site meta, mock vs live flags |
+
+Contact overrides: set `SITE_DATA_SOURCE=live` and `NEXT_PUBLIC_*` env vars (see `src/lib/mock/site.ts`).
+
+Assessment delivery: `ASSESSMENT_SUBMIT_MODE=webhook` + `ASSESSMENT_WEBHOOK_URL`, or `stub` for local dev.
 
 ## Deploy (Hetzner)
 

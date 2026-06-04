@@ -42,5 +42,3 @@ export function buildPageMetadata({ locale, path, title, description }: PageMeta
     metadataBase: new URL(siteUrl)
   };
 }
-
-export { getSiteUrl as SITE_URL };

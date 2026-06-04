@@ -1,7 +1,7 @@
 // src/lib/site/types.ts
 import type { Locale } from '@/i18n/routing';
 
-/** Runtime data origin — editorial content lives in src/lib/mock until CMS exists. */
+/** Runtime data origin for contact channels — mock defaults or live env overrides. */
 export type SiteDataSource = 'mock' | 'live';
 
 export type LocalizedString = Record<Locale, string>;

@@ -9,7 +9,7 @@ const LIVE_CONTACT_KEYS = [
   'NEXT_PUBLIC_CALENDLY_URL'
 ] as const;
 
-/** Runtime origin for contact channels — editorial content always reads from mock until CMS exists. */
+/** Whether contact channels use mock defaults or live NEXT_PUBLIC_* env overrides. */
 export function resolveDataSource(): SiteDataSource {
   const explicit = readPublicEnv('SITE_DATA_SOURCE');
 

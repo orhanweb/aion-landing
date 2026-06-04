@@ -2,18 +2,13 @@
 import type { Locale } from '@/i18n/routing';
 import { isMockDataSource as isMockFromSource } from '@/lib/mock/source';
 import { resolveSiteConfig, getSiteUrl } from '@/lib/site/resolve';
-import type { SiteConfig, SiteContact } from '@/lib/site/types';
+import type { SiteConfig } from '@/lib/site/types';
 
 export type { SiteConfig, SiteContact, SiteDataSource, SiteMeta, SiteFeatures, LocalizedString } from '@/lib/site/types';
 
 /** Full runtime site config for a locale (contact + meta + source flags). */
 export function getSiteConfig(locale: Locale): SiteConfig {
   return resolveSiteConfig(locale);
-}
-
-/** Contact slice — convenience for components that only need channels. */
-export function getSiteContact(locale: Locale): SiteContact {
-  return resolveSiteConfig(locale).contact;
 }
 
 /** Canonical site URL for SEO, sitemap, JSON-LD. */

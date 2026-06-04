@@ -14,7 +14,7 @@ function resolveAssessmentMode(): AssessmentSubmitMode {
   return mockIntegrationsDefaults.assessmentSubmitMode;
 }
 
-export function resolveIntegrationsConfig(): IntegrationsConfig {
+function resolveIntegrationsConfig(): IntegrationsConfig {
   return {
     assessment: {
       mode: resolveAssessmentMode(),

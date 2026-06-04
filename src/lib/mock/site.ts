@@ -1,5 +1,4 @@
 // src/lib/mock/site.ts
-import type { Locale } from '@/i18n/routing';
 import type { LocalizedString, SiteContact, SiteMeta } from '@/lib/site/types';
 
 /**
@@ -36,8 +35,4 @@ export function buildMockContact(locale: keyof LocalizedString): SiteContact {
     address: mockContactAddress[locale],
     responseTime: mockContactResponseTime[locale]
   };
-}
-
-export function getMockContact(locale: Locale): SiteContact {
-  return buildMockContact(locale);
 }
