@@ -15,33 +15,27 @@ export async function TestimonialsGrid() {
   const rest = testimonials.filter(item => item.id !== featured.id);
 
   return (
-    <Section variant="paper">
+    <Section>
       <Container>
         <FadeIn>
-          <MonoLabel className="text-[var(--accent-strong)]">{t('eyebrow')}</MonoLabel>
-          <h2 className="font-display mt-4 text-[clamp(2rem,3.5vw,3rem)] leading-tight tracking-tight text-paper-foreground">{t('title')}</h2>
+          <MonoLabel className="text-accent">{t('eyebrow')}</MonoLabel>
+          <h2 className="font-display mt-4 text-[clamp(2rem,3.5vw,3rem)] leading-tight tracking-tight">{t('title')}</h2>
+          <p className="mt-4 max-w-xl text-muted-foreground">{t('description')}</p>
         </FadeIn>
 
-        <div className="mt-16 grid gap-6 lg:grid-cols-12 lg:gap-8">
-          <FadeIn className="lg:col-span-7">
-            <TestimonialCard testimonial={featured} variant="featured" />
-          </FadeIn>
-          <div className="grid gap-6 sm:grid-cols-2 lg:col-span-5 lg:grid-cols-1">
-            {rest.slice(0, 2).map((item, index) => (
-              <FadeIn key={item.id} delay={0.08 + index * 0.06}>
-                <TestimonialCard testimonial={item} />
-              </FadeIn>
-            ))}
-          </div>
-        </div>
+        <FadeIn className="mt-16">
+          <TestimonialCard testimonial={featured} variant="spotlight" />
+        </FadeIn>
 
-        <div className="mt-6 grid gap-6 sm:grid-cols-2">
-          {rest.slice(2).map((item, index) => (
-            <FadeIn key={item.id} delay={0.12 + index * 0.06}>
-              <TestimonialCard testimonial={item} />
-            </FadeIn>
+        <ul className="mt-6 grid list-none gap-6 sm:grid-cols-2">
+          {rest.map((item, index) => (
+            <li key={item.id}>
+              <FadeIn delay={0.06 + index * 0.05}>
+                <TestimonialCard testimonial={item} variant="grid" />
+              </FadeIn>
+            </li>
           ))}
-        </div>
+        </ul>
       </Container>
     </Section>
   );

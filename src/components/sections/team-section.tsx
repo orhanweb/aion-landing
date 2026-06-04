@@ -25,7 +25,7 @@ export async function TeamSection({ id }: TeamSectionProps = {}) {
           <p className="mt-4 max-w-xl text-muted-foreground">{t('description')}</p>
         </FadeIn>
 
-        <div className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {members.map((member, index) => (
             <FadeIn key={member.slug} delay={index * 0.08}>
               <TeamCard member={member} />

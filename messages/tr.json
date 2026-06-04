@@ -60,12 +60,13 @@
   },
   "testimonials": {
     "eyebrow": "Referanslar",
-    "title": "Bazı Referanslarımız"
+    "title": "Bazı Referanslarımız",
+    "description": "ISO sertifikasyonu ve AI yönetişimi projelerinde birlikte çalıştığımız kurumlardan."
   },
   "team": {
-    "eyebrow": "Takım",
-    "title": "Uzman Ekibimiz",
-    "description": "ISO standartları, EU AI Act ve kurumsal AI yönetişimi konusunda deneyimli danışman kadromuz."
+    "eyebrow": "Ekip",
+    "title": "Ekiple Tanışın",
+    "description": "ISO standartları, EU AI Act ve kurumsal AI yönetişiminde yanınızda olan danışmanlar."
   },
   "assessmentTeaser": {
     "eyebrow": "Uyum Testleri",

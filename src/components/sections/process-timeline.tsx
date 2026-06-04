@@ -9,12 +9,12 @@ export async function ProcessTimeline() {
   const steps = t.raw('steps') as { title: string; description: string }[];
 
   return (
-    <Section variant="paper" id="approach">
+    <Section variant="elevated" id="approach">
       <Container>
         <FadeIn>
-          <MonoLabel className="text-[var(--accent-strong)]">{t('eyebrow')}</MonoLabel>
-          <h2 className="font-display mt-4 text-[clamp(2rem,3.5vw,3rem)] leading-tight tracking-tight text-paper-foreground">{t('title')}</h2>
-          <p className="mt-4 max-w-xl text-paper-muted-foreground">{t('description')}</p>
+          <MonoLabel className="text-accent">{t('eyebrow')}</MonoLabel>
+          <h2 className="font-display mt-4 text-[clamp(2rem,3.5vw,3rem)] leading-tight tracking-tight">{t('title')}</h2>
+          <p className="mt-4 max-w-xl text-muted-foreground">{t('description')}</p>
         </FadeIn>
 
         <ol className="relative mt-16 space-y-0">
@@ -25,18 +25,13 @@ export async function ProcessTimeline() {
             return (
               <FadeIn key={step.title} delay={index * 0.05}>
                 <li className="relative grid gap-6 pb-12 md:grid-cols-[80px_1fr] md:gap-12">
-                  {!isLast ? (
-                    <div
-                      aria-hidden
-                      className="absolute left-[39px] top-12 hidden h-[calc(100%-3rem)] w-px bg-[var(--foreground-dark-muted)]/30 md:block"
-                    />
-                  ) : null}
+                  {!isLast ? <div aria-hidden className="absolute left-[39px] top-12 hidden h-[calc(100%-3rem)] w-px bg-border md:block" /> : null}
                   <div className="flex items-start gap-4 md:flex-col md:gap-2">
-                    <span className="font-mono-label text-[var(--accent-strong)]">{num}</span>
+                    <span className="font-mono-label text-accent">{num}</span>
                   </div>
                   <div>
-                    <h3 className="font-display text-xl tracking-tight text-paper-foreground md:text-2xl">{step.title}</h3>
-                    <p className="mt-3 text-sm leading-relaxed text-paper-muted-foreground md:text-base">{step.description}</p>
+                    <h3 className="font-display text-xl tracking-tight md:text-2xl">{step.title}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">{step.description}</p>
                   </div>
                 </li>
               </FadeIn>

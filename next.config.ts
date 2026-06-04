@@ -37,6 +37,8 @@ const legacyRedirects = [
 const nextConfig: NextConfig = {
   output: 'standalone',
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  // Allow LAN devices (e.g. phone) to load dev resources during development.
+  allowedDevOrigins: ['192.168.1.116'],
   redirects: async () => legacyRedirects
 };
 

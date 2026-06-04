@@ -60,12 +60,13 @@
   },
   "testimonials": {
     "eyebrow": "References",
-    "title": "What Our Clients Say"
+    "title": "What Our Clients Say",
+    "description": "From organizations we partner with on ISO certification and AI governance programs."
   },
   "team": {
     "eyebrow": "Team",
-    "title": "Our Expert Team",
-    "description": "Consultants with deep experience in ISO standards, EU AI Act, and enterprise AI governance."
+    "title": "Meet the Team",
+    "description": "Consultants who partner with you on ISO standards, EU AI Act, and enterprise AI governance."
   },
   "assessmentTeaser": {
     "eyebrow": "Compliance Tests",

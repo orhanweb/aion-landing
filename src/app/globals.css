@@ -80,9 +80,15 @@ body {
 
 .font-mono-label {
   font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .font-mono-label {
+    font-size: 0.8125rem;
+  }
 }
 
 .grain-overlay {
