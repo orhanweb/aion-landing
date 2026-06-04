@@ -54,7 +54,7 @@ export async function ContactChannels() {
 
       <div>
         <MonoLabel className="text-accent">{t('calendlyLabel')}</MonoLabel>
-        <p className="mt-3 max-w-xl text-sm text-muted-foreground">{t('calendlyDescription')}</p>
+        <p className="mt-3 text-sm text-muted-foreground">{t('calendlyDescription')}</p>
         <CalendlyEmbed url={contact.calendlyUrl} label={t('calendlyButton')} className="mt-6" />
       </div>
 

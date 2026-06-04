@@ -1,4 +1,5 @@
 // src/lib/integrations/assessment/index.ts
+import { mockIntegrationsDefaults } from '@/lib/mock/integrations';
 import { readServerEnv } from '@/lib/site/env';
 import { stubAssessmentSubmitter } from '@/lib/integrations/assessment/stub';
 import type { AssessmentSubmitter } from '@/lib/integrations/assessment/types';
@@ -10,7 +11,7 @@ function resolveAssessmentMode(): AssessmentSubmitMode {
   if (mode === 'stub' || mode === 'webhook' || mode === 'resend') {
     return mode;
   }
-  return 'stub';
+  return mockIntegrationsDefaults.assessmentSubmitMode;
 }
 
 export function resolveIntegrationsConfig(): IntegrationsConfig {

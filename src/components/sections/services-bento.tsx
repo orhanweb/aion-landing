@@ -21,10 +21,10 @@ export async function ServicesBento({ className, showHubIntro }: ServicesBentoPr
   return (
     <Section id="services" className={className}>
       <Container>
-        <FadeIn className="max-w-2xl">
+        <FadeIn>
           <MonoLabel className="text-accent">{t('eyebrow')}</MonoLabel>
           <h2 className="font-display mt-4 text-[clamp(2rem,3.5vw,3rem)] leading-tight tracking-tight">{t('title')}</h2>
-          <p className="mt-4 text-muted-foreground">{t('description')}</p>
+          <p className="mt-4 max-w-xl text-muted-foreground">{t('description')}</p>
           {showHubIntro ? <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">{t('hubIntro')}</p> : null}
         </FadeIn>
 

@@ -17,6 +17,9 @@
   --line: rgba(238, 234, 227, 0.08);
   --line-strong: rgba(238, 234, 227, 0.16);
   --border: rgba(238, 234, 227, 0.12);
+  --layout-shell: 1280px;
+  --layout-prose: 48rem;
+  --layout-narrow: 42rem;
 }
 
 @theme inline {

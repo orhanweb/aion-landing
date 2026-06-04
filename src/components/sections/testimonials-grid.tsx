@@ -17,7 +17,7 @@ export async function TestimonialsGrid() {
   return (
     <Section variant="paper">
       <Container>
-        <FadeIn className="max-w-2xl">
+        <FadeIn>
           <MonoLabel className="text-[var(--accent-strong)]">{t('eyebrow')}</MonoLabel>
           <h2 className="font-display mt-4 text-[clamp(2rem,3.5vw,3rem)] leading-tight tracking-tight text-paper-foreground">{t('title')}</h2>
         </FadeIn>

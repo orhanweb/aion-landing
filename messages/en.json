@@ -39,11 +39,11 @@
     "hubIntro": "End-to-end consulting across five core capability areas — from strategy to certification."
   },
   "serviceDetail": {
-    "outcomesLabel": "Outcomes",
-    "processLabel": "Process",
-    "processTitle": "How We Work",
+    "outcomesLabel": "What You Get",
     "relatedLabel": "Related Services",
-    "relatedLink": "Explore"
+    "relatedLink": "Explore",
+    "primaryCta": "Start Assessment",
+    "secondaryCta": "All Services"
   },
   "process": {
     "eyebrow": "Our Approach",

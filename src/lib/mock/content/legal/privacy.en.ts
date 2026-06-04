@@ -1,4 +1,4 @@
-// src/lib/content/legal/privacy.en.ts
+// src/lib/mock/content/legal/privacy.en.ts
 import type { LegalDocument } from '@/lib/content/legal/types';
 
 export const privacyEn: LegalDocument = {

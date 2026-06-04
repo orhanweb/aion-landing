@@ -10,13 +10,13 @@ type TeamCardProps = {
 export function TeamCard({ member }: TeamCardProps) {
   return (
     <article className="group flex flex-col">
-      <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-border bg-[var(--ink-muted)]">
+      <div className="relative mx-auto size-32 shrink-0 overflow-hidden rounded-full border border-border bg-[var(--ink-muted)] sm:size-36">
         <Image
           src={member.photo}
           alt={member.name}
           fill
-          className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
-          sizes="(max-width: 768px) 100vw, 33vw"
+          className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
+          sizes="(max-width: 640px) 128px, 144px"
         />
       </div>
       <div className="mt-5">

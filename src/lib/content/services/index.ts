@@ -1,13 +1,20 @@
 // src/lib/content/services/index.ts
 import type { Locale } from '@/i18n/routing';
-import { servicesEn } from '@/lib/content/services/en';
-import { servicesTr } from '@/lib/content/services/tr';
+import { getMockServices } from '@/lib/mock/content';
 import { SERVICE_SLUGS, type Service, type ServiceSlug } from '@/lib/content/services/types';
 
-export { SERVICE_SLUGS, type Service, type ServiceSlug, type ServiceStandard, type ServiceStep } from '@/lib/content/services/types';
+export {
+  SERVICE_SLUGS,
+  type Service,
+  type ServiceSlug,
+  type ServiceStandard,
+  type ServiceStep,
+  type ServiceSections,
+  type ServiceSectionsLayout
+} from '@/lib/content/services/types';
 
 export function getServices(locale: Locale): Service[] {
-  return locale === 'tr' ? servicesTr : servicesEn;
+  return getMockServices(locale);
 }
 
 export function getService(locale: Locale, slug: string): Service | undefined {

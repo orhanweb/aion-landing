@@ -2,14 +2,16 @@
 import { notFound } from 'next/navigation';
 import { AssessmentTeaser } from '@/components/sections/assessment-teaser';
 import { RelatedServices } from '@/components/sections/related-services';
+import { ServiceDetailHero } from '@/components/sections/service-detail-hero';
+import { ServiceGapCards } from '@/components/sections/service-gap-cards';
 import { ServiceOutcomes } from '@/components/sections/service-outcomes';
-import { Accordion, AccordionItem } from '@/components/ui/accordion';
+import { ServiceProcessTimeline } from '@/components/sections/service-process-timeline';
+import { ServiceTopicGrid } from '@/components/sections/service-topic-grid';
 import { Container, Section } from '@/components/ui/container';
-import { MonoLabel } from '@/components/ui/mono-label';
-import { FadeIn } from '@/components/motion/fade-in';
 import { getService, getServiceSlugs } from '@/lib/content/services';
+import type { ServiceSectionsLayout, ServiceStep } from '@/lib/content/services/types';
 import { buildPageMetadata } from '@/lib/seo/metadata';
-import { setRequestLocale, getTranslations } from 'next-intl/server';
+import { setRequestLocale } from 'next-intl/server';
 import { routing, type Locale } from '@/i18n/routing';
 
 type PageProps = {
@@ -36,10 +38,21 @@ export async function generateMetadata({ params }: PageProps) {
   });
 }
 
+function ServiceBody({ layout, label, title, steps }: { layout: ServiceSectionsLayout; label: string; title: string; steps: ServiceStep[] }) {
+  if (layout === 'process') {
+    return <ServiceProcessTimeline label={label} title={title} steps={steps} />;
+  }
+
+  if (layout === 'gaps') {
+    return <ServiceGapCards label={label} title={title} steps={steps} />;
+  }
+
+  return <ServiceTopicGrid label={label} title={title} steps={steps} />;
+}
+
 export default async function ServiceDetailPage({ params }: PageProps) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations('serviceDetail');
 
   const service = getService(locale as Locale, slug);
 
@@ -47,48 +60,28 @@ export default async function ServiceDetailPage({ params }: PageProps) {
     notFound();
   }
 
+  const { sections } = service;
+
   return (
     <>
-      <Section variant="elevated" spacing="compact" className="pt-24">
-        <Container className="max-w-3xl">
-          <MonoLabel className="text-accent">{service.subtitle}</MonoLabel>
-          <h1 className="font-display mt-4 text-[clamp(2rem,4vw,3.5rem)] leading-tight tracking-tight">{service.title}</h1>
-          <div className="mt-6 space-y-4">
-            {service.intro.map(paragraph => (
-              <p key={paragraph.slice(0, 40)} className="text-base leading-relaxed text-muted-foreground md:text-lg">
-                {paragraph}
-              </p>
-            ))}
-          </div>
-        </Container>
-      </Section>
+      <ServiceDetailHero subtitle={service.subtitle} title={service.title} intro={service.intro} standard={service.standard} />
 
-      <Section>
-        <Container className="max-w-3xl">
+      <Section variant="elevated">
+        <Container>
           <ServiceOutcomes standard={service.standard} outcomes={service.outcomes} />
         </Container>
       </Section>
 
-      <Section variant="elevated">
-        <Container className="max-w-3xl">
-          <FadeIn>
-            <MonoLabel className="text-accent">{t('processLabel')}</MonoLabel>
-            <h2 className="font-display mt-4 text-2xl tracking-tight md:text-3xl">{t('processTitle')}</h2>
-          </FadeIn>
-          <div className="mt-10">
-            <Accordion>
-              {service.steps.map(step => (
-                <AccordionItem key={step.title} title={step.title}>
-                  {step.description}
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
+      <Section>
+        <Container>
+          <ServiceBody layout={sections.layout} label={sections.label} title={sections.title} steps={service.steps} />
         </Container>
       </Section>
 
+      {sections.layout === 'gaps' ? <AssessmentTeaser variant="inline" /> : null}
+
       <Section>
-        <Container className="max-w-3xl">
+        <Container>
           <RelatedServices locale={locale as Locale} relatedSlugs={service.relatedSlugs} />
         </Container>
       </Section>

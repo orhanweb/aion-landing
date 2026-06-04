@@ -11,10 +11,10 @@ export async function ProcessTimeline() {
   return (
     <Section variant="paper" id="approach">
       <Container>
-        <FadeIn className="max-w-2xl">
+        <FadeIn>
           <MonoLabel className="text-[var(--accent-strong)]">{t('eyebrow')}</MonoLabel>
           <h2 className="font-display mt-4 text-[clamp(2rem,3.5vw,3rem)] leading-tight tracking-tight text-paper-foreground">{t('title')}</h2>
-          <p className="mt-4 text-paper-muted-foreground">{t('description')}</p>
+          <p className="mt-4 max-w-xl text-paper-muted-foreground">{t('description')}</p>
         </FadeIn>
 
         <ol className="relative mt-16 space-y-0">
@@ -36,7 +36,7 @@ export async function ProcessTimeline() {
                   </div>
                   <div>
                     <h3 className="font-display text-xl tracking-tight text-paper-foreground md:text-2xl">{step.title}</h3>
-                    <p className="mt-3 max-w-xl text-sm leading-relaxed text-paper-muted-foreground md:text-base">{step.description}</p>
+                    <p className="mt-3 text-sm leading-relaxed text-paper-muted-foreground md:text-base">{step.description}</p>
                   </div>
                 </li>
               </FadeIn>

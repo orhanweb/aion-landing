@@ -39,11 +39,11 @@
     "hubIntro": "Beş temel yetkinlik alanında uçtan uca danışmanlık — stratejiden sertifikasyona kadar."
   },
   "serviceDetail": {
-    "outcomesLabel": "Çıktılar",
-    "processLabel": "Süreç",
-    "processTitle": "Nasıl Çalışıyoruz",
+    "outcomesLabel": "Ne Elde Edersiniz",
     "relatedLabel": "İlgili Hizmetler",
-    "relatedLink": "İncele"
+    "relatedLink": "İncele",
+    "primaryCta": "Değerlendirmeyi Başlat",
+    "secondaryCta": "Tüm Hizmetler"
   },
   "process": {
     "eyebrow": "Yaklaşımımız",

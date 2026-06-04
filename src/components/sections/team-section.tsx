@@ -19,10 +19,10 @@ export async function TeamSection({ id }: TeamSectionProps = {}) {
   return (
     <Section id={id}>
       <Container>
-        <FadeIn className="max-w-2xl">
+        <FadeIn>
           <MonoLabel className="text-accent">{t('eyebrow')}</MonoLabel>
           <h2 className="font-display mt-4 text-[clamp(2rem,3.5vw,3rem)] leading-tight tracking-tight">{t('title')}</h2>
-          <p className="mt-4 text-muted-foreground">{t('description')}</p>
+          <p className="mt-4 max-w-xl text-muted-foreground">{t('description')}</p>
         </FadeIn>
 
         <div className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">

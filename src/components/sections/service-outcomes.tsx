@@ -15,14 +15,16 @@ export async function ServiceOutcomes({ standard, outcomes }: ServiceOutcomesPro
     <FadeIn>
       <MonoLabel className="text-accent">{t('outcomesLabel')}</MonoLabel>
       <p className="mt-2 font-mono-label text-[0.625rem] text-muted-foreground">{standard}</p>
-      <ul className="mt-8 space-y-4">
+      <div className="mt-10 grid gap-6 sm:grid-cols-2">
         {outcomes.map((outcome, index) => (
-          <li key={outcome} className="flex gap-4 text-sm leading-relaxed text-muted-foreground">
-            <span className="font-mono-label shrink-0 text-[0.625rem] text-accent">{String(index + 1).padStart(2, '0')}</span>
-            <span>{outcome}</span>
-          </li>
+          <FadeIn key={outcome} delay={index * 0.05}>
+            <article className="h-full rounded-lg border border-border bg-[var(--ink-elevated)] p-6 md:p-8">
+              <span className="font-mono-label text-[0.625rem] text-accent">{String(index + 1).padStart(2, '0')}</span>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">{outcome}</p>
+            </article>
+          </FadeIn>
         ))}
-      </ul>
+      </div>
     </FadeIn>
   );
 }

@@ -3,6 +3,7 @@ import { AboutPrinciples } from '@/components/sections/about-principles';
 import { AssessmentTeaser } from '@/components/sections/assessment-teaser';
 import { TeamSection } from '@/components/sections/team-section';
 import { Container, Section } from '@/components/ui/container';
+import { Prose } from '@/components/ui/content-width';
 import { MonoLabel } from '@/components/ui/mono-label';
 import { buildPageMetadata } from '@/lib/seo/metadata';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
@@ -34,10 +35,12 @@ export default async function AboutPage({ params }: PageProps) {
   return (
     <>
       <Section className="pt-24">
-        <Container className="max-w-4xl">
-          <MonoLabel>{t('eyebrow')}</MonoLabel>
-          <h1 className="font-display mt-4 text-[clamp(2rem,4vw,3.5rem)] leading-tight tracking-tight">{t('title')}</h1>
-          <AboutPrinciples locale={locale as Locale} />
+        <Container>
+          <Prose>
+            <MonoLabel>{t('eyebrow')}</MonoLabel>
+            <h1 className="font-display mt-4 text-[clamp(2rem,4vw,3.5rem)] leading-tight tracking-tight">{t('title')}</h1>
+            <AboutPrinciples locale={locale as Locale} />
+          </Prose>
         </Container>
       </Section>
       <TeamSection id="team" />

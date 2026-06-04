@@ -18,12 +18,12 @@ export async function AboutPrinciples({ locale }: AboutPrinciplesProps) {
     <div className="mt-16 space-y-16">
       <FadeIn>
         <MonoLabel className="text-accent">{t('missionLabel')}</MonoLabel>
-        <p className="mt-4 max-w-3xl text-lg leading-relaxed text-muted-foreground">{content.mission}</p>
+        <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{content.mission}</p>
       </FadeIn>
 
       <FadeIn delay={0.05}>
         <MonoLabel className="text-accent">{t('storyLabel')}</MonoLabel>
-        <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted-foreground">{content.story}</p>
+        <p className="mt-4 text-base leading-relaxed text-muted-foreground">{content.story}</p>
       </FadeIn>
 
       <div>

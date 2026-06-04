@@ -1,9 +1,10 @@
-// src/lib/site/mock/fixtures.ts
+// src/lib/mock/site.ts
+import type { Locale } from '@/i18n/routing';
 import type { LocalizedString, SiteContact, SiteMeta } from '@/lib/site/types';
 
 /**
- * Placeholder runtime values used when env vars are not set.
- * Replace by setting vars in .env — never edit these for production.
+ * Client-facing runtime placeholders — edit here before go-live.
+ * Contact fields can also be overridden via NEXT_PUBLIC_* env when SITE_DATA_SOURCE=live.
  */
 export const mockSiteMeta: SiteMeta = {
   url: 'https://aion.tr',
@@ -15,7 +16,7 @@ export const mockContactBase = {
   email: 'contact@aion.tr',
   phoneE164: '+902125550000',
   phoneDisplay: '+90 (212) 555 00 00',
-  calendlyUrl: 'https://calendly.com/aion-consulting/discovery-call',
+  calendlyUrl: 'https://calendly.com/hello-aion-kar7/30min',
   linkedin: 'https://www.linkedin.com/company/aion-tr'
 } as const;
 
@@ -35,4 +36,8 @@ export function buildMockContact(locale: keyof LocalizedString): SiteContact {
     address: mockContactAddress[locale],
     responseTime: mockContactResponseTime[locale]
   };
+}
+
+export function getMockContact(locale: Locale): SiteContact {
+  return buildMockContact(locale);
 }

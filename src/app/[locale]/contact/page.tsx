@@ -1,6 +1,7 @@
 // src/app/[locale]/contact/page.tsx
 import { ContactChannels } from '@/components/sections/contact-channels';
 import { Container, Section } from '@/components/ui/container';
+import { Prose } from '@/components/ui/content-width';
 import { MonoLabel } from '@/components/ui/mono-label';
 import { buildPageMetadata } from '@/lib/seo/metadata';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
@@ -28,11 +29,13 @@ export default async function ContactPage({ params }: PageProps) {
 
   return (
     <Section className="pt-24">
-      <Container className="max-w-3xl">
-        <MonoLabel>{t('eyebrow')}</MonoLabel>
-        <h1 className="font-display mt-4 text-[clamp(2rem,4vw,3.5rem)] leading-tight tracking-tight">{t('title')}</h1>
-        <p className="mt-4 max-w-2xl text-muted-foreground">{t('description')}</p>
-        <ContactChannels />
+      <Container>
+        <Prose>
+          <MonoLabel>{t('eyebrow')}</MonoLabel>
+          <h1 className="font-display mt-4 text-[clamp(2rem,4vw,3.5rem)] leading-tight tracking-tight">{t('title')}</h1>
+          <p className="mt-4 text-muted-foreground">{t('description')}</p>
+          <ContactChannels />
+        </Prose>
       </Container>
     </Section>
   );
