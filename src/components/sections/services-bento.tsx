@@ -39,7 +39,7 @@ export async function ServicesBento({ className, showHubIntro }: ServicesBentoPr
             <InteractiveCardShell>
               <Link href={`/services/${coreService.slug}`} className={interactiveCardSurfaceClassName('block p-8 md:p-10 lg:p-12')}>
                 <div aria-hidden className="absolute right-0 top-0 h-40 w-40 translate-x-12 -translate-y-12 rounded-full border border-accent/20" />
-                <div aria-hidden className="absolute bottom-0 right-0 h-px w-1/2 bg-gradient-to-l from-accent/30 to-transparent" />
+                <div aria-hidden className="absolute bottom-0 right-0 h-px w-1/2 bg-linear-to-l from-accent/30 to-transparent" />
 
                 <div className="relative grid gap-10 lg:grid-cols-[minmax(0,1fr)_280px] lg:items-end">
                   <div>
