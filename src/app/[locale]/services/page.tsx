@@ -1,7 +1,7 @@
 // src/app/[locale]/services/page.tsx
 import { AssessmentTeaser } from '@/components/sections/assessment-teaser';
 import { ServicesBento } from '@/components/sections/services-bento';
-import { buildPageMetadata } from '@/lib/seo/metadata';
+import { buildLocalizedPageMetadata } from '@/lib/seo/page-metadata';
 import { setRequestLocale } from 'next-intl/server';
 import type { Locale } from '@/i18n/routing';
 
@@ -12,15 +12,7 @@ type PageProps = {
 export async function generateMetadata({ params }: PageProps) {
   const { locale } = await params;
 
-  return buildPageMetadata({
-    locale: locale as Locale,
-    path: '/services',
-    title: locale === 'tr' ? 'Hizmetler | AION' : 'Services | AION',
-    description:
-      locale === 'tr'
-        ? 'AI yönetişimi, regülasyon uyumu, bilgi güvenliği, operasyonel dayanıklılık ve insan gözetimi hizmetleri.'
-        : 'AI governance, regulatory compliance, information security, operational resilience, and human oversight services.'
-  });
+  return buildLocalizedPageMetadata(locale as Locale, '/services', 'services');
 }
 
 export default async function ServicesPage({ params }: PageProps) {

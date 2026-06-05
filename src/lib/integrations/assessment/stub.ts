@@ -2,7 +2,7 @@
 import type { AssessmentSubmission } from '@/lib/assessment/schema';
 import type { AssessmentSubmitter } from '@/lib/integrations/assessment/types';
 
-/** Default submitter — logs server-side only; swap via ASSESSMENT_SUBMIT_MODE. */
+/** Default submitter — logs server-side only; use ASSESSMENT_SUBMIT_MODE=webhook in production. */
 export const stubAssessmentSubmitter: AssessmentSubmitter = {
   async submit(payload: AssessmentSubmission) {
     console.info('[assessment:stub] submission received', {

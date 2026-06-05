@@ -4,7 +4,7 @@ import { Container, Section } from '@/components/ui/container';
 import { Narrow } from '@/components/ui/content-width';
 import { MonoLabel } from '@/components/ui/mono-label';
 import { getSiteConfig } from '@/lib/site';
-import { buildPageMetadata } from '@/lib/seo/metadata';
+import { buildLocalizedPageMetadata } from '@/lib/seo/page-metadata';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { Locale } from '@/i18n/routing';
 
@@ -15,15 +15,7 @@ type PageProps = {
 export async function generateMetadata({ params }: PageProps) {
   const { locale } = await params;
 
-  return buildPageMetadata({
-    locale: locale as Locale,
-    path: '/assessment',
-    title: locale === 'tr' ? 'Gap (Fark) Analizi | AION' : 'Gap Analysis | AION',
-    description:
-      locale === 'tr'
-        ? 'ISO 27001, ISO 42001 ve EU AI Act için kurumunuza özel gap (fark) analizi formu.'
-        : 'Organization-specific gap analysis form for ISO 27001, ISO 42001, and EU AI Act.'
-  });
+  return buildLocalizedPageMetadata(locale as Locale, '/assessment', 'assessment');
 }
 
 export default async function AssessmentPage({ params }: PageProps) {

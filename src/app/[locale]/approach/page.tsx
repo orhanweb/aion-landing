@@ -1,6 +1,6 @@
 // src/app/[locale]/approach/page.tsx
 import { ProcessTimeline } from '@/components/sections/process-timeline';
-import { buildPageMetadata } from '@/lib/seo/metadata';
+import { buildLocalizedPageMetadata } from '@/lib/seo/page-metadata';
 import { setRequestLocale } from 'next-intl/server';
 import type { Locale } from '@/i18n/routing';
 
@@ -11,13 +11,7 @@ type PageProps = {
 export async function generateMetadata({ params }: PageProps) {
   const { locale } = await params;
 
-  return buildPageMetadata({
-    locale: locale as Locale,
-    path: '/approach',
-    title: locale === 'tr' ? 'Yaklaşımımız | AION' : 'Our Approach | AION',
-    description:
-      locale === 'tr' ? 'Stratejiden sertifikasyon denetimine kadar AION yöntemi.' : 'The AION method from strategy to certification audit.'
-  });
+  return buildLocalizedPageMetadata(locale as Locale, '/approach', 'approach');
 }
 
 export default async function ApproachPage({ params }: PageProps) {

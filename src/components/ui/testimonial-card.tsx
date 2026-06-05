@@ -5,6 +5,7 @@ import type { Testimonial } from '@/lib/content/testimonials';
 
 type TestimonialCardProps = {
   testimonial: Testimonial;
+  outcomeLabel: string;
   variant?: 'spotlight' | 'grid';
 };
 
@@ -29,7 +30,18 @@ function QuoteMark({ className }: { className?: string }) {
   );
 }
 
-export function TestimonialCard({ testimonial, variant = 'grid' }: TestimonialCardProps) {
+function TestimonialOutcome({ label, value, prominent = false }: { label: string; value: string; prominent?: boolean }) {
+  return (
+    <div className="mt-4 border-l-2 border-accent/35 pl-3.5">
+      <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.12em] text-muted-foreground">{label}</p>
+      <p className={cn('mt-1.5 leading-relaxed text-foreground/90', prominent ? 'text-base md:text-[1.0625rem]' : 'text-sm md:text-[0.9375rem]')}>
+        {value}
+      </p>
+    </div>
+  );
+}
+
+export function TestimonialCard({ testimonial, outcomeLabel, variant = 'grid' }: TestimonialCardProps) {
   if (variant === 'spotlight') {
     return (
       <div className={testimonialCardShellClassName()}>
@@ -37,9 +49,7 @@ export function TestimonialCard({ testimonial, variant = 'grid' }: TestimonialCa
           <QuoteMark className="absolute -top-4 right-8 text-[5rem] md:right-12 md:text-[6rem]" />
           <div className="relative max-w-3xl">
             <MonoLabel className="text-accent">{testimonial.sector}</MonoLabel>
-            <p className="mt-4 inline-flex rounded-full border border-accent/25 bg-accent/10 px-3 py-1 font-mono-label text-[0.625rem] leading-relaxed text-accent">
-              {testimonial.outcome}
-            </p>
+            <TestimonialOutcome label={outcomeLabel} value={testimonial.outcome} prominent />
             <p className="mt-6 text-lg leading-relaxed text-foreground md:text-xl md:leading-relaxed">&ldquo;{testimonial.quote}&rdquo;</p>
             <footer className="mt-8 border-t border-border pt-6">
               <cite className="font-display text-lg not-italic text-foreground">{testimonial.author}</cite>
@@ -54,7 +64,7 @@ export function TestimonialCard({ testimonial, variant = 'grid' }: TestimonialCa
     <div className={testimonialCardShellClassName()}>
       <blockquote className={testimonialCardClassName('flex h-full min-h-[220px] flex-col p-6 md:min-h-[240px] md:p-8')}>
         <MonoLabel className="text-accent">{testimonial.sector}</MonoLabel>
-        <p className="mt-4 font-mono-label text-[0.625rem] leading-relaxed text-accent">{testimonial.outcome}</p>
+        <TestimonialOutcome label={outcomeLabel} value={testimonial.outcome} />
         <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground md:text-[0.9375rem]">&ldquo;{testimonial.quote}&rdquo;</p>
         <footer className="mt-6 border-t border-border pt-5">
           <cite className="font-display text-base not-italic text-foreground">{testimonial.author}</cite>

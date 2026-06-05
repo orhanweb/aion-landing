@@ -6,11 +6,21 @@ import type { AssessmentSubmitter } from '@/lib/integrations/assessment/types';
 import { createWebhookAssessmentSubmitter } from '@/lib/integrations/assessment/webhook';
 import type { AssessmentSubmitMode, IntegrationsConfig } from '@/lib/integrations/types';
 
+function isAssessmentSubmitMode(value: string): value is AssessmentSubmitMode {
+  return value === 'stub' || value === 'webhook';
+}
+
 function resolveAssessmentMode(): AssessmentSubmitMode {
   const mode = readServerEnv('ASSESSMENT_SUBMIT_MODE');
-  if (mode === 'stub' || mode === 'webhook' || mode === 'resend') {
+
+  if (mode && isAssessmentSubmitMode(mode)) {
     return mode;
   }
+
+  if (mode) {
+    console.warn(`[assessment] Unknown ASSESSMENT_SUBMIT_MODE="${mode}" — falling back to stub`);
+  }
+
   return mockIntegrationsDefaults.assessmentSubmitMode;
 }
 
@@ -26,20 +36,14 @@ function resolveIntegrationsConfig(): IntegrationsConfig {
 export function getAssessmentSubmitter(): AssessmentSubmitter {
   const config = resolveIntegrationsConfig();
 
-  switch (config.assessment.mode) {
-    case 'webhook': {
-      const url = config.assessment.webhookUrl;
-      if (!url) {
-        console.warn('[assessment] ASSESSMENT_SUBMIT_MODE=webhook but ASSESSMENT_WEBHOOK_URL is missing — falling back to stub');
-        return stubAssessmentSubmitter;
-      }
-      return createWebhookAssessmentSubmitter(url);
+  if (config.assessment.mode === 'webhook') {
+    const url = config.assessment.webhookUrl;
+    if (!url) {
+      console.warn('[assessment] ASSESSMENT_SUBMIT_MODE=webhook but ASSESSMENT_WEBHOOK_URL is missing — falling back to stub');
+      return stubAssessmentSubmitter;
     }
-    case 'resend':
-      console.warn('[assessment] ASSESSMENT_SUBMIT_MODE=resend not implemented — falling back to stub');
-      return stubAssessmentSubmitter;
-    case 'stub':
-    default:
-      return stubAssessmentSubmitter;
+    return createWebhookAssessmentSubmitter(url);
   }
+
+  return stubAssessmentSubmitter;
 }

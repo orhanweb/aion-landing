@@ -10,7 +10,7 @@ import { ServiceTopicGrid } from '@/components/sections/service-topic-grid';
 import { Container, Section } from '@/components/ui/container';
 import { getService, getServiceSlugs } from '@/lib/content/services';
 import type { ServiceSectionsLayout, ServiceStep } from '@/lib/content/services/types';
-import { buildPageMetadata } from '@/lib/seo/metadata';
+import { buildServicePageMetadata } from '@/lib/seo/page-metadata';
 import { setRequestLocale } from 'next-intl/server';
 import { routing, type Locale } from '@/i18n/routing';
 
@@ -24,18 +24,8 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps) {
   const { locale, slug } = await params;
-  const service = getService(locale as Locale, slug);
 
-  if (!service) {
-    return {};
-  }
-
-  return buildPageMetadata({
-    locale: locale as Locale,
-    path: `/services/${slug}`,
-    title: `${service.title} | AION`,
-    description: service.shortDescription
-  });
+  return buildServicePageMetadata(locale as Locale, slug);
 }
 
 function ServiceBody({ layout, label, title, steps }: { layout: ServiceSectionsLayout; label: string; title: string; steps: ServiceStep[] }) {
@@ -77,8 +67,6 @@ export default async function ServiceDetailPage({ params }: PageProps) {
           <ServiceBody layout={sections.layout} label={sections.label} title={sections.title} steps={service.steps} />
         </Container>
       </Section>
-
-      {sections.layout === 'gaps' ? <AssessmentTeaser variant="inline" /> : null}
 
       <Section>
         <Container>

@@ -5,7 +5,7 @@ import { TeamSection } from '@/components/sections/team-section';
 import { Container, Section } from '@/components/ui/container';
 import { Prose } from '@/components/ui/content-width';
 import { MonoLabel } from '@/components/ui/mono-label';
-import { buildPageMetadata } from '@/lib/seo/metadata';
+import { buildLocalizedPageMetadata } from '@/lib/seo/page-metadata';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { Locale } from '@/i18n/routing';
 
@@ -16,15 +16,7 @@ type PageProps = {
 export async function generateMetadata({ params }: PageProps) {
   const { locale } = await params;
 
-  return buildPageMetadata({
-    locale: locale as Locale,
-    path: '/about',
-    title: locale === 'tr' ? 'Hakkımızda | AION' : 'About | AION',
-    description:
-      locale === 'tr'
-        ? 'AION, kurumsal yapay zeka yönetişimi ve uyum danışmanlığı sunar.'
-        : 'AION provides enterprise AI governance and compliance consulting.'
-  });
+  return buildLocalizedPageMetadata(locale as Locale, '/about', 'about');
 }
 
 export default async function AboutPage({ params }: PageProps) {

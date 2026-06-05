@@ -3,7 +3,7 @@ import { ContactChannels } from '@/components/sections/contact-channels';
 import { Container, Section } from '@/components/ui/container';
 import { Prose } from '@/components/ui/content-width';
 import { MonoLabel } from '@/components/ui/mono-label';
-import { buildPageMetadata } from '@/lib/seo/metadata';
+import { buildLocalizedPageMetadata } from '@/lib/seo/page-metadata';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { Locale } from '@/i18n/routing';
 
@@ -14,12 +14,7 @@ type PageProps = {
 export async function generateMetadata({ params }: PageProps) {
   const { locale } = await params;
 
-  return buildPageMetadata({
-    locale: locale as Locale,
-    path: '/contact',
-    title: locale === 'tr' ? 'İletişim | AION' : 'Contact | AION',
-    description: locale === 'tr' ? 'AION ile iletişime geçin veya uyum değerlendirmesi başlatın.' : 'Contact AION or start a compliance assessment.'
-  });
+  return buildLocalizedPageMetadata(locale as Locale, '/contact', 'contact');
 }
 
 export default async function ContactPage({ params }: PageProps) {

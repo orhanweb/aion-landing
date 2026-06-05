@@ -1,6 +1,6 @@
 // src/lib/integrations/types.ts
 
-export type AssessmentSubmitMode = 'stub' | 'webhook' | 'resend';
+export type AssessmentSubmitMode = 'stub' | 'webhook';
 
 export type IntegrationsConfig = {
   assessment: {

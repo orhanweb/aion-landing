@@ -60,7 +60,7 @@ research/                  # Internal audit notes & screenshots
 
 Contact overrides: set `SITE_DATA_SOURCE=live` and `NEXT_PUBLIC_*` env vars (see `src/lib/mock/site.ts`).
 
-Assessment delivery: `ASSESSMENT_SUBMIT_MODE=webhook` + `ASSESSMENT_WEBHOOK_URL`, or `stub` for local dev.
+Assessment delivery (later): `ASSESSMENT_SUBMIT_MODE=webhook` + `ASSESSMENT_WEBHOOK_URL`. Default is `stub` (server log only).
 
 ## Deploy (Hetzner)
 

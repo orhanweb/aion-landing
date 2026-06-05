@@ -4,7 +4,7 @@ import { Container, Section } from '@/components/ui/container';
 import { Prose } from '@/components/ui/content-width';
 import { MonoLabel } from '@/components/ui/mono-label';
 import { getLegalDocument } from '@/lib/content/legal';
-import { buildPageMetadata } from '@/lib/seo/metadata';
+import { buildLegalPageMetadata } from '@/lib/seo/page-metadata';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { Locale } from '@/i18n/routing';
 
@@ -14,14 +14,8 @@ type PageProps = {
 
 export async function generateMetadata({ params }: PageProps) {
   const { locale } = await params;
-  const doc = getLegalDocument(locale as Locale, 'privacy');
 
-  return buildPageMetadata({
-    locale: locale as Locale,
-    path: '/privacy',
-    title: `${doc.title} | AION`,
-    description: doc.description
-  });
+  return buildLegalPageMetadata(locale as Locale, '/privacy', 'privacy');
 }
 
 export default async function PrivacyPage({ params }: PageProps) {

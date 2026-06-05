@@ -1,7 +1,33 @@
 {
   "meta": {
     "siteName": "AION",
-    "siteTagline": "Artificial Intelligence Oversight Network"
+    "siteTagline": "Artificial Intelligence Oversight Network",
+    "pages": {
+      "home": {
+        "title": "AION - AI Sisteminiz Denetime Hazır mı?",
+        "description": "EU AI Act ve ISO 42001 için risk sınıflandırması, kontrol boşluğu analizi ve sertifikasyona giden uyum yol haritası."
+      },
+      "about": {
+        "title": "Hakkımızda | AION",
+        "description": "AION, kurumsal yapay zeka yönetişimi ve uyum danışmanlığı sunar."
+      },
+      "approach": {
+        "title": "Yaklaşımımız | AION",
+        "description": "Stratejiden sertifikasyon denetimine kadar AION yöntemi."
+      },
+      "contact": {
+        "title": "İletişim | AION",
+        "description": "AION ile iletişime geçin veya gap analizi başlatın."
+      },
+      "assessment": {
+        "title": "Gap (Fark) Analizi | AION",
+        "description": "ISO 27001, ISO 42001 ve EU AI Act için kurumunuza özel gap analizi formu."
+      },
+      "services": {
+        "title": "Hizmetler | AION",
+        "description": "AI yönetişimi, regülasyon uyumu, bilgi güvenliği, operasyonel dayanıklılık ve insan gözetimi hizmetleri."
+      }
+    }
   },
   "nav": {
     "services": "Hizmetler",
@@ -148,7 +174,8 @@
   "testimonials": {
     "eyebrow": "Referanslar",
     "title": "Bazı Referanslarımız",
-    "description": "ISO sertifikasyonu ve AI yönetişimi projelerinde birlikte çalıştığımız kurumlardan."
+    "description": "ISO sertifikasyonu ve AI yönetişimi projelerinde birlikte çalıştığımız kurumlardan.",
+    "outcomeLabel": "Proje çıktısı"
   },
   "team": {
     "eyebrow": "Ekip",

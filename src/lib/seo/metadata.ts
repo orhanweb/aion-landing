@@ -8,9 +8,10 @@ type PageMetadataInput = {
   path: string;
   title: string;
   description: string;
+  siteName?: string;
 };
 
-export function buildPageMetadata({ locale, path, title, description }: PageMetadataInput): Metadata {
+export function buildPageMetadata({ locale, path, title, description, siteName = 'AION' }: PageMetadataInput): Metadata {
   const siteUrl = getSiteUrl();
   const localizedPath = `/${locale}${path === '/' ? '' : path}`;
   const canonical = `${siteUrl}${localizedPath}`;
@@ -30,7 +31,7 @@ export function buildPageMetadata({ locale, path, title, description }: PageMeta
       title,
       description,
       url: canonical,
-      siteName: 'AION',
+      siteName,
       locale: locale === 'tr' ? 'tr_TR' : 'en_US',
       alternateLocale: alternateLocale === 'tr' ? 'tr_TR' : 'en_US',
       type: 'website'

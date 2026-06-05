@@ -24,14 +24,14 @@ export async function TestimonialsGrid() {
         </FadeIn>
 
         <FadeIn className="mt-16">
-          <TestimonialCard testimonial={featured} variant="spotlight" />
+          <TestimonialCard testimonial={featured} outcomeLabel={t('outcomeLabel')} variant="spotlight" />
         </FadeIn>
 
         <ul className="mt-6 grid list-none gap-6 sm:grid-cols-2">
           {rest.map((item, index) => (
             <li key={item.id}>
               <FadeIn delay={0.06 + index * 0.05}>
-                <TestimonialCard testimonial={item} variant="grid" />
+                <TestimonialCard testimonial={item} outcomeLabel={t('outcomeLabel')} variant="grid" />
               </FadeIn>
             </li>
           ))}
