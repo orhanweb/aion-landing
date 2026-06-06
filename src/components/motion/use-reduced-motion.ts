@@ -1,24 +1,23 @@
 // src/components/motion/use-reduced-motion.ts
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useSyncExternalStore } from 'react';
 
-function getReducedMotionPreference(): boolean {
-  if (typeof window === 'undefined') {
-    return false;
-  }
+function getReducedMotionPreference() {
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
 
-export function useReducedMotion(): boolean {
-  const [reduced, setReduced] = useState(getReducedMotionPreference);
+function getServerSnapshot() {
+  return false;
+}
 
-  useEffect(() => {
-    const media = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const handler = (event: MediaQueryListEvent) => setReduced(event.matches);
-    media.addEventListener('change', handler);
-    return () => media.removeEventListener('change', handler);
-  }, []);
+function subscribe(listener: () => void) {
+  const media = window.matchMedia('(prefers-reduced-motion: reduce)');
+  media.addEventListener('change', listener);
 
-  return reduced;
+  return () => media.removeEventListener('change', listener);
+}
+
+export function useReducedMotion() {
+  return useSyncExternalStore(subscribe, getReducedMotionPreference, getServerSnapshot);
 }

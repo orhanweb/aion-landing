@@ -28,18 +28,18 @@ function subscribe(listener: () => void) {
   };
 }
 
-function getSnapshot() {
-  return scrollY;
-}
-
-function getServerSnapshot() {
-  return 0;
-}
-
 export function useScrollY() {
-  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+  return useSyncExternalStore(
+    subscribe,
+    () => scrollY,
+    () => 0
+  );
 }
 
 export function useScrollThreshold(threshold: number) {
-  return useScrollY() > threshold;
+  return useSyncExternalStore(
+    subscribe,
+    () => scrollY > threshold,
+    () => false
+  );
 }

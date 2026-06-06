@@ -37,6 +37,7 @@ export function useFocusTrap({ active, containerRef, returnFocusRef, onEscape }:
 
     const trapContainer = container;
     const previousOverflow = document.body.style.overflow;
+    const returnTarget = returnFocusRef?.current ?? null;
 
     requestAnimationFrame(() => {
       getFocusableElements(trapContainer)[0]?.focus();
@@ -82,7 +83,7 @@ export function useFocusTrap({ active, containerRef, returnFocusRef, onEscape }:
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
       document.body.style.overflow = previousOverflow;
-      returnFocusRef?.current?.focus();
+      returnTarget?.focus();
     };
   }, [active, containerRef, returnFocusRef]);
 }

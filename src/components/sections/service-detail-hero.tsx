@@ -1,5 +1,6 @@
 // src/components/sections/service-detail-hero.tsx
 import { Link } from '@/i18n/navigation';
+import { ArrowRight } from 'lucide-react';
 import { FadeIn } from '@/components/motion/fade-in';
 import { Container, Section } from '@/components/ui/container';
 import { TextMeasure } from '@/components/ui/content-width';
@@ -36,9 +37,11 @@ export async function ServiceDetailHero({ subtitle, title, intro, standard }: Se
           <div className="mt-8 flex flex-wrap items-center gap-6">
             <Link href="/assessment" className={cn(buttonVariants({ variant: 'primary', size: 'lg' }))}>
               {t('primaryCta')}
+              <ArrowRight aria-hidden="true" className="size-4" strokeWidth={1.75} />
             </Link>
-            <Link href="/services" className="font-mono-label text-foreground transition-colors hover:text-accent">
-              {t('secondaryCta')} →
+            <Link href="/services" className="inline-flex items-center gap-2 font-mono-label text-foreground transition-colors hover:text-accent">
+              {t('secondaryCta')}
+              <ArrowRight aria-hidden="true" className="size-4" strokeWidth={1.75} />
             </Link>
           </div>
         </FadeIn>

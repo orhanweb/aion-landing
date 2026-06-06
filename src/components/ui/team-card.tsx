@@ -1,5 +1,6 @@
 // src/components/ui/team-card.tsx
 import Image from 'next/image';
+import { ExternalLink } from 'lucide-react';
 import { InteractiveCardShell, interactiveCardSurfaceClassName } from '@/components/ui/interactive-card';
 import { MonoLabel } from '@/components/ui/mono-label';
 import type { TeamMember } from '@/lib/content/team';
@@ -14,7 +15,7 @@ export function TeamCard({ member, linkedinLabel, linkedinAriaLabel }: TeamCardP
   return (
     <InteractiveCardShell>
       <article className={interactiveCardSurfaceClassName('flex h-full flex-col p-6')}>
-        <div className="relative size-24 shrink-0 overflow-hidden rounded-full border border-border bg-[var(--ink-muted)] sm:size-28">
+        <div className="relative size-24 shrink-0 overflow-hidden rounded-full border border-border bg-muted sm:size-28">
           <Image
             src={member.photo}
             alt={member.name}
@@ -36,9 +37,10 @@ export function TeamCard({ member, linkedinLabel, linkedinAriaLabel }: TeamCardP
           target="_blank"
           rel="noopener noreferrer"
           aria-label={linkedinAriaLabel}
-          className="mt-5 inline-block font-mono-label text-muted-foreground transition-colors hover:text-accent"
+          className="mt-5 inline-flex items-center gap-2 font-mono-label text-muted-foreground transition-colors hover:text-accent"
         >
-          {linkedinLabel} →
+          {linkedinLabel}
+          <ExternalLink aria-hidden="true" className="size-4" strokeWidth={1.75} />
         </a>
       </article>
     </InteractiveCardShell>

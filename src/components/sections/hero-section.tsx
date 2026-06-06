@@ -1,5 +1,6 @@
 // src/components/sections/hero-section.tsx
 import { Link } from '@/i18n/navigation';
+import { ArrowRight } from 'lucide-react';
 import { ValueBullets } from '@/components/sections/value-bullets';
 import { AuditReadinessConsole } from '@/components/motion/audit-readiness-console';
 import { Stagger, StaggerItem } from '@/components/motion/stagger';
@@ -41,9 +42,11 @@ export async function HeroSection() {
               <div className="mt-8 flex flex-wrap items-center gap-6">
                 <Link href="/assessment" className={cn(buttonVariants({ variant: 'primary', size: 'lg' }))}>
                   {t('primaryCta')}
+                  <ArrowRight aria-hidden="true" className="size-4" strokeWidth={1.75} />
                 </Link>
-                <Link href="/services" className="font-mono-label text-foreground transition-colors hover:text-accent">
-                  {t('secondaryCta')} →
+                <Link href="/services" className="inline-flex items-center gap-2 font-mono-label text-foreground transition-colors hover:text-accent">
+                  {t('secondaryCta')}
+                  <ArrowRight aria-hidden="true" className="size-4" strokeWidth={1.75} />
                 </Link>
               </div>
               <p className="mt-4 font-mono-label text-muted-foreground">{t('ctaNote')}</p>

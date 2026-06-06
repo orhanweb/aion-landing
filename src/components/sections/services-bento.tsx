@@ -1,5 +1,6 @@
 // src/components/sections/services-bento.tsx
 import { Link } from '@/i18n/navigation';
+import { ArrowRight } from 'lucide-react';
 import { FadeIn } from '@/components/motion/fade-in';
 import { InteractiveCardShell, interactiveCardSurfaceClassName } from '@/components/ui/interactive-card';
 import { getServices } from '@/lib/content/services';
@@ -59,7 +60,10 @@ export async function ServicesBento({ className, showHubIntro, titleAs = 'h2' }:
 
                   <div className="rounded-lg border border-border bg-background/35 p-5">
                     <p className="font-mono-label text-muted-foreground">{coreService.standard}</p>
-                    <span className="mt-6 block font-mono-label text-accent">{t('learnMore')} →</span>
+                    <span className="mt-6 inline-flex items-center gap-2 font-mono-label text-accent">
+                      {t('learnMore')}
+                      <ArrowRight aria-hidden="true" className="size-4" strokeWidth={1.75} />
+                    </span>
                   </div>
                 </div>
               </Link>
@@ -90,7 +94,10 @@ export async function ServicesBento({ className, showHubIntro, titleAs = 'h2' }:
                       </div>
 
                       <p className="mt-6 line-clamp-3 text-sm leading-relaxed text-muted-foreground">{service.shortDescription}</p>
-                      <span className="mt-auto pt-8 font-mono-label text-accent">{t('learnMore')} →</span>
+                      <span className="mt-auto inline-flex items-center gap-2 pt-8 font-mono-label text-accent">
+                        {t('learnMore')}
+                        <ArrowRight aria-hidden="true" className="size-4" strokeWidth={1.75} />
+                      </span>
                     </Link>
                   </InteractiveCardShell>
                 </FadeIn>

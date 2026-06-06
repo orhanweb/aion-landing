@@ -2,6 +2,7 @@
 'use client';
 
 import { useId, useRef, type RefObject } from 'react';
+import { ArrowRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { useFocusTrap } from '@/lib/a11y/use-focus-trap';
@@ -44,7 +45,7 @@ export function MobileNav({ open, onClose, navItems, menuButtonRef }: MobileNavP
       aria-labelledby={titleId}
       className={cn('fixed inset-x-0 top-16 bottom-0 z-40 md:hidden')}
     >
-      <div role="presentation" className="absolute inset-0 bg-[var(--ink)]/95 backdrop-blur-sm" onClick={onClose} />
+      <div role="presentation" className="absolute inset-0 bg-(--ink)/95 backdrop-blur-sm" onClick={onClose} />
 
       <nav aria-label={t('mobileNav')} className="relative flex h-full flex-col items-start justify-center gap-8 px-8">
         <h2 id={titleId} className="sr-only">
@@ -55,8 +56,9 @@ export function MobileNav({ open, onClose, navItems, menuButtonRef }: MobileNavP
             {t(item.key)}
           </Link>
         ))}
-        <Link href="/assessment" onClick={onClose} className="font-mono-label text-accent">
-          {t('assessment')} →
+        <Link href="/assessment" onClick={onClose} className="inline-flex items-center gap-2 font-mono-label text-accent">
+          {t('assessment')}
+          <ArrowRight aria-hidden="true" className="size-4" strokeWidth={1.75} />
         </Link>
       </nav>
     </div>

@@ -1,4 +1,5 @@
 // src/components/sections/value-bullets.tsx
+import { CheckCircle2 } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 
 export async function ValueBullets() {
@@ -9,7 +10,7 @@ export async function ValueBullets() {
     <ul className="mt-6 space-y-3">
       {bullets.map(bullet => (
         <li key={bullet} className="flex items-start gap-3">
-          <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent" aria-hidden />
+          <CheckCircle2 aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-accent" strokeWidth={1.75} />
           <span className="text-sm leading-relaxed text-foreground md:text-base">{bullet}</span>
         </li>
       ))}

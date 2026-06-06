@@ -26,10 +26,11 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { RadioGroupField } from '@/components/assessment/fields/form-fields';
+import { ArrowLeft, ArrowRight, Send } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
 import { useId, useRef, useState, type FormEvent } from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, useWatch } from 'react-hook-form';
 
 type AssessmentWizardProps = {
   calendlyUrl: string;
@@ -113,7 +114,8 @@ export function AssessmentWizard({ calendlyUrl, responseTime }: AssessmentWizard
   });
 
   const currentStep = wizardSteps[stepIndex] as WizardStep;
-  const topic = form.watch('topic');
+  const watchedTopic = useWatch({ control: form.control, name: 'topic' });
+  const topic = watchedTopic ?? 'iso42001';
   const marketingOptIn = form.register('marketingOptIn');
   const errors = form.formState.errors;
 
@@ -202,7 +204,7 @@ export function AssessmentWizard({ calendlyUrl, responseTime }: AssessmentWizard
                 <legend className="font-mono-label mb-4 block text-foreground">{t('stepTopic')}</legend>
                 {assessmentTopics.map(item => (
                   <label key={item} className="flex items-center gap-3 text-sm">
-                    <input type="radio" value={item} {...form.register('topic')} className="accent-[var(--accent)]" />
+                    <input type="radio" value={item} {...form.register('topic')} className="accent-(--accent)" />
                     {t(`topics.${item}`)}
                   </label>
                 ))}
@@ -218,6 +220,7 @@ export function AssessmentWizard({ calendlyUrl, responseTime }: AssessmentWizard
                   <Label htmlFor="company">{t('fields.company')}</Label>
                   <Input
                     id="company"
+                    autoComplete="organization"
                     aria-invalid={errors.company ? true : undefined}
                     aria-describedby={errors.company ? companyErrorId : undefined}
                     {...form.register('company')}
@@ -244,6 +247,7 @@ export function AssessmentWizard({ calendlyUrl, responseTime }: AssessmentWizard
                   <Label htmlFor="name">{t('fields.name')}</Label>
                   <Input
                     id="name"
+                    autoComplete="name"
                     aria-invalid={errors.name ? true : undefined}
                     aria-describedby={errors.name ? nameErrorId : undefined}
                     {...form.register('name')}
@@ -254,6 +258,7 @@ export function AssessmentWizard({ calendlyUrl, responseTime }: AssessmentWizard
                   <Label htmlFor="title">{t('fields.title')}</Label>
                   <Input
                     id="title"
+                    autoComplete="organization-title"
                     aria-invalid={errors.title ? true : undefined}
                     aria-describedby={errors.title ? titleErrorId : undefined}
                     {...form.register('title')}
@@ -265,6 +270,7 @@ export function AssessmentWizard({ calendlyUrl, responseTime }: AssessmentWizard
                   <Input
                     id="email"
                     type="email"
+                    autoComplete="email"
                     aria-invalid={errors.email ? true : undefined}
                     aria-describedby={errors.email ? emailErrorId : undefined}
                     {...form.register('email')}
@@ -276,6 +282,7 @@ export function AssessmentWizard({ calendlyUrl, responseTime }: AssessmentWizard
                   <Input
                     id="phone"
                     type="tel"
+                    autoComplete="tel"
                     aria-invalid={errors.phone ? true : undefined}
                     aria-describedby={errors.phone ? phoneErrorId : undefined}
                     {...form.register('phone')}
@@ -289,7 +296,7 @@ export function AssessmentWizard({ calendlyUrl, responseTime }: AssessmentWizard
               <div className="space-y-4">
                 <ConsentField register={form.register} name="consent" error={errors.consent} onConsentChange={() => void form.trigger('consent')} />
                 <label htmlFor={marketingOptInId} className="flex items-start gap-3 text-sm text-muted-foreground">
-                  <input id={marketingOptInId} type="checkbox" {...marketingOptIn} className="mt-1 accent-[var(--accent)]" />
+                  <input id={marketingOptInId} type="checkbox" {...marketingOptIn} className="mt-1 accent-(--accent)" />
                   {t('fields.marketingOptIn')}
                 </label>
               </div>
@@ -297,7 +304,7 @@ export function AssessmentWizard({ calendlyUrl, responseTime }: AssessmentWizard
           </motion.div>
 
           {submitError ? (
-            <p id={submitErrorId} role="alert" className="mt-4 text-sm text-[var(--accent-strong)]">
+            <p id={submitErrorId} role="alert" className="mt-4 text-sm text-(--accent-strong)">
               {t('errors.submitFailed')}
             </p>
           ) : null}
@@ -305,11 +312,17 @@ export function AssessmentWizard({ calendlyUrl, responseTime }: AssessmentWizard
           <div className="mt-6 flex gap-3">
             {stepIndex > 0 ? (
               <Button type="button" variant="secondary" onClick={goBack} disabled={submitting}>
+                <ArrowLeft aria-hidden="true" className="size-4" strokeWidth={1.75} />
                 {t('back')}
               </Button>
             ) : null}
             <Button type="submit" disabled={submitting} aria-describedby={submitError ? submitErrorId : undefined}>
               {stepIndex === wizardSteps.length - 1 ? (submitting ? t('submitting') : t('submit')) : t('next')}
+              {stepIndex === wizardSteps.length - 1 ? (
+                <Send aria-hidden="true" className="size-4" strokeWidth={1.75} />
+              ) : (
+                <ArrowRight aria-hidden="true" className="size-4" strokeWidth={1.75} />
+              )}
             </Button>
           </div>
         </form>

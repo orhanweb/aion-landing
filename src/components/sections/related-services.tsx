@@ -1,5 +1,6 @@
 // src/components/sections/related-services.tsx
 import { Link } from '@/i18n/navigation';
+import { ArrowRight } from 'lucide-react';
 import { FadeIn } from '@/components/motion/fade-in';
 import { InteractiveCardShell, interactiveCardSurfaceClassName } from '@/components/ui/interactive-card';
 import { MonoLabel } from '@/components/ui/mono-label';
@@ -35,7 +36,10 @@ export async function RelatedServices({ locale, relatedSlugs }: RelatedServicesP
               <h3 className="font-display mt-3 text-xl tracking-tight text-foreground transition-colors group-hover:text-accent">{service.title}</h3>
               <p className="mt-2 font-mono-label text-muted-foreground">{service.standard}</p>
               <p className="mt-4 line-clamp-2 text-sm leading-relaxed text-muted-foreground">{service.shortDescription}</p>
-              <span className="mt-4 font-mono-label text-accent">{t('relatedLink')} →</span>
+              <span className="mt-4 inline-flex items-center gap-2 font-mono-label text-accent">
+                {t('relatedLink')}
+                <ArrowRight aria-hidden="true" className="size-4" strokeWidth={1.75} />
+              </span>
             </Link>
           </InteractiveCardShell>
         ))}

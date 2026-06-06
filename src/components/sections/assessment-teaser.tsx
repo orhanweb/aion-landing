@@ -1,5 +1,6 @@
 // src/components/sections/assessment-teaser.tsx
 import { Link } from '@/i18n/navigation';
+import { ArrowRight } from 'lucide-react';
 import { FadeIn } from '@/components/motion/fade-in';
 import { buttonVariants } from '@/components/ui/button';
 import { Container, Section } from '@/components/ui/container';
@@ -27,6 +28,7 @@ export async function AssessmentTeaser() {
               className={cn(buttonVariants({ variant: 'primary', size: 'lg' }), 'inline-flex justify-self-start lg:justify-self-end')}
             >
               {t('button')}
+              <ArrowRight aria-hidden="true" className="size-4" strokeWidth={1.75} />
             </Link>
           </div>
         </FadeIn>

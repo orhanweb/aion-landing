@@ -1,5 +1,6 @@
 // src/components/sections/signal-banner.tsx
 import { Link } from '@/i18n/navigation';
+import { ArrowRight } from 'lucide-react';
 import { FadeIn } from '@/components/motion/fade-in';
 import { buttonVariants } from '@/components/ui/button';
 import { Container, Section } from '@/components/ui/container';
@@ -22,7 +23,8 @@ export async function SignalBanner() {
                 <h2 className="font-display mt-4 max-w-2xl text-[clamp(1.75rem,3vw,2.5rem)] leading-tight tracking-tight">{t('title')}</h2>
                 <p className="mt-4 max-w-2xl text-muted-foreground">{t('description')}</p>
                 <Link href="/assessment" className={cn(buttonVariants({ variant: 'primary', size: 'lg' }), 'mt-8 inline-flex')}>
-                  {t('button')} →
+                  {t('button')}
+                  <ArrowRight aria-hidden="true" className="size-4" strokeWidth={1.75} />
                 </Link>
               </div>
 

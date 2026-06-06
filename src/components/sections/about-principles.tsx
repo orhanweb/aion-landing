@@ -1,5 +1,6 @@
 // src/components/sections/about-principles.tsx
 import { Link } from '@/i18n/navigation';
+import { ArrowRight } from 'lucide-react';
 import { FadeIn } from '@/components/motion/fade-in';
 import { MonoLabel } from '@/components/ui/mono-label';
 import { getAboutContent } from '@/lib/content/about';
@@ -47,8 +48,12 @@ export async function AboutPrinciples({ locale }: AboutPrinciplesProps) {
       <FadeIn>
         <p className="text-sm text-muted-foreground">
           {t('approachLinkPrefix')}{' '}
-          <Link href="/approach" className="font-mono-label text-accent transition-colors hover:text-[var(--accent-strong)]">
-            {t('approachLink')} →
+          <Link
+            href="/approach"
+            className="inline-flex items-center gap-2 font-mono-label text-accent transition-colors hover:text-(--accent-strong)"
+          >
+            {t('approachLink')}
+            <ArrowRight aria-hidden="true" className="size-4" strokeWidth={1.75} />
           </Link>
         </p>
       </FadeIn>
