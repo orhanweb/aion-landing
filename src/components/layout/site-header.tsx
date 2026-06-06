@@ -68,7 +68,7 @@ export function SiteHeader() {
     <>
       <ScrollHeader>
         <Container className="flex h-16 items-center justify-between gap-4">
-          <Logo />
+          <Logo priority />
 
           <nav aria-label={t('mainNav')} className="hidden items-center gap-8 md:flex">
             {navItems.map(item => (

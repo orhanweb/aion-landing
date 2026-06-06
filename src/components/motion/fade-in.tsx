@@ -6,23 +6,33 @@ import { defaultScrollViewport, revealHidden, revealTransition, revealVisible } 
 import { useReducedMotion } from '@/components/motion/use-reduced-motion';
 import { cn } from '@/lib/utils/cn';
 
-type FadeInProps = HTMLMotionProps<'div'> & {
+type FadeInProps = {
   delay?: number;
   viewport?: ViewportOptions;
-};
+  as?: 'div' | 'li';
+} & Omit<HTMLMotionProps<'div'>, 'delay' | 'viewport' | 'as'>;
 
-export function FadeIn({ children, className, delay = 0, viewport, ...props }: FadeInProps) {
+export function FadeIn(props: FadeInProps) {
+  const { children, className, delay = 0, viewport, as = 'div', ...rest } = props;
   const reduced = useReducedMotion();
+  const animationProps = {
+    initial: reduced ? false : revealHidden,
+    whileInView: reduced ? undefined : revealVisible,
+    viewport: { ...defaultScrollViewport, ...viewport },
+    transition: revealTransition(delay),
+    className: cn(className)
+  };
+
+  if (as === 'li') {
+    return (
+      <motion.li {...animationProps} {...(rest as HTMLMotionProps<'li'>)}>
+        {children}
+      </motion.li>
+    );
+  }
 
   return (
-    <motion.div
-      initial={reduced ? false : revealHidden}
-      whileInView={reduced ? undefined : revealVisible}
-      viewport={{ ...defaultScrollViewport, ...viewport }}
-      transition={revealTransition(delay)}
-      className={cn(className)}
-      {...props}
-    >
+    <motion.div {...animationProps} {...rest}>
       {children}
     </motion.div>
   );

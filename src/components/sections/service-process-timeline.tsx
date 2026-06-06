@@ -23,17 +23,15 @@ export function ServiceProcessTimeline({ label, title, steps }: ServiceProcessTi
           const isLast = index === steps.length - 1;
 
           return (
-            <FadeIn key={step.title} delay={index * 0.05}>
-              <li className="relative grid gap-6 pb-12 md:grid-cols-[80px_1fr] md:gap-12">
-                {!isLast ? <div aria-hidden className="absolute left-[39px] top-12 hidden h-[calc(100%-3rem)] w-px bg-border md:block" /> : null}
-                <div className="flex items-start gap-4 md:flex-col md:gap-2">
-                  <span className="font-mono-label text-accent">{num}</span>
-                </div>
-                <div>
-                  <h3 className="font-display text-xl tracking-tight md:text-2xl">{step.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">{step.description}</p>
-                </div>
-              </li>
+            <FadeIn as="li" key={step.title} delay={index * 0.05} className="relative grid gap-6 pb-12 md:grid-cols-[80px_1fr] md:gap-12">
+              {!isLast ? <div aria-hidden className="absolute left-[39px] top-12 hidden h-[calc(100%-3rem)] w-px bg-border md:block" /> : null}
+              <div className="flex items-start gap-4 md:flex-col md:gap-2">
+                <span className="font-mono-label text-accent">{num}</span>
+              </div>
+              <div>
+                <h3 className="font-display text-xl tracking-tight md:text-2xl">{step.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">{step.description}</p>
+              </div>
             </FadeIn>
           );
         })}
