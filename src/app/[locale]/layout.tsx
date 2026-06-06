@@ -8,7 +8,7 @@ import { SiteHeader } from '@/components/layout/site-header';
 import { SiteFooter } from '@/components/layout/site-footer';
 import { SkipLink } from '@/components/layout/skip-link';
 import { JsonLd } from '@/lib/schema/json-ld';
-import { organizationJsonLd, websiteJsonLd } from '@/lib/schema/organization';
+import { siteGraphJsonLd } from '@/lib/schema/site-graph';
 import { siteFontClassName } from '@/lib/fonts';
 import { routing, type Locale } from '@/i18n/routing';
 
@@ -42,7 +42,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   return (
     <html lang={locale} className={`${siteFontClassName} h-full antialiased`}>
       <body className="flex min-h-full flex-col bg-background font-sans text-foreground">
-        <JsonLd data={[await organizationJsonLd(locale as Locale), websiteJsonLd(locale as Locale)]} />
+        <JsonLd data={await siteGraphJsonLd(locale as Locale)} />
         <NextIntlClientProvider messages={messages}>
           <SkipLink />
           <SiteHeader />

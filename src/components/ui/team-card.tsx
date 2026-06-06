@@ -14,7 +14,7 @@ type TeamCardProps = {
 export function TeamCard({ member, linkedinLabel, linkedinAriaLabel }: TeamCardProps) {
   return (
     <InteractiveCardShell>
-      <article className={interactiveCardSurfaceClassName('flex h-full flex-col p-6')}>
+      <article id={`team-${member.slug}`} className={interactiveCardSurfaceClassName('flex h-full flex-col p-6')}>
         <div className="relative size-24 shrink-0 overflow-hidden rounded-full border border-border bg-muted sm:size-28">
           <Image
             src={member.photo}
