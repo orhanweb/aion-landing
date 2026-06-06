@@ -1,6 +1,7 @@
 // src/app/sitemap.ts
 import type { MetadataRoute } from 'next';
 import { getServiceSlugs } from '@/lib/content/services';
+import { CONTENT_LAST_MODIFIED } from '@/lib/seo/content-version';
 import { routing } from '@/i18n/routing';
 import { getSiteUrl } from '@/lib/site';
 
@@ -14,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const path of staticPaths) {
       entries.push({
         url: `${siteUrl}/${locale}${path}`,
-        lastModified: new Date(),
+        lastModified: CONTENT_LAST_MODIFIED,
         changeFrequency: path === '' ? 'weekly' : 'monthly',
         priority: path === '' ? 1 : 0.8
       });
@@ -23,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const slug of getServiceSlugs()) {
       entries.push({
         url: `${siteUrl}/${locale}/services/${slug}`,
-        lastModified: new Date(),
+        lastModified: CONTENT_LAST_MODIFIED,
         changeFrequency: 'monthly',
         priority: 0.7
       });

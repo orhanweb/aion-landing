@@ -20,6 +20,10 @@ function buildOgImagePath(locale: Locale) {
   return `/${locale}/opengraph-image`;
 }
 
+function resolvePageTitle(path: string, title: string, siteName: string) {
+  return path === '/' ? title : `${title} | ${siteName}`;
+}
+
 export function buildPageMetadata({ locale, path, title, description, siteName = 'AION' }: PageMetadataInput): Metadata {
   const siteUrl = getSiteUrl();
   const pathSuffix = path === '/' ? '' : path;
@@ -27,10 +31,11 @@ export function buildPageMetadata({ locale, path, title, description, siteName =
   const canonical = `${siteUrl}${localizedPath}`;
   const alternateLocale = locale === 'tr' ? 'en' : 'tr';
   const ogImagePath = buildOgImagePath(locale);
-  const ogImage = { url: ogImagePath, ...OG_IMAGE_SIZE, alt: title };
+  const resolvedTitle = resolvePageTitle(path, title, siteName);
+  const ogImage = { url: ogImagePath, ...OG_IMAGE_SIZE, alt: resolvedTitle };
 
   return {
-    title,
+    title: path === '/' ? { absolute: title } : title,
     description,
     alternates: {
       canonical,
@@ -41,7 +46,7 @@ export function buildPageMetadata({ locale, path, title, description, siteName =
       }
     },
     openGraph: {
-      title,
+      title: resolvedTitle,
       description,
       url: canonical,
       siteName,
@@ -52,7 +57,7 @@ export function buildPageMetadata({ locale, path, title, description, siteName =
     },
     twitter: {
       card: 'summary_large_image',
-      title,
+      title: resolvedTitle,
       description,
       images: [ogImagePath]
     },

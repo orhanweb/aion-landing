@@ -13,10 +13,10 @@ type PageCopy = {
   description: string;
 };
 
-async function buildResolvedPageMetadata(locale: Locale, path: string, resolveCopy: (siteName: string) => PageCopy) {
+async function buildResolvedPageMetadata(locale: Locale, path: string, resolveCopy: () => PageCopy) {
   setRequestLocale(locale);
   const meta = await getTranslations('meta');
-  const copy = resolveCopy(meta('siteName'));
+  const copy = resolveCopy();
 
   return buildPageMetadata({
     locale,
@@ -40,8 +40,8 @@ export async function buildLocalizedPageMetadata(locale: Locale, path: string, p
 export async function buildLegalPageMetadata(locale: Locale, path: string, slug: LegalSlug) {
   const doc = getLegalDocument(locale, slug);
 
-  return buildResolvedPageMetadata(locale, path, siteName => ({
-    title: `${doc.title} | ${siteName}`,
+  return buildResolvedPageMetadata(locale, path, () => ({
+    title: doc.title,
     description: doc.description
   }));
 }
@@ -53,8 +53,8 @@ export async function buildServicePageMetadata(locale: Locale, slug: string) {
     return {};
   }
 
-  return buildResolvedPageMetadata(locale, `/services/${slug}`, siteName => ({
-    title: `${service.title} | ${siteName}`,
+  return buildResolvedPageMetadata(locale, `/services/${slug}`, () => ({
+    title: service.title,
     description: service.shortDescription
   }));
 }

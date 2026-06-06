@@ -9,7 +9,9 @@ import { ServiceProcessTimeline } from '@/components/sections/service-process-ti
 import { ServiceTopicGrid } from '@/components/sections/service-topic-grid';
 import { Container, Section } from '@/components/ui/container';
 import { getService, getServiceSlugs } from '@/lib/content/services';
-import type { ServiceSectionsLayout, ServiceStep } from '@/lib/content/services/types';
+import type { ServiceSectionsLayout, ServiceSlug, ServiceStep } from '@/lib/content/services/types';
+import { JsonLd } from '@/lib/schema/json-ld';
+import { servicePageJsonLd } from '@/lib/schema/service-page';
 import { buildServicePageMetadata } from '@/lib/seo/page-metadata';
 import { setRequestLocale } from 'next-intl/server';
 import { routing, type Locale } from '@/i18n/routing';
@@ -51,9 +53,11 @@ export default async function ServiceDetailPage({ params }: PageProps) {
   }
 
   const { sections } = service;
+  const structuredData = await servicePageJsonLd(locale as Locale, slug as ServiceSlug);
 
   return (
     <>
+      <JsonLd data={structuredData} />
       <ServiceDetailHero subtitle={service.subtitle} title={service.title} intro={service.intro} standard={service.standard} />
 
       <Section variant="elevated">

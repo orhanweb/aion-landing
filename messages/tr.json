@@ -2,29 +2,33 @@
   "meta": {
     "siteName": "AION",
     "siteTagline": "Artificial Intelligence Oversight Network",
+    "organizationDescription": "Kurumsal yapay zeka yönetişimi, ISO 42001, EU AI Act uyumu ve bilgi güvenliği danışmanlığı.",
+    "breadcrumb": {
+      "home": "Ana Sayfa"
+    },
     "pages": {
       "home": {
         "title": "AION - AI Sisteminiz Denetime Hazır mı?",
         "description": "EU AI Act ve ISO 42001 için risk sınıflandırması, kontrol boşluğu analizi ve sertifikasyona giden uyum yol haritası."
       },
       "about": {
-        "title": "Hakkımızda | AION",
+        "title": "Hakkımızda",
         "description": "AION, kurumsal yapay zeka yönetişimi ve uyum danışmanlığı sunar."
       },
       "approach": {
-        "title": "Yaklaşımımız | AION",
+        "title": "Yaklaşımımız",
         "description": "Stratejiden sertifikasyon denetimine kadar AION yöntemi."
       },
       "contact": {
-        "title": "İletişim | AION",
+        "title": "İletişim",
         "description": "AION ile iletişime geçin veya gap analizi başlatın."
       },
       "assessment": {
-        "title": "Gap (Fark) Analizi | AION",
+        "title": "Gap (Fark) Analizi",
         "description": "ISO 27001, ISO 42001 ve EU AI Act için kurumunuza özel gap analizi formu."
       },
       "services": {
-        "title": "Hizmetler | AION",
+        "title": "Hizmetler",
         "description": "AI yönetişimi, regülasyon uyumu, bilgi güvenliği, operasyonel dayanıklılık ve insan gözetimi hizmetleri."
       }
     }
@@ -209,11 +213,6 @@
       "company": "Kurumsal",
       "contact": "İletişim",
       "legal": "Yasal",
-      "servicesLinks": {
-        "aiGovernance": "AI Yönetişimi",
-        "compliance": "Regülasyon ve Uyum",
-        "security": "Bilgi Güvenliği"
-      },
       "companyLinks": {
         "about": "Hakkımızda",
         "approach": "Yaklaşımımız",

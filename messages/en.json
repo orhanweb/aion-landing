@@ -2,29 +2,33 @@
   "meta": {
     "siteName": "AION",
     "siteTagline": "Artificial Intelligence Oversight Network",
+    "organizationDescription": "Enterprise AI governance, ISO 42001, EU AI Act compliance, and information security consultancy.",
+    "breadcrumb": {
+      "home": "Home"
+    },
     "pages": {
       "home": {
         "title": "AION — Is Your AI System Audit-Ready?",
         "description": "Risk classification, control gap analysis, and compliance roadmap for EU AI Act and ISO 42001 readiness."
       },
       "about": {
-        "title": "About | AION",
+        "title": "About",
         "description": "AION provides enterprise AI governance and compliance consulting."
       },
       "approach": {
-        "title": "Our Approach | AION",
+        "title": "Our Approach",
         "description": "The AION method from strategy to certification audit."
       },
       "contact": {
-        "title": "Contact | AION",
+        "title": "Contact",
         "description": "Contact AION or start a gap analysis."
       },
       "assessment": {
-        "title": "Gap Analysis | AION",
+        "title": "Gap Analysis",
         "description": "Organization-specific gap analysis form for ISO 27001, ISO 42001, and EU AI Act."
       },
       "services": {
-        "title": "Services | AION",
+        "title": "Services",
         "description": "AI governance, regulatory compliance, information security, operational resilience, and human oversight services."
       }
     }
@@ -205,11 +209,6 @@
       "company": "Company",
       "contact": "Contact",
       "legal": "Legal",
-      "servicesLinks": {
-        "aiGovernance": "AI Governance",
-        "compliance": "Regulation & Compliance",
-        "security": "Information Security"
-      },
       "companyLinks": {
         "about": "About",
         "approach": "Approach",
