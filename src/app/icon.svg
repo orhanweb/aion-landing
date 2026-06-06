@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <defs>
+    <linearGradient id="aion-icon-gold" x1="18" y1="10" x2="62" y2="70" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D7B77F"/>
+      <stop offset="0.52" stop-color="#B8956A"/>
+      <stop offset="1" stop-color="#8F6C41"/>
+    </linearGradient>
+  </defs>
+  <path
+    d="M40 10L58 22V38L40 50L22 38V22L40 10Z"
+    stroke="url(#aion-icon-gold)"
+    stroke-width="4"
+    stroke-linejoin="miter"
+  />
+  <path
+    d="M22 42L40 54L58 42V58L40 70L22 58V42Z"
+    fill="url(#aion-icon-gold)"
+    fill-opacity="0.9"
+  />
+  <path
+    d="M40 24L49 30V38L40 44L31 38V30L40 24Z"
+    fill="#0A0B0D"
+    fill-opacity="0.92"
+  />
+  <circle cx="40" cy="34" r="3" fill="#C45C3E"/>
+</svg>

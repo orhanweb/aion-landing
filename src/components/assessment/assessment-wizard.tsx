@@ -185,7 +185,7 @@ export function AssessmentWizard({ calendlyUrl, responseTime }: AssessmentWizard
               <legend className="font-mono-label mb-4 block text-foreground">{t('stepTopic')}</legend>
               {assessmentTopics.map(item => (
                 <label key={item} className="flex items-center gap-3 text-sm">
-                  <input type="radio" value={item} {...form.register('topic')} className="accent-[var(--accent)]" />
+                  <input type="radio" value={item} {...form.register('topic')} className="accent-(--accent)" />
                   {t(`topics.${item}`)}
                 </label>
               ))}
@@ -249,14 +249,14 @@ export function AssessmentWizard({ calendlyUrl, responseTime }: AssessmentWizard
                 onConsentChange={() => void form.trigger('consent')}
               />
               <label className="flex items-start gap-3 text-sm text-muted-foreground">
-                <input type="checkbox" {...marketingOptIn} className="mt-1 accent-[var(--accent)]" />
+                <input type="checkbox" {...marketingOptIn} className="mt-1 accent-(--accent)" />
                 {t('fields.marketingOptIn')}
               </label>
             </div>
           ) : null}
         </motion.div>
 
-        {submitError ? <p className="text-sm text-[var(--accent-strong)]">{t('errors.submitFailed')}</p> : null}
+        {submitError ? <p className="text-sm text-(--accent-strong)">{t('errors.submitFailed')}</p> : null}
 
         <div className="flex gap-3">
           {stepIndex > 0 ? (
