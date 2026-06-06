@@ -22,11 +22,15 @@ export async function RelatedServices({ locale, relatedSlugs }: RelatedServicesP
 
   return (
     <FadeIn>
-      <MonoLabel className="text-accent">{t('relatedLabel')}</MonoLabel>
+      <h2 className="font-display text-2xl tracking-tight md:text-3xl">{t('relatedLabel')}</h2>
       <div className="mt-8 grid gap-4 sm:grid-cols-2">
         {related.map((service, index) => (
           <InteractiveCardShell key={service.slug}>
-            <Link href={`/services/${service.slug}`} className={interactiveCardSurfaceClassName('flex h-full flex-col p-6')}>
+            <Link
+              href={`/services/${service.slug}`}
+              aria-label={t('relatedLinkLabel', { service: service.title })}
+              className={interactiveCardSurfaceClassName('flex h-full flex-col p-6')}
+            >
               <MonoLabel className="text-accent">{String(index + 1).padStart(2, '0')}</MonoLabel>
               <h3 className="font-display mt-3 text-xl tracking-tight text-foreground transition-colors group-hover:text-accent">{service.title}</h3>
               <p className="mt-2 font-mono-label text-[0.625rem] text-muted-foreground">{service.standard}</p>

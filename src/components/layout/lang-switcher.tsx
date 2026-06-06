@@ -1,7 +1,7 @@
 // src/components/layout/lang-switcher.tsx
 'use client';
 
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { cn } from '@/lib/utils/cn';
 import type { Locale } from '@/i18n/routing';
@@ -13,6 +13,7 @@ const localeLabels: Record<Locale, string> = {
 
 export function LangSwitcher() {
   const locale = useLocale() as Locale;
+  const t = useTranslations('nav');
   const pathname = usePathname();
   const router = useRouter();
   const nextLocale: Locale = locale === 'tr' ? 'en' : 'tr';
@@ -25,7 +26,7 @@ export function LangSwitcher() {
     <button
       type="button"
       onClick={switchLocale}
-      aria-label={locale === 'tr' ? 'Switch to English' : 'Switch to Turkish'}
+      aria-label={locale === 'tr' ? t('switchToEnglish') : t('switchToTurkish')}
       className={cn(
         'font-mono-label inline-flex min-h-8 min-w-8 items-center justify-center rounded-md px-2.5 py-1.5 text-[0.625rem]',
         'text-muted-foreground transition-[color,background-color] duration-200',

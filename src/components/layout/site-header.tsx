@@ -1,15 +1,15 @@
 // src/components/layout/site-header.tsx
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/navigation';
+import { Link, usePathname } from '@/i18n/navigation';
 import { LangSwitcher } from '@/components/layout/lang-switcher';
+import { MobileNav } from '@/components/layout/mobile-nav';
 import { StickyHeaderCta } from '@/components/layout/sticky-header-cta';
 import { ScrollHeader } from '@/components/motion/scroll-header';
 import { Logo } from '@/components/ui/logo';
 import { Container } from '@/components/ui/container';
-import { cn } from '@/lib/utils/cn';
 
 const navItems = [
   { href: '/services' as const, key: 'services' as const },
@@ -20,7 +20,21 @@ const navItems = [
 
 export function SiteHeader() {
   const t = useTranslations('nav');
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const [trackedPathname, setTrackedPathname] = useState(pathname);
+
+  if (pathname !== trackedPathname) {
+    setTrackedPathname(pathname);
+    if (open) {
+      setOpen(false);
+    }
+  }
+
+  function closeMenu() {
+    setOpen(false);
+  }
 
   return (
     <>
@@ -28,7 +42,7 @@ export function SiteHeader() {
         <Container className="flex h-16 items-center justify-between gap-4">
           <Logo />
 
-          <nav aria-label="Main" className="hidden items-center gap-8 md:flex">
+          <nav aria-label={t('mainNav')} className="hidden items-center gap-8 md:flex">
             {navItems.map(item => (
               <Link
                 key={item.key}
@@ -50,11 +64,12 @@ export function SiteHeader() {
             </Link>
             <StickyHeaderCta label={t('stickyCta')} />
             <button
+              ref={menuButtonRef}
               type="button"
               className="font-mono-label text-[0.625rem] text-foreground md:hidden"
               aria-expanded={open}
-              aria-label={open ? t('menuClose') : t('menuOpen')}
-              onClick={() => setOpen(v => !v)}
+              aria-controls="mobile-nav"
+              onClick={() => setOpen(value => !value)}
             >
               {open ? t('menuClose') : t('menuOpen')}
             </button>
@@ -64,24 +79,7 @@ export function SiteHeader() {
 
       <div className="h-16" aria-hidden />
 
-      <div
-        className={cn(
-          'fixed inset-0 z-40 bg-[var(--ink)]/95 backdrop-blur-sm transition-opacity md:hidden',
-          open ? 'opacity-100' : 'pointer-events-none opacity-0'
-        )}
-        aria-hidden={!open}
-      >
-        <nav className="flex h-full flex-col items-start justify-center gap-8 px-8">
-          {navItems.map(item => (
-            <Link key={item.key} href={item.href} onClick={() => setOpen(false)} className="font-display text-3xl text-foreground">
-              {t(item.key)}
-            </Link>
-          ))}
-          <Link href="/assessment" onClick={() => setOpen(false)} className="font-mono-label text-accent">
-            {t('assessment')} →
-          </Link>
-        </nav>
-      </div>
+      <MobileNav open={open} onClose={closeMenu} navItems={navItems} menuButtonRef={menuButtonRef} />
     </>
   );
 }

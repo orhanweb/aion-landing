@@ -43,9 +43,10 @@ export async function ContactChannels() {
             href={contact.linkedin}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={t('linkedinAriaLabel')}
             className="mt-3 block text-lg text-foreground transition-colors hover:text-accent"
           >
-            LinkedIn →
+            {t('linkedinCta')} →
           </a>
         </div>
       </div>

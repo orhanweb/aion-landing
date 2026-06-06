@@ -28,7 +28,11 @@ export async function TeamSection({ id }: TeamSectionProps = {}) {
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {members.map((member, index) => (
             <FadeIn key={member.slug} delay={index * 0.08}>
-              <TeamCard member={member} />
+              <TeamCard
+                member={member}
+                linkedinLabel={t('linkedinCta', { name: member.name })}
+                linkedinAriaLabel={t('linkedinAria', { name: member.name })}
+              />
             </FadeIn>
           ))}
         </div>

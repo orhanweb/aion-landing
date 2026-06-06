@@ -12,32 +12,41 @@ type WizardProgressProps = {
 export function WizardProgress({ currentStep }: WizardProgressProps) {
   const t = useTranslations('assessment');
   const currentIndex = wizardSteps.indexOf(currentStep);
+  const stepStatus = t('stepStatus', {
+    current: currentIndex + 1,
+    total: wizardSteps.length,
+    step: t(`steps.${currentStep}`)
+  });
 
   return (
-    <div className="mb-8">
+    <nav aria-label={t('progressLabel')}>
       <p className="font-mono-label text-[0.625rem] text-muted-foreground">
         {currentIndex + 1} / {wizardSteps.length}
       </p>
-      <div className="mt-4 flex flex-wrap gap-2">
+      <p aria-live="polite" aria-atomic="true" className="sr-only">
+        {stepStatus}
+      </p>
+      <ol className="mt-4 flex flex-wrap gap-2">
         {wizardSteps.map((step, index) => {
           const isActive = step === currentStep;
           const isComplete = index < currentIndex;
 
           return (
-            <span
-              key={step}
-              className={cn(
-                'rounded-full border px-3 py-1 font-mono-label text-[0.625rem] transition-colors',
-                isActive && 'border-accent bg-accent/10 text-accent',
-                isComplete && !isActive && 'border-[var(--line-strong)] text-foreground',
-                !isActive && !isComplete && 'border-border text-muted-foreground'
-              )}
-            >
-              {t(`steps.${step}`)}
-            </span>
+            <li key={step} aria-current={isActive ? 'step' : undefined}>
+              <span
+                className={cn(
+                  'inline-block rounded-full border px-3 py-1 font-mono-label text-[0.625rem] transition-colors',
+                  isActive && 'border-accent bg-accent/10 text-accent',
+                  isComplete && !isActive && 'border-[var(--line-strong)] text-foreground',
+                  !isActive && !isComplete && 'border-border text-muted-foreground'
+                )}
+              >
+                {t(`steps.${step}`)}
+              </span>
+            </li>
           );
         })}
-      </div>
-    </div>
+      </ol>
+    </nav>
   );
 }

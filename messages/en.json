@@ -41,7 +41,12 @@
     "stickyCta": "Get Gap Analysis",
     "contact": "Contact",
     "menuOpen": "Open menu",
-    "menuClose": "Close menu"
+    "menuClose": "Close menu",
+    "mainNav": "Main navigation",
+    "mobileNav": "Mobile navigation",
+    "mobileMenuTitle": "Menu",
+    "switchToEnglish": "Switch to English",
+    "switchToTurkish": "Switch to Turkish"
   },
   "a11y": {
     "skipToContent": "Skip to main content"
@@ -158,6 +163,7 @@
     "outcomesLabel": "What You Get",
     "relatedLabel": "Related Services",
     "relatedLink": "Explore",
+    "relatedLinkLabel": "Explore {service}",
     "primaryCta": "Start Assessment",
     "secondaryCta": "All Services"
   },
@@ -183,7 +189,9 @@
   "team": {
     "eyebrow": "Team",
     "title": "Meet the Team",
-    "description": "Consultants who partner with you on ISO standards, EU AI Act, and enterprise AI governance."
+    "description": "Consultants who partner with you on ISO standards, EU AI Act, and enterprise AI governance.",
+    "linkedinCta": "{name} on LinkedIn",
+    "linkedinAria": "{name} LinkedIn profile (opens in new tab)"
   },
   "assessmentTeaser": {
     "eyebrow": "Free Gap Analysis",
@@ -229,6 +237,9 @@
     "stepTopic": "Select a topic",
     "stepCompany": "Company details",
     "stepContact": "Contact details",
+    "progressLabel": "Assessment progress",
+    "stepStatus": "Step {current} of {total}: {step}",
+    "formLabel": "Gap analysis form",
     "steps": {
       "topic": "Topic",
       "branch": "Details",
@@ -371,6 +382,8 @@
     "phoneLabel": "Phone",
     "addressLabel": "Address",
     "linkedinLabel": "LinkedIn",
+    "linkedinCta": "Visit AION on LinkedIn",
+    "linkedinAriaLabel": "AION company profile on LinkedIn (opens in new tab)",
     "calendlyLabel": "Schedule a Call",
     "calendlyDescription": "Pick a time for a 30-minute discovery session.",
     "calendlyButton": "Open Calendar",
@@ -391,5 +404,11 @@
     "principlesTitle": "Why AION?",
     "approachLinkPrefix": "Explore our methodology:",
     "approachLink": "Our Approach"
+  },
+  "notFound": {
+    "eyebrow": "404",
+    "title": "Page not found",
+    "description": "The page you're looking for doesn't exist or has been moved.",
+    "homeCta": "Back to home"
   }
 }

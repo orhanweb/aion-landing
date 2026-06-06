@@ -29,7 +29,9 @@ export default async function AssessmentPage({ params }: PageProps) {
       <Container>
         <Narrow>
           <MonoLabel>{t('eyebrow')}</MonoLabel>
-          <h1 className="font-display mt-4 text-[clamp(2rem,4vw,3rem)] leading-tight tracking-tight">{t('title')}</h1>
+          <h1 id="assessment-page-title" className="font-display mt-4 text-[clamp(2rem,4vw,3rem)] leading-tight tracking-tight">
+            {t('title')}
+          </h1>
           <p className="mt-3 text-muted-foreground">{t('description')}</p>
           <div className="mt-10">
             <AssessmentWizard calendlyUrl={site.contact.calendlyUrl} responseTime={site.contact.responseTime} />

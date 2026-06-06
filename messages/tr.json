@@ -41,7 +41,12 @@
     "stickyCta": "Gap Analizi Al",
     "contact": "İletişim",
     "menuOpen": "Menüyü aç",
-    "menuClose": "Menüyü kapat"
+    "menuClose": "Menüyü kapat",
+    "mainNav": "Ana navigasyon",
+    "mobileNav": "Mobil navigasyon",
+    "mobileMenuTitle": "Menü",
+    "switchToEnglish": "İngilizceye geç",
+    "switchToTurkish": "Türkçeye geç"
   },
   "a11y": {
     "skipToContent": "Ana içeriğe geç"
@@ -162,6 +167,7 @@
     "outcomesLabel": "Ne Elde Edersiniz",
     "relatedLabel": "İlgili Hizmetler",
     "relatedLink": "İncele",
+    "relatedLinkLabel": "{service} hizmetini incele",
     "primaryCta": "Değerlendirmeyi Başlat",
     "secondaryCta": "Tüm Hizmetler"
   },
@@ -187,7 +193,9 @@
   "team": {
     "eyebrow": "Ekip",
     "title": "Ekiple Tanışın",
-    "description": "ISO standartları, EU AI Act ve kurumsal AI yönetişiminde yanınızda olan danışmanlar."
+    "description": "ISO standartları, EU AI Act ve kurumsal AI yönetişiminde yanınızda olan danışmanlar.",
+    "linkedinCta": "{name} — LinkedIn",
+    "linkedinAria": "{name} LinkedIn profili (yeni sekmede açılır)"
   },
   "assessmentTeaser": {
     "eyebrow": "Ücretsiz Gap Analizi",
@@ -233,6 +241,9 @@
     "stepTopic": "Konu seçin",
     "stepCompany": "Kurum bilgileri",
     "stepContact": "İletişim bilgileri",
+    "progressLabel": "Değerlendirme ilerlemesi",
+    "stepStatus": "Adım {current} / {total}: {step}",
+    "formLabel": "Gap analizi formu",
     "steps": {
       "topic": "Konu",
       "branch": "Detay",
@@ -375,6 +386,8 @@
     "phoneLabel": "Telefon",
     "addressLabel": "Adres",
     "linkedinLabel": "LinkedIn",
+    "linkedinCta": "AION LinkedIn profilini ziyaret et",
+    "linkedinAriaLabel": "AION şirket LinkedIn profili (yeni sekmede açılır)",
     "calendlyLabel": "Görüşme Planla",
     "calendlyDescription": "30 dakikalık keşif görüşmesi için takvimden uygun bir zaman seçin.",
     "calendlyButton": "Takvimi Aç",
@@ -395,5 +408,11 @@
     "principlesTitle": "Neden AION?",
     "approachLinkPrefix": "Metodolojimizi inceleyin:",
     "approachLink": "Yaklaşımımız"
+  },
+  "notFound": {
+    "eyebrow": "404",
+    "title": "Sayfa bulunamadı",
+    "description": "Aradığınız sayfa mevcut değil veya taşınmış olabilir.",
+    "homeCta": "Ana sayfaya dön"
   }
 }

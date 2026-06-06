@@ -6,9 +6,11 @@ import type { TeamMember } from '@/lib/content/team';
 
 type TeamCardProps = {
   member: TeamMember;
+  linkedinLabel: string;
+  linkedinAriaLabel: string;
 };
 
-export function TeamCard({ member }: TeamCardProps) {
+export function TeamCard({ member, linkedinLabel, linkedinAriaLabel }: TeamCardProps) {
   return (
     <InteractiveCardShell>
       <article className={interactiveCardSurfaceClassName('flex h-full flex-col p-6')}>
@@ -33,9 +35,10 @@ export function TeamCard({ member }: TeamCardProps) {
           href={member.linkedin}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={linkedinAriaLabel}
           className="mt-5 inline-block font-mono-label text-[0.625rem] text-muted-foreground transition-colors hover:text-accent"
         >
-          LinkedIn →
+          {linkedinLabel} →
         </a>
       </article>
     </InteractiveCardShell>

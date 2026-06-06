@@ -1,6 +1,7 @@
 // src/components/assessment/fields/form-fields.tsx
 'use client';
 
+import { useId } from 'react';
 import { cn } from '@/lib/utils/cn';
 import { useTranslations } from 'next-intl';
 import type { UseFormRegister, FieldValues, Path } from 'react-hook-form';
@@ -9,9 +10,11 @@ type FormFieldError = { message?: string } | undefined;
 
 type FieldErrorProps = {
   error?: FormFieldError;
+  id?: string;
+  live?: boolean;
 };
 
-export function FieldError({ error }: FieldErrorProps) {
+export function FieldError({ error, id, live = false }: FieldErrorProps) {
   const t = useTranslations('assessment');
 
   if (!error?.message) {
@@ -20,7 +23,11 @@ export function FieldError({ error }: FieldErrorProps) {
 
   const message = error.message.startsWith('errors.') ? t(error.message as 'errors.required') : error.message;
 
-  return <p className="text-xs text-[var(--accent-strong)]">{message}</p>;
+  return (
+    <p id={id} role={live ? 'alert' : undefined} className="text-xs text-[var(--accent-strong)]">
+      {message}
+    </p>
+  );
 }
 
 type RadioGroupFieldProps<T extends FieldValues> = {
@@ -30,14 +37,30 @@ type RadioGroupFieldProps<T extends FieldValues> = {
   register: UseFormRegister<T>;
   labelPrefix: string;
   error?: FormFieldError;
+  errorId?: string;
   className?: string;
 };
 
-export function RadioGroupField<T extends FieldValues>({ legend, name, options, register, labelPrefix, error, className }: RadioGroupFieldProps<T>) {
+export function RadioGroupField<T extends FieldValues>({
+  legend,
+  name,
+  options,
+  register,
+  labelPrefix,
+  error,
+  errorId,
+  className
+}: RadioGroupFieldProps<T>) {
   const t = useTranslations('assessment');
+  const generatedErrorId = useId();
+  const resolvedErrorId = errorId ?? generatedErrorId;
 
   return (
-    <fieldset className={cn('space-y-3', className)}>
+    <fieldset
+      className={cn('space-y-3', className)}
+      aria-invalid={error?.message ? true : undefined}
+      aria-describedby={error?.message ? resolvedErrorId : undefined}
+    >
       <legend className="font-mono-label mb-4 block text-foreground">{legend}</legend>
       {options.map(option => (
         <label key={option} className="flex items-center gap-3 text-sm">
@@ -45,7 +68,7 @@ export function RadioGroupField<T extends FieldValues>({ legend, name, options, 
           {t(`${labelPrefix}.${option}` as 'fields.company')}
         </label>
       ))}
-      <FieldError error={error} />
+      <FieldError id={resolvedErrorId} error={error} />
     </fieldset>
   );
 }
@@ -57,6 +80,7 @@ type CheckboxGroupFieldProps<T extends FieldValues> = {
   register: UseFormRegister<T>;
   labelPrefix: string;
   error?: FormFieldError;
+  errorId?: string;
   className?: string;
 };
 
@@ -67,12 +91,19 @@ export function CheckboxGroupField<T extends FieldValues>({
   register,
   labelPrefix,
   error,
+  errorId,
   className
 }: CheckboxGroupFieldProps<T>) {
   const t = useTranslations('assessment');
+  const generatedErrorId = useId();
+  const resolvedErrorId = errorId ?? generatedErrorId;
 
   return (
-    <fieldset className={cn('space-y-3', className)}>
+    <fieldset
+      className={cn('space-y-3', className)}
+      aria-invalid={error?.message ? true : undefined}
+      aria-describedby={error?.message ? resolvedErrorId : undefined}
+    >
       <legend className="font-mono-label mb-4 block text-foreground">{legend}</legend>
       {options.map(option => (
         <label key={option} className="flex items-center gap-3 text-sm">
@@ -80,7 +111,7 @@ export function CheckboxGroupField<T extends FieldValues>({
           {t(`${labelPrefix}.${option}` as 'fields.company')}
         </label>
       ))}
-      <FieldError error={error} />
+      <FieldError id={resolvedErrorId} error={error} />
     </fieldset>
   );
 }
