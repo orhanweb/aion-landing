@@ -51,7 +51,7 @@ export async function ContactChannels() {
         </div>
       </div>
 
-      <p className="font-mono-label text-[0.625rem] text-muted-foreground">{contact.responseTime}</p>
+      <p className="font-mono-label text-muted-foreground">{contact.responseTime}</p>
 
       <div>
         <MonoLabel className="text-accent">{t('calendlyLabel')}</MonoLabel>

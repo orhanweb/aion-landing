@@ -15,7 +15,7 @@ export async function TrustStrip() {
           <ul className="flex flex-wrap items-center gap-x-5 gap-y-2 md:gap-x-8 lg:gap-x-12">
             {frameworks.map(framework => (
               <li key={framework}>
-                <span className="font-mono-label text-[0.625rem] text-muted-foreground">{framework}</span>
+                <span className="font-mono-label text-muted-foreground">{framework}</span>
               </li>
             ))}
           </ul>

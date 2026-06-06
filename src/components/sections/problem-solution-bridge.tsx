@@ -54,7 +54,7 @@ function BridgeColumn({ label, items, tone }: BridgeColumnProps) {
           <li key={item.title} className="flex gap-4">
             <span
               aria-hidden
-              className={cn('mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border font-mono text-[0.6875rem]', markerClass)}
+              className={cn('mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border font-mono text-xs', markerClass)}
             >
               {String(index + 1).padStart(2, '0')}
             </span>

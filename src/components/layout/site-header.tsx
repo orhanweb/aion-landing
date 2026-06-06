@@ -47,7 +47,7 @@ export function SiteHeader() {
               <Link
                 key={item.key}
                 href={item.href}
-                className="font-mono-label text-[0.625rem] text-muted-foreground transition-colors hover:text-foreground"
+                className="font-mono-label text-muted-foreground transition-colors hover:text-foreground"
               >
                 {t(item.key)}
               </Link>
@@ -58,7 +58,7 @@ export function SiteHeader() {
             <LangSwitcher />
             <Link
               href="/assessment"
-              className="hidden font-mono-label text-[0.625rem] text-accent transition-colors hover:text-[var(--accent-strong)] sm:inline-flex lg:hidden"
+              className="hidden font-mono-label text-accent transition-colors hover:text-[var(--accent-strong)] sm:inline-flex lg:hidden"
             >
               {t('assessment')} →
             </Link>
@@ -66,7 +66,7 @@ export function SiteHeader() {
             <button
               ref={menuButtonRef}
               type="button"
-              className="font-mono-label text-[0.625rem] text-foreground md:hidden"
+              className="font-mono-label text-foreground md:hidden"
               aria-expanded={open}
               aria-controls="mobile-nav"
               onClick={() => setOpen(value => !value)}

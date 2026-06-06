@@ -36,7 +36,7 @@ export function TeamCard({ member, linkedinLabel, linkedinAriaLabel }: TeamCardP
           target="_blank"
           rel="noopener noreferrer"
           aria-label={linkedinAriaLabel}
-          className="mt-5 inline-block font-mono-label text-[0.625rem] text-muted-foreground transition-colors hover:text-accent"
+          className="mt-5 inline-block font-mono-label text-muted-foreground transition-colors hover:text-accent"
         >
           {linkedinLabel} →
         </a>

@@ -30,7 +30,7 @@ export async function SignalBanner() {
                 <MonoLabel className="text-signal">{t('penalty')}</MonoLabel>
                 <div>
                   <p className="font-display text-[clamp(3rem,8vw,5.5rem)] leading-none tracking-tight text-signal">35M EUR</p>
-                  <p className="mt-3 font-mono-label text-[0.625rem] leading-relaxed text-muted-foreground">{t('dateLabel')}</p>
+                  <p className="mt-3 font-mono-label leading-relaxed text-muted-foreground">{t('dateLabel')}</p>
                 </div>
               </aside>
             </div>

@@ -32,7 +32,7 @@ export async function ServiceDetailHero({ subtitle, title, intro, standard }: Se
               </p>
             ))}
           </TextMeasure>
-          <p className="mt-8 font-mono-label text-[0.625rem] text-muted-foreground">{standard}</p>
+          <p className="mt-8 font-mono-label text-muted-foreground">{standard}</p>
           <div className="mt-8 flex flex-wrap items-center gap-6">
             <Link href="/assessment" className={cn(buttonVariants({ variant: 'primary', size: 'lg' }))}>
               {t('primaryCta')}

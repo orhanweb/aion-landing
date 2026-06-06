@@ -10,7 +10,7 @@ export function MockDataBanner({ message, className }: MockDataBannerProps) {
   return (
     <p
       className={cn(
-        'rounded-md border border-border bg-[var(--ink-elevated)] px-4 py-3 font-mono-label text-[0.625rem] text-muted-foreground',
+        'rounded-md border border-border bg-[var(--ink-elevated)] px-4 py-3 font-mono-label text-muted-foreground',
         className
       )}
       role="status"

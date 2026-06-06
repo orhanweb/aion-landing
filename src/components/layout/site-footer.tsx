@@ -2,7 +2,6 @@
 import { Link } from '@/i18n/navigation';
 import { Container } from '@/components/ui/container';
 import { Logo } from '@/components/ui/logo';
-import { MonoLabel } from '@/components/ui/mono-label';
 import { getServices } from '@/lib/content/services';
 import { getSiteConfig } from '@/lib/site';
 import { getLocale, getTranslations } from 'next-intl/server';
@@ -25,8 +24,10 @@ export async function SiteFooter() {
             <p className="text-sm leading-relaxed text-muted-foreground">{t('tagline')}</p>
           </div>
 
-          <nav aria-label={t('columns.services')}>
-            <MonoLabel className="mb-4 block text-foreground">{t('columns.services')}</MonoLabel>
+          <nav aria-labelledby="footer-services-heading">
+            <h2 id="footer-services-heading" className="font-mono-label mb-4 block text-foreground">
+              {t('columns.services')}
+            </h2>
             <ul className="flex flex-col gap-3 text-sm text-muted-foreground">
               {services.map(service => (
                 <li key={service.slug}>
@@ -38,8 +39,10 @@ export async function SiteFooter() {
             </ul>
           </nav>
 
-          <nav aria-label={t('columns.company')}>
-            <MonoLabel className="mb-4 block text-foreground">{t('columns.company')}</MonoLabel>
+          <nav aria-labelledby="footer-company-heading">
+            <h2 id="footer-company-heading" className="font-mono-label mb-4 block text-foreground">
+              {t('columns.company')}
+            </h2>
             <ul className="flex flex-col gap-3 text-sm text-muted-foreground">
               <li>
                 <Link href="/about" className="transition-colors hover:text-foreground">
@@ -59,8 +62,10 @@ export async function SiteFooter() {
             </ul>
           </nav>
 
-          <nav aria-label={t('columns.legal')}>
-            <MonoLabel className="mb-4 block text-foreground">{t('columns.legal')}</MonoLabel>
+          <nav aria-labelledby="footer-legal-heading">
+            <h2 id="footer-legal-heading" className="font-mono-label mb-4 block text-foreground">
+              {t('columns.legal')}
+            </h2>
             <ul className="flex flex-col gap-3 text-sm text-muted-foreground">
               <li>
                 <Link href="/privacy" className="transition-colors hover:text-foreground">
@@ -86,7 +91,7 @@ export async function SiteFooter() {
 
         <div className="mt-12 flex flex-col gap-4 border-t border-border pt-8 sm:flex-row sm:items-center sm:justify-between">
           <p className="font-mono-label text-muted-foreground">{t('copyright', { year })}</p>
-          <p className="font-mono-label text-[0.625rem] text-muted-foreground">{t('legalNotice')}</p>
+          <p className="font-mono-label text-muted-foreground">{t('legalNotice')}</p>
         </div>
       </Container>
     </footer>

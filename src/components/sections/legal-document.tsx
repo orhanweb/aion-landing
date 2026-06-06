@@ -14,7 +14,7 @@ export async function LegalDocumentView({ document }: LegalDocumentProps) {
   return (
     <article className="mt-10 space-y-12">
       <FadeIn>
-        <p className="font-mono-label text-[0.625rem] text-muted-foreground">{t('lastUpdated', { date: document.lastUpdated })}</p>
+        <p className="font-mono-label text-muted-foreground">{t('lastUpdated', { date: document.lastUpdated })}</p>
         <p className="mt-6 text-base leading-relaxed text-muted-foreground">{document.disclaimer}</p>
       </FadeIn>
 

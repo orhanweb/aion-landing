@@ -8,7 +8,7 @@
   --paper: #f3f0e8;
   --paper-muted: #e8e4da;
   --foreground: #eeeae3;
-  --foreground-muted: #9a9590;
+  --foreground-muted: #aba6a0;
   --foreground-dark: #1c1a17;
   --foreground-dark-muted: #5c5854;
   --accent: #b8956a;
@@ -95,13 +95,15 @@ html {
 .font-mono-label {
   font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
   font-size: 0.75rem;
-  letter-spacing: 0.14em;
+  line-height: 1.4;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 @media (min-width: 768px) {
   .font-mono-label {
     font-size: 0.8125rem;
+    letter-spacing: 0.14em;
   }
 }
 

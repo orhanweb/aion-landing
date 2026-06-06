@@ -33,9 +33,9 @@ export async function RelatedServices({ locale, relatedSlugs }: RelatedServicesP
             >
               <MonoLabel className="text-accent">{String(index + 1).padStart(2, '0')}</MonoLabel>
               <h3 className="font-display mt-3 text-xl tracking-tight text-foreground transition-colors group-hover:text-accent">{service.title}</h3>
-              <p className="mt-2 font-mono-label text-[0.625rem] text-muted-foreground">{service.standard}</p>
+              <p className="mt-2 font-mono-label text-muted-foreground">{service.standard}</p>
               <p className="mt-4 line-clamp-2 text-sm leading-relaxed text-muted-foreground">{service.shortDescription}</p>
-              <span className="mt-4 font-mono-label text-[0.625rem] text-accent">{t('relatedLink')} →</span>
+              <span className="mt-4 font-mono-label text-accent">{t('relatedLink')} →</span>
             </Link>
           </InteractiveCardShell>
         ))}

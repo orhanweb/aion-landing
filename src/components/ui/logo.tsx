@@ -15,7 +15,7 @@ export function Logo({ className, subtitle = 'Oversight Network', priority = fal
       <Image src="/aion-mark.svg" alt="" width={40} height={40} priority={priority} className="h-10 w-10 shrink-0" />
       <span className="inline-flex flex-col gap-0.5">
         <span className="font-display text-xl tracking-tight text-foreground transition-colors group-hover:text-accent">AION</span>
-        <span className="font-mono-label hidden text-[0.6rem] text-muted-foreground sm:block">{subtitle}</span>
+        <span className="font-mono-label hidden text-muted-foreground sm:block">{subtitle}</span>
       </span>
     </Link>
   );

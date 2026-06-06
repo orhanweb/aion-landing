@@ -32,7 +32,7 @@ export async function AuditReadinessConsole({ className }: AuditReadinessConsole
       <div className="relative">
         <div className="flex items-start justify-between gap-6">
           <div>
-            <p className="font-mono-label text-[0.625rem] text-accent">{t('title')}</p>
+            <p className="font-mono-label text-accent">{t('title')}</p>
             <p className="mt-2 max-w-xs text-sm leading-relaxed text-muted-foreground">{t('subtitle')}</p>
           </div>
           <div className="rounded-full border border-accent/30 bg-accent/10 px-3 py-1 font-mono-label text-[0.5625rem] text-accent">{t('badge')}</div>

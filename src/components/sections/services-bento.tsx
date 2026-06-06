@@ -39,7 +39,11 @@ export async function ServicesBento({ className, showHubIntro, titleAs = 'h2' }:
         <div className="mt-16">
           <FadeIn>
             <InteractiveCardShell>
-              <Link href={`/services/${coreService.slug}`} className={interactiveCardSurfaceClassName('block p-8 md:p-10 lg:p-12')}>
+              <Link
+                href={`/services/${coreService.slug}`}
+                aria-label={t('learnMoreLabel', { service: coreService.title })}
+                className={interactiveCardSurfaceClassName('block p-8 md:p-10 lg:p-12')}
+              >
                 <div aria-hidden className="absolute right-0 top-0 h-40 w-40 translate-x-12 -translate-y-12 rounded-full border border-accent/20" />
                 <div aria-hidden className="absolute bottom-0 right-0 h-px w-1/2 bg-linear-to-l from-accent/30 to-transparent" />
 
@@ -49,15 +53,13 @@ export async function ServicesBento({ className, showHubIntro, titleAs = 'h2' }:
                     <h3 className="font-display mt-5 max-w-3xl text-[clamp(2rem,4vw,4rem)] leading-[1.05] tracking-tight text-foreground">
                       {coreService.title}
                     </h3>
-                    <p className="mt-4 max-w-xl font-mono-label text-[0.625rem] leading-relaxed text-muted-foreground md:text-xs">
-                      {coreService.subtitle}
-                    </p>
+                    <p className="mt-4 max-w-xl font-mono-label leading-relaxed text-muted-foreground">{coreService.subtitle}</p>
                     <p className="mt-8 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">{coreService.shortDescription}</p>
                   </div>
 
                   <div className="rounded-lg border border-border bg-background/35 p-5">
-                    <p className="font-mono-label text-[0.625rem] text-muted-foreground">{coreService.standard}</p>
-                    <span className="mt-6 block font-mono-label text-[0.625rem] text-accent">{t('learnMore')} →</span>
+                    <p className="font-mono-label text-muted-foreground">{coreService.standard}</p>
+                    <span className="mt-6 block font-mono-label text-accent">{t('learnMore')} →</span>
                   </div>
                 </div>
               </Link>
@@ -76,15 +78,19 @@ export async function ServicesBento({ className, showHubIntro, titleAs = 'h2' }:
               return (
                 <FadeIn key={service.slug} delay={(index + 1) * 0.05}>
                   <InteractiveCardShell className={cn(index % 2 === 0 ? 'lg:mr-3' : 'lg:ml-3')}>
-                    <Link href={`/services/${service.slug}`} className={interactiveCardSurfaceClassName('flex min-h-[260px] flex-col p-6 md:p-8')}>
+                    <Link
+                      href={`/services/${service.slug}`}
+                      aria-label={t('learnMoreLabel', { service: service.title })}
+                      className={interactiveCardSurfaceClassName('flex min-h-[260px] flex-col p-6 md:p-8')}
+                    >
                       <div>
                         <MonoLabel className="text-accent">{num}</MonoLabel>
                         <h3 className="font-display mt-4 text-2xl leading-tight tracking-tight text-foreground">{service.title}</h3>
-                        <p className="mt-2 font-mono-label text-[0.625rem] leading-relaxed text-muted-foreground">{service.subtitle}</p>
+                        <p className="mt-2 font-mono-label leading-relaxed text-muted-foreground">{service.subtitle}</p>
                       </div>
 
                       <p className="mt-6 line-clamp-3 text-sm leading-relaxed text-muted-foreground">{service.shortDescription}</p>
-                      <span className="mt-auto pt-8 font-mono-label text-[0.625rem] text-accent">{t('learnMore')} →</span>
+                      <span className="mt-auto pt-8 font-mono-label text-accent">{t('learnMore')} →</span>
                     </Link>
                   </InteractiveCardShell>
                 </FadeIn>

@@ -20,7 +20,7 @@ export function WizardProgress({ currentStep }: WizardProgressProps) {
 
   return (
     <nav aria-label={t('progressLabel')}>
-      <p className="font-mono-label text-[0.625rem] text-muted-foreground">
+      <p className="font-mono-label text-muted-foreground">
         {currentIndex + 1} / {wizardSteps.length}
       </p>
       <p aria-live="polite" aria-atomic="true" className="sr-only">
@@ -35,7 +35,7 @@ export function WizardProgress({ currentStep }: WizardProgressProps) {
             <li key={step} aria-current={isActive ? 'step' : undefined}>
               <span
                 className={cn(
-                  'inline-block rounded-full border px-3 py-1 font-mono-label text-[0.625rem] transition-colors',
+                  'inline-block rounded-full border px-3 py-1 font-mono-label transition-colors',
                   isActive && 'border-accent bg-accent/10 text-accent',
                   isComplete && !isActive && 'border-[var(--line-strong)] text-foreground',
                   !isActive && !isComplete && 'border-border text-muted-foreground'

@@ -20,7 +20,7 @@ export async function AssessmentTeaser() {
           <div className="mt-8 grid gap-8 rounded-lg border border-border bg-card px-8 py-10 md:px-12 md:py-14 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
             <div>
               <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">{t('description')}</p>
-              <p className="mt-4 font-mono-label text-[0.625rem] leading-relaxed text-muted-foreground">{t('privacy')}</p>
+              <p className="mt-4 font-mono-label leading-relaxed text-muted-foreground">{t('privacy')}</p>
             </div>
             <Link
               href="/assessment"

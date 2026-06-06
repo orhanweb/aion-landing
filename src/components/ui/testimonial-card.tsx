@@ -33,7 +33,7 @@ function QuoteMark({ className }: { className?: string }) {
 function TestimonialOutcome({ label, value, prominent = false }: { label: string; value: string; prominent?: boolean }) {
   return (
     <div className="mt-4 border-l-2 border-accent/35 pl-3.5">
-      <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.12em] text-muted-foreground">{label}</p>
+      <p className="font-mono-label text-muted-foreground">{label}</p>
       <p className={cn('mt-1.5 leading-relaxed text-foreground/90', prominent ? 'text-base md:text-[1.0625rem]' : 'text-sm md:text-[0.9375rem]')}>
         {value}
       </p>

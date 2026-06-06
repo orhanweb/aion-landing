@@ -14,10 +14,10 @@ function GapCard({ step, index }: { step: ServiceStep; index: number }) {
 
   return (
     <article className="border-l-[3px] border-signal py-2 pl-6 md:pl-8">
-      <span className="font-mono-label text-[0.625rem] text-signal">{num}</span>
+      <span className="font-mono-label text-signal">{num}</span>
       <h3 className="font-display mt-2 text-xl tracking-tight md:text-2xl">{step.title}</h3>
       {step.highlight ? (
-        <p className="mt-3 inline-block rounded-sm bg-signal/10 px-3 py-1 font-mono-label text-[0.625rem] text-signal">{step.highlight}</p>
+        <p className="mt-3 inline-block rounded-sm bg-signal/10 px-3 py-1 font-mono-label text-signal">{step.highlight}</p>
       ) : null}
       <p className="mt-4 text-sm leading-relaxed text-muted-foreground md:text-base">{step.description}</p>
     </article>

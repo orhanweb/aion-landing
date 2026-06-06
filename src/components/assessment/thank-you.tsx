@@ -28,7 +28,7 @@ export function ThankYou({ calendlyUrl, responseTime }: ThankYouProps) {
             {t('thankYou.calendlyCta')}
           </a>
         </div>
-        <p className="font-mono-label text-[0.625rem] text-muted-foreground">{t('thankYou.privacyNote')}</p>
+        <p className="font-mono-label text-muted-foreground">{t('thankYou.privacyNote')}</p>
       </CardContent>
     </Card>
   );

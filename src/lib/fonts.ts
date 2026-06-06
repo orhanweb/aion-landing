@@ -10,7 +10,7 @@ export const plusJakartaSans = Plus_Jakarta_Sans({
 
 export const lora = Lora({
   subsets: ['latin', 'latin-ext'],
-  weight: ['400', '500', '600'],
+  weight: ['400', '600'],
   style: ['normal', 'italic'],
   variable: '--font-lora',
   display: 'swap'
@@ -18,7 +18,7 @@ export const lora = Lora({
 
 export const ibmPlexMono = IBM_Plex_Mono({
   subsets: ['latin', 'latin-ext'],
-  weight: ['400', '500'],
+  weight: ['400'],
   variable: '--font-ibm-plex-mono',
   display: 'swap'
 });

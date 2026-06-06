@@ -46,11 +46,11 @@ export async function HeroSection() {
                   {t('secondaryCta')} →
                 </Link>
               </div>
-              <p className="mt-4 font-mono-label text-[0.625rem] text-muted-foreground">{t('ctaNote')}</p>
+              <p className="mt-4 font-mono-label text-muted-foreground">{t('ctaNote')}</p>
             </StaggerItem>
 
             <StaggerItem>
-              <p className="mt-10 font-mono-label text-[0.625rem] text-muted-foreground">{t('standards')}</p>
+              <p className="mt-10 font-mono-label text-muted-foreground">{t('standards')}</p>
             </StaggerItem>
           </Stagger>
 

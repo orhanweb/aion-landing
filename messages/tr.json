@@ -161,6 +161,7 @@
     "title": "Temel Yetkinlikler",
     "description": "ISO standartları ve uluslararası regülasyonlarla uyumlu AI yönetişimi.",
     "learnMore": "Detaylı İncele",
+    "learnMoreLabel": "{service} hizmetini detaylı incele",
     "hubIntro": "Beş temel yetkinlik alanında uçtan uca danışmanlık, stratejiden sertifikasyona kadar."
   },
   "serviceDetail": {

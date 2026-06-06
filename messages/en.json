@@ -157,6 +157,7 @@
     "title": "Core Capabilities",
     "description": "AI governance aligned with ISO standards and international regulations.",
     "learnMore": "Learn More",
+    "learnMoreLabel": "Learn more about {service}",
     "hubIntro": "End-to-end consulting across five core capability areas, from strategy to certification."
   },
   "serviceDetail": {
