@@ -49,6 +49,14 @@ body {
   font-family: var(--font-plus-jakarta-sans), system-ui, sans-serif;
 }
 
+html {
+  scroll-padding-top: 4rem;
+}
+
+#main-content {
+  scroll-margin-top: 4rem;
+}
+
 @layer base {
   a[href],
   button:not(:disabled),
@@ -68,6 +76,12 @@ body {
   :disabled,
   [aria-disabled='true'] {
     cursor: not-allowed;
+  }
+
+  a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
   }
 }
 
@@ -111,4 +125,27 @@ body {
 
 .text-balance {
   text-wrap: balance;
+}
+
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: -100%;
+  z-index: 100;
+  border-radius: 0.375rem;
+  background: var(--accent);
+  padding: 0.625rem 1rem;
+  font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: 1rem;
+  outline: 2px solid var(--foreground);
+  outline-offset: 3px;
 }

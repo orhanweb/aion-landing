@@ -18,5 +18,5 @@ export default async function ApproachPage({ params }: PageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <ProcessTimeline />;
+  return <ProcessTimeline titleAs="h1" />;
 }

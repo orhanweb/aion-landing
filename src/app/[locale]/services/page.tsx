@@ -21,7 +21,7 @@ export default async function ServicesPage({ params }: PageProps) {
 
   return (
     <>
-      <ServicesBento className="pt-24" showHubIntro />
+      <ServicesBento className="pt-24" showHubIntro titleAs="h1" />
       <AssessmentTeaser />
     </>
   );

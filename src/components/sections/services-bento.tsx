@@ -12,13 +12,15 @@ import type { Locale } from '@/i18n/routing';
 type ServicesBentoProps = {
   className?: string;
   showHubIntro?: boolean;
+  titleAs?: 'h1' | 'h2';
 };
 
-export async function ServicesBento({ className, showHubIntro }: ServicesBentoProps = {}) {
+export async function ServicesBento({ className, showHubIntro, titleAs = 'h2' }: ServicesBentoProps = {}) {
   const locale = (await getLocale()) as Locale;
   const t = await getTranslations('services');
   const services = getServices(locale);
   const [coreService, ...controlServices] = services;
+  const TitleTag = titleAs;
 
   if (!coreService) {
     return null;
@@ -29,7 +31,7 @@ export async function ServicesBento({ className, showHubIntro }: ServicesBentoPr
       <Container>
         <FadeIn>
           <MonoLabel className="text-accent">{t('eyebrow')}</MonoLabel>
-          <h2 className="font-display mt-4 text-[clamp(2rem,3.5vw,3rem)] leading-tight tracking-tight">{t('title')}</h2>
+          <TitleTag className="font-display mt-4 text-[clamp(2rem,3.5vw,3rem)] leading-tight tracking-tight">{t('title')}</TitleTag>
           <p className="mt-4 max-w-xl text-muted-foreground">{t('description')}</p>
           {showHubIntro ? <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">{t('hubIntro')}</p> : null}
         </FadeIn>

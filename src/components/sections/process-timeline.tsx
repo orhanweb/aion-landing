@@ -4,16 +4,22 @@ import { Container, Section } from '@/components/ui/container';
 import { MonoLabel } from '@/components/ui/mono-label';
 import { getTranslations } from 'next-intl/server';
 
-export async function ProcessTimeline() {
+type ProcessTimelineProps = {
+  className?: string;
+  titleAs?: 'h1' | 'h2';
+};
+
+export async function ProcessTimeline({ className, titleAs = 'h2' }: ProcessTimelineProps = {}) {
   const t = await getTranslations('process');
   const steps = t.raw('steps') as { title: string; description: string }[];
+  const TitleTag = titleAs;
 
   return (
-    <Section variant="elevated" id="approach">
+    <Section variant="elevated" id="approach" className={className}>
       <Container>
         <FadeIn>
           <MonoLabel className="text-accent">{t('eyebrow')}</MonoLabel>
-          <h2 className="font-display mt-4 text-[clamp(2rem,3.5vw,3rem)] leading-tight tracking-tight">{t('title')}</h2>
+          <TitleTag className="font-display mt-4 text-[clamp(2rem,3.5vw,3rem)] leading-tight tracking-tight">{t('title')}</TitleTag>
           <p className="mt-4 max-w-xl text-muted-foreground">{t('description')}</p>
         </FadeIn>
 

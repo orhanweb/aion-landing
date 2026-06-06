@@ -6,6 +6,7 @@ import { notFound } from 'next/navigation';
 import { IBM_Plex_Mono, Lora, Plus_Jakarta_Sans } from 'next/font/google';
 import { SiteHeader } from '@/components/layout/site-header';
 import { SiteFooter } from '@/components/layout/site-footer';
+import { SkipLink } from '@/components/layout/skip-link';
 import { JsonLd } from '@/lib/schema/json-ld';
 import { organizationJsonLd } from '@/lib/schema/organization';
 import { routing, type Locale } from '@/i18n/routing';
@@ -51,8 +52,11 @@ export default async function LocaleLayout({ children, params }: { children: Rea
       <body className="flex min-h-full flex-col bg-background font-sans text-foreground">
         <JsonLd data={organizationJsonLd(locale as Locale)} />
         <NextIntlClientProvider messages={messages}>
+          <SkipLink />
           <SiteHeader />
-          <main className="flex-1">{children}</main>
+          <main id="main-content" className="flex-1">
+            {children}
+          </main>
           <SiteFooter />
         </NextIntlClientProvider>
       </body>

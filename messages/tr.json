@@ -39,6 +39,9 @@
     "menuOpen": "Menüyü aç",
     "menuClose": "Menüyü kapat"
   },
+  "a11y": {
+    "skipToContent": "Ana içeriğe geç"
+  },
   "hero": {
     "eyebrow": "EU AI Act Readiness / ISO 42001",
     "titleLine1": "Yapay zeka sisteminiz",
