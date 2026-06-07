@@ -23,7 +23,7 @@ export const privacyTr: LegalDocument = {
         'Kimlik ve iletişim bilgileri (ad soyad, unvan, kurumsal e-posta, telefon)',
         'Kurumsal bilgiler (şirket adı, sektör, çalışan sayısı aralığı)',
         'Değerlendirme formu yanıtları (ISO/EU AI Act uyum soruları, serbest metin açıklamalar)',
-        'Teknik veriler (IP adresi, tarayıcı türü — sunucu günlükleri aracılığıyla)',
+        'Teknik veriler (IP adresi, tarayıcı türü; sunucu günlükleri aracılığıyla)',
         'Pazarlama tercihi (isteğe bağlı bilgilendirme onayı)'
       ]
     },

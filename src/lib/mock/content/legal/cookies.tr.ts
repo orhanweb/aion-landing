@@ -20,8 +20,8 @@ export const cookiesTr: LegalDocument = {
       title: 'Birinci Taraf Çerezler',
       paragraphs: ['Sitemizde aşağıdaki birinci taraf kullanım söz konusudur:'],
       list: [
-        'Dil tercihi — oturum süresince locale yönlendirmesi (next-intl)',
-        'Teknik oturum çerezleri — güvenlik ve yük dengeleme (barındırma sağlayıcısı)',
+        'Dil tercihi: oturum süresince locale yönlendirmesi (next-intl)',
+        'Teknik oturum çerezleri: güvenlik ve yük dengeleme (barındırma sağlayıcısı)',
         'Pazarlama veya profil oluşturma amaçlı birinci taraf izleme çerezi kullanılmaz'
       ]
     },
@@ -32,7 +32,7 @@ export const cookiesTr: LegalDocument = {
         'Calendly: Görüşme planlama aracını yalnızca “Takvimi Aç” butonuna tıkladığınızda yükleriz. Calendly kendi çerezlerini ayarlayabilir.',
         'Calendly çerezleri ve politikası: calendly.com/privacy'
       ],
-      list: ['calendly.com — randevu planlama (kullanıcı eylemi sonrası)', 'Barındırma/CDN sağlayıcısı — statik dosya dağıtımı (teknik çerezler)']
+      list: ['calendly.com: randevu planlama (kullanıcı eylemi sonrası)', 'Barındırma/CDN sağlayıcısı: statik dosya dağıtımı (teknik çerezler)']
     },
     {
       id: 'fonts',

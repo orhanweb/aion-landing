@@ -7,25 +7,25 @@ export const serviceFaqsTr = {
       id: 'iso-42001-overview',
       question: 'ISO/IEC 42001 nedir ve kurumum neden bu standardı benimsemeli?',
       answer:
-        'ISO/IEC 42001, yapay zeka yönetim sistemleri için uluslararası standarttır. Kurumunuzda yapay zekanın nasıl geliştirileceğini, devreye alınacağını, izleneceğini ve iyileştirileceğini yapılandırılmış bir çerçevede yönetmenizi sağlar. Benimsenmesi regülasyon ve operasyonel riski azaltır, paydaş güvenini güçlendirir ve sorumlu yapay zeka için denetlenebilir bir temel oluşturur.'
+        'ISO/IEC 42001, yapay zeka yönetim sistemleri için uluslararası standarttır. Yapay zekanın nasıl geliştirileceğini, devreye alınacağını, izleneceğini ve iyileştirileceğini yapılandırılmış bir çerçevede yönetmenizi sağlar. Benimsenmesi regülasyon ve operasyonel riski azaltır, paydaş güvenini güçlendirir ve sorumlu yapay zeka için denetlenebilir bir temel oluşturur.'
     },
     {
       id: 'certification-timeline',
       question: 'ISO 42001 sertifikasyonu genellikle ne kadar sürer?',
       answer:
-        'Süre; kurumsal olgunluk, sistem karmaşıklığı ve mevcut yönetim sistemi entegrasyonlarına bağlıdır. Çoğu kurum gap analizi, sistem tasarımı, uygulama ve iç denetim sürecini 6–12 ay içinde tamamlar. AION, yüksek riskli yapay zeka sistemlerini ve denetim kritik kontrollerini önceleyen aşamalı bir yol haritasıyla bu süreci hızlandırır.'
+        'Süre; kurumsal olgunluk, sistem karmaşıklığı ve mevcut yönetim sistemi entegrasyonlarına bağlıdır. Çoğu kurum gap analizi, sistem tasarımı, uygulama ve iç denetim sürecini 6–12 ay içinde tamamlar. AION, yüksek riskli yapay zeka sistemlerini ve denetim kritik kontrollerini önceleyen aşamalı bir yol haritası kullanır.'
     },
     {
       id: 'iso-42001-eu-ai-act-relation',
       question: 'ISO 42001 ile EU AI Act arasındaki ilişki nedir?',
       answer:
-        'ISO 42001 bir yönetim sistemi standardıdır; EU AI Act ise belirli yapay zeka kullanım senaryoları için yasal yükümlülükler getirir. ISO 42001 uygulaması, risk yönetimi, dokümantasyon, insan gözetimi ve sürekli izleme gerekliliklerini sertifikasyona hazır bir yönetişim yapısı üzerinden karşılamaya yardımcı olur.'
+        'ISO 42001 bir yapay zeka yönetim sisteminin nasıl işletileceğini tanımlar. EU AI Act ise belirli kullanım senaryoları için yasal yükümlülükler getirir. ISO 42001 uygulaması; risk yönetimi, dokümantasyon, insan gözetimi ve izleme gerekliliklerini sertifikasyona hazır bir yapı üzerinden karşılamanıza yardımcı olur.'
     },
     {
       id: 'certification-audit-support',
       question: 'AION sertifikasyon denetim sürecinde de destek veriyor mu?',
       answer:
-        'Evet. AION kurumunuzu uçtan uca hazırlar — gap analizinden politika tasarımına, iç denetimden düzeltici faaliyetlere kadar. Akredite belgelendirme kuruluşu denetimlerinde (BSI, TÜV vb.) yanınızda yer alır ve dış denetim öncesi ve sırasında bulguların kapatılmasına rehberlik ederiz.'
+        'Evet. Gap analizi ve politika tasarımından iç denetim ve düzeltici faaliyetlere kadar kurumunuzu hazırlıyoruz. Akredite belgelendirme kuruluşu denetimlerinde (BSI, TÜV vb.) yanınızda olur, dış denetim öncesi ve sırasında bulguların kapatılmasına rehberlik ederiz.'
     }
   ],
   'regulatory-compliance': [
@@ -39,13 +39,13 @@ export const serviceFaqsTr = {
       id: 'non-compliance-penalties',
       question: 'EU AI Act uyumsuzluğunda hangi cezai yaptırımlar uygulanır?',
       answer:
-        "İdari para cezaları ihlal türüne göre değişir. Yasaklanmış yapay zeka uygulamaları için cezalar 35 milyon avroya veya küresel yıllık cironun %7'sine kadar çıkabilir. Tedarik zinciri ve sağlayıcı yükümlülükleri 15 milyon avroya veya cironun %3'üne kadar ceza içerebilir. Doğru risk sınıflandırması, dokümantasyon ve insan gözetimi kontrolleri bu riskleri azaltmak için kritiktir."
+        "İdari para cezaları ihlal türüne göre değişir. Yasaklanmış yapay zeka uygulamaları için cezalar 35 milyon avroya veya küresel yıllık cironun %7'sine kadar çıkabilir. Tedarik zinciri ve sağlayıcı yükümlülükleri 15 milyon avroya veya cironun %3'üne kadar ceza içerebilir. Doğru risk sınıflandırması, dokümantasyon ve insan gözetimi kontrolleri bu riskleri azaltır."
     },
     {
       id: 'third-party-ai-compliance',
       question: 'Yalnızca üçüncü taraf yapay zeka araçları kullanıyorsak EU AI Act uyumu gerekli mi?',
       answer:
-        'Çoğu durumda evet. Modeller veya platformlar dış kaynaklı olsa bile, devreye alan kuruluş kullanım biçiminden sorumludur. Kurumlar sağlayıcı dokümantasyonunu doğrulamalı, gerektiğinde uygunluk değerlendirmesi yapmalı ve kendi kullanım senaryoları için şeffaflık, veri yönetişimi ve insan gözetimini sağlamalıdır.'
+        'Çoğu durumda evet. Modeller veya platformlar dış kaynaklı olsa bile, devreye alan kuruluş kullanım biçiminden sorumludur. Sağlayıcı dokümantasyonunu doğrulamalı, gerektiğinde uygunluk değerlendirmesi yapmalı ve kendi kullanım senaryonuz için şeffaflık, veri yönetişimi ve insan gözetimini sağlamalısınız.'
     },
     {
       id: 'ai-act-classification-process',
@@ -59,19 +59,19 @@ export const serviceFaqsTr = {
       id: 'iso-27001-ai-risks',
       question: 'ISO 27001 yapay zekaya özgü güvenlik risklerini nasıl ele alır?',
       answer:
-        'ISO 27001; erişim kontrolü, şifreleme, olay yönetimi ve tedarikçi güvenliğiyle bilgi varlıklarını korur. Yapay zeka sistemleri model kaçırma, prompt injection, eğitim verisi zehirlenmesi ve çıkarım anında veri sızıntısı gibi ek tehditler getirir. AION, ISO 27001 kontrollerini ISO 42001 yapay zeka yönetişimiyle entegre ederek geleneksel ve yapay zekaya özgü saldırı yüzeylerini birlikte kapsar.'
+        'ISO 27001; erişim kontrolü, şifreleme, olay yönetimi ve tedarikçi güvenliğiyle bilgi varlıklarını korur. Yapay zeka; model kaçırma, prompt injection, eğitim verisi zehirlenmesi ve çıkarım anında veri sızıntısı gibi ek tehditler getirir. AION, ISO 27001 kontrollerini ISO 42001 yapay zeka yönetişimiyle entegre ederek geleneksel ve yapay zekaya özgü saldırı yüzeylerini birlikte kapsar.'
     },
     {
       id: 'data-poisoning-protection',
       question: 'Yapay zeka veri zehirlenmesi nedir ve buna karşı nasıl korunulur?',
       answer:
-        'Veri zehirlenmesi; saldırganların eğitim veya fine-tuning veri setlerine kötü niyetli örnekler enjekte etmesiyle modellerin hatalı davranması veya bilgi sızdırmasıdır. Koruma; veri kökeni takibi, bütünlük doğrulaması, eğitim hattı erişim kontrolleri, anomali tespiti ve düzenli model performans izlemesi gerektirir. AION bu kontrolleri entegre güvenlik mimarisinin parçası olarak uygular.'
+        'Veri zehirlenmesi; saldırganların eğitim veya fine-tuning veri setlerine kötü niyetli örnekler enjekte etmesiyle modellerin hatalı davranması veya bilgi sızdırmasıdır. Koruma; veri kökeni takibi, bütünlük doğrulaması, eğitim hattı erişim kontrolleri, anomali tespiti ve düzenli model performans izlemesi gerektirir.'
     },
     {
       id: 'iso-27001-42001-integration',
       question: 'ISO 27001 ve ISO 42001 birlikte uygulanabilir mi?',
       answer:
-        'Evet, hatta birlikte uygulanmalıdır. Her iki standart risk değerlendirme, kontrol seçimi, izleme ve sürekli iyileştirme yapılarını paylaşır. Birleşik uygulama tekrarlayan dokümantasyonu önler, denetim yükünü azaltır ve bilgi güvenliği ile yapay zeka yönetişiminin birbirini güçlendirmesini sağlar.'
+        'Evet, hatta birlikte uygulanmalıdır. Her iki standart risk değerlendirme, kontrol seçimi, izleme ve sürekli iyileştirme yapılarını paylaşır. Birleşik uygulama tekrarlayan dokümantasyonu önler, denetim yükünü azaltır; bilgi güvenliği ile yapay zeka yönetişimi aynı hizada kalır.'
     },
     {
       id: 'ai-penetration-testing',
@@ -111,7 +111,7 @@ export const serviceFaqsTr = {
       id: 'eu-ai-act-oversight',
       question: 'EU AI Act kapsamında insan gözetimi nedir?',
       answer:
-        'İnsan gözetimi; nitelikli personelin yapay zeka sistem çıktılarını izlemesi, yorumlaması ve gerektiğinde geçersiz kılması anlamına gelir — özellikle yüksek riskli uygulamalarda. EU AI Act, bireylere zarar verebilecek veya hakları ihlal edebilecek otomatik kararları durdurma veya geri alma yeteneği dahil olmak üzere etkili gözetim mekanizmalarını zorunlu kılar.'
+        'İnsan gözetimi; nitelikli personelin yapay zeka sistem çıktılarını izlemesi, yorumlaması ve gerektiğinde geçersiz kılması anlamına gelir; özellikle yüksek riskli uygulamalarda. EU AI Act, bireylere zarar verebilecek veya hakları ihlal edebilecek otomatik kararları durdurma veya geri alma yeteneği dahil olmak üzere etkili gözetim mekanizmalarını zorunlu kılar.'
     },
     {
       id: 'mandatory-oversight-cases',
@@ -123,7 +123,7 @@ export const serviceFaqsTr = {
       id: 'full-automation-compliance',
       question: 'Tam otomatik yapay zeka karar alma uyumlu olabilir mi?',
       answer:
-        'Düşük riskli kullanım senaryolarında tam otomasyon kabul edilebilir olabilir; ancak yüksek riskli sistemler geçersiz kılma yetkisine sahip anlamlı insan incelemesi gerektirir. AION her süreci sorumlu yapay zeka ilkeleri ve regülasyon gerekliliklerine göre değerlendirir; yalnızca otomasyonun hesap verebilirlik ve şeffaflık standartlarını karşılayamadığı noktalarda manuel kontrol adımlarını korur.'
+        'Düşük riskli kullanım senaryolarında tam otomasyon kabul edilebilir olabilir; ancak yüksek riskli sistemler geçersiz kılma yetkisine sahip anlamlı insan incelemesi gerektirir. AION her süreci sorumlu yapay zeka ilkeleri ve regülasyon gerekliliklerine göre değerlendirir; hesap verebilirlik veya şeffaflık standartlarını karşılayamayan noktalarda manuel kontrol adımlarını korur.'
     },
     {
       id: 'human-in-the-loop-design',

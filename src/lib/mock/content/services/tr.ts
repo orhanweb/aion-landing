@@ -10,8 +10,8 @@ export const mockServicesTr: ServiceContent[] = [
     shortDescription:
       'ISO/IEC 42001 temelli yapay zeka yönetişim sistemi kuruyoruz. AI sistemlerinin risklerini, karar süreçlerini ve yaşam döngüsünü kurumsal kontrol altına alıyoruz.',
     intro: [
-      'Yapay zekâ yönetişim sürecinizin ilk ve en kritik adımı, kurumunuzun mevcut durumunun net bir fotoğrafını çekmektir. Resmî belgelendirme sürecine ve sistem kurulumuna başlamadan önce kuruluşunuzda hâlihazırda kullanılan veya geliştirilen yapay zekâ sistemlerini; operasyonel, teknik ve yasal regülasyon riskleri açısından değerlendiriyoruz.',
-      'Mevcut uygulamalarınız ile ISO/IEC 42001 standardının gereklilikleri arasındaki farkları (Boşluk Analizi / Gap Analizi) karşılaştırıyor, iyileştirmeye açık zayıf noktalarınızı tespit ederek size detaylı bir rapor sunuyoruz. Yaptığımız bu mevcut durum analizi ve ön değerlendirme sayesinde sertifikasyon yolculuğunuzun önündeki engelleri ve riskleri henüz en başındayken belirliyor; böylece zaman ve maliyet kayıplarını önleyerek kurumunuza en uygun, stratejik ve hedefe yönelik yol haritasını çıkarıyoruz.'
+      'Yapay zeka yönetişiminde ilk adım, kurumunuzun bugünkü durumunu net biçimde görmektir. Sertifikasyon veya sistem kurulumuna geçmeden önce kullandığınız veya geliştirdiğiniz yapay zeka sistemlerini operasyonel, teknik ve yasal açıdan değerlendiriyoruz.',
+      'Mevcut uygulamalarınızı ISO/IEC 42001 gereklilikleriyle karşılaştırıyor, gap analiziyle zayıf noktaları tespit ediyor ve ayrıntılı bir rapor sunuyoruz. Böylece yol haritasına başlamadan önce engelleri görür, zaman ve maliyet kaybını önlersiniz.'
     ],
     outcomes: [
       'ISO/IEC 42001 uyumlu AI yönetişim sistemi',
@@ -29,37 +29,37 @@ export const mockServicesTr: ServiceContent[] = [
       {
         title: 'Hedef Belirleme',
         description:
-          'Yapay zekâ yolculuğunuzda rotanızı netleştiriyoruz. AION olarak kuruluşunuzun stratejik vizyonuyla uyumlu, ölçülebilir, izlenebilir ve kurumsal YZ politikalarınızla entegre yapay zekâ hedefleri belirliyoruz. Teknolojiyi sadece kullanmak için değil; kurumunuza somut değer katacak, regülasyonlara hazır ve sürdürülebilir sonuçlar elde etmeniz için başlangıç noktanızı tasarlıyoruz.'
+          'Yapay zeka hedeflerinizi stratejik vizyonunuz ve mevcut politikalarınızla uyumlu hale getiriyoruz. Amaç ölçülebilir sonuçlar: somut değer, regülasyon hazırlığı ve sürdürülebilir sistemler.'
       },
       {
         title: 'Politika ve Prosedürler',
         description:
-          'Yapay zekâ sistemlerinizin geliştirilmesi ve kullanımı için kurumsal anayasanızı yazıyoruz. Etik kullanım, veri güvenliği, şeffaflık ve adil karar alma ilkelerini barındıran; organizasyonunuzun diğer politikalarıyla (kalite, bilgi güvenliği, gizlilik) konuşan sağlam bir ISO/IEC 42001 YZ politikası ve dokümantasyon altyapısı kuruyoruz.'
+          'Yapay zeka sistemlerinizi geliştirmek ve kullanmak için gereken politika ve dokümantasyonu hazırlıyoruz. ISO/IEC 42001 yapay zeka politikanız; etik kullanım, veri güvenliği, şeffaflık ve adil karar almayı kapsar; kalite, bilgi güvenliği ve gizlilik politikalarınızla uyumlu çalışır.'
       },
       {
         title: 'Eğitim ve Farkındalık Faaliyetleri',
         description:
-          'Yapay zekâ dönüşümü teknolojiyle değil, insanla başlar. Çalışanlarınızın ve yönetim ekibinizin YZ politikaları, etik sorumluluklar, potansiyel riskler ve kendi rolleri konusundaki farkındalıklarını artırıyoruz. Yetkinlik açıklarını tespit edip gerekli eğitimleri planlayarak kurumunuzun tamamında "Tasarım Yoluyla Güven" (Trust by Design) kültürünü inşa ediyoruz.'
+          'Yapay zeka yönetişimi teknoloji kadar insanla da ilgilidir. Çalışan ve yönetim ekiplerinizi yapay zeka politikaları, etik sorumluluklar, riskler ve rolleri konusunda eğitiyoruz. Yetkinlik açıklarını kapatıyor ve Trust by Design kültürünü kuruma yaygınlaştırıyoruz.'
       },
       {
         title: 'Risk Mimarisi ve Kontroller',
         description:
-          'Yapay zekânın getirdiği algoritmik önyargı, veri zehirlenmesi ve şeffaflık eksikliği gibi benzersiz riskleri sistematik olarak tanımlıyor ve YZ Sistem Etki Değerlendirmelerini (AI System Impact Assessment) gerçekleştiriyoruz. ISO/IEC 42001 Ek-A gereklilikleri doğrultusunda kuruma özel bir "Uygulanabilirlik Bildirgesi" hazırlayarak kabul edilemez riskleri en aza indirecek teknik, yasal ve idari kontrolleri hayata geçiriyoruz.'
+          'Algoritmik önyargı, veri zehirlenmesi ve şeffaflık eksikliği gibi yapay zekaya özgü riskleri tanımlıyor, YZ Sistem Etki Değerlendirmelerini yürütüyoruz. ISO/IEC 42001 Ek-A kapsamında Uygulanabilirlik Bildirgesi hazırlayıp kabul edilemez riski azaltacak kontrolleri devreye alıyoruz.'
       },
       {
         title: 'Performans Ölçümü',
         description:
-          'Kurduğumuz sistemin ve yapay zekâ modellerinizin sadece kâğıt üzerinde kalmamasını, sahada gerçekten işe yaramasını sağlıyoruz. Doğruluk, şeffaflık ve güvenlik gibi metriklerle neyin, ne zaman ve nasıl ölçüleceğini belirliyoruz. Böylece YZ sistemlerinizin belirlenen hedeflere ve etik kurallara ne kadar sadık kaldığını sürekli izliyor ve yönetime şeffaf raporlamalar sunuyoruz.'
+          'Doğruluk, şeffaflık ve güvenlik gibi metriklerin ne sıklıkla, kim tarafından ölçüleceğini belirliyoruz. Yapay zeka sistemleri tanımlanan hedeflere ve etik kurallara göre izlenir; yönetime düzenli raporlama yapılır.'
       },
       {
         title: 'Sertifikasyon Denetimi',
         description:
-          'Kurumunuzu uluslararası akredite belgelendirme denetimlerine uçtan uca hazırlıyoruz. Resmî dış denetimler (BSI, TÜV vb.) öncesinde uzman kadromuzla planlı "iç tetkikler" gerçekleştiriyor, olası bulguları ve zayıf noktaları tespit ederek eksikleri hızla gideriyoruz. Dış denetim ve belgelendirme sürecinde yanınızda yer alarak ISO 42001 sertifikasını başarıyla almanıza rehberlik ediyoruz.'
+          'Kurumunuzu akredite sertifikasyon denetimlerine hazırlıyoruz. Dış denetimler (BSI, TÜV vb.) öncesinde iç denetimler yapıyor, bulguları kapatıyor ve ISO 42001 sertifikasyon sürecinde yanınızda oluyoruz.'
       },
       {
         title: 'Sürekli İyileştirme',
         description:
-          'Yapay zekâ sistemleri statik yazılımlar değildir; sürekli yeni verilerle öğrenir ve değişirler. Bu dinamik yapıyı kontrol altında tutmak için meydana gelebilecek uygunsuzluklarda kök neden analizleri yapıyor ve düzeltici faaliyetler (CAPA) planlıyoruz. Kurumunuzun YZ yönetim sisteminin uygunluğunu, etkinliğini ve dayanıklılığını sürekli iyileştirerek inovasyon gücünüzü güvenle ölçeklendirmenizi sağlıyoruz.'
+          'Yapay zeka sistemleri yeni verilerle öğrenmeye devam eder. Uygunsuzluklarda kök neden analizi yapıyor, düzeltici faaliyetler (CAPA) planlıyor ve ölçeklendikçe yönetim sisteminizin etkin kalmasını sağlıyoruz.'
       }
     ],
     relatedSlugs: ['regulatory-compliance', 'human-oversight']
@@ -72,7 +72,7 @@ export const mockServicesTr: ServiceContent[] = [
     shortDescription:
       'AI sistemlerinizi EU AI Act ve uluslararası düzenlemeler kapsamında değerlendiriyor, risk sınıflandırması ve uyum süreçlerini yapılandırıyoruz.',
     intro: [
-      'Yapay zekâ sistemleri; etik, güvenlik, şeffaflık ve regülasyon açısından yeni riskler doğurur. ISO 42001, bu riskleri kontrol altına alarak kurumlara güvenilir, sürdürülebilir ve denetlenebilir AI yönetimi sağlar. AI çözümlerinizi EU AI Act ve uluslararası standartlara uyumlu ve sorumlu hale getiriyor; risk sınıflandırması, kontrol mekanizmaları ve yönetişim süreçlerini uçtan uca yapılandırıyoruz.'
+      'Yapay zeka sistemleri etik, güvenlik, şeffaflık ve regülasyon açısından yeni riskler doğurur. ISO 42001 bu riskleri yapılandırılmış ve denetlenebilir biçimde yönetmenize yardımcı olur. AI çözümlerinizi EU AI Act ve uluslararası standartlara uyumlu hale getiriyoruz: risk sınıflandırması, kontroller ve yönetişim uçtan uca.'
     ],
     outcomes: [
       'Doğru EU AI Act risk sınıflandırması',
@@ -91,23 +91,23 @@ export const mockServicesTr: ServiceContent[] = [
         title: 'Yanlış Risk Sınıflandırması ve Eksik Etki Değerlendirmeleri',
         highlight: "€35M veya küresel cironun %7'si",
         description:
-          "Birçok kuruluş, kullandığı yapay zekâ sistemlerinin EU AI Act kapsamındaki risk kategorisini doğru belirleyememekte ve yüksek riskli sistemler için zorunlu olan etki değerlendirmelerini atlamaktadır. Bu eksiklik, şirketleri 35 milyon Euro'ya veya küresel cironun %7'sine varan ağır idari para cezalarıyla karşı karşıya bırakabilmektedir. AION olarak sistemlerinizi uluslararası standartlarda denetleyip doğru sınıflandırarak bu ağır finansal ve yasal riskleri tamamen ortadan kaldırıyoruz. Stratejik risk değerlendirme yaklaşımımız sayesinde yasal denetimlerde kurumsal otoritenizi ve güvenilirliğinizi şüpheye yer bırakmayacak şekilde kanıtlıyorsunuz."
+          "Birçok kuruluş yapay zeka sistemlerini EU AI Act kapsamında yanlış sınıflandırıyor veya yüksek riskli kullanım senaryoları için zorunlu etki değerlendirmelerini atlıyor. Cezalar 35 milyon avroya veya küresel cironun %7'sine kadar çıkabilir. Sistemlerinizi uluslararası standartlara göre denetleyip doğru sınıflandırmanızı sağlıyoruz; yükümlülüklerinizi regülatör sormadan önce netleştirirsiniz."
       },
       {
         title: 'Şeffaflık ve Açıklanabilirlik (Explainability) Yetersizliği',
         description:
-          'Avrupa Birliği Yapay Zekâ Yasası, kullanıcıların bir yapay zekâ (örneğin chatbotlar veya deepfake içerikler) ile etkileşime girdiğini açıkça bilmesini zorunlu bir şeffaflık ilkesi olarak şart koşar. Modellerin ürettiği kararların "kara kutu" mantığıyla belirsiz olması, yalnızca müşteri güvenini zedelemekle kalmaz, regülatörler nezdinde de doğrudan ihlal sayılır. Sistemlerinizin karar alma süreçlerini açıklanabilir kılmamak, marka itibarınıza zarar vererek pazar payınızı doğrudan etkiler. AION ile yapay zekâ mimarinizi şeffaflaştırarak arama motorlarının ve yapay zekâ asistanlarının sizi güvenilir bir "otorite" olarak referans almasını sağlıyoruz.'
+          'EU AI Act, kullanıcıların chatbot veya sentetik medya gibi yapay zeka ile etkileşime girdiğini bilmesini zorunlu kılar. Belirsiz model kararları güveni zedeler ve regülasyon riski yaratır. Karar süreçlerinizi belgeleyip açıklanabilir hale getirmenize yardımcı oluyoruz.'
       },
       {
         title: 'Veri Yönetişimi ve İnsan Gözetimi (Human Oversight) İhlalleri',
         description:
-          'Yasanın en katı kurallarından biri, modellerin eğitiminde kullanılan verilerin önyargılardan (bias) arındırılmış olması ve otomatik kararlara karşı mutlaka etkili bir "insan gözetimi" kurulmasıdır. Veri zehirlenmesine açık, ayrımcılık barındıran ve insan denetiminden tamamen yoksun otonom süreçler, büyük bir operasyonel ve hukuki uyum ihlalidir. Bu alandaki eksiklikler, kurumunuzu sadece yasal cezalara değil, aynı zamanda siber güvenlik zafiyetlerine karşı da savunmasız bırakır. AION uzmanlığı, veri kalitenizi güvence altına alarak sistemlerinize regülasyonların talep ettiği insan denetim mimarisini kusursuzca entegre eder.'
+          'Eğitim verileri sorumlu biçimde yönetilmeli; otomatik kararlar etkili insan gözetimi altında olmalıdır. Veri kalitesi, önyargı kontrolü veya inceleme süreçlerindeki boşluklar hem yasal hem güvenlik riski doğurur. Veri yönetişimini güvence altına alıyor, regülatörlerin beklediği gözetim mimarisini entegre ediyoruz.'
       },
       {
         title: 'Sağlayıcı (Provider) ve Kullanıcı (Deployer) Sorumluluklarının İhmali',
         highlight: "€15M'ye varan dolaylı cezalar",
         description:
-          "İşletmelerin yapay zekâ değer zincirindeki rollerini netleştirmemesi, üçüncü taraf hizmetlerdeki sözleşmesel ve yasal sorumlulukların ihlaline yol açar. Özellikle dışarıdan tedarik edilen yapay zekâ hizmetlerinin risk analizlerinin yapılmaması, şirketinizi 15 milyon Euro'ya varan cezaların dolaylı hedefi hâline getiren kritik bir uyum boşluğudur. Tedarik zincirindeki bu denetimsizlik, güvenilir bir iş ortağı olma statünüzü kaybetmenize ve küresel pazarlara girişinizin engellenmesine neden olabilir. AION ile tüm tedarikçi ilişkilerinizi uçtan uca denetleyerek sorumluluk dağılımınızı uluslararası yasalara ve ISO 42001 gerekliliklerine tam uyumlu hâle getiriyoruz."
+          "Yapay zeka değer zincirindeki roller net olmalıdır; özellikle üçüncü taraf model veya platform kullanımında. Tedarikçi due diligence eksikliği ve belgelenmemiş sorumluluklar 15 milyon avroya kadar ceza riski taşır. Sağlayıcı ve kullanıcı yükümlülüklerini haritalıyor, sözleşme ve kontrolleri ISO 42001 ile EU AI Act'e uyumlu hale getiriyoruz."
       }
     ],
     relatedSlugs: ['ai-governance', 'information-security']
@@ -120,8 +120,8 @@ export const mockServicesTr: ServiceContent[] = [
     shortDescription:
       'ISO 27001 çerçevesinde veri güvenliği, erişim kontrolü ve güvenli AI operasyonları için bilgi güvenliği mimarisi oluşturuyoruz.',
     intro: [
-      'Yapay zekâ sistemlerinde veri güvenliği nasıl sağlanır? Yapay zekâ modellerinizin eğitimi ve çalışması sırasında işlenen hassas verileri, veri sızıntılarına ve yapay zekâya özgü model zehirlenmesi (data poisoning) saldırılarına karşı uçtan uca koruyoruz.',
-      'ISO/IEC 27001 (Bilgi Güvenliği) ve ISO/IEC 42001 (Yapay Zekâ Yönetimi) standartlarının gerekliliklerini entegre ederek kurumsal verilerinizin gizliliğini ve bütünlüğünü uluslararası yasal düzenlemelere tam uyumlu bir şekilde güvence altına alıyoruz.'
+      'Yapay zeka eğitimi ve çıkarımında işlenen hassas veriler; sızıntılara ve veri zehirlenmesi gibi yapay zekaya özgü saldırılara karşı korunmalıdır.',
+      'ISO/IEC 27001 (Bilgi Güvenliği) ve ISO/IEC 42001 (Yapay Zeka Yönetimi) gerekliliklerini entegre ederek verilerinizin gizliliğini ve bütünlüğünü uluslararası düzenlemelere uygun biçimde güvence altına alıyoruz.'
     ],
     outcomes: [
       'ISO 27001 + 42001 entegre güvenlik mimarisi',
@@ -139,22 +139,22 @@ export const mockServicesTr: ServiceContent[] = [
       {
         title: 'Güvenli Model Operasyonları',
         description:
-          'Güvenli yapay zekâ model operasyonları, algoritmalarınızın canlı ortamda prompt injection (istem enjeksiyonu), modelden kaçınma (model evasion) ve manipülasyon gibi yeni nesil siber saldırılara karşı kesintisiz korunmasını ifade eder. AION uzmanlığı ile modellerinizin yaşam döngüsü boyunca dış müdahalelere kapalı, adil ve şeffaf sonuçlar üretmesini sağlıyor; "Tasarım Yoluyla Güven" (Trust by Design) ilkesiyle güvenilir yapay zekâ altyapıları inşa ediyoruz.'
+          'Canlı ortamdaki yapay zeka modelleri prompt injection, kaçınma ve manipülasyon saldırılarına maruz kalır. Algoritmalarınızı yaşam döngüsü boyunca koruyor; çıktıların adil, şeffaf ve dış müdahaleye dayanıklı kalmasını sağlıyoruz.'
       },
       {
         title: 'Risk Mimarisi ve Tehdit Analizi',
         description:
-          'Kurumunuza özel yapay zekâ sızma testleri (AI Penetration Testing) ve YZ sistemi etki değerlendirmeleri uygulayarak altyapınızdaki "kara kutu" güvenlik açıklarını siber saldırganlardan önce tespit ediyoruz. OWASP yönergeleri ve ISO/IEC 42001 çerçevesinde kurumunuza özel bir risk mimarisi oluşturarak operasyonel, yasal ve itibar kayıplarını önleyecek proaktif savunma ile kontrol mekanizmaları geliştiriyoruz.'
+          'Kuruma özel yapay zeka sızma testleri ve etki değerlendirmeleriyle güvenlik açıklarını saldırganlardan önce tespit ediyoruz. OWASP yönergeleri ve ISO/IEC 42001 çerçevesinde operasyonel, yasal ve itibar kaybını sınırlayan kontroller kuruyoruz.'
       },
       {
         title: 'İzleme ve Olay Yönetimi',
         description:
-          'Yapay zekâ modellerindeki anormalliklerin, performans düşüşlerinin (drift) ve siber güvenlik sapmalarının anında tespit edilmesi, operasyonel dayanıklılık ve iş sürekliliği için hayati önem taşır. AION olarak yapay zekâ altyapınızı sürekli denetleyen izleme mekanizmaları kuruyor; olası bir siber olayda hızlı ve etkili olay müdahale (incident response) planlarını devreye sokarak yasal bildirim süreçlerini ve sistem kurtarmayı profesyonelce yönetiyoruz.'
+          'Yapay zeka modellerindeki anormallikler, performans sapmaları ve güvenlik ihlalleri hızlı tespit gerektirir. İzleme, olay müdahale planları ve gerektiğinde yasal bildirim süreçlerini birlikte tasarlıyoruz.'
       },
       {
         title: 'Sürekli Güvenlik İyileştirme',
         description:
-          'Yapay zekâ teknolojileri kendi kendine öğrenerek değişirken ve siber tehdit manzarası sürekli evrilirken güvenlik altyapınızın statik kalması düşünülemez. Düzenli iç denetimler, kök neden analizleri ve performans ölçümleriyle (PUKÖ döngüsü) sisteminizi sürekli güncelliyor; EU AI Act gibi hızla değişen küresel regülasyonlara ve geleceğin otonom tehditlerine karşı her zaman hazırlıklı ve dirençli kalmanızı sağlıyoruz.'
+          'Tehditler ve regülasyonlar sürekli değişir. İç denetimler, kök neden analizleri ve PUKÖ döngüsüyle güvenlik duruşunuzu güncel tutuyoruz; EU AI Act dahil gelişen risklere karşı hazırlıklı kalırsınız.'
       }
     ],
     relatedSlugs: ['ai-governance', 'operational-resilience']
@@ -166,7 +166,7 @@ export const mockServicesTr: ServiceContent[] = [
     standard: 'ISO 22301',
     shortDescription: 'ISO 22301 iş sürekliliği yaklaşımıyla kritik AI ve veri sistemlerinin kesintilerde güvenle çalışmasını sağlıyoruz.',
     intro: [
-      'Kritik yapay zekâ ve veri sistemlerinin sürekliliğini güvence altına alıyor, kesinti risklerini görünür kılıyor ve kurumunuza özel operasyonel dayanıklılık yaklaşımıyla AI operasyonlarınızı sürdürülebilir, dirençli ve kontrol edilebilir bir yapıya dönüştürüyoruz. Her organizasyona terzi işi yaklaşarak, sektör ve kuruluş gereksinimlerini göz önüne alarak, ISO 22301 çerçevesinde sistemlerinizi yüksek erişilebilirlik, iş sürekliliği ve kurtarma kabiliyetiyle güçlendiriyoruz.'
+      'Kritik yapay zeka ve veri sistemlerinin çalışmaya devam etmesini sağlıyor, kesinti risklerini görünür kılıyor ve sektörünüze uygun operasyonel dayanıklılık yapısı kuruyoruz. ISO 22301 çerçevesinde erişilebilirlik, iş sürekliliği ve kurtarma kabiliyetini güçlendiriyoruz.'
     ],
     outcomes: [
       'Kritik AI süreç envanteri ve risk analizi',
@@ -184,42 +184,42 @@ export const mockServicesTr: ServiceContent[] = [
       {
         title: 'Kritik Sistem ve Süreç Analizi',
         description:
-          'İş sürekliliğini sağlamak adına kurumunuzdaki tüm yapay zekâ entegrasyonlarını, makine öğrenimi modellerini ve veri kaynaklarını detaylı bir risk analizinden geçiriyoruz. Olası siber tehditler veya operasyonel kesintiler karşısında en kritik süreçlerinizi belirleyerek proaktif bir yapay zekâ risk yönetimi stratejisi oluşturuyoruz. Böylece ISO 22301 ve ISO 42001 standartlarıyla tam uyumlu, "Tasarım Yoluyla Güven" (Trust by Design) ilkesini merkeze alan kesintisiz bir iş modeli tasarlıyoruz.'
+          'Yapay zeka entegrasyonlarını, ML modellerini ve veri kaynaklarını analiz ederek kritik süreçleri ve tehditleri belirliyoruz. Sonuç, ISO 22301 ve ISO 42001 ile uyumlu, Trust by Design odaklı bir risk stratejisidir.'
       },
       {
         title: 'Dayanıklılık Hedeflerinin Belirlenmesi',
         description:
-          'Beklenmedik kriz anlarında yapay zekâ operasyonlarınızın minimum kesintiyle çalışması için kurumsal hedeflerinize en uygun operasyonel dayanıklılık metriklerini (RTO/RPO) belirliyoruz. Arama motoru görünürlüğü ve kesintisiz müşteri deneyimi gibi kritik değerlerinizi korumak adına sistemlerinizin kriz anındaki toparlanma hızını optimize ediyoruz. Bu sayede pazar payınızı ve rekabet avantajınızı kaybetmeden sürdürülebilir ve güvenilir yapay zekâ altyapıları inşa etmenizi sağlıyoruz.'
+          'Operasyonlarınıza uygun RTO ve RPO hedefleri tanımlıyoruz. Kurtarma planları, kesinti anında müşteri deneyimini ve kritik iş fonksiyonlarını korur.'
       },
       {
         title: 'Süreklilik Politika ve Prosedürleri',
         description:
-          'Küresel regülasyonlara ve EU AI Act (Avrupa Birliği Yapay Zekâ Yasası) gibi yasal düzenlemelere tam uyumlu, kurumunuza özel iş sürekliliği politikaları ve kriz yönetimi prosedürleri hazırlıyoruz. Yapay zekâ modellerinizin olası bir kesinti anında nasıl davranacağını önceden kurgulayarak "kara kutu" risklerini şeffaf, izlenebilir ve yönetilebilir adımlara dönüştürüyoruz. Kriz anlarında veri güvenliğinizi ve şeffaflık ilkelerini garanti altına alacak bu anayasalar sayesinde marka itibarınızı yasal güvenceye alıyoruz.'
+          'EU AI Act dahil regülasyonlara uyumlu iş sürekliliği ve kriz prosedürleri hazırlıyoruz. Kesinti anında yapay zeka modellerinin nasıl davranacağı önceden tanımlanır; güvenli degradasyon ve kurtarma adımları netleşir.'
       },
       {
         title: 'Eğitim ve Farkındalık Faaliyetleri',
         description:
-          'Operasyonel dayanıklılığın en önemli halkası olan insan faktörünü güçlendirmek için ekiplerinize yapay zekâ yönetişimi ve veri güvenliği odaklı farkındalık eğitimleri sunuyoruz. Çalışanlarınızı potansiyel siber saldırılara, sızıntı risklerine ve kriz anı müdahale (incident response) süreçlerine karşı uygulamalı olarak hazırlıyoruz. Kurum genelinde proaktif bir güvenlik kültürü oluşturarak yapay zekâ altyapınızın insan gözetimi (human oversight) ile otonom hatalardan arınmış biçimde çalışmasını güvence altına alıyoruz.'
+          'Dayanıklılıkta insan faktörü belirleyicidir. Ekiplerinizi yapay zeka yönetişimi, veri güvenliği, olay müdahalesi ve insan gözetimi konusunda eğitiyoruz; otonom hataların kontrolsüz kalmasını önlüyoruz.'
       },
       {
         title: 'Dayanıklılık Mimarisi ve Kontroller',
         description:
-          'Yapay zekâ sistemleriniz için kesinti veya dışarıdan gelen bir siber saldırı durumunda anında devreye girecek yedekli ve güvenli bir dayanıklılık mimarisi kurguluyoruz. ISO 27001 bilgi güvenliği ve ISO 42001 yapay zekâ standartlarının zorunlu kıldığı teknik ve idari kontrol mekanizmalarını sistemlerinize uçtan uca entegre ediyoruz. Böylece veri zehirlenmesi (data poisoning) veya model sapması (model drift) gibi tehditleri henüz kaynağındayken engelleyen, kesintisiz bir hizmet altyapısı kuruyoruz.'
+          'Kesinti veya saldırı anında devreye giren yedekli mimari tasarlıyoruz. ISO 27001 ve ISO 42001 kontrollerini entegre ederek veri zehirlenmesi veya model sapması gibi tehditleri kaynağında engelliyoruz.'
       },
       {
         title: 'Performans Ölçümü ve Testler',
         description:
-          'Kurduğumuz iş sürekliliği yapısını kâğıt üzerinde bırakmıyor; yapay zekâ sızma testleri (AI Pen-Testing) ve felaket kurtarma senaryolarıyla canlı ortamda düzenli olarak sınıyoruz. Elde edilen verilerle yapay zekâ modellerinizin performansını sürekli ölçüyor, olası güvenlik zafiyetlerini (vulnerabilities) tespit edip operasyonel dayanıklılık kapasitenizi artırıyoruz. Müşteri odaklı bu ölçüm ve test süreçleri sayesinde kriz anlarında dahi yüksek performanslı ve güvenilir sonuçlar üretmeye devam etmenizi garantiliyoruz.'
+          'İş sürekliliği sadece kağıtta kalmaz. Yapay zeka sızma testleri ve felaket kurtarma tatbikatları performansı doğrular, zafiyetleri ortaya çıkarır ve dayanıklılık kapasitesini artırır.'
       },
       {
         title: 'Doğrulama ve Denetim Hazırlığı',
         description:
-          'Yapay zekâ süreçlerinizi, uluslararası akredite belgelendirme kuruluşlarının zorlu bağımsız denetimlerinden başarıyla geçecek şekilde doğruluyor ve belgeliyoruz. Kapsamlı iç tetkikler (Gap Analizi) uygulayarak regülasyon uyum eksikliklerinizi (compliance gaps) tespit ediyor ve dış denetimler öncesinde eksiksiz bir hazırlık sağlıyoruz. Sizi sadece yerel değil, küresel pazarda da güvenilir bir otorite hâline getirecek olan bu süreçle tüm yasal ve finansal ceza risklerinizi minimize ediyoruz.'
+          'Yapay zeka süreçlerinizi bağımsız sertifikasyon denetimlerine hazırlıyor, belgeliyoruz. İç denetimlerle uyum boşluklarını dış denetim öncesinde kapatır, yasal ve finansal riski azaltırız.'
       },
       {
         title: 'Sürekli İyileştirme',
         description:
-          'Yapay zekâ ekosisteminin sürekli evrilen dinamik doğasına ayak uydurmak için iş sürekliliği sistemlerinizi veri odaklı PUKÖ (Planla-Uygula-Kontrol Et-Önlem Al) döngüsü ile sürekli iyileştiriyoruz. Yeni siber tehditlere ve sürekli güncellenen küresel regülasyonlara karşı yapay zekâ yönetişim çerçevenizi her daim çevik ve güncel tutuyoruz. AION uzmanlığıyla sunduğumuz bu sürdürülebilir büyüme modeli, inovasyon hızınızı artırırken dijital yatırımlarınızın uzun vadeli ROI (Yatırım Getirisi) performansını da maksimize eder.'
+          'Süreklilik sistemlerinde PUKÖ döngüsü uygulayarak yapay zeka yönetişiminizi tehditler ve regülasyonlar değiştikçe güncel tutuyoruz.'
       }
     ],
     relatedSlugs: ['information-security', 'human-oversight']
@@ -231,7 +231,7 @@ export const mockServicesTr: ServiceContent[] = [
     standard: 'Human Oversight',
     shortDescription: 'Tasarım yoluyla güven yaklaşımıyla insan gözetimini merkeze alan, hesap verebilir risk yönetim altyapısı inşa ediyoruz.',
     intro: [
-      'Yapay zekâda "insan gözetimi" (human oversight), yapay zekâ sistemlerinin sorumlu, etik ve şeffaf bir şekilde kullanılmasını güvence altına almak için kurgulanan kritik bir mekanizmadır. ISO/IEC 42001 Yapay Zekâ Yönetim Sistemi standardı ve Avrupa Birliği Yapay Zekâ Yasası (EU AI Act) gibi çerçeveler; hesap verebilirlik ve şeffaflık beklentilerini karşılamak adına insan gözetimini temel bir şart olarak konumlandırır.'
+      'İnsan gözetimi, yapay zeka sistemlerinin sorumlu, etik ve şeffaf kullanımını sağlar. ISO/IEC 42001 ve EU AI Act, hesap verebilirlik ve şeffaflık için bunu temel bir gereklilik olarak ele alır.'
     ],
     outcomes: [
       'AI System Impact Assessment tabanlı gözetim planı',
@@ -249,27 +249,27 @@ export const mockServicesTr: ServiceContent[] = [
       {
         title: 'Etki Değerlendirmesi ile Gözetim İhtiyacının Belirlenmesi',
         description:
-          'İnsan gözetimi hedeflerinin, yapay zekâ sisteminin yaşam döngüsünün hangi aşamalarında devreye alınacağı önceden planlanmalıdır. İhtiyaç duyulan gözetimin seviyesi, yapılacak Yapay Zekâ Sistemi Etki Değerlendirmesi (AI System Impact Assessment) sonuçlarına göre belirlenmelidir. Özellikle sistemin gerçek kişiler üzerinde olası bir etkisi varsa insan gözetimi gereksinimleri (süreçler ve araçlar dâhil) mutlaka tanımlanmalıdır.'
+          'Gözetim hedefleri ve yaşam döngüsü aşamaları önceden planlanır. Gerekli düzey, Yapay Zeka Sistem Etki Değerlendirmesi sonuçlarına göre belirlenir. Sistem gerçek kişileri etkileyebiliyorsa gözetim süreçleri ve araçları açıkça tanımlanmalıdır.'
       },
       {
         title: 'Kararlara Müdahale Edebilen İnsan İncelemeciler Atanması',
         description:
-          'Sisteme entegre edilecek insan gözetmenler, yapay zekânın ürettiği çıktıları sadece izlemekle kalmamalıdır. Bu kişilere, yapay zekâ tarafından alınan kararları geçersiz kılma (override) yetkisi verilmelidir.'
+          'Gözetim yapan kişiler çıktıları yalnızca izlememeli; gerektiğinde yapay zeka kararlarını geçersiz kılma (override) yetkisine sahip olmalıdır.'
       },
       {
         title: 'Personel Eğitimi ve Yetkinlik Sağlanması',
         description:
-          'İnsan gözetimi faaliyetlerinde görev alacak personelin yetkinliği hayati önem taşır. Bu personelin; sistemin talimatları, dokümantasyonu ve insan gözetimi hedeflerini karşılamak için yürütecekleri spesifik görevler hakkında bilgilendirilmesi, eğitilmesi ve süreci tam olarak anlaması sağlanmalıdır.'
+          'Gözetim personeli sistem talimatlarını, dokümantasyonu, gözetim hedeflerini ve kendi sorumluluklarını anlamalıdır. Eğitim ve yetkinlik kontrolleri tasarımın parçasıdır.'
       },
       {
         title: 'Performans İzleme ve Geri Bildirim Mekanizmaları',
         description:
-          'İnsan gözetimi, yapay zekâ çıktılarının doğruluğu da dâhil olmak üzere sistem performansının sürekli olarak izlenmesini içerir. Gözetmenlerin, sistem çıktılarının ilgili taraflara etkileri veya sistemin performansındaki sapmalar hakkında endişelerini raporlayabilecekleri şeffaf bir mekanizma kurulmalıdır.'
+          'Gözetim; sistem performansının ve çıktı doğruluğunun izlenmesini içerir. Gözetmenlerin paydaş etkisi veya performans sapması konusunda endişelerini iletebileceği net bir kanal kurulmalıdır.'
       },
       {
         title: 'Tam Otomasyonun Sorgulanması ve Uygunluk Kontrolü',
         description:
-          'Her sürecin tamamen yapay zekâya devredilmesi doğru olmayabilir. Tamamen otomatik karar alma mekanizmasının, sistemin kullanım amacına ve sorumlu yapay zekâ kullanım ilkelerine uygun olup olmadığı dikkatlice değerlendirilmeli, gerektiğinde manuel kontrol adımları süreçte tutulmalıdır. Ayrıca sistemin, kullanım talimatlarına göre "kabul edilebilir kullanım" için gerektirdiği insan gözetimi standartlarına sahip olduğu garanti edilmelidir.'
+          'Her süreç tamamen otomasyona devredilmemelidir. Tam otomasyonun kullanım amacına ve sorumlu yapay zeka ilkelerine uygunluğu değerlendirilir; hesap verebilirlik veya şeffaflık gerektiren noktalarda manuel kontrol adımları korunur.'
       }
     ],
     relatedSlugs: ['ai-governance', 'regulatory-compliance']

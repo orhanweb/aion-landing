@@ -29,7 +29,7 @@ export const mockTestimonialsTr: MockTestimonial[] = [
     sector: 'Sağlık Teknolojileri',
     outcome: 'Güvenli veri mimarisi ve AI operasyon kontrol seti',
     quote:
-      'ISO 27001 çerçevesinde güvenli veri altyapımızı kurarken AI operasyonlarımızı aynı mimariye kusursuz entegre ettiler. Veri güvenliği konusunda artık tam güvenle ilerliyoruz.',
+      'ISO 27001 çerçevesinde güvenli veri altyapımızı kurarken AI operasyonlarımızı aynı mimariye entegre ettiler. Veri güvenliği konusunda artık net bir çerçeveyle ilerliyoruz.',
     serviceSlug: 'information-security',
     featured: false
   },
@@ -82,7 +82,7 @@ export const mockTestimonialsEn: MockTestimonial[] = [
     sector: 'Health Technology',
     outcome: 'Secure data architecture and AI operations control set',
     quote:
-      'They built our ISO 27001 secure data infrastructure and integrated AI operations into the same architecture seamlessly. We now move forward with full confidence in our data security.',
+      'They built our ISO 27001 secure data infrastructure and integrated AI operations into the same architecture. We now have a clear framework for data security.',
     serviceSlug: 'information-security',
     featured: false
   },

@@ -14,13 +14,13 @@ export type MockAboutContent = {
 
 export const mockAboutTr: MockAboutContent = {
   mission:
-    'AION, kurumların yapay zeka sistemlerini güvenli, şeffaf ve denetlenebilir şekilde yönetmesi için ISO standartları ve EU AI Act uyumunda uçtan uca danışmanlık sunar.',
+    'AION, kurumların yapay zeka sistemlerini güvenli, şeffaf ve denetlenebilir biçimde yönetmesi için ISO standartları ve EU AI Act uyumunda danışmanlık sunar.',
   story:
-    'Yapay zeka regülasyonları hızla evriliyor; kurumlar teknik ekipler ile uyum birimleri arasında köprü kuracak güvenilir bir ortağa ihtiyaç duyuyor. AION, sertifikasyon odaklı danışmanlık geleneğini AI yönetişimi alanına taşıyarak stratejiden denetime kadar yanınızda olur.',
+    'Yapay zeka regülasyonları hızla değişiyor. Teknik ekipler ile uyum birimleri arasında köprü kurmak giderek zorlaşıyor. AION, sertifikasyon odaklı danışmanlık deneyimini yapay zeka yönetişimine taşıyarak stratejiden denetime kadar yanınızda olur.',
   principles: [
     {
       title: 'Trust by Design',
-      description: 'Güven, sonradan eklenen bir katman değil; süreçlerin ve sistemlerin tasarımının merkezinde yer alır.'
+      description: 'Güven sonradan eklenen bir katman değil. Süreçlerin ve sistemlerin tasarımının parçasıdır.'
     },
     {
       title: 'Audit-Ready',
@@ -32,20 +32,19 @@ export const mockAboutTr: MockAboutContent = {
     },
     {
       title: 'Long-Term Partnership',
-      description: 'Sertifika almak bir bitiş değil; sürekli iyileştirme ve regülasyon takibi için kalıcı bir ilişki başlatır.'
+      description: 'Sertifika bitiş çizgisi değil. Sürekli iyileştirme ve regülasyon takibi için kalıcı bir ilişkinin başlangıcıdır.'
     }
   ]
 };
 
 export const mockAboutEn: MockAboutContent = {
-  mission:
-    'AION delivers end-to-end consulting so organizations manage AI systems securely, transparently, and auditably under ISO standards and the EU AI Act.',
+  mission: 'AION helps organizations manage AI systems securely, transparently, and auditably under ISO standards and the EU AI Act.',
   story:
-    'AI regulation is evolving fast; enterprises need a trusted partner bridging technical teams and compliance functions. AION brings certification-grade consulting to AI governance — from strategy through audit.',
+    'AI regulation is changing quickly, and the gap between technical teams and compliance functions keeps widening. AION brings certification-grade consulting to AI governance, from strategy through audit.',
   principles: [
     {
       title: 'Trust by Design',
-      description: 'Trust is not a layer added later — it sits at the center of how processes and systems are designed.'
+      description: 'Trust is built into how processes and systems are designed, not added at the end.'
     },
     {
       title: 'Audit-Ready',
@@ -57,7 +56,7 @@ export const mockAboutEn: MockAboutContent = {
     },
     {
       title: 'Long-Term Partnership',
-      description: 'Certification is not the finish line — it starts a lasting relationship for continuous improvement and regulatory tracking.'
+      description: 'Certification is a milestone, not the finish line. We stay with you for continuous improvement and regulatory tracking.'
     }
   ]
 };

@@ -8,7 +8,7 @@
     },
     "pages": {
       "home": {
-        "title": "AION — Is Your AI System Audit-Ready?",
+        "title": "AION: Is Your AI System Audit-Ready?",
         "description": "Risk classification, control gap analysis, and compliance roadmap for EU AI Act and ISO 42001 readiness."
       },
       "about": {
@@ -54,7 +54,7 @@
     "titleLine1": "Is your AI system",
     "titleLine2": "audit-ready?",
     "titleLine3": "See the risk. Build the roadmap.",
-    "description": "As EU AI Act and ISO 42001 expectations become concrete, wrong risk classification or missing controls create direct audit exposure. AION turns gap analysis into an actionable compliance plan through certification.",
+    "description": "As EU AI Act and ISO 42001 requirements take shape, wrong risk classification or missing controls create direct audit exposure. AION turns gap analysis into a practical compliance plan through certification.",
     "standards": "ISO 42001, EU AI Act, ISO 27001, ISO 22301",
     "primaryCta": "Get a Free Gap Analysis",
     "secondaryCta": "Explore Services",
@@ -142,7 +142,7 @@
   },
   "metrics": {
     "label": "Gap Analysis Outputs",
-    "description": "After the form, the goal is not just a callback. The goal is an actionable output that makes your audit exposure concrete.",
+    "description": "After the form, the output is an actionable view of your audit exposure, not just a callback request.",
     "items": [
       { "value": "Score", "label": "AI risk and compliance maturity" },
       { "value": "Map", "label": "ISO 42001 and EU AI Act control gaps" },

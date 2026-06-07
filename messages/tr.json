@@ -146,7 +146,7 @@
   },
   "metrics": {
     "label": "Gap Analizi Çıktıları",
-    "description": "Form doldurulduktan sonra amaç sadece geri dönüş yapmak değil; kurumun denetim riskini somutlaştıran uygulanabilir bir çıktı üretmek.",
+    "description": "Form doldurulduktan sonra amaç yalnızca geri dönüş değil; denetim riskinizi somutlaştıran uygulanabilir bir çıktı üretmek.",
     "items": [
       { "value": "Skor", "label": "AI risk ve uyum olgunluğu" },
       { "value": "Harita", "label": "ISO 42001 ve EU AI Act kontrol boşlukları" },
@@ -196,7 +196,7 @@
     "title": "Ekiple Tanışın",
     "description": "ISO standartları, EU AI Act ve kurumsal AI yönetişiminde yanınızda olan danışmanlar.",
     "expertiseLabel": "Uzmanlık alanları",
-    "linkedinCta": "{name} — LinkedIn",
+    "linkedinCta": "{name} · LinkedIn",
     "linkedinAria": "{name} LinkedIn profili (yeni sekmede açılır)"
   },
   "assessmentTeaser": {

@@ -23,7 +23,7 @@ export const privacyEn: LegalDocument = {
         'Identity and contact details (name, job title, corporate email, phone)',
         'Company information (company name, sector, employee count range)',
         'Assessment form responses (compliance questions, free-text descriptions)',
-        'Technical data (IP address, browser type — via server logs)',
+        'Technical data (IP address, browser type via server logs)',
         'Marketing preference (optional consent for updates)'
       ]
     },

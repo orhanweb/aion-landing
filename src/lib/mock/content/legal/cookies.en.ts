@@ -20,8 +20,8 @@ export const cookiesEn: LegalDocument = {
       title: 'First-Party Cookies',
       paragraphs: ['Our site uses the following first-party mechanisms:'],
       list: [
-        'Language preference — locale routing for the session (next-intl)',
-        'Technical session cookies — security and load balancing (hosting provider)',
+        'Language preference: locale routing for the session (next-intl)',
+        'Technical session cookies: security and load balancing (hosting provider)',
         'No first-party marketing or profiling cookies'
       ]
     },
@@ -32,7 +32,7 @@ export const cookiesEn: LegalDocument = {
         'Calendly: We load the scheduling widget only after you click “Open Calendar”. Calendly may set its own cookies.',
         'Calendly privacy: calendly.com/privacy'
       ],
-      list: ['calendly.com — appointment scheduling (after user action)', 'Hosting/CDN provider — static asset delivery (technical cookies)']
+      list: ['calendly.com: appointment scheduling (after user action)', 'Hosting/CDN provider: static asset delivery (technical cookies)']
     },
     {
       id: 'fonts',

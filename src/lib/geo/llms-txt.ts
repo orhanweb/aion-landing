@@ -56,7 +56,7 @@ function buildServicesSection(locale: Locale, heading: string) {
       continue;
     }
 
-    lines.push(formatLink(service.title, localizedUrl(locale, `/services/${slug}`), `${service.standard} — ${service.shortDescription}`));
+    lines.push(formatLink(service.title, localizedUrl(locale, `/services/${slug}`), `${service.standard}: ${service.shortDescription}`));
   }
 
   return lines.join('\n');
@@ -96,7 +96,7 @@ export function buildLlmsTxt(): string {
   const tagline = en.meta.siteTagline;
 
   return [
-    `# ${siteName} — ${tagline}`,
+    `# ${siteName}: ${tagline}`,
     '',
     `> ${en.meta.organizationDescription}`,
     `> ${tr.meta.organizationDescription}`,
