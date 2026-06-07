@@ -20,7 +20,7 @@ export function InteractiveCardShell({ children, className, ...props }: Interact
 
 export function interactiveCardSurfaceClassName(className?: string) {
   return cn(
-    'relative overflow-hidden rounded-lg border border-border bg-[var(--ink-elevated)]',
+    'relative overflow-hidden rounded-lg border border-border bg-card',
     'transition-all duration-300',
     'group-hover:-translate-y-1 group-hover:border-accent/25',
     'group-hover:shadow-[0_16px_48px_-20px_rgba(184,149,106,0.55)]',

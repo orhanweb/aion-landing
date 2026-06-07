@@ -8,8 +8,8 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: 'rounded-sm border border-accent bg-accent px-6 py-3 text-sm text-[var(--ink)] hover:bg-[var(--accent-strong)]',
-        secondary: 'rounded-sm border border-border bg-transparent px-6 py-3 text-sm text-foreground hover:border-[var(--line-strong)]',
+        primary: 'rounded-sm border border-accent bg-accent px-6 py-3 text-sm text-primary-foreground hover:bg-(--accent-strong)',
+        secondary: 'rounded-sm border border-border bg-transparent px-6 py-3 text-sm text-foreground hover:border-(--line-strong)',
         ghost: 'rounded-none border-b border-transparent px-0 py-1 text-sm text-foreground hover:border-accent',
         link: 'rounded-none px-0 py-0 text-sm text-accent underline-offset-4 hover:underline'
       },

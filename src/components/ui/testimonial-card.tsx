@@ -11,7 +11,7 @@ type TestimonialCardProps = {
 
 function testimonialCardClassName(className?: string) {
   return cn(
-    'relative overflow-hidden rounded-lg border border-border border-l-2 border-l-border bg-[var(--ink-elevated)] text-foreground',
+    'relative overflow-hidden rounded-lg border border-border border-l-2 border-l-border bg-card text-foreground',
     'transition-colors duration-300',
     'group-hover:border-accent/25 group-hover:border-l-accent/70',
     className

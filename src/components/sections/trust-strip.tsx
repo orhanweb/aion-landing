@@ -8,7 +8,7 @@ export async function TrustStrip() {
   const frameworks = t.raw('frameworks') as string[];
 
   return (
-    <div className="border-y border-border bg-[var(--ink-elevated)] py-5">
+    <div className="border-y border-border bg-card py-5">
       <Container>
         <div className="flex flex-col gap-3 md:flex-row md:items-center md:gap-8 lg:gap-12">
           <MonoLabel className="shrink-0 text-accent">{t('label')}</MonoLabel>

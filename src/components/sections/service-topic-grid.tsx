@@ -14,7 +14,7 @@ function TopicCard({ step, index, fullWidth = false }: { step: ServiceStep; inde
   const num = String(index + 1).padStart(2, '0');
 
   return (
-    <article className={cn('h-full rounded-lg border border-border bg-[var(--ink-elevated)] p-6 md:p-8', fullWidth && 'sm:col-span-2')}>
+    <article className={cn('h-full rounded-lg border border-border bg-card p-6 md:p-8', fullWidth && 'sm:col-span-2')}>
       <span className="font-mono-label text-accent">{num}</span>
       <h3 className="font-display mt-3 text-xl tracking-tight">{step.title}</h3>
       <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">{step.description}</p>

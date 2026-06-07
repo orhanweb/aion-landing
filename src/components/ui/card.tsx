@@ -3,12 +3,7 @@ import { cn } from '@/lib/utils/cn';
 import { type HTMLAttributes } from 'react';
 
 export function Card({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
-  return (
-    <div
-      className={cn('rounded-lg border border-border bg-[var(--ink-elevated)] text-card-foreground transition-all duration-300', className)}
-      {...props}
-    />
-  );
+  return <div className={cn('rounded-lg border border-border bg-card text-card-foreground transition-all duration-300', className)} {...props} />;
 }
 
 export function CardHeader({ className, ...props }: HTMLAttributes<HTMLDivElement>) {

@@ -4,14 +4,14 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { type HTMLAttributes } from 'react';
 
 export function Container({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
-  return <div className={cn('mx-auto w-full max-w-[1280px] px-4 sm:px-6 lg:px-8', className)} {...props} />;
+  return <div className={cn('mx-auto w-full max-w-(--layout-shell) px-4 sm:px-6 lg:px-8', className)} {...props} />;
 }
 
 const sectionVariants = cva('relative', {
   variants: {
     variant: {
       default: 'bg-background text-foreground',
-      elevated: 'bg-[var(--ink-elevated)] text-foreground',
+      elevated: 'bg-card text-foreground',
       paper: 'bg-paper text-paper-foreground'
     },
     spacing: {
