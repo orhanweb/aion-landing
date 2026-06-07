@@ -37,7 +37,7 @@ export function WizardProgress({ currentStep }: WizardProgressProps) {
                 className={cn(
                   'inline-block rounded-full border px-3 py-1 font-mono-label transition-colors',
                   isActive && 'border-accent bg-accent/10 text-accent',
-                  isComplete && !isActive && 'border-[var(--line-strong)] text-foreground',
+                  isComplete && !isActive && 'border-(--line-strong) text-foreground',
                   !isActive && !isComplete && 'border-border text-muted-foreground'
                 )}
               >

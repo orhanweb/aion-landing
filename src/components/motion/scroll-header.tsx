@@ -17,7 +17,7 @@ export function ScrollHeader({ children, className }: ScrollHeaderProps) {
     <header
       className={cn(
         'fixed inset-x-0 top-0 z-50 transition-[background-color,border-color] duration-300',
-        scrolled ? 'border-b border-border bg-[var(--ink)]/95 backdrop-blur-sm' : 'border-b border-transparent bg-transparent',
+        scrolled ? 'border-b border-border bg-(--ink)/95 backdrop-blur-sm' : 'border-b border-transparent bg-transparent',
         className
       )}
     >

@@ -29,11 +29,8 @@ export function ServiceFaqSection({ label, title, titleId, faqs }: ServiceFaqSec
       <div className="mt-12 space-y-4">
         {faqs.map((faq, index) => (
           <FadeIn key={faq.id} delay={index * 0.05}>
-            <details
-              id={faqQuestionFragmentId(faq.id)}
-              className="group rounded-lg border border-border bg-[var(--ink-elevated)] open:border-accent/25"
-            >
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-4 rounded-lg px-6 py-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--ink-elevated)] [&::-webkit-details-marker]:hidden">
+            <details id={faqQuestionFragmentId(faq.id)} className="group rounded-lg border border-border bg-card open:border-accent/25">
+              <summary className="flex cursor-pointer list-none items-start justify-between gap-4 rounded-lg px-6 py-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card [&::-webkit-details-marker]:hidden">
                 <span className="text-base font-semibold tracking-tight text-foreground md:text-lg">{faq.question}</span>
                 <ChevronDown
                   aria-hidden="true"

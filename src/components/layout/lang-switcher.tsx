@@ -31,7 +31,7 @@ export function LangSwitcher() {
         'font-mono-label inline-flex min-h-8 min-w-8 items-center justify-center rounded-md px-2.5 py-1.5',
         'text-muted-foreground transition-[color,background-color] duration-200',
         'hover:bg-[rgba(238,234,227,0.06)] hover:text-foreground',
-        'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--ink)]'
+        'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-(--ink)'
       )}
     >
       {localeLabels[nextLocale]}

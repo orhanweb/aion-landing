@@ -14,7 +14,7 @@ export default function RootNotFound() {
           <p className="max-w-md text-sm text-muted-foreground">The page you&apos;re looking for doesn&apos;t exist or has been moved.</p>
           <Link
             href={`/${routing.defaultLocale}`}
-            className="mt-2 inline-flex rounded-md bg-accent px-5 py-3 font-mono-label text-[var(--ink)] transition-colors hover:bg-[var(--accent-strong)]"
+            className="mt-2 inline-flex rounded-md bg-accent px-5 py-3 font-mono-label text-(--ink) transition-colors hover:bg-(--accent-strong)"
           >
             Back to home
           </Link>

@@ -24,7 +24,7 @@ export function FieldError({ error, id, live = false }: FieldErrorProps) {
   const message = error.message.startsWith('errors.') ? t(error.message as 'errors.required') : error.message;
 
   return (
-    <p id={id} role={live ? 'alert' : undefined} className="text-xs text-[var(--accent-strong)]">
+    <p id={id} role={live ? 'alert' : undefined} className="text-xs text-(--accent-strong)">
       {message}
     </p>
   );
@@ -64,7 +64,7 @@ export function RadioGroupField<T extends FieldValues>({
       <legend className="font-mono-label mb-4 block text-foreground">{legend}</legend>
       {options.map(option => (
         <label key={option} className="flex items-center gap-3 text-sm">
-          <input type="radio" value={option} {...register(name)} className="accent-[var(--accent)]" />
+          <input type="radio" value={option} {...register(name)} className="accent-(--accent)" />
           {t(`${labelPrefix}.${option}` as 'fields.company')}
         </label>
       ))}
@@ -107,7 +107,7 @@ export function CheckboxGroupField<T extends FieldValues>({
       <legend className="font-mono-label mb-4 block text-foreground">{legend}</legend>
       {options.map(option => (
         <label key={option} className="flex items-center gap-3 text-sm">
-          <input type="checkbox" value={option} {...register(name)} className="accent-[var(--accent)]" />
+          <input type="checkbox" value={option} {...register(name)} className="accent-(--accent)" />
           {t(`${labelPrefix}.${option}` as 'fields.company')}
         </label>
       ))}

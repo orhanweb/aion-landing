@@ -36,7 +36,7 @@ export async function AboutPrinciples({ locale }: AboutPrinciplesProps) {
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
           {content.principles.map((principle, index) => (
             <FadeIn key={principle.title} delay={index * 0.05}>
-              <article className="h-full rounded-lg border border-border bg-[var(--ink-elevated)] p-6 md:p-8">
+              <article className="h-full rounded-lg border border-border bg-card p-6 md:p-8">
                 <h3 className="font-display text-xl tracking-tight text-foreground">{principle.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{principle.description}</p>
               </article>

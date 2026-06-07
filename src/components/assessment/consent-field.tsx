@@ -38,7 +38,7 @@ export function ConsentField<T extends FieldValues>({ register, name, error, onC
             field.onChange(event);
             onConsentChange?.();
           }}
-          className="mt-1 accent-[var(--accent)]"
+          className="mt-1 accent-(--accent)"
         />
         <p id={descriptionId} className="text-sm text-muted-foreground">
           <span id={labelId}>

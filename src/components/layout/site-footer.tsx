@@ -16,7 +16,7 @@ export async function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border bg-[var(--ink-elevated)] py-16">
+    <footer className="border-t border-border bg-card py-16">
       <Container>
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
           <div className="flex flex-col gap-4 lg:col-span-2">
