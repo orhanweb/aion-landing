@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { ExternalLink } from 'lucide-react';
 import { InteractiveCardShell, interactiveCardSurfaceClassName } from '@/components/ui/interactive-card';
 import { MonoLabel } from '@/components/ui/mono-label';
-import { personKnowsAboutTopics } from '@/lib/schema/team-authority';
+import { personKnowsAboutTopics } from '@/lib/content/authority';
 import type { TeamMember } from '@/lib/content/team';
 
 type TeamCardProps = {

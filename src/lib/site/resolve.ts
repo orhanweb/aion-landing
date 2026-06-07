@@ -38,10 +38,7 @@ export function resolveSiteConfig(locale: Locale): SiteConfig {
   return {
     source,
     meta: resolveMeta(),
-    contact: resolveContact(locale),
-    features: {
-      showMockBanner: source === 'mock'
-    }
+    contact: resolveContact(locale)
   };
 }
 

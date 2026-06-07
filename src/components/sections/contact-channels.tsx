@@ -2,7 +2,6 @@
 import { Link } from '@/i18n/navigation';
 import { CalendarDays, ExternalLink, Mail, MapPin, Phone } from 'lucide-react';
 import { CalendlyEmbed } from '@/components/integrations/calendly-embed';
-import { MockDataBanner } from '@/components/ui/mock-data-banner';
 import { MonoLabel } from '@/components/ui/mono-label';
 import { getSiteConfig } from '@/lib/site';
 import { getTranslations, getLocale } from 'next-intl/server';
@@ -16,8 +15,6 @@ export async function ContactChannels() {
 
   return (
     <div className="mt-12 space-y-12">
-      {site.features.showMockBanner ? <MockDataBanner message={t('mockNotice')} /> : null}
-
       <div className="grid gap-10 sm:grid-cols-2">
         <div className="flex gap-4">
           <Mail aria-hidden="true" className="mt-1 size-5 shrink-0 text-accent" strokeWidth={1.75} />

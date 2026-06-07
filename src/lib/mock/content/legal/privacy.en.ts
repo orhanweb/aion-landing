@@ -6,7 +6,6 @@ export const privacyEn: LegalDocument = {
   title: 'Privacy Notice',
   description: 'AION privacy notice on the processing of personal data.',
   lastUpdated: '2026-05-26',
-  disclaimer: 'This text is for information only. Have it reviewed by your legal counsel before publication.',
   sections: [
     {
       id: 'controller',

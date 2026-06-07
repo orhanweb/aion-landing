@@ -6,7 +6,6 @@ export const privacyTr: LegalDocument = {
   title: 'KVKK Aydınlatma Metni',
   description: 'AION kişisel verilerin işlenmesine ilişkin aydınlatma metni.',
   lastUpdated: '2026-05-26',
-  disclaimer: 'Bu metin bilgilendirme amaçlıdır. Yayınlanmadan önce hukuk danışmanınız tarafından gözden geçirilmelidir.',
   sections: [
     {
       id: 'controller',

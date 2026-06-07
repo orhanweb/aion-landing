@@ -6,7 +6,6 @@ export const cookiesTr: LegalDocument = {
   title: 'Çerez Politikası',
   description: 'AION web sitesinde kullanılan çerezler ve benzeri teknolojiler.',
   lastUpdated: '2026-05-26',
-  disclaimer: 'Bu metin bilgilendirme amaçlıdır. Üçüncü taraf hizmet sağlayıcıları kendi politikalarını güncelleyebilir.',
   sections: [
     {
       id: 'intro',

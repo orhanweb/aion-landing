@@ -383,7 +383,6 @@
     "eyebrow": "İletişim",
     "title": "Bizimle iletişime geçin",
     "description": "Kurumsal AI uyum yolculuğunuz için ekibimizle doğrudan iletişime geçin veya görüşme planlayın.",
-    "mockNotice": "Placeholder iletişim bilgileri. Production öncesi .env dosyasındaki NEXT_PUBLIC_* değişkenlerini güncelleyin.",
     "emailLabel": "E-posta",
     "phoneLabel": "Telefon",
     "addressLabel": "Adres",

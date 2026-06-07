@@ -1,5 +1,5 @@
 // src/lib/schema/site-graph.ts
-import { organizationKnowsAboutTopics } from '@/lib/schema/team-authority';
+import { organizationKnowsAboutTopics } from '@/lib/content/authority';
 import { SCHEMA_AREA_SERVED, schemaImageObject, schemaInLanguage } from '@/lib/schema/helpers';
 import { teamPersonSchemaNodes } from '@/lib/schema/person';
 import { organizationEntityId, websiteEntityId } from '@/lib/schema/site-entity';

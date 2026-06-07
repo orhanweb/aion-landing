@@ -22,14 +22,8 @@ export type SiteMeta = {
   tagline: string;
 };
 
-export type SiteFeatures = {
-  /** Show dev banner when runtime config is still mock-sourced. */
-  showMockBanner: boolean;
-};
-
 export type SiteConfig = {
   source: SiteDataSource;
   meta: SiteMeta;
   contact: SiteContact;
-  features: SiteFeatures;
 };

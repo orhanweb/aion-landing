@@ -6,7 +6,6 @@ export const cookiesEn: LegalDocument = {
   title: 'Cookie Policy',
   description: 'Cookies and similar technologies used on the AION website.',
   lastUpdated: '2026-05-26',
-  disclaimer: 'This text is for information only. Third-party providers may update their own policies.',
   sections: [
     {
       id: 'intro',

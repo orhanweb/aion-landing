@@ -379,7 +379,6 @@
     "eyebrow": "Contact",
     "title": "Get in touch",
     "description": "Reach our team directly for your enterprise AI compliance journey, or schedule a discovery call.",
-    "mockNotice": "Placeholder contact details. Update NEXT_PUBLIC_* variables in .env before production.",
     "emailLabel": "Email",
     "phoneLabel": "Phone",
     "addressLabel": "Address",

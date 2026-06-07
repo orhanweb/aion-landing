@@ -1,7 +1,7 @@
 // src/lib/schema/person.ts
 import { getTeamMembers } from '@/lib/content/team';
 import type { TeamMember } from '@/lib/content/team';
-import { personKnowsAboutTopics } from '@/lib/schema/team-authority';
+import { personKnowsAboutTopics } from '@/lib/content/authority';
 import { organizationEntityId, personEntityId, personProfileUrl } from '@/lib/schema/site-entity';
 import { absoluteAssetUrl, normalizeSiteUrl } from '@/lib/schema/url';
 import { schemaImageObject, type SchemaNodeWithId } from '@/lib/schema/helpers';

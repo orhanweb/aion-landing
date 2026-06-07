@@ -1,9 +1,9 @@
 // src/lib/geo/llms-txt.ts
 import { getLegalDocument } from '@/lib/content/legal';
+import { personKnowsAboutTopics } from '@/lib/content/authority';
 import { getService, getServiceSlugs } from '@/lib/content/services';
 import { getTeamMembers } from '@/lib/content/team';
 import { personProfileUrl } from '@/lib/schema/site-entity';
-import { personKnowsAboutTopics } from '@/lib/schema/team-authority';
 import { GEO_CORE_PATHS, GEO_LEGAL_PATHS } from '@/lib/geo/public-paths';
 import { routing, type Locale } from '@/i18n/routing';
 import { en, tr } from '@/lib/i18n/messages';

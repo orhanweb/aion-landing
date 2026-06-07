@@ -15,6 +15,5 @@ export type LegalDocument = {
   title: string;
   description: string;
   lastUpdated: string;
-  disclaimer: string;
   sections: LegalSection[];
 };
