@@ -1,6 +1,7 @@
 // src/lib/schema/person.ts
 import { getTeamMembers } from '@/lib/content/team';
 import type { TeamMember } from '@/lib/content/team';
+import { personKnowsAboutTopics } from '@/lib/schema/team-authority';
 import { organizationEntityId, personEntityId, personProfileUrl } from '@/lib/schema/site-entity';
 import { absoluteAssetUrl, normalizeSiteUrl } from '@/lib/schema/url';
 import { schemaImageObject, type SchemaNodeWithId } from '@/lib/schema/helpers';
@@ -15,6 +16,7 @@ export type PersonSchemaNode = SchemaNodeWithId & {
   url: string;
   sameAs: string[];
   worksFor: { '@id': string };
+  knowsAbout?: string[];
 };
 
 export function personSchemaNode(member: TeamMember, locale: Locale, siteUrl = normalizeSiteUrl()): PersonSchemaNode {
@@ -29,7 +31,8 @@ export function personSchemaNode(member: TeamMember, locale: Locale, siteUrl = n
     sameAs: [member.linkedin],
     worksFor: {
       '@id': organizationEntityId(siteUrl)
-    }
+    },
+    ...(member.expertise.length > 0 ? { knowsAbout: personKnowsAboutTopics(member) } : {})
   };
 }
 

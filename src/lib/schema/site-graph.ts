@@ -1,4 +1,5 @@
 // src/lib/schema/site-graph.ts
+import { organizationKnowsAboutTopics } from '@/lib/schema/team-authority';
 import { SCHEMA_AREA_SERVED, schemaImageObject, schemaInLanguage } from '@/lib/schema/helpers';
 import { teamPersonSchemaNodes } from '@/lib/schema/person';
 import { organizationEntityId, websiteEntityId } from '@/lib/schema/site-entity';
@@ -27,7 +28,7 @@ async function organizationSchemaNode(locale: Locale, siteUrl: string, personIds
     description: meta('organizationDescription'),
     inLanguage: schemaInLanguage(locale),
     areaServed: [...SCHEMA_AREA_SERVED],
-    knowsAbout: ['ISO/IEC 42001', 'EU AI Act', 'ISO/IEC 27001', 'ISO 22301', 'AI Governance', 'Human Oversight'],
+    knowsAbout: organizationKnowsAboutTopics(locale),
     address: {
       '@type': 'PostalAddress',
       streetAddress: site.contact.address,

@@ -191,6 +191,7 @@
     "eyebrow": "Team",
     "title": "Meet the Team",
     "description": "Consultants who partner with you on ISO standards, EU AI Act, and enterprise AI governance.",
+    "expertiseLabel": "Areas of expertise",
     "linkedinCta": "{name} on LinkedIn",
     "linkedinAria": "{name} LinkedIn profile (opens in new tab)"
   },

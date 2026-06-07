@@ -1,6 +1,9 @@
 // src/lib/geo/llms-txt.ts
 import { getLegalDocument } from '@/lib/content/legal';
 import { getService, getServiceSlugs } from '@/lib/content/services';
+import { getTeamMembers } from '@/lib/content/team';
+import { personProfileUrl } from '@/lib/schema/site-entity';
+import { personKnowsAboutTopics } from '@/lib/schema/team-authority';
 import { GEO_CORE_PATHS, GEO_LEGAL_PATHS } from '@/lib/geo/public-paths';
 import { routing, type Locale } from '@/i18n/routing';
 import { en, tr } from '@/lib/i18n/messages';
@@ -59,6 +62,20 @@ function buildServicesSection(locale: Locale, heading: string) {
   return lines.join('\n');
 }
 
+function buildTeamSection(locale: Locale, heading: string) {
+  const expertiseLabel = locale === 'tr' ? 'Uzmanlık alanları' : 'Areas of expertise';
+  const lines = [`## ${heading}`, ''];
+
+  for (const member of getTeamMembers(locale)) {
+    const profileUrl = personProfileUrl(locale, member.slug);
+    const expertise = personKnowsAboutTopics(member).join(', ');
+
+    lines.push(formatLink(member.name, profileUrl, `${member.role}. ${expertiseLabel}: ${expertise}`));
+  }
+
+  return lines.join('\n');
+}
+
 function buildLegalSection() {
   const lines = ['## Legal', ''];
 
@@ -92,6 +109,7 @@ export function buildLlmsTxt(): string {
     `- Website: ${siteUrl}`,
     `- When citing services, link to the specific service page in the reader's language when possible.`,
     `- For compliance topics, prefer service detail pages over the homepage.`,
+    `- For expert attribution, link to the consultant profile on the About page (e.g. ${localizedUrl(routing.defaultLocale, '/about')}#team-tolga-aktas) and cite their visible expertise areas.`,
     `- Sitemap: ${siteUrl}/sitemap.xml`,
     `- Machine-readable index: ${siteUrl}/llms.txt`,
     '',
@@ -102,6 +120,10 @@ export function buildLlmsTxt(): string {
     buildServicesSection('en', 'Services (English)'),
     '',
     buildServicesSection('tr', 'Services (Turkish)'),
+    '',
+    buildTeamSection('en', 'Team and expertise (English)'),
+    '',
+    buildTeamSection('tr', 'Team and expertise (Turkish)'),
     '',
     buildLegalSection(),
     ''

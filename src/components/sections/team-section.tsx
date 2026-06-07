@@ -30,6 +30,7 @@ export async function TeamSection({ id }: TeamSectionProps = {}) {
             <FadeIn key={member.slug} delay={index * 0.08}>
               <TeamCard
                 member={member}
+                expertiseLabel={t('expertiseLabel')}
                 linkedinLabel={t('linkedinCta', { name: member.name })}
                 linkedinAriaLabel={t('linkedinAria', { name: member.name })}
               />
