@@ -1,7 +1,7 @@
 // src/lib/mock/content/services/en.ts
-import type { Service } from '@/lib/content/services/types';
+import type { ServiceContent } from '@/lib/content/services/types';
 
-export const mockServicesEn: Service[] = [
+export const mockServicesEn: ServiceContent[] = [
   {
     slug: 'ai-governance',
     title: 'AI Governance',

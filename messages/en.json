@@ -160,6 +160,8 @@
   },
   "serviceDetail": {
     "outcomesLabel": "What You Get",
+    "faqLabel": "FAQ",
+    "faqTitle": "Questions About {service}",
     "relatedLabel": "Related Services",
     "relatedLink": "Explore",
     "relatedLinkLabel": "Explore {service}",

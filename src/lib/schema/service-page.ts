@@ -2,8 +2,9 @@
 import { getService } from '@/lib/content/services';
 import type { ServiceSlug } from '@/lib/content/services/types';
 import { breadcrumbGraphNode } from '@/lib/schema/breadcrumb';
+import { faqPageGraphNode } from '@/lib/schema/faq-page';
 import { SCHEMA_AREA_SERVED, schemaInLanguage } from '@/lib/schema/helpers';
-import { organizationEntityId, serviceEntityId, serviceWebPageEntityId, websiteEntityId } from '@/lib/schema/site-entity';
+import { faqPageEntityId, organizationEntityId, serviceEntityId, serviceWebPageEntityId, websiteEntityId } from '@/lib/schema/site-entity';
 import { localizedPageUrl, normalizeSiteUrl } from '@/lib/schema/url';
 import { CONTENT_LAST_MODIFIED } from '@/lib/seo/content-version';
 import type { Locale } from '@/i18n/routing';
@@ -26,6 +27,7 @@ export async function servicePageJsonLd(locale: Locale, slug: ServiceSlug) {
   const homeUrl = localizedPageUrl(locale, '', siteUrl);
   const serviceId = serviceEntityId(locale, slug, siteUrl);
   const webPageId = serviceWebPageEntityId(locale, slug, siteUrl);
+  const faqNode = faqPageGraphNode(service.faqs, pageUrl, webPageId, locale);
 
   const webPage = {
     '@type': 'WebPage',
@@ -43,7 +45,8 @@ export async function servicePageJsonLd(locale: Locale, slug: ServiceSlug) {
     },
     mainEntity: {
       '@id': serviceId
-    }
+    },
+    ...(faqNode ? { hasPart: { '@id': faqPageEntityId(pageUrl) } } : {})
   };
 
   const serviceSchema = {
@@ -72,8 +75,10 @@ export async function servicePageJsonLd(locale: Locale, slug: ServiceSlug) {
     pageUrl
   );
 
+  const graph = [webPage, serviceSchema, breadcrumbs, ...(faqNode ? [faqNode] : [])];
+
   return {
     '@context': 'https://schema.org',
-    '@graph': [webPage, serviceSchema, breadcrumbs]
+    '@graph': graph
   };
 }

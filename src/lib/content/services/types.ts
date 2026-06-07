@@ -21,6 +21,13 @@ export type ServiceStep = {
   highlight?: string;
 };
 
+export type ServiceFaq = {
+  /** Stable identifier shared across locales for schema fragments and deep links. */
+  id: string;
+  question: string;
+  answer: string;
+};
+
 export type Service = {
   slug: ServiceSlug;
   title: string;
@@ -32,4 +39,8 @@ export type Service = {
   sections: ServiceSections;
   steps: ServiceStep[];
   relatedSlugs: ServiceSlug[];
+  faqs: ServiceFaq[];
 };
+
+/** Service fields stored in locale mock files before FAQ bundles are attached. */
+export type ServiceContent = Omit<Service, 'faqs'>;

@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { AssessmentTeaser } from '@/components/sections/assessment-teaser';
 import { RelatedServices } from '@/components/sections/related-services';
 import { ServiceDetailHero } from '@/components/sections/service-detail-hero';
+import { ServiceFaqSection } from '@/components/sections/service-faq-section';
 import { ServiceGapCards } from '@/components/sections/service-gap-cards';
 import { ServiceOutcomes } from '@/components/sections/service-outcomes';
 import { ServiceProcessTimeline } from '@/components/sections/service-process-timeline';
@@ -13,7 +14,7 @@ import type { ServiceSectionsLayout, ServiceSlug, ServiceStep } from '@/lib/cont
 import { JsonLd } from '@/lib/schema/json-ld';
 import { servicePageJsonLd } from '@/lib/schema/service-page';
 import { buildServicePageMetadata } from '@/lib/seo/page-metadata';
-import { setRequestLocale } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { routing, type Locale } from '@/i18n/routing';
 
 type PageProps = {
@@ -54,6 +55,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
   const { sections } = service;
   const structuredData = await servicePageJsonLd(locale as Locale, slug as ServiceSlug);
+  const t = await getTranslations('serviceDetail');
 
   return (
     <>
@@ -71,6 +73,19 @@ export default async function ServiceDetailPage({ params }: PageProps) {
           <ServiceBody layout={sections.layout} label={sections.label} title={sections.title} steps={service.steps} />
         </Container>
       </Section>
+
+      {service.faqs.length > 0 ? (
+        <Section id="faq" variant="elevated" aria-labelledby="service-faq-heading">
+          <Container>
+            <ServiceFaqSection
+              label={t('faqLabel')}
+              title={t('faqTitle', { service: service.title })}
+              titleId="service-faq-heading"
+              faqs={service.faqs}
+            />
+          </Container>
+        </Section>
+      ) : null}
 
       <Section>
         <Container>

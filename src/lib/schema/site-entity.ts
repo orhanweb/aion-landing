@@ -26,6 +26,18 @@ export function serviceWebPageEntityId(locale: string, slug: string, siteUrl = n
   return `${localizedPageUrl(locale, `/services/${slug}`, siteUrl)}#webpage`;
 }
 
+export function faqPageEntityId(pageUrl: string) {
+  return `${pageUrl}#faq`;
+}
+
+export function faqQuestionFragmentId(faqId: string) {
+  return `faq-${faqId}`;
+}
+
+export function faqQuestionEntityId(pageUrl: string, faqId: string) {
+  return `${pageUrl}#${faqQuestionFragmentId(faqId)}`;
+}
+
 export function breadcrumbEntityId(pageUrl: string) {
   return `${pageUrl}#breadcrumb`;
 }

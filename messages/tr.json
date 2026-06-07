@@ -164,6 +164,8 @@
   },
   "serviceDetail": {
     "outcomesLabel": "Ne Elde Edersiniz",
+    "faqLabel": "SSS",
+    "faqTitle": "{service} Hakkında Sorular",
     "relatedLabel": "İlgili Hizmetler",
     "relatedLink": "İncele",
     "relatedLinkLabel": "{service} hizmetini incele",

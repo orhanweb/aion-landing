@@ -6,6 +6,8 @@ import { SERVICE_SLUGS, type Service, type ServiceSlug } from '@/lib/content/ser
 export {
   SERVICE_SLUGS,
   type Service,
+  type ServiceContent,
+  type ServiceFaq,
   type ServiceSlug,
   type ServiceStandard,
   type ServiceStep,
