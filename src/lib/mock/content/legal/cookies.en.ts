@@ -4,55 +4,34 @@ import type { LegalDocument } from '@/lib/content/legal/types';
 export const cookiesEn: LegalDocument = {
   slug: 'cookies',
   title: 'Cookie Policy',
-  description: 'Cookies and similar technologies used on the AION website.',
-  lastUpdated: '2026-05-26',
+  description: 'A brief overview of how cookies are used on the AION website.',
+  lastUpdated: '2026-06-08',
   sections: [
     {
-      id: 'intro',
-      title: 'Overview',
+      id: 'what-we-use',
+      title: 'What We Use',
       paragraphs: [
-        'This policy describes cookies and similar technologies used on our website at aion.tr.',
-        'We do not use third-party embeds for marketing, profiling, or appointment scheduling.'
+        'This site uses one functional cookie to remember your language preference. Your language is also determined by the URL in the address bar (/tr or /en).',
+        'We do not use cookies for marketing, advertising, profiling, or behavioural analytics.'
       ]
     },
     {
-      id: 'first-party',
-      title: 'First-Party Cookies',
-      paragraphs: ['Our site uses the following first-party mechanisms:'],
+      id: 'what-we-do-not-use',
+      title: 'What We Do Not Use',
+      paragraphs: ['The following are not used on our site:'],
       list: [
-        'Language preference: locale routing for the session (next-intl)',
-        'Technical session cookies: security and load balancing (hosting provider)',
-        'No first-party marketing or profiling cookies'
+        'Google Analytics or similar behavioural analytics tools',
+        'Advertising or targeting cookies',
+        'Third-party scheduling, chat, or social media embeds',
+        'In-site WhatsApp integration (WhatsApp is offered as an external link only)'
       ]
     },
     {
-      id: 'third-party',
-      title: 'Third-Party Services',
-      paragraphs: ['Our hosting infrastructure may use technical cookies for static asset delivery.'],
-      list: ['Hosting/CDN provider: static asset delivery (technical cookies)']
-    },
-    {
-      id: 'fonts',
-      title: 'Fonts and Analytics',
+      id: 'questions',
+      title: 'Questions',
       paragraphs: [
-        'Fonts are self-hosted via next/font; we do not load Google Fonts from a CDN.',
-        'We do not use Google Analytics or similar behavioural analytics tools.'
-      ]
-    },
-    {
-      id: 'control',
-      title: 'Managing Preferences',
-      paragraphs: [
-        'You can delete or block cookies in your browser settings. Disabling essential cookies may affect site functionality.',
-        'For direct contact, use our email or WhatsApp channels.'
-      ]
-    },
-    {
-      id: 'updates',
-      title: 'Updates',
-      paragraphs: [
-        'We may update this policy when our services or legal requirements change. The revision date is shown at the top of the page.',
-        'For questions, see our Privacy Notice and contact channels.'
+        'You can delete or block cookies in your browser settings. Disabling the language cookie may require your preference to be set again on your next visit; access to site content is not affected.',
+        'For questions, use the email or WhatsApp channels on our contact page. See our Privacy Notice for details on how personal data is processed.'
       ]
     }
   ]
