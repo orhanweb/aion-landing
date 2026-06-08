@@ -12,7 +12,7 @@ export const privacyEn: LegalDocument = {
       title: 'Data Controller',
       paragraphs: [
         'Under applicable data protection law, AION (“we”, “us”) processes your personal data as described below.',
-        'Contact us via the current email and address published on our website.'
+        'Contact us via the current email and WhatsApp details published on our website.'
       ]
     },
     {

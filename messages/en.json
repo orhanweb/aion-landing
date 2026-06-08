@@ -383,10 +383,6 @@
     "whatsappCta": "Message us on WhatsApp",
     "whatsappPrefill": "Hello, I would like to learn more about AION.",
     "whatsappAriaLabel": "Message us on WhatsApp: {number} (opens in new tab)",
-    "addressLabel": "Address",
-    "linkedinLabel": "LinkedIn",
-    "linkedinCta": "Visit AION on LinkedIn",
-    "linkedinAriaLabel": "AION company profile on LinkedIn (opens in new tab)",
     "privacyNote": "Your personal data is processed under applicable privacy law.",
     "privacyLink": "Privacy Notice",
     "cookiesLink": "Cookie Policy"

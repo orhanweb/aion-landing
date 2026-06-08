@@ -12,7 +12,7 @@ export const privacyTr: LegalDocument = {
       title: 'Veri Sorumlusu',
       paragraphs: [
         '6698 sayılı Kişisel Verilerin Korunması Kanunu (“KVKK”) kapsamında veri sorumlusu AION (“AION”, “biz”) olarak kişisel verilerinizi aşağıda açıklanan çerçevede işlemekteyiz.',
-        'İletişim: web sitemizdeki güncel e-posta ve adres bilgileri üzerinden bize ulaşabilirsiniz.'
+        'İletişim: web sitemizdeki güncel e-posta ve WhatsApp bilgileri üzerinden bize ulaşabilirsiniz.'
       ]
     },
     {

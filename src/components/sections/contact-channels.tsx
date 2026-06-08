@@ -1,6 +1,6 @@
 // src/components/sections/contact-channels.tsx
 import { Link } from '@/i18n/navigation';
-import { ExternalLink, Mail, MapPin } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { MonoLabel } from '@/components/ui/mono-label';
 import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 import { getSiteConfig } from '@/lib/site';
@@ -42,30 +42,6 @@ export async function ContactChannels() {
               {t('whatsappCta')}
             </a>
             <p className="mt-1 text-sm text-muted-foreground">{contact.whatsappDisplay}</p>
-          </div>
-        </div>
-
-        <div className="flex gap-4">
-          <MapPin aria-hidden="true" className="mt-1 size-5 shrink-0 text-accent" strokeWidth={1.75} />
-          <div>
-            <MonoLabel className="text-accent">{t('addressLabel')}</MonoLabel>
-            <p className="mt-3 text-base text-muted-foreground">{contact.address}</p>
-          </div>
-        </div>
-
-        <div className="flex gap-4">
-          <ExternalLink aria-hidden="true" className="mt-1 size-5 shrink-0 text-accent" strokeWidth={1.75} />
-          <div>
-            <MonoLabel className="text-accent">{t('linkedinLabel')}</MonoLabel>
-            <a
-              href={contact.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={t('linkedinAriaLabel')}
-              className="mt-3 block text-lg text-foreground transition-colors hover:text-accent"
-            >
-              {t('linkedinCta')}
-            </a>
           </div>
         </div>
       </div>

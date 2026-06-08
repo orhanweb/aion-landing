@@ -387,10 +387,6 @@
     "whatsappCta": "WhatsApp ile yazın",
     "whatsappPrefill": "Merhaba, AION hakkında bilgi almak istiyorum.",
     "whatsappAriaLabel": "WhatsApp üzerinden yazın: {number} (yeni sekmede açılır)",
-    "addressLabel": "Adres",
-    "linkedinLabel": "LinkedIn",
-    "linkedinCta": "AION LinkedIn profilini ziyaret et",
-    "linkedinAriaLabel": "AION şirket LinkedIn profili (yeni sekmede açılır)",
     "privacyNote": "Kişisel verileriniz KVKK kapsamında işlenir.",
     "privacyLink": "Gizlilik Politikası",
     "cookiesLink": "Çerez Politikası"

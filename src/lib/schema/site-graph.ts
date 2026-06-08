@@ -29,11 +29,6 @@ async function organizationSchemaNode(locale: Locale, siteUrl: string, personIds
     inLanguage: schemaInLanguage(locale),
     areaServed: [...SCHEMA_AREA_SERVED],
     knowsAbout: organizationKnowsAboutTopics(locale),
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: site.contact.address,
-      addressCountry: 'TR'
-    },
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer service',
@@ -42,7 +37,6 @@ async function organizationSchemaNode(locale: Locale, siteUrl: string, personIds
       areaServed: [...SCHEMA_AREA_SERVED],
       availableLanguage: ['Turkish', 'English']
     },
-    ...(site.contact.linkedin ? { sameAs: [site.contact.linkedin] } : {}),
     ...(personIds.length > 0 ? { employee: personIds.map(id => ({ '@id': id })) } : {})
   };
 }

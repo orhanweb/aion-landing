@@ -1,6 +1,6 @@
 // src/lib/site/resolve.ts
 import type { Locale } from '@/i18n/routing';
-import { buildMockContact, mockContactAddress, mockContactBase, mockContactResponseTime, mockSiteMeta } from '@/lib/mock/site';
+import { buildMockContact, mockContactResponseTime, mockSiteMeta } from '@/lib/mock/site';
 import { resolveDataSource } from '@/lib/mock/source';
 import { readPublicEnv } from '@/lib/site/env';
 import type { SiteConfig, SiteContact, SiteMeta } from '@/lib/site/types';
@@ -25,8 +25,6 @@ function resolveContact(locale: Locale): SiteContact {
     email: readPublicEnv('NEXT_PUBLIC_CONTACT_EMAIL') ?? mock.email,
     whatsappE164: readPublicEnv('NEXT_PUBLIC_WHATSAPP_NUMBER') ?? mock.whatsappE164,
     whatsappDisplay: readPublicEnv('NEXT_PUBLIC_WHATSAPP_DISPLAY') ?? mock.whatsappDisplay ?? mock.whatsappE164,
-    linkedin: readPublicEnv('NEXT_PUBLIC_LINKEDIN_URL') ?? mockContactBase.linkedin,
-    address: readPublicEnv('NEXT_PUBLIC_COMPANY_ADDRESS') ?? mockContactAddress[locale],
     responseTime: mockContactResponseTime[locale]
   };
 }

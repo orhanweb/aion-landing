@@ -14,14 +14,8 @@ export const mockSiteMeta: SiteMeta = {
 export const mockContactBase = {
   email: 'contact@aion.tr',
   whatsappE164: '+905435218694',
-  whatsappDisplay: '+90 (543) 521 86 94',
-  linkedin: 'https://www.linkedin.com/company/aion-tr'
+  whatsappDisplay: '+90 (543) 521 86 94'
 } as const;
-
-export const mockContactAddress: LocalizedString = {
-  tr: 'Levent, İstanbul, Türkiye',
-  en: 'Levent, Istanbul, Türkiye'
-};
 
 export const mockContactResponseTime: LocalizedString = {
   tr: 'İş günlerinde 24 saat içinde dönüş',
@@ -31,7 +25,6 @@ export const mockContactResponseTime: LocalizedString = {
 export function buildMockContact(locale: keyof LocalizedString): SiteContact {
   return {
     ...mockContactBase,
-    address: mockContactAddress[locale],
     responseTime: mockContactResponseTime[locale]
   };
 }

@@ -10,9 +10,7 @@ export type SiteContact = {
   email: string;
   whatsappE164: string;
   whatsappDisplay: string;
-  address: string;
   responseTime: string;
-  linkedin: string;
 };
 
 export type SiteMeta = {
