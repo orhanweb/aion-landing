@@ -6,12 +6,9 @@ import { MonoLabel } from '@/components/ui/mono-label';
 import { useTranslations } from 'next-intl';
 import { useEffect, useRef } from 'react';
 
-type ThankYouProps = {
-  responseTime: string;
-};
-
-export function ThankYou({ responseTime }: ThankYouProps) {
+export function ThankYou() {
   const t = useTranslations('assessment');
+  const contact = useTranslations('contact');
   const titleRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
@@ -27,7 +24,7 @@ export function ThankYou({ responseTime }: ThankYouProps) {
         </h2>
       </CardHeader>
       <CardContent className="space-y-6">
-        <p className="text-sm leading-relaxed text-muted-foreground">{t('thankYou.description', { responseTime })}</p>
+        <p className="text-sm leading-relaxed text-muted-foreground">{t('thankYou.description', { responseTime: contact('responseTime') })}</p>
         <p className="font-mono-label text-muted-foreground">{t('thankYou.privacyNote')}</p>
       </CardContent>
     </Card>

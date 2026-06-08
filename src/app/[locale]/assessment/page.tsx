@@ -21,7 +21,6 @@ export default async function AssessmentPage({ params }: PageProps) {
   const { locale } = await params;
   setRequestLocale(locale as Locale);
   const t = await getTranslations('assessment');
-  const contactT = await getTranslations('contact');
 
   return (
     <Section className="pt-24">
@@ -33,7 +32,7 @@ export default async function AssessmentPage({ params }: PageProps) {
           </h1>
           <p className="mt-3 text-muted-foreground">{t('description')}</p>
           <div className="mt-10">
-            <AssessmentWizard responseTime={contactT('responseTime')} />
+            <AssessmentWizard />
           </div>
         </Narrow>
       </Container>

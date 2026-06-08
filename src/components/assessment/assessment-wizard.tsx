@@ -32,10 +32,6 @@ import { useTranslations } from 'next-intl';
 import { useId, useRef, useState, type FormEvent } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
 
-type AssessmentWizardProps = {
-  responseTime: string;
-};
-
 function buildSubmission(values: AssessmentFormValues): AssessmentSubmission {
   const shared = {
     company: values.company,
@@ -89,7 +85,7 @@ function buildSubmission(values: AssessmentFormValues): AssessmentSubmission {
   }
 }
 
-export function AssessmentWizard({ responseTime }: AssessmentWizardProps) {
+export function AssessmentWizard() {
   const t = useTranslations('assessment');
   const reduced = useReducedMotion();
   const companyErrorId = useId();
@@ -179,7 +175,7 @@ export function AssessmentWizard({ responseTime }: AssessmentWizardProps) {
   }
 
   if (submitted) {
-    return <ThankYou responseTime={responseTime} />;
+    return <ThankYou />;
   }
 
   return (
