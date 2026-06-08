@@ -23,8 +23,8 @@ function resolveContact(locale: Locale): SiteContact {
 
   return {
     email: readPublicEnv('NEXT_PUBLIC_CONTACT_EMAIL') ?? mock.email,
-    phoneE164: readPublicEnv('NEXT_PUBLIC_CONTACT_PHONE') ?? mock.phoneE164,
-    phoneDisplay: readPublicEnv('NEXT_PUBLIC_CONTACT_PHONE_DISPLAY') ?? mock.phoneDisplay,
+    whatsappE164: readPublicEnv('NEXT_PUBLIC_WHATSAPP_NUMBER') ?? mock.whatsappE164,
+    whatsappDisplay: readPublicEnv('NEXT_PUBLIC_WHATSAPP_DISPLAY') ?? mock.whatsappDisplay ?? mock.whatsappE164,
     linkedin: readPublicEnv('NEXT_PUBLIC_LINKEDIN_URL') ?? mockContactBase.linkedin,
     address: readPublicEnv('NEXT_PUBLIC_COMPANY_ADDRESS') ?? mockContactAddress[locale],
     responseTime: mockContactResponseTime[locale]

@@ -24,7 +24,7 @@ async function organizationSchemaNode(locale: Locale, siteUrl: string, personIds
     logo: schemaImageObject(logoUrl),
     image: schemaImageObject(logoUrl),
     email: site.contact.email,
-    telephone: site.contact.phoneE164,
+    telephone: site.contact.whatsappE164,
     description: meta('organizationDescription'),
     inLanguage: schemaInLanguage(locale),
     areaServed: [...SCHEMA_AREA_SERVED],
@@ -38,7 +38,7 @@ async function organizationSchemaNode(locale: Locale, siteUrl: string, personIds
       '@type': 'ContactPoint',
       contactType: 'customer service',
       email: site.contact.email,
-      telephone: site.contact.phoneE164,
+      telephone: site.contact.whatsappE164,
       areaServed: [...SCHEMA_AREA_SERVED],
       availableLanguage: ['Turkish', 'English']
     },

@@ -13,8 +13,8 @@ export const mockSiteMeta: SiteMeta = {
 
 export const mockContactBase = {
   email: 'contact@aion.tr',
-  phoneE164: '+902125550000',
-  phoneDisplay: '+90 (212) 555 00 00',
+  whatsappE164: '+905435218694',
+  whatsappDisplay: '+90 (543) 521 86 94',
   linkedin: 'https://www.linkedin.com/company/aion-tr'
 } as const;
 

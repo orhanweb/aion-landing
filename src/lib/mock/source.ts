@@ -2,7 +2,7 @@
 import { readPublicEnv } from '@/lib/site/env';
 import type { SiteDataSource } from '@/lib/site/types';
 
-const LIVE_CONTACT_KEYS = ['NEXT_PUBLIC_CONTACT_EMAIL', 'NEXT_PUBLIC_CONTACT_PHONE', 'NEXT_PUBLIC_CONTACT_PHONE_DISPLAY'] as const;
+const LIVE_CONTACT_KEYS = ['NEXT_PUBLIC_CONTACT_EMAIL', 'NEXT_PUBLIC_WHATSAPP_NUMBER', 'NEXT_PUBLIC_WHATSAPP_DISPLAY'] as const;
 
 /** Whether contact channels use mock defaults or live NEXT_PUBLIC_* env overrides. */
 export function resolveDataSource(): SiteDataSource {

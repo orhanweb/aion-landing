@@ -44,7 +44,7 @@ export const cookiesEn: LegalDocument = {
       title: 'Managing Preferences',
       paragraphs: [
         'You can delete or block cookies in your browser settings. Disabling essential cookies may affect site functionality.',
-        'For direct contact, use our email, phone, or LinkedIn channels.'
+        'For direct contact, use our email, WhatsApp, or LinkedIn channels.'
       ]
     },
     {

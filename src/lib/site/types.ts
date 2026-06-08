@@ -8,8 +8,8 @@ export type LocalizedString = Record<Locale, string>;
 
 export type SiteContact = {
   email: string;
-  phoneE164: string;
-  phoneDisplay: string;
+  whatsappE164: string;
+  whatsappDisplay: string;
   address: string;
   responseTime: string;
   linkedin: string;

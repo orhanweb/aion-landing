@@ -44,7 +44,7 @@ export const cookiesTr: LegalDocument = {
       title: 'Tercihlerinizi Yönetme',
       paragraphs: [
         'Tarayıcı ayarlarınızdan çerezleri silebilir veya engelleyebilirsiniz. Zorunlu çerezlerin devre dışı bırakılması site işlevlerini etkileyebilir.',
-        'Doğrudan iletişim için e-posta, telefon veya LinkedIn kanallarımızı kullanabilirsiniz.'
+        'Doğrudan iletişim için e-posta, WhatsApp veya LinkedIn kanallarımızı kullanabilirsiniz.'
       ]
     },
     {
