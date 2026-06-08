@@ -15,7 +15,6 @@ export const mockContactBase = {
   email: 'contact@aion.tr',
   phoneE164: '+902125550000',
   phoneDisplay: '+90 (212) 555 00 00',
-  calendlyUrl: 'https://calendly.com/hello-aion-kar7/30min',
   linkedin: 'https://www.linkedin.com/company/aion-tr'
 } as const;
 

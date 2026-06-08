@@ -35,7 +35,6 @@ src/
 │   ├── sections/          # Page sections (hero, services bento, …)
 │   ├── motion/            # Fade, stagger, hero preview console
 │   ├── assessment/        # Multi-step gap analysis wizard
-│   └── integrations/      # Calendly embed
 ├── lib/
 │   ├── content/           # Public content API (facade → mock today)
 │   ├── mock/              # Mock data + runtime source resolution

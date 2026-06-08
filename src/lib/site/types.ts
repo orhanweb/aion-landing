@@ -10,7 +10,6 @@ export type SiteContact = {
   email: string;
   phoneE164: string;
   phoneDisplay: string;
-  calendlyUrl: string;
   address: string;
   responseTime: string;
   linkedin: string;

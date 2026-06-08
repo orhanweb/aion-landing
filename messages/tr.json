@@ -375,23 +375,19 @@
       "eyebrow": "Teşekkürler",
       "title": "Değerlendirmeniz alındı",
       "description": "Ekibimiz bilgilerinizi inceleyecek. {responseTime} size dönüş yapacağız.",
-      "calendlyCta": "Görüşme Planla",
       "privacyNote": "Verileriniz yalnızca değerlendirme amacıyla işlenir; tarayıcıda saklanmaz."
     }
   },
   "contact": {
     "eyebrow": "İletişim",
     "title": "Bizimle iletişime geçin",
-    "description": "Kurumsal AI uyum yolculuğunuz için ekibimizle doğrudan iletişime geçin veya görüşme planlayın.",
+    "description": "Kurumsal AI uyum yolculuğunuz için ekibimizle doğrudan iletişime geçin.",
     "emailLabel": "E-posta",
     "phoneLabel": "Telefon",
     "addressLabel": "Adres",
     "linkedinLabel": "LinkedIn",
     "linkedinCta": "AION LinkedIn profilini ziyaret et",
     "linkedinAriaLabel": "AION şirket LinkedIn profili (yeni sekmede açılır)",
-    "calendlyLabel": "Görüşme Planla",
-    "calendlyDescription": "30 dakikalık keşif görüşmesi için takvimden uygun bir zaman seçin.",
-    "calendlyButton": "Takvimi Aç",
     "privacyNote": "Kişisel verileriniz KVKK kapsamında işlenir.",
     "privacyLink": "Gizlilik Politikası",
     "cookiesLink": "Çerez Politikası"

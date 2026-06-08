@@ -33,7 +33,6 @@ import { useId, useRef, useState, type FormEvent } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
 
 type AssessmentWizardProps = {
-  calendlyUrl: string;
   responseTime: string;
 };
 
@@ -90,7 +89,7 @@ function buildSubmission(values: AssessmentFormValues): AssessmentSubmission {
   }
 }
 
-export function AssessmentWizard({ calendlyUrl, responseTime }: AssessmentWizardProps) {
+export function AssessmentWizard({ responseTime }: AssessmentWizardProps) {
   const t = useTranslations('assessment');
   const reduced = useReducedMotion();
   const companyErrorId = useId();
@@ -180,7 +179,7 @@ export function AssessmentWizard({ calendlyUrl, responseTime }: AssessmentWizard
   }
 
   if (submitted) {
-    return <ThankYou calendlyUrl={calendlyUrl} responseTime={responseTime} />;
+    return <ThankYou responseTime={responseTime} />;
   }
 
   return (

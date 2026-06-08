@@ -12,7 +12,7 @@ export const cookiesEn: LegalDocument = {
       title: 'Overview',
       paragraphs: [
         'This policy describes cookies and similar technologies used on our website at aion.tr.',
-        'Non-essential cookies are only loaded through third-party services activated by your explicit action (e.g. clicking “Open Calendar”).'
+        'We do not use third-party embeds for marketing, profiling, or appointment scheduling.'
       ]
     },
     {
@@ -28,11 +28,8 @@ export const cookiesEn: LegalDocument = {
     {
       id: 'third-party',
       title: 'Third-Party Services',
-      paragraphs: [
-        'Calendly: We load the scheduling widget only after you click “Open Calendar”. Calendly may set its own cookies.',
-        'Calendly privacy: calendly.com/privacy'
-      ],
-      list: ['calendly.com: appointment scheduling (after user action)', 'Hosting/CDN provider: static asset delivery (technical cookies)']
+      paragraphs: ['Our hosting infrastructure may use technical cookies for static asset delivery.'],
+      list: ['Hosting/CDN provider: static asset delivery (technical cookies)']
     },
     {
       id: 'fonts',
@@ -47,7 +44,7 @@ export const cookiesEn: LegalDocument = {
       title: 'Managing Preferences',
       paragraphs: [
         'You can delete or block cookies in your browser settings. Disabling essential cookies may affect site functionality.',
-        'No third-party cookies are set until the Calendly embed loads; you may contact us by email instead.'
+        'For direct contact, use our email, phone, or LinkedIn channels.'
       ]
     },
     {

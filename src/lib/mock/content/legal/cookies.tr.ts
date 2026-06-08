@@ -12,7 +12,7 @@ export const cookiesTr: LegalDocument = {
       title: 'Genel',
       paragraphs: [
         'Bu politika, aion.tr alan adlı web sitemizde kullanılan çerezler ve benzeri teknolojiler hakkında bilgi verir.',
-        'Zorunlu olmayan çerezler yalnızca açık eyleminizle (ör. “Takvimi Aç” butonu) devreye giren üçüncü taraf hizmetler aracılığıyla yüklenir.'
+        'Sitemizde pazarlama, profil oluşturma veya randevu planlama amaçlı üçüncü taraf embed kullanılmaz.'
       ]
     },
     {
@@ -28,11 +28,8 @@ export const cookiesTr: LegalDocument = {
     {
       id: 'third-party',
       title: 'Üçüncü Taraf Hizmetler',
-      paragraphs: [
-        'Calendly: Görüşme planlama aracını yalnızca “Takvimi Aç” butonuna tıkladığınızda yükleriz. Calendly kendi çerezlerini ayarlayabilir.',
-        'Calendly çerezleri ve politikası: calendly.com/privacy'
-      ],
-      list: ['calendly.com: randevu planlama (kullanıcı eylemi sonrası)', 'Barındırma/CDN sağlayıcısı: statik dosya dağıtımı (teknik çerezler)']
+      paragraphs: ['Barındırma altyapımız statik dosya dağıtımı için teknik çerezler kullanabilir.'],
+      list: ['Barındırma/CDN sağlayıcısı: statik dosya dağıtımı (teknik çerezler)']
     },
     {
       id: 'fonts',
@@ -47,7 +44,7 @@ export const cookiesTr: LegalDocument = {
       title: 'Tercihlerinizi Yönetme',
       paragraphs: [
         'Tarayıcı ayarlarınızdan çerezleri silebilir veya engelleyebilirsiniz. Zorunlu çerezlerin devre dışı bırakılması site işlevlerini etkileyebilir.',
-        'Calendly embed yüklenmeden önce üçüncü taraf çerez oluşmaz; embed’i kullanmamayı tercih edebilir ve doğrudan e-posta ile iletişime geçebilirsiniz.'
+        'Doğrudan iletişim için e-posta, telefon veya LinkedIn kanallarımızı kullanabilirsiniz.'
       ]
     },
     {

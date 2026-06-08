@@ -34,7 +34,7 @@ export default async function AssessmentPage({ params }: PageProps) {
           </h1>
           <p className="mt-3 text-muted-foreground">{t('description')}</p>
           <div className="mt-10">
-            <AssessmentWizard calendlyUrl={site.contact.calendlyUrl} responseTime={site.contact.responseTime} />
+            <AssessmentWizard responseTime={site.contact.responseTime} />
           </div>
         </Narrow>
       </Container>

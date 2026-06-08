@@ -1,7 +1,6 @@
 // src/components/sections/contact-channels.tsx
 import { Link } from '@/i18n/navigation';
-import { CalendarDays, ExternalLink, Mail, MapPin, Phone } from 'lucide-react';
-import { CalendlyEmbed } from '@/components/integrations/calendly-embed';
+import { ExternalLink, Mail, MapPin, Phone } from 'lucide-react';
 import { MonoLabel } from '@/components/ui/mono-label';
 import { getSiteConfig } from '@/lib/site';
 import { getTranslations, getLocale } from 'next-intl/server';
@@ -62,15 +61,6 @@ export async function ContactChannels() {
       </div>
 
       <p className="font-mono-label text-muted-foreground">{contact.responseTime}</p>
-
-      <div>
-        <div className="flex items-center gap-3">
-          <CalendarDays aria-hidden="true" className="size-5 text-accent" strokeWidth={1.75} />
-          <MonoLabel className="text-accent">{t('calendlyLabel')}</MonoLabel>
-        </div>
-        <p className="mt-3 text-sm text-muted-foreground">{t('calendlyDescription')}</p>
-        <CalendlyEmbed url={contact.calendlyUrl} label={t('calendlyButton')} className="mt-6" />
-      </div>
 
       <p className="text-sm text-muted-foreground">
         {t('privacyNote')}{' '}

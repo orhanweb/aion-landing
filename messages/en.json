@@ -371,23 +371,19 @@
       "eyebrow": "Thank you",
       "title": "Assessment received",
       "description": "Our team will review your information. {responseTime}.",
-      "calendlyCta": "Schedule a Call",
       "privacyNote": "Your data is processed for assessment purposes only and is not stored in the browser."
     }
   },
   "contact": {
     "eyebrow": "Contact",
     "title": "Get in touch",
-    "description": "Reach our team directly for your enterprise AI compliance journey, or schedule a discovery call.",
+    "description": "Reach our team directly for your enterprise AI compliance journey.",
     "emailLabel": "Email",
     "phoneLabel": "Phone",
     "addressLabel": "Address",
     "linkedinLabel": "LinkedIn",
     "linkedinCta": "Visit AION on LinkedIn",
     "linkedinAriaLabel": "AION company profile on LinkedIn (opens in new tab)",
-    "calendlyLabel": "Schedule a Call",
-    "calendlyDescription": "Pick a time for a 30-minute discovery session.",
-    "calendlyButton": "Open Calendar",
     "privacyNote": "Your personal data is processed under applicable privacy law.",
     "privacyLink": "Privacy Notice",
     "cookiesLink": "Cookie Policy"
