@@ -1,9 +1,9 @@
 // src/lib/content/team.ts
 import type { Locale } from '@/i18n/routing';
-import { getMockTeamMembers, type MockTeamMember } from '@/lib/mock/content/team';
+import { resolveTeamMembers, type TeamMemberRecord } from '@/lib/content/data/team';
 
-export type TeamMember = MockTeamMember;
+export type TeamMember = TeamMemberRecord;
 
 export function getTeamMembers(locale: Locale): TeamMember[] {
-  return getMockTeamMembers(locale);
+  return resolveTeamMembers(locale);
 }

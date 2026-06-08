@@ -12,7 +12,7 @@ Enterprise AI governance marketing site — Next.js, custom UI kit, TR/EN.
 - Zod + React Hook Form (assessment wizard)
 - Motion (`motion/react`) for scroll and reveal animations
 
-Editorial content lives in TypeScript under `src/lib/mock/content/`, exposed through `src/lib/content/*` getters. UI copy is in `messages/*.json`. All content changes are developer-managed in the repo.
+Editorial content lives in TypeScript under `src/lib/content/data/`, exposed through `src/lib/content/*` getters. UI copy is in `messages/*.json`. All content changes are developer-managed in the repo.
 
 ## Scripts
 
@@ -36,8 +36,8 @@ src/
 │   ├── motion/            # Fade, stagger, hero preview console
 │   ├── assessment/        # Multi-step gap analysis wizard
 ├── lib/
-│   ├── content/           # Public content API (facade → mock today)
-│   ├── mock/              # Mock data + runtime source resolution
+│   ├── content/           # Public content API + editorial data files
+│   │   └── data/          # Static editorial content (services, team, legal)
 │   ├── site/              # Site config, contact, env helpers
 │   ├── assessment/        # Zod schemas + server actions
 │   ├── integrations/      # Assessment submit (stub / webhook)
@@ -53,7 +53,7 @@ research/                  # Internal audit notes & screenshots
 | Layer                   | Role                                          |
 | ----------------------- | --------------------------------------------- |
 | `messages/*.json`       | UI copy, form labels, section headings        |
-| `src/lib/mock/content/` | Services, team, testimonials, legal, about    |
+| `src/lib/content/data/` | Services, team, testimonials, legal, about    |
 | `src/lib/content/`      | Stable getters consumed by pages and sections |
 | `src/lib/site/`         | Contact channels, site meta, env validation   |
 

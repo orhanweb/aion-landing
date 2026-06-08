@@ -4,7 +4,7 @@
 export function buildWhatsAppUrl(e164: string, prefilledMessage?: string): string {
   let digits = e164.replace(/\D/g, '');
 
-  // Accept Turkish local input (05xxxxxxxxx) in env or mock data.
+  // Accept Turkish local input (05xxxxxxxxx) in env.
   if (digits.startsWith('0') && digits.length === 11) {
     digits = `90${digits.slice(1)}`;
   }

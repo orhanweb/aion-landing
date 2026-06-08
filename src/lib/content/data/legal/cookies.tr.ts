@@ -1,4 +1,4 @@
-// src/lib/mock/content/legal/cookies.tr.ts
+// src/lib/content/data/legal/cookies.tr.ts
 import type { LegalDocument } from '@/lib/content/legal/types';
 
 export const cookiesTr: LegalDocument = {

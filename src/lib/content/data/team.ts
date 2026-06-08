@@ -1,7 +1,7 @@
-// src/lib/mock/content/team.ts
+// src/lib/content/data/team.ts
 import type { Locale } from '@/i18n/routing';
 
-export type MockTeamMember = {
+export type TeamMemberRecord = {
   slug: string;
   name: string;
   role: string;
@@ -11,7 +11,7 @@ export type MockTeamMember = {
   photo: string;
 };
 
-export const mockTeamTr: MockTeamMember[] = [
+export const teamMembersTr: TeamMemberRecord[] = [
   {
     slug: 'tolga-aktas',
     name: 'Tolga Aktaş',
@@ -41,7 +41,7 @@ export const mockTeamTr: MockTeamMember[] = [
   }
 ];
 
-export const mockTeamEn: MockTeamMember[] = [
+export const teamMembersEn: TeamMemberRecord[] = [
   {
     slug: 'tolga-aktas',
     name: 'Tolga Aktaş',
@@ -71,6 +71,6 @@ export const mockTeamEn: MockTeamMember[] = [
   }
 ];
 
-export function getMockTeamMembers(locale: Locale): MockTeamMember[] {
-  return locale === 'tr' ? mockTeamTr : mockTeamEn;
+export function resolveTeamMembers(locale: Locale): TeamMemberRecord[] {
+  return locale === 'tr' ? teamMembersTr : teamMembersEn;
 }

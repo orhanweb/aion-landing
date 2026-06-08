@@ -1,6 +1,6 @@
 // src/lib/content/services/index.ts
 import type { Locale } from '@/i18n/routing';
-import { getMockServices } from '@/lib/mock/content';
+import { resolveServices } from '@/lib/content/data';
 import { SERVICE_SLUGS, type Service, type ServiceSlug } from '@/lib/content/services/types';
 
 export {
@@ -16,7 +16,7 @@ export {
 } from '@/lib/content/services/types';
 
 export function getServices(locale: Locale): Service[] {
-  return getMockServices(locale);
+  return resolveServices(locale);
 }
 
 export function getService(locale: Locale, slug: string): Service | undefined {

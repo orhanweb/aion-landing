@@ -1,18 +1,18 @@
-// src/lib/mock/content/about.ts
+// src/lib/content/data/about.ts
 import type { Locale } from '@/i18n/routing';
 
-export type MockAboutPrinciple = {
+export type AboutPrincipleRecord = {
   title: string;
   description: string;
 };
 
-export type MockAboutContent = {
+export type AboutContentRecord = {
   mission: string;
   story: string;
-  principles: MockAboutPrinciple[];
+  principles: AboutPrincipleRecord[];
 };
 
-export const mockAboutTr: MockAboutContent = {
+export const aboutContentTr: AboutContentRecord = {
   mission:
     'AION, kurumların yapay zeka sistemlerini güvenli, şeffaf ve denetlenebilir biçimde yönetmesi için ISO standartları ve EU AI Act uyumunda danışmanlık sunar.',
   story:
@@ -37,7 +37,7 @@ export const mockAboutTr: MockAboutContent = {
   ]
 };
 
-export const mockAboutEn: MockAboutContent = {
+export const aboutContentEn: AboutContentRecord = {
   mission: 'AION helps organizations manage AI systems securely, transparently, and auditably under ISO standards and the EU AI Act.',
   story:
     'AI regulation is changing quickly, and the gap between technical teams and compliance functions keeps widening. AION brings certification-grade consulting to AI governance, from strategy through audit.',
@@ -61,6 +61,6 @@ export const mockAboutEn: MockAboutContent = {
   ]
 };
 
-export function getMockAboutContent(locale: Locale): MockAboutContent {
-  return locale === 'tr' ? mockAboutTr : mockAboutEn;
+export function resolveAboutContent(locale: Locale): AboutContentRecord {
+  return locale === 'tr' ? aboutContentTr : aboutContentEn;
 }

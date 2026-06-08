@@ -1,8 +1,8 @@
-// src/lib/mock/content/testimonials.ts
+// src/lib/content/data/testimonials.ts
 import type { Locale } from '@/i18n/routing';
 import type { ServiceSlug } from '@/lib/content/services/types';
 
-export type MockTestimonial = {
+export type TestimonialRecord = {
   id: string;
   author: string;
   sector: string;
@@ -12,7 +12,7 @@ export type MockTestimonial = {
   featured: boolean;
 };
 
-export const mockTestimonialsTr: MockTestimonial[] = [
+export const testimonialsTr: TestimonialRecord[] = [
   {
     id: 'fatih-kuran',
     author: 'Fatih Kuran',
@@ -65,7 +65,7 @@ export const mockTestimonialsTr: MockTestimonial[] = [
   }
 ];
 
-export const mockTestimonialsEn: MockTestimonial[] = [
+export const testimonialsEn: TestimonialRecord[] = [
   {
     id: 'fatih-kuran',
     author: 'Fatih Kuran',
@@ -117,6 +117,6 @@ export const mockTestimonialsEn: MockTestimonial[] = [
   }
 ];
 
-export function getMockTestimonials(locale: Locale): MockTestimonial[] {
-  return locale === 'tr' ? mockTestimonialsTr : mockTestimonialsEn;
+export function resolveTestimonials(locale: Locale): TestimonialRecord[] {
+  return locale === 'tr' ? testimonialsTr : testimonialsEn;
 }

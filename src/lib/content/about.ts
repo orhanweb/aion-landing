@@ -1,10 +1,10 @@
 // src/lib/content/about.ts
 import type { Locale } from '@/i18n/routing';
-import { getMockAboutContent, type MockAboutContent, type MockAboutPrinciple } from '@/lib/mock/content/about';
+import { resolveAboutContent, type AboutContentRecord, type AboutPrincipleRecord } from '@/lib/content/data/about';
 
-export type AboutPrinciple = MockAboutPrinciple;
-export type AboutContent = MockAboutContent;
+export type AboutPrinciple = AboutPrincipleRecord;
+export type AboutContent = AboutContentRecord;
 
 export function getAboutContent(locale: Locale): AboutContent {
-  return getMockAboutContent(locale);
+  return resolveAboutContent(locale);
 }

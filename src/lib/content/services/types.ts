@@ -42,5 +42,5 @@ export type Service = {
   faqs: ServiceFaq[];
 };
 
-/** Service fields stored in locale mock files before FAQ bundles are attached. */
+/** Service fields stored in locale data files before FAQ bundles are attached. */
 export type ServiceContent = Omit<Service, 'faqs'>;

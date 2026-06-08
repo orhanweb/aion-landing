@@ -1,4 +1,4 @@
-// src/lib/mock/content/services/faqs/tr.ts
+// src/lib/content/data/services/faqs/tr.ts
 import type { ServiceFaq, ServiceSlug } from '@/lib/content/services/types';
 
 export const serviceFaqsTr = {
