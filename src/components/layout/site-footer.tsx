@@ -16,7 +16,7 @@ export async function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border bg-card py-16">
+    <footer className="border-t border-border bg-card pt-16 pb-8">
       <Container>
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
           <div className="flex flex-col gap-4 lg:col-span-2">
@@ -89,9 +89,8 @@ export async function SiteFooter() {
           </nav>
         </div>
 
-        <div className="mt-12 flex flex-col gap-4 border-t border-border pt-8 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 border-t border-border pt-8 text-center">
           <p className="font-mono-label text-muted-foreground">{t('copyright', { year })}</p>
-          <p className="font-mono-label text-muted-foreground">{t('legalNotice')}</p>
         </div>
       </Container>
     </footer>

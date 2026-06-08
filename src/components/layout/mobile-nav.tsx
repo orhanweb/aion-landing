@@ -2,9 +2,9 @@
 'use client';
 
 import { useId, useRef, type RefObject } from 'react';
-import { ArrowRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
+import { HeaderCtaLink } from '@/components/layout/header-cta-link';
 import { useFocusTrap } from '@/lib/a11y/use-focus-trap';
 import { cn } from '@/lib/utils/cn';
 
@@ -43,7 +43,7 @@ export function MobileNav({ open, onClose, navItems, menuButtonRef }: MobileNavP
       role="dialog"
       aria-modal="true"
       aria-labelledby={titleId}
-      className={cn('fixed inset-x-0 top-16 bottom-0 z-40 md:hidden')}
+      className={cn('fixed inset-x-0 top-16 bottom-0 z-40 lg:hidden')}
     >
       <div role="presentation" className="absolute inset-0 bg-(--ink)/95 backdrop-blur-sm" onClick={onClose} />
 
@@ -56,10 +56,7 @@ export function MobileNav({ open, onClose, navItems, menuButtonRef }: MobileNavP
             {t(item.key)}
           </Link>
         ))}
-        <Link href="/assessment" onClick={onClose} className="inline-flex items-center gap-2 font-mono-label text-accent">
-          {t('assessment')}
-          <ArrowRight aria-hidden="true" className="size-4" strokeWidth={1.75} />
-        </Link>
+        <HeaderCtaLink label={t('stickyCta')} onClick={onClose} className="sm:hidden" />
       </nav>
     </div>
   );

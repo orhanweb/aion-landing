@@ -1,9 +1,8 @@
 // src/components/layout/sticky-header-cta.tsx
 'use client';
 
-import { Link } from '@/i18n/navigation';
+import { HeaderCtaLink } from '@/components/layout/header-cta-link';
 import { useScrollThreshold } from '@/lib/a11y/use-scroll-threshold';
-import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils/cn';
 
 type StickyHeaderCtaProps = {
@@ -15,16 +14,10 @@ export function StickyHeaderCta({ label }: StickyHeaderCtaProps) {
 
   return (
     <span className="hidden lg:contents" inert={visible ? undefined : true}>
-      <Link
-        href="/assessment"
-        className={cn(
-          buttonVariants({ variant: 'primary', size: 'sm' }),
-          'inline-flex transition-all duration-300',
-          visible ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-1 opacity-0'
-        )}
-      >
-        {label}
-      </Link>
+      <HeaderCtaLink
+        label={label}
+        className={cn('transition-all duration-300', visible ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-1 opacity-0')}
+      />
     </span>
   );
 }

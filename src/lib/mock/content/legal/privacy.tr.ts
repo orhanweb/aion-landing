@@ -5,7 +5,7 @@ export const privacyTr: LegalDocument = {
   slug: 'privacy',
   title: 'KVKK Aydınlatma Metni',
   description: 'AION kişisel verilerin işlenmesine ilişkin aydınlatma metni.',
-  lastUpdated: '2026-05-26',
+  lastUpdated: '2026-06-08',
   sections: [
     {
       id: 'controller',

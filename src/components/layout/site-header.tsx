@@ -2,9 +2,10 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { ArrowRight, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { Link, usePathname } from '@/i18n/navigation';
+import { HeaderCtaLink } from '@/components/layout/header-cta-link';
 import { LangSwitcher } from '@/components/layout/lang-switcher';
 import { MobileNav } from '@/components/layout/mobile-nav';
 import { StickyHeaderCta } from '@/components/layout/sticky-header-cta';
@@ -56,6 +57,22 @@ export function SiteHeader() {
     };
   }, [open]);
 
+  // Close mobile menu when viewport reaches desktop nav (Tailwind lg) so inert/scroll lock cleanup runs.
+  useEffect(() => {
+    const media = window.matchMedia('(min-width: 1024px)');
+
+    function closeOnDesktopNav(event?: MediaQueryListEvent) {
+      if (event?.matches ?? media.matches) {
+        setOpen(false);
+      }
+    }
+
+    closeOnDesktopNav();
+    media.addEventListener('change', closeOnDesktopNav);
+
+    return () => media.removeEventListener('change', closeOnDesktopNav);
+  }, []);
+
   function closeMenu() {
     setOpen(false);
   }
@@ -70,7 +87,7 @@ export function SiteHeader() {
         <Container className="flex h-16 items-center justify-between gap-4">
           <Logo priority />
 
-          <nav aria-label={t('mainNav')} className="hidden items-center gap-8 md:flex">
+          <nav aria-label={t('mainNav')} className="hidden items-center gap-6 lg:flex xl:gap-8">
             {navItems.map(item => (
               <Link
                 key={item.key}
@@ -85,19 +102,16 @@ export function SiteHeader() {
 
           <div className="flex items-center gap-4">
             <LangSwitcher />
-            <Link
-              href="/assessment"
+            <HeaderCtaLink
+              label={t('stickyCta')}
               aria-current={pathname === '/assessment' ? 'page' : undefined}
-              className="hidden items-center gap-1.5 font-mono-label text-accent transition-colors hover:text-(--accent-strong) sm:inline-flex lg:hidden"
-            >
-              {t('assessment')}
-              <ArrowRight aria-hidden="true" className="size-3.5" strokeWidth={1.75} />
-            </Link>
+              className="hidden sm:inline-flex lg:hidden"
+            />
             <StickyHeaderCta label={t('stickyCta')} />
             <button
               ref={menuButtonRef}
               type="button"
-              className="inline-flex items-center rounded-md p-2 text-foreground transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-(--ink) md:hidden"
+              className="inline-flex items-center rounded-md p-2 text-foreground transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-(--ink) lg:hidden"
               aria-expanded={open}
               aria-controls="mobile-nav"
               aria-label={t('mobileMenuTitle')}

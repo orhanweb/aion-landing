@@ -5,7 +5,7 @@ export const privacyEn: LegalDocument = {
   slug: 'privacy',
   title: 'Privacy Notice',
   description: 'AION privacy notice on the processing of personal data.',
-  lastUpdated: '2026-05-26',
+  lastUpdated: '2026-06-08',
   sections: [
     {
       id: 'controller',
