@@ -1,14 +1,20 @@
 // src/lib/site/env.ts
+import { validateEnv, type ValidatedEnv } from '@/lib/site/env-schema';
 
-export function readEnv(key: string): string | undefined {
-  const value = process.env[key]?.trim();
-  return value && value.length > 0 ? value : undefined;
+let cachedEnv: ValidatedEnv | undefined;
+
+export function getValidatedEnv(): ValidatedEnv {
+  if (!cachedEnv) {
+    cachedEnv = validateEnv();
+  }
+
+  return cachedEnv;
 }
 
-export function readPublicEnv(key: string): string | undefined {
-  return readEnv(key);
+export function requirePublicEnv<Key extends keyof ValidatedEnv['public']>(key: Key): ValidatedEnv['public'][Key] {
+  return getValidatedEnv().public[key];
 }
 
-export function readServerEnv(key: string): string | undefined {
-  return readEnv(key);
+export function requireServerEnv<Key extends keyof ValidatedEnv['assessment']>(key: Key): ValidatedEnv['assessment'][Key] {
+  return getValidatedEnv().assessment[key];
 }

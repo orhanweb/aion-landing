@@ -1,41 +1,27 @@
 // src/lib/site/resolve.ts
-import type { Locale } from '@/i18n/routing';
-import { buildMockContact, mockContactResponseTime, mockSiteMeta } from '@/lib/mock/site';
-import { resolveDataSource } from '@/lib/mock/source';
-import { readPublicEnv } from '@/lib/site/env';
+import { requirePublicEnv } from '@/lib/site/env';
 import type { SiteConfig, SiteContact, SiteMeta } from '@/lib/site/types';
 
 function resolveMeta(): SiteMeta {
   return {
-    url: readPublicEnv('NEXT_PUBLIC_SITE_URL') ?? mockSiteMeta.url,
-    name: readPublicEnv('NEXT_PUBLIC_SITE_NAME') ?? mockSiteMeta.name,
-    tagline: readPublicEnv('NEXT_PUBLIC_SITE_TAGLINE') ?? mockSiteMeta.tagline
+    url: requirePublicEnv('NEXT_PUBLIC_SITE_URL'),
+    name: requirePublicEnv('NEXT_PUBLIC_SITE_NAME'),
+    tagline: requirePublicEnv('NEXT_PUBLIC_SITE_TAGLINE')
   };
 }
 
-function resolveContact(locale: Locale): SiteContact {
-  const source = resolveDataSource();
-  const mock = buildMockContact(locale);
-
-  if (source === 'mock') {
-    return mock;
-  }
-
+function resolveContact(): SiteContact {
   return {
-    email: readPublicEnv('NEXT_PUBLIC_CONTACT_EMAIL') ?? mock.email,
-    whatsappE164: readPublicEnv('NEXT_PUBLIC_WHATSAPP_NUMBER') ?? mock.whatsappE164,
-    whatsappDisplay: readPublicEnv('NEXT_PUBLIC_WHATSAPP_DISPLAY') ?? mock.whatsappDisplay ?? mock.whatsappE164,
-    responseTime: mockContactResponseTime[locale]
+    email: requirePublicEnv('NEXT_PUBLIC_CONTACT_EMAIL'),
+    whatsappE164: requirePublicEnv('NEXT_PUBLIC_WHATSAPP_NUMBER'),
+    whatsappDisplay: requirePublicEnv('NEXT_PUBLIC_WHATSAPP_DISPLAY')
   };
 }
 
-export function resolveSiteConfig(locale: Locale): SiteConfig {
-  const source = resolveDataSource();
-
+export function resolveSiteConfig(): SiteConfig {
   return {
-    source,
     meta: resolveMeta(),
-    contact: resolveContact(locale)
+    contact: resolveContact()
   };
 }
 

@@ -373,7 +373,7 @@
     "thankYou": {
       "eyebrow": "Teşekkürler",
       "title": "Değerlendirmeniz alındı",
-      "description": "Ekibimiz bilgilerinizi inceleyecek. {responseTime} size dönüş yapacağız.",
+      "description": "Ekibimiz bilgilerinizi inceleyecek. {responseTime}.",
       "privacyNote": "Verileriniz yalnızca değerlendirme amacıyla işlenir; tarayıcıda saklanmaz."
     }
   },
@@ -386,6 +386,7 @@
     "whatsappCta": "WhatsApp ile yazın",
     "whatsappPrefill": "Merhaba, AION hakkında bilgi almak istiyorum.",
     "whatsappAriaLabel": "WhatsApp üzerinden yazın: {number} (yeni sekmede açılır)",
+    "responseTime": "İş günlerinde 24 saat içinde dönüş",
     "privacyNote": "Kişisel verileriniz KVKK kapsamında işlenir.",
     "privacyLink": "Gizlilik Politikası",
     "cookiesLink": "Çerez Politikası"

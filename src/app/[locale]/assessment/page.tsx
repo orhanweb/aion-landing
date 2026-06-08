@@ -3,7 +3,6 @@ import { AssessmentWizard } from '@/components/assessment/assessment-wizard';
 import { Container, Section } from '@/components/ui/container';
 import { Narrow } from '@/components/ui/content-width';
 import { MonoLabel } from '@/components/ui/mono-label';
-import { getSiteConfig } from '@/lib/site';
 import { buildLocalizedPageMetadata } from '@/lib/seo/page-metadata';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { Locale } from '@/i18n/routing';
@@ -22,7 +21,7 @@ export default async function AssessmentPage({ params }: PageProps) {
   const { locale } = await params;
   setRequestLocale(locale as Locale);
   const t = await getTranslations('assessment');
-  const site = getSiteConfig(locale as Locale);
+  const contactT = await getTranslations('contact');
 
   return (
     <Section className="pt-24">
@@ -34,7 +33,7 @@ export default async function AssessmentPage({ params }: PageProps) {
           </h1>
           <p className="mt-3 text-muted-foreground">{t('description')}</p>
           <div className="mt-10">
-            <AssessmentWizard responseTime={site.contact.responseTime} />
+            <AssessmentWizard responseTime={contactT('responseTime')} />
           </div>
         </Narrow>
       </Container>

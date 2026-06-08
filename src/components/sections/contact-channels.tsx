@@ -5,13 +5,11 @@ import { MonoLabel } from '@/components/ui/mono-label';
 import { WhatsAppIcon } from '@/components/ui/whatsapp-icon';
 import { getSiteConfig } from '@/lib/site';
 import { buildWhatsAppUrl } from '@/lib/site/whatsapp';
-import { getTranslations, getLocale } from 'next-intl/server';
-import type { Locale } from '@/i18n/routing';
+import { getTranslations } from 'next-intl/server';
 
 export async function ContactChannels() {
-  const locale = (await getLocale()) as Locale;
   const t = await getTranslations('contact');
-  const site = getSiteConfig(locale);
+  const site = getSiteConfig();
   const contact = site.contact;
   const whatsappUrl = buildWhatsAppUrl(contact.whatsappE164, t('whatsappPrefill'));
 
@@ -46,7 +44,7 @@ export async function ContactChannels() {
         </div>
       </div>
 
-      <p className="font-mono-label text-muted-foreground">{contact.responseTime}</p>
+      <p className="font-mono-label text-muted-foreground">{t('responseTime')}</p>
 
       <p className="text-sm text-muted-foreground">
         {t('privacyNote')}{' '}

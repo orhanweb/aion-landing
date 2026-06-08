@@ -50,16 +50,16 @@ research/                  # Internal audit notes & screenshots
 
 ## Content & data
 
-| Layer                   | Role                                            |
-| ----------------------- | ----------------------------------------------- |
-| `messages/*.json`       | UI copy, form labels, section headings          |
-| `src/lib/mock/content/` | Services, team, testimonials, legal, about      |
-| `src/lib/content/`      | Stable getters consumed by pages and sections   |
-| `src/lib/site/`         | Contact channels, site meta, mock vs live flags |
+| Layer                   | Role                                          |
+| ----------------------- | --------------------------------------------- |
+| `messages/*.json`       | UI copy, form labels, section headings        |
+| `src/lib/mock/content/` | Services, team, testimonials, legal, about    |
+| `src/lib/content/`      | Stable getters consumed by pages and sections |
+| `src/lib/site/`         | Contact channels, site meta, env validation   |
 
-Contact overrides: set `SITE_DATA_SOURCE=live` and `NEXT_PUBLIC_*` env vars (see `src/lib/mock/site.ts`).
+Contact overrides: set required env vars (see `.env.example`).
 
-Assessment delivery (later): `ASSESSMENT_SUBMIT_MODE=webhook` + `ASSESSMENT_WEBHOOK_URL`. Default is `stub` (server log only).
+Assessment delivery: `ASSESSMENT_SUBMIT_MODE=webhook` + `ASSESSMENT_WEBHOOK_URL`. Use `stub` to log only.
 
 ## Deploy (Hetzner)
 

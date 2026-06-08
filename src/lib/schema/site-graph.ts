@@ -11,7 +11,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 async function organizationSchemaNode(locale: Locale, siteUrl: string, personIds: string[]) {
   setRequestLocale(locale);
   const meta = await getTranslations('meta');
-  const site = getSiteConfig(locale);
+  const site = getSiteConfig();
   const logoUrl = absoluteAssetUrl('/aion-mark.svg', siteUrl);
   const homeUrl = localizedPageUrl(locale, '', siteUrl);
 
@@ -42,7 +42,7 @@ async function organizationSchemaNode(locale: Locale, siteUrl: string, personIds
 }
 
 function websiteSchemaNode(locale: Locale, siteUrl: string) {
-  const site = getSiteConfig(locale);
+  const site = getSiteConfig();
   const homeUrl = localizedPageUrl(locale, '', siteUrl);
 
   return {

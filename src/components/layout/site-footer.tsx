@@ -10,7 +10,7 @@ import type { Locale } from '@/i18n/routing';
 export async function SiteFooter() {
   const t = await getTranslations('footer');
   const locale = (await getLocale()) as Locale;
-  const site = getSiteConfig(locale);
+  const site = getSiteConfig();
   const contact = site.contact;
   const services = getServices(locale);
   const year = new Date().getFullYear();
