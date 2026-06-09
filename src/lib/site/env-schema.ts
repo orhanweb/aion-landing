@@ -12,29 +12,16 @@ const sitePublicSchema = z.object({
 
 const assessmentServerSchema = z
   .object({
-    ASSESSMENT_SUBMIT_MODE: z.enum(['stub', 'webhook']),
-    ASSESSMENT_WEBHOOK_URL: z.string().optional()
+    ASSESSMENT_SUBMIT_MODE: z.enum(['stub', 'email']),
+    RESEND_API_KEY: z.string().optional()
   })
   .superRefine((value, ctx) => {
-    if (value.ASSESSMENT_SUBMIT_MODE === 'webhook') {
-      if (!value.ASSESSMENT_WEBHOOK_URL?.trim()) {
-        ctx.addIssue({
-          code: 'custom',
-          message: 'ASSESSMENT_WEBHOOK_URL is required when ASSESSMENT_SUBMIT_MODE=webhook',
-          path: ['ASSESSMENT_WEBHOOK_URL']
-        });
-        return;
-      }
-
-      try {
-        new URL(value.ASSESSMENT_WEBHOOK_URL);
-      } catch {
-        ctx.addIssue({
-          code: 'custom',
-          message: 'ASSESSMENT_WEBHOOK_URL must be a valid URL',
-          path: ['ASSESSMENT_WEBHOOK_URL']
-        });
-      }
+    if (value.ASSESSMENT_SUBMIT_MODE === 'email' && !value.RESEND_API_KEY?.trim()) {
+      ctx.addIssue({
+        code: 'custom',
+        message: 'RESEND_API_KEY is required when ASSESSMENT_SUBMIT_MODE=email',
+        path: ['RESEND_API_KEY']
+      });
     }
   });
 
@@ -95,7 +82,7 @@ export function validateEnv(): ValidatedEnv {
 
   const assessmentResult = assessmentServerSchema.safeParse({
     ASSESSMENT_SUBMIT_MODE: readRawEnv('ASSESSMENT_SUBMIT_MODE'),
-    ASSESSMENT_WEBHOOK_URL: readRawEnv('ASSESSMENT_WEBHOOK_URL')
+    RESEND_API_KEY: readRawEnv('RESEND_API_KEY')
   });
 
   if (!assessmentResult.success) {

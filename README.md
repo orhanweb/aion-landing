@@ -40,7 +40,7 @@ src/
 │   │   └── data/          # Static editorial content (services, team, legal)
 │   ├── site/              # Site config, contact, env helpers
 │   ├── assessment/        # Zod schemas + server actions
-│   ├── integrations/      # Assessment submit (stub / webhook)
+│   ├── integrations/      # Assessment submit (stub / email via Resend)
 │   └── seo/               # Metadata helpers
 ├── i18n/                  # next-intl routing + request config
 messages/                  # TR / EN UI strings (next-intl)
@@ -59,7 +59,7 @@ research/                  # Internal audit notes & screenshots
 
 Contact overrides: set required env vars (see `.env.example`).
 
-Assessment delivery: `ASSESSMENT_SUBMIT_MODE=webhook` + `ASSESSMENT_WEBHOOK_URL`. Use `stub` to log only.
+Assessment delivery: `ASSESSMENT_SUBMIT_MODE=email` + `RESEND_API_KEY` (Resend → `NEXT_PUBLIC_CONTACT_EMAIL`). Use `stub` locally to log only.
 
 ## Deploy (Hetzner)
 

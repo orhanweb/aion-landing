@@ -1,11 +1,10 @@
 // src/lib/integrations/types.ts
 
-export type AssessmentSubmitMode = 'stub' | 'webhook';
+export type AssessmentSubmitMode = 'stub' | 'email';
 
 export type IntegrationsConfig = {
   assessment: {
     mode: AssessmentSubmitMode;
-    webhookUrl?: string;
   };
 };
 
