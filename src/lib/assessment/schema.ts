@@ -107,8 +107,7 @@ const contactSchema = z.object({
 });
 
 const consentSchema = z.object({
-  consent: z.boolean().refine(value => value === true, { message: 'errors.consent' }),
-  marketingOptIn: z.boolean()
+  consent: z.boolean().refine(value => value === true, { message: 'errors.consent' })
 });
 
 export const assessmentFormSchema = z
@@ -132,8 +131,7 @@ export const assessmentFormSchema = z
     email: z.string().email({ message: 'errors.email' }),
     phone: z.string().min(7, required),
     title: z.string().min(2, required),
-    consent: z.boolean(),
-    marketingOptIn: z.boolean()
+    consent: z.boolean()
   })
   .superRefine((values, ctx) => {
     const branchResult = getBranchSchema(values.topic).safeParse(values);
@@ -179,8 +177,7 @@ export function getDefaultFormValues(): AssessmentFormValues {
     email: '',
     phone: '',
     title: '',
-    consent: false,
-    marketingOptIn: false
+    consent: false
   };
 }
 
@@ -216,8 +213,7 @@ export const assessmentSubmissionSchema = z.discriminatedUnion('topic', [
     email: z.string().email(),
     phone: z.string().min(7),
     title: z.string().min(2),
-    consent: z.literal(true),
-    marketingOptIn: z.boolean()
+    consent: z.literal(true)
   }),
   z.object({
     topic: z.literal('iso42001'),
@@ -231,8 +227,7 @@ export const assessmentSubmissionSchema = z.discriminatedUnion('topic', [
     email: z.string().email(),
     phone: z.string().min(7),
     title: z.string().min(2),
-    consent: z.literal(true),
-    marketingOptIn: z.boolean()
+    consent: z.literal(true)
   }),
   z.object({
     topic: z.literal('euAiAct'),
@@ -247,8 +242,7 @@ export const assessmentSubmissionSchema = z.discriminatedUnion('topic', [
     email: z.string().email(),
     phone: z.string().min(7),
     title: z.string().min(2),
-    consent: z.literal(true),
-    marketingOptIn: z.boolean()
+    consent: z.literal(true)
   }),
   z.object({
     topic: z.literal('general'),
@@ -259,8 +253,7 @@ export const assessmentSubmissionSchema = z.discriminatedUnion('topic', [
     email: z.string().email(),
     phone: z.string().min(7),
     title: z.string().min(2),
-    consent: z.literal(true),
-    marketingOptIn: z.boolean()
+    consent: z.literal(true)
   })
 ]);
 

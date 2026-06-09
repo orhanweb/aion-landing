@@ -351,8 +351,7 @@
       "phone": "Phone",
       "consentPrefix": "I have read and accept the",
       "consentLink": "Privacy Notice",
-      "consentSuffix": ".",
-      "marketingOptIn": "I would like to receive updates on compliance and AI governance from AION (optional)."
+      "consentSuffix": "."
     },
     "errors": {
       "required": "This field is required.",

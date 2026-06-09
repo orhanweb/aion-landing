@@ -131,8 +131,7 @@ function getSharedFields(payload: AssessmentSubmission): EmailField[] {
     { label: 'Contact name', value: payload.name },
     { label: 'Email', value: payload.email },
     { label: 'Phone', value: payload.phone },
-    { label: 'Job title', value: payload.title },
-    { label: 'Marketing opt-in', value: payload.marketingOptIn ? 'Yes' : 'No' }
+    { label: 'Job title', value: payload.title }
   ];
 
   if (payload.topic !== 'iso42001') {

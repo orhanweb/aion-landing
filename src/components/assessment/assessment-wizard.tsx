@@ -39,8 +39,7 @@ function buildSubmission(values: AssessmentFormValues): AssessmentSubmission {
     email: values.email,
     phone: values.phone,
     title: values.title,
-    consent: true as const,
-    marketingOptIn: values.marketingOptIn
+    consent: true as const
   };
 
   switch (values.topic) {
@@ -96,7 +95,6 @@ export function AssessmentWizard() {
   const phoneErrorId = useId();
   const topicErrorId = useId();
   const submitErrorId = useId();
-  const marketingOptInId = useId();
   const [stepIndex, setStepIndex] = useState(0);
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -111,7 +109,6 @@ export function AssessmentWizard() {
   const currentStep = wizardSteps[stepIndex] as WizardStep;
   const watchedTopic = useWatch({ control: form.control, name: 'topic' });
   const topic = watchedTopic ?? 'iso42001';
-  const marketingOptIn = form.register('marketingOptIn');
   const errors = form.formState.errors;
 
   function applyStepErrors(issues: { path: PropertyKey[]; message: string }[]) {
@@ -288,13 +285,7 @@ export function AssessmentWizard() {
             ) : null}
 
             {currentStep === 'consent' ? (
-              <div className="space-y-4">
-                <ConsentField register={form.register} name="consent" error={errors.consent} onConsentChange={() => void form.trigger('consent')} />
-                <label htmlFor={marketingOptInId} className="flex items-start gap-3 text-sm text-muted-foreground">
-                  <input id={marketingOptInId} type="checkbox" {...marketingOptIn} className="mt-1 accent-(--accent)" />
-                  {t('fields.marketingOptIn')}
-                </label>
-              </div>
+              <ConsentField register={form.register} name="consent" error={errors.consent} onConsentChange={() => void form.trigger('consent')} />
             ) : null}
           </motion.div>
 

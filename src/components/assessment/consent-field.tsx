@@ -43,7 +43,7 @@ export function ConsentField<T extends FieldValues>({ register, name, error, onC
         <p id={descriptionId} className="text-sm text-muted-foreground">
           <span id={labelId}>
             {t('fields.consentPrefix') ? `${t('fields.consentPrefix')} ` : null}
-            <Link href="/privacy" className="text-accent underline-offset-4 hover:underline">
+            <Link href="/privacy" target="_blank" rel="noopener noreferrer" className="text-accent underline-offset-4 hover:underline">
               {t('fields.consentLink')}
             </Link>
             {t('fields.consentSuffix')}

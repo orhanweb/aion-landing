@@ -355,8 +355,7 @@
       "phone": "Telefon",
       "consentPrefix": "",
       "consentLink": "KVKK Aydınlatma Metni",
-      "consentSuffix": "'ni okudum ve kabul ediyorum.",
-      "marketingOptIn": "AION'dan uyum ve AI yönetişimi hakkında bilgilendirme almak istiyorum (isteğe bağlı)."
+      "consentSuffix": "'ni okudum ve kabul ediyorum."
     },
     "errors": {
       "required": "Bu alan zorunludur.",
