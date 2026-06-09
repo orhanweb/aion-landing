@@ -24,8 +24,7 @@ export async function HeroSection() {
 
             <StaggerItem>
               <h1 className="font-display mt-6 text-balance text-[clamp(3rem,5.8vw,5rem)] font-semibold leading-[1.05] tracking-[0.01em] xl:text-[clamp(4rem,5vw,5.5rem)]">
-                <span className="block">{t('titleLine1')}</span>
-                <span className="block text-accent">{t('titleLine2')}</span>
+                <span className="block">{t('titleLine1')}</span> <span className="block text-accent">{t('titleLine2')}</span>
               </h1>
               <p className="mt-5 max-w-2xl font-mono-label leading-relaxed text-accent">{t('titleLine3')}</p>
             </StaggerItem>
