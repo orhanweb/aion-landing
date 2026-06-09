@@ -6,7 +6,6 @@ import { getSecurityHeaders } from './src/lib/security-headers';
 const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 
 const nextConfig: NextConfig = {
-  output: 'standalone',
   // Allow LAN devices (e.g. phone) to load dev resources during development.
   allowedDevOrigins: ['192.168.1.116'],
   headers: async () => [

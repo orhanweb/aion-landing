@@ -4,7 +4,7 @@ Enterprise AI governance marketing site — Next.js, custom UI kit, TR/EN.
 
 ## Stack
 
-- Next.js 16 (App Router, standalone output)
+- Next.js 16 (App Router)
 - TypeScript (strict)
 - Tailwind CSS 4
 - Custom UI components (`src/components/ui/`) — no shadcn
@@ -61,13 +61,6 @@ Contact overrides: set required env vars (see `.env.example`).
 
 Assessment delivery: `ASSESSMENT_SUBMIT_MODE=email` + `RESEND_API_KEY` (Resend → `NEXT_PUBLIC_CONTACT_EMAIL`). Use `stub` locally to log only.
 
-## Deploy (Hetzner)
+## Deploy (Vercel)
 
-Build produces standalone output:
-
-```bash
-npm run build
-node .next/standalone/server.js
-```
-
-Docker + Caddy setup — coming next.
+Production runs on Vercel. Set all required env vars from `.env.example` in the Vercel project settings (mark `RESEND_API_KEY` as Sensitive when using email delivery).
