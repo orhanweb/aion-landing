@@ -1,5 +1,6 @@
 // src/components/sections/service-topic-grid.tsx
 import { FadeIn } from '@/components/motion/fade-in';
+import { serviceDetailScrollViewport } from '@/components/motion/motion-config';
 import { MonoLabel } from '@/components/ui/mono-label';
 import { cn } from '@/lib/utils/cn';
 import type { ServiceStep } from '@/lib/content/services/types';
@@ -29,20 +30,20 @@ export function ServiceTopicGrid({ label, title, steps }: ServiceTopicGridProps)
 
   return (
     <>
-      <FadeIn>
+      <FadeIn viewport={serviceDetailScrollViewport}>
         <MonoLabel className="text-accent">{label}</MonoLabel>
         <h2 className="font-display mt-4 text-2xl tracking-tight md:text-3xl">{title}</h2>
       </FadeIn>
 
       <div className="mt-10 grid items-stretch gap-6 sm:grid-cols-2">
         {gridSteps.map((step, index) => (
-          <FadeIn key={step.title} delay={index * 0.05}>
+          <FadeIn viewport={serviceDetailScrollViewport} key={step.title} delay={index * 0.05}>
             <TopicCard step={step} index={index} />
           </FadeIn>
         ))}
 
         {trailingStep ? (
-          <FadeIn delay={gridSteps.length * 0.05}>
+          <FadeIn viewport={serviceDetailScrollViewport} delay={gridSteps.length * 0.05}>
             <TopicCard step={trailingStep} index={steps.length - 1} fullWidth />
           </FadeIn>
         ) : null}

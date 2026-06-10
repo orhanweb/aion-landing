@@ -2,6 +2,7 @@
 import { Link } from '@/i18n/navigation';
 import { ArrowRight } from 'lucide-react';
 import { FadeIn } from '@/components/motion/fade-in';
+import { serviceDetailScrollViewport } from '@/components/motion/motion-config';
 import { Container, Section } from '@/components/ui/container';
 import { TextMeasure } from '@/components/ui/content-width';
 import { MonoLabel } from '@/components/ui/mono-label';
@@ -23,7 +24,7 @@ export async function ServiceDetailHero({ subtitle, title, intro, standard }: Se
   return (
     <Section variant="default" spacing="compact" className="pt-24">
       <Container>
-        <FadeIn>
+        <FadeIn viewport={serviceDetailScrollViewport}>
           <MonoLabel className="text-accent">{subtitle}</MonoLabel>
           <h1 className="font-display mt-4 text-[clamp(2rem,4vw,3.5rem)] leading-tight tracking-tight">{title}</h1>
           <TextMeasure className="mt-6 space-y-4">

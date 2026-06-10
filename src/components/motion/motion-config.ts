@@ -22,4 +22,11 @@ export const defaultScrollViewport = {
   margin: '0px 0px -10% 0px'
 } as const;
 
+/** Service detail pages: trigger earlier while scrolling (less visible area required). */
+export const serviceDetailScrollViewport = {
+  once: true,
+  amount: 0.2,
+  margin: '0px 0px 20% 0px'
+} as const;
+
 export type ScrollViewportOptions = typeof defaultScrollViewport;

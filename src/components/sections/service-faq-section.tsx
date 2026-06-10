@@ -1,6 +1,7 @@
 // src/components/sections/service-faq-section.tsx
 import { ChevronDown } from 'lucide-react';
 import { FadeIn } from '@/components/motion/fade-in';
+import { serviceDetailScrollViewport } from '@/components/motion/motion-config';
 import { MonoLabel } from '@/components/ui/mono-label';
 import { faqQuestionFragmentId } from '@/lib/schema/site-entity';
 import type { ServiceFaq } from '@/lib/content/services/types';
@@ -19,7 +20,7 @@ export function ServiceFaqSection({ label, title, titleId, faqs }: ServiceFaqSec
 
   return (
     <>
-      <FadeIn>
+      <FadeIn viewport={serviceDetailScrollViewport}>
         <MonoLabel className="text-accent">{label}</MonoLabel>
         <h2 id={titleId} className="font-display mt-4 text-2xl tracking-tight md:text-3xl">
           {title}
@@ -28,7 +29,7 @@ export function ServiceFaqSection({ label, title, titleId, faqs }: ServiceFaqSec
 
       <div className="mt-12 space-y-4">
         {faqs.map((faq, index) => (
-          <FadeIn key={faq.id} delay={index * 0.05}>
+          <FadeIn viewport={serviceDetailScrollViewport} key={faq.id} delay={index * 0.05}>
             <details id={faqQuestionFragmentId(faq.id)} className="group rounded-lg border border-border bg-card open:border-accent/25">
               <summary className="flex cursor-pointer list-none items-start justify-between gap-4 rounded-lg px-6 py-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-card [&::-webkit-details-marker]:hidden">
                 <span className="text-base font-semibold tracking-tight text-foreground md:text-lg">{faq.question}</span>

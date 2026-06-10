@@ -2,6 +2,7 @@
 import { Link } from '@/i18n/navigation';
 import { ArrowRight } from 'lucide-react';
 import { FadeIn } from '@/components/motion/fade-in';
+import { serviceDetailScrollViewport } from '@/components/motion/motion-config';
 import { InteractiveCardShell, interactiveCardSurfaceClassName } from '@/components/ui/interactive-card';
 import { MonoLabel } from '@/components/ui/mono-label';
 import type { Locale } from '@/i18n/routing';
@@ -22,7 +23,7 @@ export async function RelatedServices({ locale, relatedSlugs }: RelatedServicesP
   }
 
   return (
-    <FadeIn>
+    <FadeIn viewport={serviceDetailScrollViewport}>
       <h2 className="font-display text-2xl tracking-tight md:text-3xl">{t('relatedLabel')}</h2>
       <div className="mt-8 grid gap-4 sm:grid-cols-2">
         {related.map((service, index) => (
