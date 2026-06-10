@@ -3,6 +3,7 @@ import type { Locale } from '@/i18n/routing';
 import { getLegalDocument } from '@/lib/content/legal';
 import type { LegalSlug } from '@/lib/content/legal/types';
 import { getService } from '@/lib/content/services';
+import { getTechnicalOffering } from '@/lib/content/technical-offering';
 import { buildPageMetadata } from '@/lib/seo/metadata';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
@@ -56,5 +57,14 @@ export async function buildServicePageMetadata(locale: Locale, slug: string) {
   return buildResolvedPageMetadata(locale, `/services/${slug}`, () => ({
     title: service.title,
     description: service.shortDescription
+  }));
+}
+
+export async function buildTechnicalOfferingPageMetadata(locale: Locale) {
+  const offering = getTechnicalOffering(locale);
+
+  return buildResolvedPageMetadata(locale, `/services/${offering.slug}`, () => ({
+    title: `${offering.title} · Orhan Kahraman`,
+    description: offering.intro[0] ?? offering.shortDescription
   }));
 }

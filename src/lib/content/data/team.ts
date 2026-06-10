@@ -9,6 +9,7 @@ export type TeamMemberRecord = {
   expertise: string[];
   linkedin: string;
   photo: string;
+  profilePath?: string;
 };
 
 export const teamMembersTr: TeamMemberRecord[] = [
@@ -33,11 +34,12 @@ export const teamMembersTr: TeamMemberRecord[] = [
   {
     slug: 'orhan-kahraman',
     name: 'Orhan Kahraman',
-    role: 'Developer',
-    bio: 'AI yönetişim platformları ve uyum otomasyon araçlarının geliştirilmesinden sorumlu. Teknik altyapı, veri güvenliği mimarisi ve süreç dijitalleştirme çözümleri tasarlar.',
-    expertise: ['Platform Engineering', 'Data Security', 'Process Automation'],
+    role: 'Full-Stack Developer',
+    bio: 'React, Next.js ve TypeScript ile kurumsal web ve SaaS ürünleri geliştirir. Form akışları, API katmanları ve AI destekli otomasyon sistemleri kurar.',
+    expertise: ['Full-Stack TypeScript', 'SaaS Development', 'AI Integration'],
     linkedin: 'https://www.linkedin.com/in/orhan-kahraman/',
-    photo: '/team/orhan-kahraman.png'
+    photo: '/team/orhan-kahraman.png',
+    profilePath: '/services/technical-solutions'
   }
 ];
 
@@ -63,11 +65,12 @@ export const teamMembersEn: TeamMemberRecord[] = [
   {
     slug: 'orhan-kahraman',
     name: 'Orhan Kahraman',
-    role: 'Developer',
-    bio: 'Responsible for building AI governance platforms and compliance automation tools. Designs technical infrastructure, data security architecture, and process digitization solutions.',
-    expertise: ['Platform Engineering', 'Data Security', 'Process Automation'],
+    role: 'Full-Stack Developer',
+    bio: 'Builds corporate websites and SaaS products with React, Next.js, and TypeScript. Delivers form flows, API layers, and AI-powered automation systems.',
+    expertise: ['Full-Stack TypeScript', 'SaaS Development', 'AI Integration'],
     linkedin: 'https://www.linkedin.com/in/orhan-kahraman/',
-    photo: '/team/orhan-kahraman.png'
+    photo: '/team/orhan-kahraman.png',
+    profilePath: '/services/technical-solutions'
   }
 ];
 

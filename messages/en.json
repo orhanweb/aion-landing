@@ -156,7 +156,16 @@
     "description": "AI governance aligned with ISO standards and international regulations.",
     "learnMore": "Learn More",
     "learnMoreLabel": "Learn more about {service}",
-    "hubIntro": "End-to-end consulting across five core capability areas, from strategy to certification."
+    "hubIntro": "End-to-end consulting across five core capability areas, from strategy to certification.",
+    "technicalLabel": "Development partner"
+  },
+  "technicalDetail": {
+    "capabilitiesLabel": "Capabilities",
+    "areasLabel": "Focus areas",
+    "areasTitle": "Technical scope",
+    "primaryCta": "Connect on LinkedIn",
+    "primaryCtaAria": "Orhan Kahraman LinkedIn profile (opens in a new tab)",
+    "secondaryCta": "All Services"
   },
   "serviceDetail": {
     "outcomesLabel": "What You Get",
@@ -193,7 +202,8 @@
     "description": "Consultants who partner with you on ISO standards, EU AI Act, and enterprise AI governance.",
     "expertiseLabel": "Areas of expertise",
     "linkedinCta": "{name} on LinkedIn",
-    "linkedinAria": "{name} LinkedIn profile (opens in new tab)"
+    "linkedinAria": "{name} LinkedIn profile (opens in new tab)",
+    "profilePageAria": "{name} technical profile page"
   },
   "assessmentTeaser": {
     "eyebrow": "Free Gap Analysis",

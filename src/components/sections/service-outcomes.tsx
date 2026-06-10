@@ -6,14 +6,15 @@ import { getTranslations } from 'next-intl/server';
 type ServiceOutcomesProps = {
   standard: string;
   outcomes: string[];
+  outcomesLabel?: string;
 };
 
-export async function ServiceOutcomes({ standard, outcomes }: ServiceOutcomesProps) {
+export async function ServiceOutcomes({ standard, outcomes, outcomesLabel }: ServiceOutcomesProps) {
   const t = await getTranslations('serviceDetail');
 
   return (
     <FadeIn>
-      <MonoLabel className="text-accent">{t('outcomesLabel')}</MonoLabel>
+      <MonoLabel className="text-accent">{outcomesLabel ?? t('outcomesLabel')}</MonoLabel>
       <p className="mt-2 font-mono-label text-muted-foreground">{standard}</p>
       <div className="mt-10 grid gap-6 sm:grid-cols-2">
         {outcomes.map((outcome, index) => (

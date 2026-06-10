@@ -87,7 +87,7 @@ function escapeHtml(value: string): string {
 }
 
 function formatList(values: readonly string[]): string {
-  return values.length > 0 ? values.join(', ') : '—';
+  return values.length > 0 ? values.join(', ') : '-';
 }
 
 function formatIsoSystems(values: readonly (keyof typeof isoSystemLabels)[]): string {
@@ -171,7 +171,7 @@ export type AssessmentSubmissionEmail = {
 export function formatAssessmentSubmissionEmail(payload: AssessmentSubmission, siteName: string, submittedAt: string): AssessmentSubmissionEmail {
   const branchFields = getBranchFields(payload);
   const sharedFields = getSharedFields(payload);
-  const subject = `[${siteName} Assessment] ${topicLabels[payload.topic]} — ${payload.company}`;
+  const subject = `[${siteName} Assessment] ${topicLabels[payload.topic]} / ${payload.company}`;
 
   const text = [
     `New assessment submission for ${siteName}.`,

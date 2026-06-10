@@ -3,6 +3,7 @@ import { Link } from '@/i18n/navigation';
 import { Container } from '@/components/ui/container';
 import { Logo } from '@/components/ui/logo';
 import { getServices } from '@/lib/content/services';
+import { getTechnicalOffering, getTechnicalOfferingPath } from '@/lib/content/technical-offering';
 import { getSiteConfig } from '@/lib/site';
 import { getLocale, getTranslations } from 'next-intl/server';
 import type { Locale } from '@/i18n/routing';
@@ -13,6 +14,7 @@ export async function SiteFooter() {
   const site = getSiteConfig();
   const contact = site.contact;
   const services = getServices(locale);
+  const technicalOffering = getTechnicalOffering(locale);
   const year = new Date().getFullYear();
 
   return (
@@ -36,6 +38,11 @@ export async function SiteFooter() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link href={getTechnicalOfferingPath()} className="transition-colors hover:text-foreground">
+                  {technicalOffering.title}
+                </Link>
+              </li>
             </ul>
           </nav>
 

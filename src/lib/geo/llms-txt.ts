@@ -2,6 +2,7 @@
 import { getLegalDocument } from '@/lib/content/legal';
 import { personKnowsAboutTopics } from '@/lib/content/authority';
 import { getService, getServiceSlugs } from '@/lib/content/services';
+import { getTechnicalOffering, getTechnicalOfferingPath } from '@/lib/content/technical-offering';
 import { getTeamMembers } from '@/lib/content/team';
 import { personProfileUrl } from '@/lib/schema/site-entity';
 import { GEO_CORE_PATHS, GEO_LEGAL_PATHS } from '@/lib/geo/public-paths';
@@ -58,6 +59,12 @@ function buildServicesSection(locale: Locale, heading: string) {
 
     lines.push(formatLink(service.title, localizedUrl(locale, `/services/${slug}`), `${service.standard}: ${service.shortDescription}`));
   }
+
+  const technicalOffering = getTechnicalOffering(locale);
+
+  lines.push(
+    formatLink(technicalOffering.title, localizedUrl(locale, getTechnicalOfferingPath()), `${technicalOffering.focus}: ${technicalOffering.intro[0]}`)
+  );
 
   return lines.join('\n');
 }

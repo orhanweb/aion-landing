@@ -160,7 +160,16 @@
     "description": "ISO standartları ve uluslararası regülasyonlarla uyumlu AI yönetişimi.",
     "learnMore": "Detaylı İncele",
     "learnMoreLabel": "{service} hizmetini detaylı incele",
-    "hubIntro": "Beş temel yetkinlik alanında uçtan uca danışmanlık, stratejiden sertifikasyona kadar."
+    "hubIntro": "Beş temel yetkinlik alanında uçtan uca danışmanlık, stratejiden sertifikasyona kadar.",
+    "technicalLabel": "Geliştirme ortağı"
+  },
+  "technicalDetail": {
+    "capabilitiesLabel": "Yetkinlikler",
+    "areasLabel": "Çalışma alanları",
+    "areasTitle": "Teknik kapsam",
+    "primaryCta": "LinkedIn'de Bağlantı Kur",
+    "primaryCtaAria": "Orhan Kahraman LinkedIn profili (yeni sekmede açılır)",
+    "secondaryCta": "Tüm Hizmetler"
   },
   "serviceDetail": {
     "outcomesLabel": "Ne Elde Edersiniz",
@@ -197,7 +206,8 @@
     "description": "ISO standartları, EU AI Act ve kurumsal AI yönetişiminde yanınızda olan danışmanlar.",
     "expertiseLabel": "Uzmanlık alanları",
     "linkedinCta": "{name} · LinkedIn",
-    "linkedinAria": "{name} LinkedIn profili (yeni sekmede açılır)"
+    "linkedinAria": "{name} LinkedIn profili (yeni sekmede açılır)",
+    "profilePageAria": "{name} teknik profil sayfası"
   },
   "assessmentTeaser": {
     "eyebrow": "Ücretsiz Gap Analizi",

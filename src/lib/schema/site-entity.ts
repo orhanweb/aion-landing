@@ -1,4 +1,6 @@
 // src/lib/schema/site-entity.ts
+import { getTeamMembers } from '@/lib/content/team';
+import type { Locale } from '@/i18n/routing';
 import { localizedPageUrl, normalizeSiteUrl } from '@/lib/schema/url';
 import { getSiteUrl } from '@/lib/site';
 
@@ -15,6 +17,12 @@ export function personEntityId(slug: string, siteUrl = normalizeSiteUrl(getSiteU
 }
 
 export function personProfileUrl(locale: string, slug: string, siteUrl = normalizeSiteUrl(getSiteUrl())) {
+  const member = getTeamMembers(locale as Locale).find(entry => entry.slug === slug);
+
+  if (member?.profilePath) {
+    return localizedPageUrl(locale, member.profilePath, siteUrl);
+  }
+
   return `${localizedPageUrl(locale, '/about', siteUrl)}#team-${slug}`;
 }
 

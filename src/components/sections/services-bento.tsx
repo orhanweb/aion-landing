@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import { FadeIn } from '@/components/motion/fade-in';
 import { InteractiveCardShell, interactiveCardSurfaceClassName } from '@/components/ui/interactive-card';
 import { getServices } from '@/lib/content/services';
+import { getTechnicalOffering, getTechnicalOfferingPath } from '@/lib/content/technical-offering';
 import { Container, Section } from '@/components/ui/container';
 import { MonoLabel } from '@/components/ui/mono-label';
 import { cn } from '@/lib/utils/cn';
@@ -20,6 +21,7 @@ export async function ServicesBento({ className, showHubIntro, titleAs = 'h2' }:
   const locale = (await getLocale()) as Locale;
   const t = await getTranslations('services');
   const services = getServices(locale);
+  const technicalOffering = getTechnicalOffering(locale);
   const [coreService, ...controlServices] = services;
   const TitleTag = titleAs;
 
@@ -103,6 +105,43 @@ export async function ServicesBento({ className, showHubIntro, titleAs = 'h2' }:
                 </FadeIn>
               );
             })}
+          </div>
+
+          <div className="mt-4 lg:mt-8">
+            <FadeIn delay={0.2}>
+              <p className="mb-4 font-mono-label text-muted-foreground">{t('technicalLabel')}</p>
+              <InteractiveCardShell>
+                <Link
+                  href={getTechnicalOfferingPath()}
+                  aria-label={t('learnMoreLabel', { service: technicalOffering.title })}
+                  className={interactiveCardSurfaceClassName('block p-8 md:p-10 lg:p-12')}
+                >
+                  <div aria-hidden className="absolute right-0 top-0 h-40 w-40 translate-x-12 -translate-y-12 rounded-full border border-accent/20" />
+                  <div aria-hidden className="absolute bottom-0 right-0 h-px w-1/2 bg-linear-to-l from-accent/30 to-transparent" />
+
+                  <div className="relative grid gap-10 lg:grid-cols-[minmax(0,1fr)_280px] lg:items-end">
+                    <div>
+                      <MonoLabel className="text-accent">06</MonoLabel>
+                      <h3 className="font-display mt-5 max-w-3xl text-[clamp(2rem,4vw,3.5rem)] leading-[1.05] tracking-tight text-foreground">
+                        {technicalOffering.title}
+                      </h3>
+                      <p className="mt-4 max-w-xl font-mono-label leading-relaxed text-muted-foreground">{technicalOffering.subtitle}</p>
+                      <p className="mt-8 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+                        {technicalOffering.shortDescription}
+                      </p>
+                    </div>
+
+                    <div className="rounded-lg border border-border bg-background/35 p-5">
+                      <p className="font-mono-label text-muted-foreground">{technicalOffering.focus}</p>
+                      <span className="mt-6 inline-flex items-center gap-2 font-mono-label text-accent">
+                        {t('learnMore')}
+                        <ArrowRight aria-hidden="true" className="size-4" strokeWidth={1.75} />
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              </InteractiveCardShell>
+            </FadeIn>
           </div>
         </div>
       </Container>

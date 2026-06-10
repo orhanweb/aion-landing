@@ -33,6 +33,7 @@ export async function TeamSection({ id }: TeamSectionProps = {}) {
                 expertiseLabel={t('expertiseLabel')}
                 linkedinLabel={t('linkedinCta', { name: member.name })}
                 linkedinAriaLabel={t('linkedinAria', { name: member.name })}
+                profileLinkAriaLabel={member.profilePath ? t('profilePageAria', { name: member.name }) : undefined}
               />
             </FadeIn>
           ))}
