@@ -7,21 +7,23 @@
       <stop offset="1" stop-color="#8F6C41"/>
     </linearGradient>
   </defs>
-  <path
-    d="M40 10L58 22V38L40 50L22 38V22L40 10Z"
-    stroke="url(#aion-icon-gold)"
-    stroke-width="4"
-    stroke-linejoin="miter"
-  />
-  <path
-    d="M22 42L40 54L58 42V58L40 70L22 58V42Z"
-    fill="url(#aion-icon-gold)"
-    fill-opacity="0.9"
-  />
-  <path
-    d="M40 24L49 30V38L40 44L31 38V30L40 24Z"
-    fill="#0A0B0D"
-    fill-opacity="0.92"
-  />
-  <circle cx="40" cy="34" r="3" fill="#C45C3E"/>
+  <g transform="translate(40 40) scale(1.15) translate(-40 -40)">
+    <path
+      d="M40 10L58 22V38L40 50L22 38V22L40 10Z"
+      stroke="url(#aion-icon-gold)"
+      stroke-width="4"
+      stroke-linejoin="miter"
+    />
+    <path
+      d="M22 42L40 54L58 42V58L40 70L22 58V42Z"
+      fill="url(#aion-icon-gold)"
+      fill-opacity="0.9"
+    />
+    <path
+      d="M40 24L49 30V38L40 44L31 38V30L40 24Z"
+      fill="#0A0B0D"
+      fill-opacity="0.92"
+    />
+    <circle cx="40" cy="34" r="3" fill="#C45C3E"/>
+  </g>
 </svg>

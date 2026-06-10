@@ -12,6 +12,7 @@ import { getTranslations } from 'next-intl/server';
 
 export async function HeroSection() {
   const t = await getTranslations('hero');
+  const meta = await getTranslations('meta');
 
   return (
     <Section spacing="none" className="grain-overlay grid-lines overflow-hidden py-16 md:py-20 xl:py-28">
@@ -19,7 +20,9 @@ export async function HeroSection() {
         <div className="grid items-center gap-12 xl:grid-cols-[minmax(0,1fr)_minmax(340px,440px)] xl:gap-16">
           <Stagger className="max-w-[900px] xl:max-w-none">
             <StaggerItem>
-              <MonoLabel className="text-accent">{t('eyebrow')}</MonoLabel>
+              <p className="max-w-2xl font-mono-label text-pretty normal-case! tracking-[0.14em] text-accent md:tracking-[0.18em]">
+                {meta('siteTagline')}
+              </p>
             </StaggerItem>
 
             <StaggerItem>
